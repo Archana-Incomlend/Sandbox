@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Reminder_14_days_before_due_date</name>
+        <label>Reminder_14_days_before_due_date</label>
+        <locationX>165</locationX>
+        <locationY>362</locationY>
+        <actionName>invoice_finance_deal__c.Reminder_14_days_before_due_date</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Last_date_Repayment_reminder</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Reminder_7_days_before_due_date</name>
+        <label>Reminder 7 days before due date</label>
+        <locationX>866</locationX>
+        <locationY>370</locationY>
+        <actionName>invoice_finance_deal__c.Reminder_7_days_before_due_date</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Last_date_Repayment_reminder</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <description>Migrated to Flow from Workflow - Auto -Email before DD reminder payment</description>
+    <environments>Default</environments>
+    <interviewLabel>Invoice Finance Deal - Auto -Email before DD reminder payment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Invoice Finance Deal - Auto -Email before DD reminder payment</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Last_date_Repayment_reminder</name>
+        <label>Last date Repayment reminder</label>
+        <locationX>566</locationX>
+        <locationY>521</locationY>
+        <inputAssignments>
+            <field>Last_sent_re_payment_reminder_email__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>400</locationX>
+        <locationY>31</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterFormula>!{!$Setup.ICL_Settings__c.Disable_Migrate_Flow__c} &amp;&amp; {!$Record.RecordType.DeveloperName} != &apos;Passthrough_Record&apos; &amp;&amp; 00N0T00000AMuji = &apos;Awaiting due date&apos; &amp;&amp; {!$Record.Auto_email_payment_reminder__c} = True &amp;&amp; {!$Record.Supplier_Buyer_Map__r.No_reminder_before_due_date__c} = false</filterFormula>
+        <object>invoice_finance_deal__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>X14_Days_Before_Due_Date</name>
+            <connector>
+                <targetReference>Reminder_14_days_before_due_date</targetReference>
+            </connector>
+            <label>14 Days Before Due Date</label>
+            <offsetNumber>-14</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X7_Days_Before_Due_Date</name>
+            <connector>
+                <targetReference>Reminder_7_days_before_due_date</targetReference>
+            </connector>
+            <label>7 Days Before Due Date</label>
+            <offsetNumber>-7</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

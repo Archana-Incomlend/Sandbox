@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <description>Migrated from the workflow - Split Sales Map factoring</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>BuyerSalesZone</name>
+        <dataType>Number</dataType>
+        <expression>0 * 100</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>SupplierSalesZone</name>
+        <dataType>Number</dataType>
+        <expression>1 * 100</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Migrate Supplier Buyer Map - Split Sales Map factoring {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Supplier Buyer Map - Split Sales Map factoring</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Sales_Supplier_Buyer_owner_fac_Map</name>
+        <label>Update Sales Supplier / Buyer owner fac Map</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <inputAssignments>
+            <field>Buyer_Sales_Zone__c</field>
+            <value>
+                <elementReference>BuyerSalesZone</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Supplier_Zone__c</field>
+            <value>
+                <elementReference>SupplierSalesZone</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Sales_Supplier_Buyer_owner_fac_Map</targetReference>
+        </connector>
+        <filterFormula>!{!$Setup.ICL_Settings__c.Disable_Migrate_Flow__c} &amp;&amp; ( CONTAINS({!$Record.Incomlend_product__r.Name}, &apos;Standard Insured - USD&apos;) || CONTAINS({!$Record.Incomlend_product__r.Name}, &apos;Standard Insured - EUR&apos;) || CONTAINS({!$Record.Incomlend_product__r.Name}, &apos;Standard Insured - HKD&apos;) || CONTAINS({!$Record.Incomlend_product__r.Name}, &apos;Standard Insured - SGD&apos;))</filterFormula>
+        <object>Supplier_Buyer_Map__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <triggerOrder>300</triggerOrder>
+</Flow>

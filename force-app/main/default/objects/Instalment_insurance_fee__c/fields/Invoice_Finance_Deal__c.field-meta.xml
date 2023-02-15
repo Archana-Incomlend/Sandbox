@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Finance_Deal__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Finance invoice deal used to pay the instalment</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Finance invoice deal used to pay the instalment</inlineHelpText>
+    <label>Invoice Finance Deal</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>$Source.Supplier_buyer_map_instalment__c</field>
+            <operation>equals</operation>
+            <valueField>invoice_finance_deal__c.Supplier_Buyer_Map__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>invoice_finance_deal__c</referenceTo>
+    <relationshipName>Instalment_insurance_fee</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

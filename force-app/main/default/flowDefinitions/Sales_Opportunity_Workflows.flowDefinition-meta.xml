@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Flow from all sales opportunity workflows.
+1. Active Status Automation
+2. Forecast Completed
+3. Missin Forecast
+4. Update Satus Opportunity
+5. Update buyer opporunity Factoring
+6. Update opporunity Supplychain
+7. Update supplier opporunity Factoring</description>
+    <masterLabel>In-Active Migrate SO Sales Opportunity - Workflows</masterLabel>
+</FlowDefinition>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invalid_Transactions</fullName>
+    <columns>Accounting_Period__c</columns>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>eWallet__c</columns>
+    <columns>Type__c</columns>
+    <columns>CCY__c</columns>
+    <columns>Amount__c</columns>
+    <columns>Amount_USD_Equiv_daily_fx__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CCY__c</field>
+        <operation>equals</operation>
+        <value>USD</value>
+    </filters>
+    <filters>
+        <field>Amount_USD_Equiv_daily_fx__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Accounting_Period__c</field>
+        <operation>greaterThan</operation>
+        <value>2017-12</value>
+    </filters>
+    <filters>
+        <field>Accounting_Period__c</field>
+        <operation>lessThan</operation>
+        <value>2018-04</value>
+    </filters>
+    <label>Invalid Transactions (01-03 2018)</label>
+</ListView>

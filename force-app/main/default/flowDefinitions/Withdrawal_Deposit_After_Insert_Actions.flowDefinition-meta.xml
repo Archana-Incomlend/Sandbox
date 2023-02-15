@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Migrated Process Builder to Flow.
+1. Approval for Withdrawal</description>
+    <masterLabel>In-Active Migrate Withdrawal Deposit - After Insert Actions</masterLabel>
+</FlowDefinition>

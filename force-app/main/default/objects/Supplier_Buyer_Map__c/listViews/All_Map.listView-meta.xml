@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Map</fullName>
+    <columns>NAME</columns>
+    <columns>Supplier_name__c</columns>
+    <columns>Supplier_Country__c</columns>
+    <columns>Buyer_Name__c</columns>
+    <columns>Buyer_Country__c</columns>
+    <columns>Funder_Discount_Rate__c</columns>
+    <columns>Supplier_Discount_Rate__c</columns>
+    <columns>Buyer_Insured_By__c</columns>
+    <columns>No_reminder_before_due_date__c</columns>
+    <columns>Market_Place_Name__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>map_onboarding_stage__c</field>
+        <operation>equals</operation>
+        <value>90.Onboarded</value>
+    </filters>
+    <label>All Map</label>
+</ListView>

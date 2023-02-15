@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Goods_and_Services_new__c</fullName>
+    <externalId>false</externalId>
+    <label>Goods and Services (new)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Oil &amp; Gas</fullName>
+                <default>false</default>
+                <label>Oil &amp; Gas</label>
+            </value>
+            <value>
+                <fullName>Oil &amp; Gas Equipment</fullName>
+                <default>false</default>
+                <label>Oil &amp; Gas Equipment</label>
+            </value>
+            <value>
+                <fullName>Thermal Coal</fullName>
+                <default>false</default>
+                <label>Thermal Coal</label>
+            </value>
+            <value>
+                <fullName>Diversified Chemicals</fullName>
+                <default>false</default>
+                <label>Diversified Chemicals</label>
+            </value>
+            <value>
+                <fullName>Fertilizers &amp; Agricultural Chemicals</fullName>
+                <default>false</default>
+                <label>Fertilizers &amp; Agricultural Chemicals</label>
+            </value>
+            <value>
+                <fullName>Construction Materials</fullName>
+                <default>false</default>
+                <label>Construction Materials</label>
+            </value>
+            <value>
+                <fullName>Metal, Glass &amp; Plastic Containers</fullName>
+                <default>false</default>
+                <label>Metal &amp; Glass &amp; Plastic Containers</label>
+            </value>
+            <value>
+                <fullName>Forest Products</fullName>
+                <default>false</default>
+                <label>Forest Products</label>
+            </value>
+            <value>
+                <fullName>Paper Products</fullName>
+                <default>false</default>
+                <label>Paper Products</label>
+            </value>
+            <value>
+                <fullName>Aluminium</fullName>
+                <default>false</default>
+                <label>Aluminium</label>
+            </value>
+            <value>
+                <fullName>Other Metals</fullName>
+                <default>false</default>
+                <label>Other Metals</label>
+            </value>
+            <value>
+                <fullName>Copper</fullName>
+                <default>false</default>
+                <label>Copper</label>
+            </value>
+            <value>
+                <fullName>Nickel</fullName>
+                <default>false</default>
+                <label>Nickel</label>
+            </value>
+            <value>
+                <fullName>Lead</fullName>
+                <default>false</default>
+                <label>Lead</label>
+            </value>
+            <value>
+                <fullName>Zinc</fullName>
+                <default>false</default>
+                <label>Zinc</label>
+            </value>
+            <value>
+                <fullName>Tin</fullName>
+                <default>false</default>
+                <label>Tin</label>
+            </value>
+            <value>
+                <fullName>Gold</fullName>
+                <default>false</default>
+                <label>Gold</label>
+            </value>
+            <value>
+                <fullName>Precious Metals &amp; Minerals</fullName>
+                <default>false</default>
+                <label>Precious Metals &amp; Minerals</label>
+            </value>
+            <value>
+                <fullName>Silver</fullName>
+                <default>false</default>
+                <label>Silver</label>
+            </value>
+            <value>
+                <fullName>Metallurgical Coal</fullName>
+                <default>false</default>
+                <label>Metallurgical Coal</label>
+            </value>
+            <value>
+                <fullName>Iron &amp; Steel</fullName>
+                <default>false</default>
+                <label>Iron &amp; Steel</label>
+            </value>
+            <value>
+                <fullName>Aerospace &amp; Defense Equipment</fullName>
+                <default>false</default>
+                <label>Aerospace &amp; Defense Equipment</label>
+            </value>
+            <value>
+                <fullName>Electrical Components &amp; Equipment</fullName>
+                <default>false</default>
+                <label>Electrical Components &amp; Equipment</label>
+            </value>
+            <value>
+                <fullName>Heavy Electrical Equipment</fullName>
+                <default>false</default>
+                <label>Heavy Electrical Equipment</label>
+            </value>
+            <value>
+                <fullName>Construction Machinery &amp; Heavy Trucks</fullName>
+                <default>false</default>
+                <label>Construction Machinery &amp; Heavy Trucks</label>
+            </value>
+            <value>
+                <fullName>Agricultural &amp; Farm Machinery</fullName>
+                <default>false</default>
+                <label>Agricultural &amp; Farm Machinery</label>
+            </value>
+            <value>
+                <fullName>Industrial Machinery</fullName>
+                <default>false</default>
+                <label>Industrial Machinery</label>
+            </value>
+            <value>
+                <fullName>Auto Parts &amp; Equipment</fullName>
+                <default>false</default>
+                <label>Auto Parts &amp; Equipment</label>
+            </value>
+            <value>
+                <fullName>Tires &amp; Rubber</fullName>
+                <default>false</default>
+                <label>Tires &amp; Rubber</label>
+            </value>
+            <value>
+                <fullName>Automobiles</fullName>
+                <default>false</default>
+                <label>Automobiles</label>
+            </value>
+            <value>
+                <fullName>Motorcycles</fullName>
+                <default>false</default>
+                <label>Motorcycles</label>
+            </value>
+            <value>
+                <fullName>Consumer Electronics</fullName>
+                <default>false</default>
+                <label>Consumer Electronics</label>
+            </value>
+            <value>
+                <fullName>Home Furnishings</fullName>
+                <default>false</default>
+                <label>Home Furnishings</label>
+            </value>
+            <value>
+                <fullName>Household Appliances</fullName>
+                <default>false</default>
+                <label>Household Appliances</label>
+            </value>
+            <value>
+                <fullName>Housewares &amp; Specialties</fullName>
+                <default>false</default>
+                <label>Housewares &amp; Specialties</label>
+            </value>
+            <value>
+                <fullName>Leisure Products</fullName>
+                <default>false</default>
+                <label>Leisure Products</label>
+            </value>
+            <value>
+                <fullName>Apparel, Accessories &amp; Luxury Goods</fullName>
+                <default>false</default>
+                <label>Apparel &amp; Accessories &amp; Luxury Goods</label>
+            </value>
+            <value>
+                <fullName>Footwear</fullName>
+                <default>false</default>
+                <label>Footwear</label>
+            </value>
+            <value>
+                <fullName>Textiles</fullName>
+                <default>false</default>
+                <label>Textiles</label>
+            </value>
+            <value>
+                <fullName>Household &amp; Personal Products</fullName>
+                <default>false</default>
+                <label>Household &amp; Personal Products</label>
+            </value>
+            <value>
+                <fullName>Beverages</fullName>
+                <default>false</default>
+                <label>Beverages</label>
+            </value>
+            <value>
+                <fullName>Packaged Foods &amp; Meats</fullName>
+                <default>false</default>
+                <label>Packaged Foods &amp; Meats</label>
+            </value>
+            <value>
+                <fullName>Tobacco</fullName>
+                <default>false</default>
+                <label>Tobacco</label>
+            </value>
+            <value>
+                <fullName>Live Animals</fullName>
+                <default>false</default>
+                <label>Live Animals</label>
+            </value>
+            <value>
+                <fullName>Live Plants</fullName>
+                <default>false</default>
+                <label>Live Plants</label>
+            </value>
+            <value>
+                <fullName>Crops, Beans &amp; Pulses</fullName>
+                <default>false</default>
+                <label>Crops &amp; Beans &amp; Pulses</label>
+            </value>
+            <value>
+                <fullName>Edible Oils</fullName>
+                <default>false</default>
+                <label>Edible Oils</label>
+            </value>
+            <value>
+                <fullName>Fruits &amp; Vegetables</fullName>
+                <default>false</default>
+                <label>Fruits &amp; Vegetables</label>
+            </value>
+            <value>
+                <fullName>Sugar Products</fullName>
+                <default>false</default>
+                <label>Sugar Products</label>
+            </value>
+            <value>
+                <fullName>Coffee, Tea &amp; Spices</fullName>
+                <default>false</default>
+                <label>Coffee &amp; Tea &amp; Spices</label>
+            </value>
+            <value>
+                <fullName>Other Food Products</fullName>
+                <default>false</default>
+                <label>Other Food Products</label>
+            </value>
+            <value>
+                <fullName>Health Care Supplies &amp; Equipment</fullName>
+                <default>false</default>
+                <label>Health Care Supplies &amp; Equipment</label>
+            </value>
+            <value>
+                <fullName>Pharmaceuticals</fullName>
+                <default>false</default>
+                <label>Pharmaceuticals</label>
+            </value>
+            <value>
+                <fullName>Communications Equipment</fullName>
+                <default>false</default>
+                <label>Communications Equipment</label>
+            </value>
+            <value>
+                <fullName>Technology Hardware, Storage &amp; Peripherals</fullName>
+                <default>false</default>
+                <label>Technology Hardware &amp; Storage &amp; Peripherals</label>
+            </value>
+            <value>
+                <fullName>Electronic Equipment &amp; Instruments</fullName>
+                <default>false</default>
+                <label>Electronic Equipment &amp; Instruments</label>
+            </value>
+            <value>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+                <label>Electronic Components</label>
+            </value>
+            <value>
+                <fullName>Semiconductors</fullName>
+                <default>false</default>
+                <label>Semiconductors</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

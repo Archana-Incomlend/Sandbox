@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Energy</fullName>
+        <default>false</default>
+        <label>Energy</label>
+    </customValue>
+    <customValue>
+        <fullName>Materials</fullName>
+        <default>false</default>
+        <label>Materials</label>
+    </customValue>
+    <customValue>
+        <fullName>Metals &amp; Minerals</fullName>
+        <default>false</default>
+        <label>Metals &amp; Minerals</label>
+    </customValue>
+    <customValue>
+        <fullName>Industrial Products</fullName>
+        <default>false</default>
+        <label>Industrial Products</label>
+    </customValue>
+    <customValue>
+        <fullName>Consumer Goods</fullName>
+        <default>false</default>
+        <label>Consumer Goods</label>
+    </customValue>
+    <customValue>
+        <fullName>Soft Commodities</fullName>
+        <default>false</default>
+        <label>Soft Commodities</label>
+    </customValue>
+    <customValue>
+        <fullName>Health Care</fullName>
+        <default>false</default>
+        <label>Health Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Technology Hardware &amp; Equipment</fullName>
+        <default>false</default>
+        <label>Technology Hardware &amp; Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Others</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Others</label>
+    </customValue>
+    <masterLabel>Sector</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

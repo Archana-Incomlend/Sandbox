@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Map_Supplier_rate__c</fullName>
+    <description>Supplier discount rate from map , is pushed to the supplier discount rate in the invoice for calculation</description>
+    <externalId>false</externalId>
+    <formula>Supplier_Buyer_Map__r.Supplier_Discount_Rate__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>default Supplier discount rate from map</inlineHelpText>
+    <label>Map Supplier rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

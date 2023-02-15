@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rating_Atradius__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND( Lead_Name__r.Atradius_Rating__c  &gt;=32 ,  Lead_Name__r.Atradius_Rating__c &lt;36),&quot;33-36&quot;,
+IF( AND( Lead_Name__r.Atradius_Rating__c  &gt;=37 ,  Lead_Name__r.Atradius_Rating__c &lt;41),&quot;37-41&quot;,
+IF( AND( Lead_Name__r.Atradius_Rating__c  &gt;=42 ,  Lead_Name__r.Atradius_Rating__c &lt;46),&quot;42-46&quot;,
+IF( AND( Lead_Name__r.Atradius_Rating__c  &gt;=47 ,  Lead_Name__r.Atradius_Rating__c &lt;51),&quot;47-51&quot;,
+IF( AND( Lead_Name__r.Atradius_Rating__c  &gt;=52 ,  Lead_Name__r.Atradius_Rating__c &lt;54),&quot;52-54&quot;,
+IF( AND( Lead_Name__r.Atradius_Rating__c  &gt;=56 ,  Lead_Name__r.Atradius_Rating__c &lt;59),&quot;56-59&quot;,
+IF( AND( Lead_Name__r.Atradius_Rating__c  &gt;=59 ,  Lead_Name__r.Atradius_Rating__c &lt;62),&quot;59-62&quot;,
+IF( AND( Lead_Name__r.Atradius_Rating__c  &gt;=63 ,  Lead_Name__r.Atradius_Rating__c &lt;65),&quot;63-65&quot;,
+IF( Lead_Name__r.Atradius_Rating__c &lt;30 ,&quot;&lt;30&quot;,
+IF( Lead_Name__r.Atradius_Rating__c &lt;1 ,&quot;No rating&quot;, &quot;No Rating&quot;)
+)
+)
+)
+)
+)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Rating Atradius</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

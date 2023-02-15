@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Categories__c</name>
+    <picklistValues>
+        <masterLabel>abortion</masterLabel>
+        <translation>аборт</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>adserving</masterLabel>
+        <translation>демонстрация рекламы</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>adult</masterLabel>
+        <translation>только для взрослых</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>alcohol and tobacco</masterLabel>
+        <translation>алкоголь и табак</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>anonymizers</masterLabel>
+        <translation>анонимайзеры</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>auctions</masterLabel>
+        <translation>аукционы</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>banking</masterLabel>
+        <translation>банковские операции</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>blogs</masterLabel>
+        <translation>блоги</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>chat</masterLabel>
+        <translation>чат</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>dating</masterLabel>
+        <translation>знакомства</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>drugs</masterLabel>
+        <translation>наркотики</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>entertainment</masterLabel>
+        <translation>развлечения</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>gambling</masterLabel>
+        <translation>азартные игры</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>games</masterLabel>
+        <translation>игры</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>hacking</masterLabel>
+        <translation>взлом компьютеров и сетей</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>hate</masterLabel>
+        <translation>ненависть</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>job search</masterLabel>
+        <translation>поиск работы</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>paymentservice</masterLabel>
+        <translation>служба платежей</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>scam</masterLabel>
+        <translation>мошенничество</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>shopping</masterLabel>
+        <translation>покупки</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>social networking</masterLabel>
+        <translation>социальные сети</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>software download</masterLabel>
+        <translation>загрузка ПО</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>spam</masterLabel>
+        <translation>спам</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>streaming media</masterLabel>
+        <translation>потоковые медиаресурсы</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>violence</masterLabel>
+        <translation>насилие</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>warez</masterLabel>
+        <translation>нелицензионное ПО</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>weapons</masterLabel>
+        <translation>оружие</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>webmail</masterLabel>
+        <translation>веб-почта</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insured_by__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Insurance provider for the Credit Limit</inlineHelpText>
+    <label>Insured by</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Atradius</fullName>
+                <default>false</default>
+                <label>Atradius</label>
+            </value>
+            <value>
+                <fullName>BCC Trade Credit Pty Ltd - Reverse Factoring</fullName>
+                <default>false</default>
+                <label>BCC Trade Credit Pty Ltd - Reverse Factoring</label>
+            </value>
+            <value>
+                <fullName>FCI-NFC</fullName>
+                <default>false</default>
+                <label>FCI-NFC</label>
+            </value>
+            <value>
+                <fullName>ICEIC</fullName>
+                <default>false</default>
+                <label>ICEIC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

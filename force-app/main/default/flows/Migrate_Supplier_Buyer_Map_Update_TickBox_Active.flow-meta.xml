@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <description>Migrated from the workflow - Update TickBox Active</description>
+    <environments>Default</environments>
+    <interviewLabel>Migrate Supplier Buyer Map - Update TickBox Active {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Supplier Buyer Map - Update TickBox Active</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Active_Checkbox</name>
+        <label>Update Active Checkbox</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <inputAssignments>
+            <field>Active__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Active_Checkbox</targetReference>
+        </connector>
+        <filterFormula>!{!$Setup.ICL_Settings__c.Disable_Migrate_Flow__c} &amp;&amp; NOT( ISPICKVAL({!$Record.map_onboarding_stage__c}, &apos;01 - Blocked - no stats&apos; ) ) &amp;&amp; NOT( ISPICKVAL({!$Record.map_onboarding_stage__c}, &apos;10.Checking Insurance&apos; ) )  &amp;&amp; NOT( ISPICKVAL({!$Record.map_onboarding_stage__c}, &apos;rejected by buyer&apos; ) ) &amp;&amp; NOT( ISPICKVAL({!$Record.map_onboarding_stage__c}, &apos;rejected by supplier&apos; ) ) &amp;&amp; NOT( ISPICKVAL({!$Record.map_onboarding_stage__c}, &apos;rejected by Incomlend&apos; ) )</filterFormula>
+        <object>Supplier_Buyer_Map__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cant_buy_more_than_remaining_amount</fullName>
+    <active>true</active>
+    <description>Cannot buy amount more than remaining amount</description>
+    <errorConditionFormula>IF( ISBLANK( CreatedDate),amount__c  &gt;  Invoice__r.remaining_amount__c + Invoice__r.Sum_Of_All_Pre_Reservations__c,FALSE)</errorConditionFormula>
+    <errorMessage>Requested reservation amount is not available(e2)</errorMessage>
+</ValidationRule>

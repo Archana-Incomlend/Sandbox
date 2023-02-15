@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Over_Due_days_based_on_expected_date__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( OVERDUE__c = true, 
+if(isblank(Actual_Repayment_Received_Date__c), today() ,Actual_Repayment_Received_Date__c) - Expected_Payment_Date__c , 
+0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Over Due days based on expected date</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

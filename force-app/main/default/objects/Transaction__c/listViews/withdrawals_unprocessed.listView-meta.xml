@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>withdrawals_unprocessed</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Type__c</columns>
+    <columns>Amount__c</columns>
+    <columns>CCY__c</columns>
+    <columns>Effective_Date__c</columns>
+    <columns>notes__c</columns>
+    <columns>Status__c</columns>
+    <columns>Trustee_Approved__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>80.Withdrawal</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled,Confirmed by Finance</value>
+    </filters>
+    <filters>
+        <field>Trustee_Approved__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>withdrawals - unprocessed</label>
+</ListView>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Credit_Commitee_Planned</name>
+        <label>Credit Commitee Planned</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <actionName>Supplier_Buyer_Map__c.Credit_Commitee_Planned</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>53.0</apiVersion>
+    <description>Migrated from the workflow - Credit Committee planned</description>
+    <environments>Default</environments>
+    <interviewLabel>Migrate Supplier Buyer Map - Credit Committee planned {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Supplier Buyer Map - Credit Committee planned</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Credit_Commitee_Planned</targetReference>
+        </connector>
+        <filterFormula>!{!$Setup.ICL_Settings__c.Disable_Migrate_Flow__c} &amp;&amp; ISNULL({!$Record.Credit_Committee_Expected_Date__c}) &amp;&amp; ISCHANGED({!$Record.Credit_Committee_Expected_Date__c})</filterFormula>
+        <object>Supplier_Buyer_Map__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

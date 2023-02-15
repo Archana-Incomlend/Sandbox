@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Credit Insurance</fullName>
+        <default>false</default>
+        <label>Credit Insurance</label>
+    </customValue>
+    <customValue>
+        <fullName>Termsheet signed in docusign</fullName>
+        <default>false</default>
+        <label>Termsheet signed in docusign</label>
+    </customValue>
+    <customValue>
+        <fullName>Offer of invoice financing signed in docusign</fullName>
+        <default>false</default>
+        <label>Offer of invoice financing signed in docusign</label>
+    </customValue>
+    <customValue>
+        <fullName>GTC Buyer + Deed Indemnity signed in docusign</fullName>
+        <default>false</default>
+        <label>GTC Buyer + Deed Indemnity signed in docusign</label>
+    </customValue>
+    <customValue>
+        <fullName>Absence of common shareholder &amp; directors</fullName>
+        <default>false</default>
+        <label>Absence of common shareholder &amp; directors</label>
+    </customValue>
+    <customValue>
+        <fullName>Buyer Visit Report</fullName>
+        <default>false</default>
+        <label>Buyer Visit Report</label>
+    </customValue>
+    <customValue>
+        <fullName>Due Diligence</fullName>
+        <default>false</default>
+        <label>Due Diligence</label>
+    </customValue>
+    <customValue>
+        <fullName>Vertification of company&apos;s landline</fullName>
+        <default>false</default>
+        <label>Vertification of company&apos;s landline</label>
+    </customValue>
+    <customValue>
+        <fullName>Vertification of primary contact landline</fullName>
+        <default>false</default>
+        <label>Vertification of primary contact landline</label>
+    </customValue>
+    <customValue>
+        <fullName>Vertification of email address</fullName>
+        <default>false</default>
+        <label>Vertification of email address</label>
+    </customValue>
+    <customValue>
+        <fullName>Email confirmation</fullName>
+        <default>false</default>
+        <label>Email confirmation</label>
+    </customValue>
+    <customValue>
+        <fullName>WorldCheck - Incomlend</fullName>
+        <default>false</default>
+        <label>WorldCheck - Incomlend</label>
+    </customValue>
+    <customValue>
+        <fullName>GoogleCheck - Incomlend</fullName>
+        <default>false</default>
+        <label>GoogleCheck - Incomlend</label>
+    </customValue>
+    <customValue>
+        <fullName>Onboarding Checklist</fullName>
+        <default>false</default>
+        <label>Onboarding Checklist</label>
+    </customValue>
+    <masterLabel>B-N&amp;A R-Factoring BUYER</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

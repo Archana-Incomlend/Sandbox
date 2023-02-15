@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>all_time_average_discount_rate__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(All_time_invoice_count_RH__c = 0,
+0,
+ sum_of_discount_rates_RH__c  /  All_time_invoice_count_RH__c  )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>all time average discount rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

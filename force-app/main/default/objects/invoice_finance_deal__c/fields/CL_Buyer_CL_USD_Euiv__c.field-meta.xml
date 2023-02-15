@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CL_Buyer_CL_USD_Euiv__c</fullName>
+    <description>Buyer CL USD Equiv</description>
+    <externalId>false</externalId>
+    <formula>Supplier_Buyer_Map__r.Buyer_CL_USD_Equiv__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Buyer CL USD Equiv</inlineHelpText>
+    <label>CL Buyer CL USD Euiv</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

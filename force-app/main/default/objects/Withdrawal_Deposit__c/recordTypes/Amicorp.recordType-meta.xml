@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amicorp</fullName>
+    <active>true</active>
+    <label>Amicorp</label>
+    <picklistValues>
+        <picklist>Approval__c</picklist>
+        <values>
+            <fullName>Approval requested</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Confirmed by Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed by Operation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CCY__c</picklist>
+        <values>
+            <fullName>EUR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GBP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HKD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SGD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XXX</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Processed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Processed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Trustee__c</picklist>
+        <values>
+            <fullName>Amicorp Escrow</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Amicorp Trust</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>70%2EDeposit</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>80%2EWithdrawal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

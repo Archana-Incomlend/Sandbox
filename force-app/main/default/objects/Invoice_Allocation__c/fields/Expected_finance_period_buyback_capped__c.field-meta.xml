@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_finance_period_buyback_capped__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* buyback expected financing period adjusted to either buyback enter or close date */
+Min (Invoice__r.expected_financing_period__c + If( isBlank(Invoice__r.advance_send_to_supplier_date__c),
+0, If( isBlank(Buyback_Enter_Date__c), 0, Invoice__r.advance_send_to_supplier_date__c - Buyback_Enter_Date__c)),
+If( isBlank(Buybacked_Date__c), 65535, Buybacked_Date__c - Invoice__r.advance_send_to_supplier_date__c)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Expected finance period buyback capped</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

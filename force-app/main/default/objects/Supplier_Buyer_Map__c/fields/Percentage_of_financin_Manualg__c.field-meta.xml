@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percentage_of_financin_Manualg__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Field reserved for Bangladesh 95% use case. Do not change otherwise.</inlineHelpText>
+    <label>Percentage of financing</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

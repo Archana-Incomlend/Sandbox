@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_available_eWallets_USD_equi_2__c</fullName>
+    <externalId>false</externalId>
+    <formula>USD_eWallet__r.Available_Balance__c + EUR_eWallet__r.Available_Balance_USD_Equiv__c +  SGD_eWallet__r.Available_Balance_USD_Equiv__c + HKD_eWallet__r.Available_Balance_USD_Equiv__c + GBP_eWallet__r.Available_Balance_USD_Equiv__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total available eWallets USD equi 2</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

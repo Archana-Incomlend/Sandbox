@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sales Opportunity</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sales Opportunities</value>
+    </caseValues>
+    <layouts>
+        <layout>Invoice Opportunity Layout</layout>
+        <sections>
+            <label></label>
+            <section>Action Plan</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Agent ( Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Buyer (Auto from Map)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Forecast (sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Funding Section (Funding)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Head of Sales</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Insurance (risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Key Steps (Auto From Map)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Lead (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Ops Comment Project (pre Map Creation)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Potential (Risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Roll Over Opportunity (Auto based on invoice)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Shipping info ( Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier (Auto From Map)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier Buyer Map (Auto From Map)</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Sales Opportunity Sales</layout>
+        <sections>
+            <label></label>
+            <section>Action Plan</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Agent SALES ( if any)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Forecast SALES</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Lead SALES</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Shipping info (optional) SALES</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step to CC</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Term Sheet</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

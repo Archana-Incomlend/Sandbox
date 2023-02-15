@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>dsfs__All1</fullName>
+    <columns>NAME</columns>
+    <columns>dsfs__Subject__c</columns>
+    <columns>dsfs__Envelope_Status__c</columns>
+    <columns>dsfs__Sent_Date_Time__c</columns>
+    <columns>dsfs__Company__c</columns>
+    <columns>dsfs__Sender__c</columns>
+    <columns>Invoice_Finance_Deal2__c</columns>
+    <columns>Supplier_Buyer_Map__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

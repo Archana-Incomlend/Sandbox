@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FX_Rate__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>FX Rate</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 AND (2 OR (3 AND 4))</booleanFilter>
+        <filterItems>
+            <field>$Source.CCY__c</field>
+            <operation>equals</operation>
+            <valueField>FX_Rates__c.from_currency__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.advance_send_to_supplier_date__c</field>
+            <operation>equals</operation>
+            <valueField>FX_Rates__c.date__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.Actual_Repayment_Received_Date__c</field>
+            <operation>equals</operation>
+            <valueField>FX_Rates__c.date__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>012280000015HekAAE</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>FX_Rates__c</referenceTo>
+    <relationshipLabel>Invoice Finance Deals</relationshipLabel>
+    <relationshipName>Invoice_Finance_Deals</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

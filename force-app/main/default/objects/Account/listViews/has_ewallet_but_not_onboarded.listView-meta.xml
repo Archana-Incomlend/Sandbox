@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>has_ewallet_but_not_onboarded</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>onboarding_approved__c</columns>
+    <columns>Has_eWallet__c</columns>
+    <columns>onboarding_stage__c</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <columns>Sub_type__c</columns>
+    <columns>USD_Available_eWallet__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Has_eWallet__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>onboarding_stage__c</field>
+        <operation>notEqual</operation>
+        <value>99.Onboarded</value>
+    </filters>
+    <label>has ewallet but not onboarded!!</label>
+</ListView>

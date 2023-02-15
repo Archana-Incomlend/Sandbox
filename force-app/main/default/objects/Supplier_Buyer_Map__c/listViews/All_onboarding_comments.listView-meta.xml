@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_onboarding_comments</fullName>
+    <columns>NAME</columns>
+    <columns>Supplier__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>Ops_Owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Ops_Owner__c</field>
+        <operation>equals</operation>
+        <value>Mohd. Asif</value>
+    </filters>
+    <label>All onboarding comments</label>
+</ListView>

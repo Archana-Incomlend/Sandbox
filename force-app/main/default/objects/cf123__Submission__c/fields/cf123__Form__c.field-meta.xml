@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cf123__Form__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Form</label>
+    <referenceTo>cf123__Form__c</referenceTo>
+    <relationshipName>Submissions</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

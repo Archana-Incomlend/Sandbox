@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <description>update all e-wallet trustee</description>
+    <interviewLabel>Maintenance e-wallet {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Maintenance e-wallet trustee</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>get_ewallet_trustee</name>
+        <label>get ewallet trustee</label>
+        <locationX>205</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_e_wallet</targetReference>
+        </connector>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>eWallet_Trustee__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_e_wallet</name>
+        <label>Update e-wallet trustee</label>
+        <locationX>525</locationX>
+        <locationY>49</locationY>
+        <inputReference>get_ewallet_trustee</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>get_ewallet_trustee</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+</Flow>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>financing_period_positive</fullName>
+    <active>true</active>
+    <errorConditionFormula>Actual_Repayment_Received_Date__c &lt; advance_send_to_supplier_date__c</errorConditionFormula>
+    <errorDisplayField>Actual_Repayment_Received_Date__c</errorDisplayField>
+    <errorMessage>This has to be after advance amount credited to ewallet date</errorMessage>
+</ValidationRule>

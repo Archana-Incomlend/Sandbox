@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_platform_fee_for_upfront_fee__c</fullName>
+    <externalId>false</externalId>
+    <formula>ROUND(Total_platform_fee__c-if(ispickval( Supplier_Buyer_Map__r.Agent_s_fee_type__c ,&quot;Platform fee (%)&quot;), Supplier_Buyer_Map__r.Value_of_agent_s_fee__c * invoice_amount__c/100,0),2)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total platform fee for upfront fee</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

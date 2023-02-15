@@ -1,0 +1,18 @@
+<apex:page standardController="invoice_finance_deal__c" extensions="SendBuyerConfirmationInvoice" lightningStylesheets="true">
+  <apex:sectionHeader title="Task" subtitle="Select Template for Buyer Confirmation"/>
+  <apex:form >
+        <apex:pageBlock id="dataSection">
+            <apex:pageMessages id="pageMessages" />
+            <apex:pageBlockSection title="Select Email Template" id="pbTemplate" collapsible="false" rendered="{!if(ListId != '' , true,false)}">
+                
+                <apex:selectList size="1" value="{!TemplateId}">
+                    <apex:selectOptions value="{!AllEmailTemplates}"/>
+                </apex:selectList>
+            </apex:pageBlockSection>
+            <center>
+            <apex:commandButton value="Next" action="{!GenerateEmailContent}" rendered="{!if(ListId != '', true,false)}"/>
+            <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+            </center>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

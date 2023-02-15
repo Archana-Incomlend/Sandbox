@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Migrated from the workflow
+1. Update due date delta bucket
+2. Update Invoice Amount
+3. Update in Progress Date</description>
+    <masterLabel>In-Active Migrate Invoice Finance Deal - Update invoice amount, due date delta bucket, In Progress Date</masterLabel>
+</FlowDefinition>

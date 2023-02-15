@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Tax Invoice</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Tax Invoices</value>
+    </caseValues>
+    <layouts>
+        <layout>Tax Invoice Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Customer Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label></label>
+        <name>Funder</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Funder_Agent</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Map_Agent</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Supplier</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

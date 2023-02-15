@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Deal_Dropped__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason for Deal Dropped</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Weak/small supplier</fullName>
+                <default>false</default>
+                <label>Weak/small supplier</label>
+            </value>
+            <value>
+                <fullName>Buyer below min financial criteria</fullName>
+                <default>false</default>
+                <label>Buyer below min financial criteria</label>
+            </value>
+            <value>
+                <fullName>Insufficient track record between supplier and buyer</fullName>
+                <default>false</default>
+                <label>Insufficient track record between supplier and buyer</label>
+            </value>
+            <value>
+                <fullName>Lack of buyer financials</fullName>
+                <default>false</default>
+                <label>Lack of buyer financials</label>
+            </value>
+            <value>
+                <fullName>Lack of buyer call</fullName>
+                <default>false</default>
+                <label>Lack of buyer call</label>
+            </value>
+            <value>
+                <fullName>Lack of buyer engagement (BC/BNL/NoA)</fullName>
+                <default>false</default>
+                <label>Lack of buyer engagement (BC/BNL/NoA)</label>
+            </value>
+            <value>
+                <fullName>Insufficient credit limit</fullName>
+                <default>false</default>
+                <label>Insufficient credit limit</label>
+            </value>
+            <value>
+                <fullName>Uncompetitive pricing</fullName>
+                <default>false</default>
+                <label>Uncompetitive pricing</label>
+            </value>
+            <value>
+                <fullName>Unacceptable geographic location of buyer/seller</fullName>
+                <default>false</default>
+                <label>Unacceptable geographic location of buyer/seller</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

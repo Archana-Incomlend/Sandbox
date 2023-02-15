@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cf123__Launch_123ContactForm</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Launch 123ContactForm</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/cf123__VF01_App?Id={!cf123__Form__c.Id}</url>
+</WebLink>

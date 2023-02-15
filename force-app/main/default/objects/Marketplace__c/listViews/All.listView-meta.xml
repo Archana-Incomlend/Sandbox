@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>default_marketplace__c</columns>
+    <columns>NAME</columns>
+    <columns>latest_to_usd_rate__c</columns>
+    <columns>minimum_purchase_amount__c</columns>
+    <columns>active__c</columns>
+    <columns>currency_symbol__c</columns>
+    <columns>Available_on_Marketplace__c</columns>
+    <columns>All_time_funded_Amount__c</columns>
+    <columns>All_Time_Invoice_Value__c</columns>
+    <columns>All_time_invoice_count__c</columns>
+    <columns>all_time_average_invoice_value__c</columns>
+    <columns>FX_Rate_for_MI__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

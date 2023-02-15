@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Migrated from the workflow
+Auto -Email overdue reminder payment 
+Auto -Email overdue reminder payment2 - workflow rules</description>
+    <masterLabel>In-Active Migrate Invoice Finance Deal - Auto -Email overdue reminder payment</masterLabel>
+</FlowDefinition>

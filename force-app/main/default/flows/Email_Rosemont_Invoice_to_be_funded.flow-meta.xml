@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apexPluginCalls>
+        <name>send_email</name>
+        <label>send email</label>
+        <locationX>407</locationX>
+        <locationY>589</locationY>
+        <apexClass>sendHTMLEmailPlugin</apexClass>
+        <connector>
+            <targetReference>Emails_Sent</targetReference>
+        </connector>
+        <inputParameters>
+            <name>htmlBody</name>
+            <value>
+                <elementReference>emailbody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Subject</name>
+            <value>
+                <elementReference>emailTitle</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Other Emails (comma-separated)</name>
+            <value>
+                <elementReference>EmailRosemontPrimary.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>BCC Email Addresses (comma-separated)</name>
+            <value>
+                <stringValue>operations@incomlend.com, farah@incomlend.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>CC Email Addresses (comma-separated)</name>
+            <value>
+                <elementReference>RosemontAccountInfo.Alternative_email_to_add_in_communicatio__c</elementReference>
+            </value>
+        </inputParameters>
+    </apexPluginCalls>
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>Is_Email_already_sent</name>
+        <label>Is Email already sent</label>
+        <locationX>378</locationX>
+        <locationY>334</locationY>
+        <defaultConnector>
+            <targetReference>Emails_already_sent</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Email_not_send_yet</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>invoice.Email_sent_to_Rosemont__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Rosemont_ID</targetReference>
+            </connector>
+            <label>Email not send yet</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IsInvoiceNotYetFunded</name>
+        <label>IsInvoiceNotYetFunded</label>
+        <locationX>348</locationX>
+        <locationY>169</locationY>
+        <defaultConnector>
+            <targetReference>Invoice_phase_is_not_correct</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>InvoiceNotYetFunded</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>invoice.Phase__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1:PRE LISTING</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Email_already_sent</targetReference>
+            </connector>
+            <label>InvoiceNotYetFunded</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>NetDiscRate</name>
+        <dataType>Number</dataType>
+        <expression>(1-{!FunderAccountInfo.discount_profit_share_percent__c})*{!invoice.discount_rate__c}*100</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>TotalAmountCredited</name>
+        <dataType>Currency</dataType>
+        <expression>{!Alloc.funder_discount_amount__c}+ {!Alloc.amount__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Email Rosemont Invoice to be funded {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Email Rosemont Invoice to be funded</label>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Rosemont_Account_info</name>
+        <label>Get Rosemont Account info</label>
+        <locationX>773</locationX>
+        <locationY>451</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetEmail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RosemontIDtoGetInfo</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputReference>RosemontAccountInfo</outputReference>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Primary_Contact__c</queriedFields>
+        <queriedFields>Alternative_email_to_add_in_communicatio__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>GetEmail</name>
+        <label>GetContactInfo</label>
+        <locationX>580</locationX>
+        <locationY>531</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>send_email</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RosemontAccountInfo.Primary_Contact__c</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+        <outputReference>EmailRosemontPrimary</outputReference>
+        <queriedFields>Email</queriedFields>
+        <queriedFields>FirstName</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>lookup_invoice</name>
+        <label>lookup invoice</label>
+        <locationX>533</locationX>
+        <locationY>82</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>IsInvoiceNotYetFunded</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>invoiceid</elementReference>
+            </value>
+        </filters>
+        <object>invoice_finance_deal__c</object>
+        <outputReference>invoice</outputReference>
+        <queriedFields>invoice_amount__c</queriedFields>
+        <queriedFields>Invoice_name__c</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>CCY__c</queriedFields>
+        <queriedFields>Email_sent_to_Rosemont__c</queriedFields>
+        <queriedFields>supplier_text__c</queriedFields>
+        <queriedFields>Buyer_text__c</queriedFields>
+        <queriedFields>requested_amount__c</queriedFields>
+        <queriedFields>Listing_Start__c</queriedFields>
+        <queriedFields>Listing_End__c</queriedFields>
+        <queriedFields>Expected_Payment_Date__c</queriedFields>
+        <queriedFields>Phase__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Emails_Sent</name>
+        <label>Emails Sent</label>
+        <locationX>212</locationX>
+        <locationY>519</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>invoiceid</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Email_sent_to_Rosemont__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>invoice_finance_deal__c</object>
+    </recordUpdates>
+    <screens>
+        <name>Are_you_sure</name>
+        <label>Are you sure ?</label>
+        <locationX>300</locationX>
+        <locationY>9</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>lookup_invoice</targetReference>
+        </connector>
+        <fields>
+            <name>Areyousure</name>
+            <fieldText>Are you sure to send an email to Rosemont ?</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Emails_already_sent</name>
+        <label>Emails already sent</label>
+        <locationX>129</locationX>
+        <locationY>336</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>EmailsAlreadySent2</name>
+            <fieldText>Email to Rosemont already sent !</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <pausedText>Emails already sent !</pausedText>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Invoice_phase_is_not_correct</name>
+        <label>Invoice phase is not correct</label>
+        <locationX>84</locationX>
+        <locationY>165</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Invoicephaseisnotcorrect</name>
+            <fieldText>The invoice phase is not correct !</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Are_you_sure</startElementReference>
+    <status>Active</status>
+    <subflows>
+        <name>Get_Rosemont_ID</name>
+        <label>Get Rosemont ID</label>
+        <locationX>674</locationX>
+        <locationY>309</locationY>
+        <connector>
+            <targetReference>Get_Rosemont_Account_info</targetReference>
+        </connector>
+        <flowName>Lookup_Rosemont</flowName>
+        <outputAssignments>
+            <assignToReference>RosemontIDtoGetInfo</assignToReference>
+            <name>RosemontID</name>
+        </outputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>emailbody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:2px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;IMG SRC=&quot;https://incomlend--c.ap2.content.force.com/servlet/servlet.ImageServer?id=01528000002r2ag&amp;oid=00D28000001bV5p&quot;&gt;&lt;/FONT&gt;&lt;/DIV&gt;&lt;BR /&gt;
+
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Dear Rosemont team,&lt;/FONT&gt;&lt;/DIV&gt;&lt;BR /&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt; A new invoice is about to be published. &lt;/FONT&gt;&lt;/DIV&gt;&lt;BR /&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt; Please find invoice details :&lt;/FONT&gt;&lt;/DIV&gt;
+
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt; - Invoice Finance Deal ID on SalesForce : {!invoice.Name} &lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt; - Supplier : {!invoice.supplier_text__c}&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt; - Buyer : {!invoice.Buyer_text__c}&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt; - Requested amount : {!invoice.requested_amount__c}{!invoice.CCY__c}&lt;/FONT&gt;&lt;/DIV&gt;&lt;BR /&gt;
+
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt; - Auction Start : {!invoice.Listing_Start__c}&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt; - Auction End : {!invoice.Listing_End__c}&lt;/FONT&gt;&lt;/DIV&gt;&lt;BR /&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt; - Expected Payment Date : {!invoice.Expected_Payment_Date__c} &lt;/FONT&gt;&lt;/DIV&gt;&lt;BR /&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Actions of checking &amp; validation will be required from Rosemont when the invoice will be funded and the following day of &quot;Expected Payment Date&quot;.&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt; All details about this transaction, amounts and clients involved are available on SalesForce.&lt;/FONT&gt;&lt;/DIV&gt;&lt;BR /&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt; Regards,&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt; Incomlend Team&lt;/FONT&gt;&lt;/DIV&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>emailsalreadysent</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>Emails already sent !</text>
+    </textTemplates>
+    <textTemplates>
+        <name>emailTitle</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>Incomlend - Invoice ID [{!invoice.Name}] - details/deadlines</text>
+    </textTemplates>
+    <variables>
+        <name>Alloc</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Invoice_Allocation__c</objectType>
+    </variables>
+    <variables>
+        <name>Allocation</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Invoice_Allocation__c</objectType>
+    </variables>
+    <variables>
+        <name>AllocationID</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Invoice_Allocation__c</objectType>
+    </variables>
+    <variables>
+        <name>AllocationIDs</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Invoice_Allocation__c</objectType>
+    </variables>
+    <variables>
+        <name>Allocations</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Invoice_Allocation__c</objectType>
+    </variables>
+    <variables>
+        <name>BuyerInfo</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Supplier_Buyer_Map__c</objectType>
+    </variables>
+    <variables>
+        <name>BuyerName</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>email</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>mathieu@incomlend.com, laurence@incomlend.com</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>EmailFunder</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>EmailRosemontPrimary</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>FunderAccountInfo</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>invoice</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>invoice_finance_deal__c</objectType>
+    </variables>
+    <variables>
+        <name>invoiceid</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>a092800000Ql27Q</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>RosemontAccountInfo</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>RosemontIDtoGetInfo</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

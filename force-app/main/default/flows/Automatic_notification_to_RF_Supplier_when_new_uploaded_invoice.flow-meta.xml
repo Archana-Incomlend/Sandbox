@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apexPluginCalls>
+        <name>Send_email_to_Supplier</name>
+        <label>Send email to Supplier</label>
+        <locationX>1063</locationX>
+        <locationY>49</locationY>
+        <apexClass>sendHTMLEmailPlugin</apexClass>
+        <inputParameters>
+            <name>BCC Email Addresses (comma-separated)</name>
+            <value>
+                <stringValue>pierre.petesch@incomlend.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>CC Email Addresses (comma-separated)</name>
+            <value>
+                <elementReference>Supplier.Alternative_email_to_add_in_communicatio__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>htmlBody</name>
+            <value>
+                <elementReference>EmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Other Emails (comma-separated)</name>
+            <value>
+                <elementReference>Supplier.Primary_contact_email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Sender Address</name>
+            <value>
+                <stringValue>operations@incomlend.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Sender Display Name</name>
+            <value>
+                <stringValue>Operations Team</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Subject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+    </apexPluginCalls>
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>Is_Product_Reverse_Factoring</name>
+        <label>Is Product Reverse Factoring</label>
+        <locationX>430</locationX>
+        <locationY>52</locationY>
+        <defaultConnectorLabel>Is Not Reverse Factoring</defaultConnectorLabel>
+        <rules>
+            <name>Is_Reverse_Factoring</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Invoice.Incomlend_Product_2__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Reverse Factoring</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Lookup_Map</targetReference>
+            </connector>
+            <label>Is Reverse Factoring</label>
+        </rules>
+    </decisions>
+    <description>This flow send an email to the Supplier (Reverse Factoring only), when the Buyer has uploaded a new invoice</description>
+    <interviewLabel>Automatic notification to RF Supplier when new uploaded invoice {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Automatic notification to RF Supplier when new uploaded invoice</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Lookup_Invoice</name>
+        <label>Lookup Invoice</label>
+        <locationX>248</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Product_Reverse_Factoring</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>InvoiceID</elementReference>
+            </value>
+        </filters>
+        <object>invoice_finance_deal__c</object>
+        <outputReference>Invoice</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Buyer_text__c</queriedFields>
+        <queriedFields>CCY__c</queriedFields>
+        <queriedFields>Real_Face_Value__c</queriedFields>
+        <queriedFields>Incomlend_Product_2__c</queriedFields>
+        <queriedFields>supplier_del__c</queriedFields>
+        <queriedFields>supplier_invoice_reference_number__c</queriedFields>
+        <queriedFields>Supplier_Buyer_Map__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Lookup_Map</name>
+        <label>Lookup Map</label>
+        <locationX>661</locationX>
+        <locationY>51</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Lookup_Supplier</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Invoice.Supplier_Buyer_Map__c</elementReference>
+            </value>
+        </filters>
+        <object>Supplier_Buyer_Map__c</object>
+        <outputReference>SupplierBuyerMap</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Supplier__c</queriedFields>
+        <queriedFields>Buyer__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Lookup_Supplier</name>
+        <label>Lookup Supplier</label>
+        <locationX>862</locationX>
+        <locationY>49</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Send_email_to_Supplier</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SupplierBuyerMap.Supplier__c</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputReference>Supplier</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Primary_contact_email__c</queriedFields>
+        <queriedFields>Alternative_email_to_add_in_communicatio__c</queriedFields>
+        <queriedFields>Primary_contact_First_Name__c</queriedFields>
+    </recordLookups>
+    <startElementReference>Lookup_Invoice</startElementReference>
+    <status>Draft</status>
+    <textTemplates>
+        <name>EmailBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:2px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;IMG SRC=&quot;https://incomlend--c.ap2.content.force.com/servlet/servlet.ImageServer?id=01528000002r2ag&amp;oid=00D28000001bV5p&quot;&gt;&lt;/FONT&gt;&lt;/DIV&gt;&lt;BR /&gt;
+
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Dear {!Supplier.Primary_contact_First_Name__c},&lt;/FONT&gt;&lt;/DIV&gt;&lt;BR /&gt;
+
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;The invoice &lt;B&gt;{!Invoice.supplier_invoice_reference_number__c}&lt;/B&gt; #ID {!Invoice.Name} of &lt;B&gt;{!Invoice.Real_Face_Value__c} {!Invoice.CCY__c}&lt;/B&gt; to your buyer &lt;B&gt;{!Invoice.Buyer_text__c}&lt;/B&gt;  has been submitted by your buyer for early funding for you. &lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Please connect to the platform to confirm the invoice and its funding to you by clicking on the &lt;A HREF=&quot;https://marketplace.incomlend.com/#/app/invoice-detail/supplier/{!Invoice.CCY__c}/{!Invoice.Id}&quot;&gt; following link&lt;/A&gt;. &lt;/FONT&gt;&lt;/DIV&gt;&lt;BR /&gt;
+
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Do not hesitate to contact us if you have any question, &lt;/FONT&gt;&lt;/DIV&gt;&lt;BR /&gt;
+
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Regards, &lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Incomlend team&lt;/FONT&gt;&lt;/DIV&gt;&lt;BR /&gt;
+
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:9px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;I&gt;DISCLAMER: Confidentiality &lt;/I&gt;&lt;/FONT&gt;&lt;/DIV&gt;&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:9px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;I&gt;Any information transmitted by means of this e-mail (and any of the attachments) is intended exclusively for the addressee(s) and for those authorized by the addressee(s) to read this message. We are not liable for any views expressed by an individual in this email/attachment which do not constitute official communication. Any use by a party other than the addressee(s) is prohibited. This information may be confidential in nature and fall under a duty of non-disclosure, or be legally privileged. If you have received this e-mail in error please email us on info@incomlend.com &lt;/I&gt;&lt;/FONT&gt;&lt;/DIV&gt;&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:9px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;I&gt;This sender has taken reasonable measures to ensure that this message is free from viruses, but the recipient should also take such measures. The sender shall not be liable for damages resulting from the use of electronic means of communication, including - but not limited to - damages resulting from failure or delay in delivery of electronic communications, interception or manipulation of electronic communications by third parties or by computer programs used for electronic communications and transmission of viruses and other malicious code. &lt;/I&gt;&lt;/FONT&gt;&lt;/DIV&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>EmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Incomlend - A new invoice has been submitted by your Buyer</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Invoice</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>invoice_finance_deal__c</objectType>
+    </variables>
+    <variables>
+        <name>InvoiceID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Supplier</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>SupplierBuyerMap</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Supplier_Buyer_Map__c</objectType>
+    </variables>
+</Flow>

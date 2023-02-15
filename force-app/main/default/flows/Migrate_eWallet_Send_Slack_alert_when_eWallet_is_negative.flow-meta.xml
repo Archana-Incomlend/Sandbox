@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <description>Migrated from Workflows to Flow.
+Send Slack alert when eWallet is negative</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AccountName_CCY</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Account__r.Id}+ TEXT({!$Record.CCY__c})</expression>
+    </formulas>
+    <interviewLabel>Migrate eWallet - Send {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate eWallet - Send Slack alert when eWallet is negative</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>291</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Send_Slack_alert_when_eWallet_is_negative</targetReference>
+        </connector>
+        <filterFormula>!{!$Setup.ICL_Settings__c.Disable_Migrate_Flow__c} &amp;&amp; ({!$Record.Balance__c} &lt; 0)</filterFormula>
+        <object>eWallet__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <subflows>
+        <name>Send_Slack_alert_when_eWallet_is_negative</name>
+        <label>Send Slack alert when eWallet is negative</label>
+        <locationX>420</locationX>
+        <locationY>548</locationY>
+        <flowName>Send_Slack_alert_when_eWallet_is_negative</flowName>
+        <inputAssignments>
+            <name>eWalletID</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

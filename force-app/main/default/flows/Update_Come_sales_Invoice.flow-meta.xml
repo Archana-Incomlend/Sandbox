@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <interviewLabel>Update Come sales Invoice {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>Update Come sales Invoice</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Map</name>
+        <label>Get Map</label>
+        <locationX>338</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_invoice</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>invoice.Supplier_Buyer_Map__c</elementReference>
+            </value>
+        </filters>
+        <object>Supplier_Buyer_Map__c</object>
+        <outputReference>SupplierBuyerMap</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Ops_Owner__c</queriedFields>
+        <queriedFields>Com_Sales__c</queriedFields>
+        <queriedFields>Buyer_Com_Sales__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>lookup_invoice</name>
+        <label>Get invoice</label>
+        <locationX>197</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Map</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>invoiceID</elementReference>
+            </value>
+        </filters>
+        <object>invoice_finance_deal__c</object>
+        <outputReference>invoice</outputReference>
+        <queriedFields>Phase__c</queriedFields>
+        <queriedFields>auto_status__c</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>invoice_amount__c</queriedFields>
+        <queriedFields>CCY__c</queriedFields>
+        <queriedFields>Invoice_name__c</queriedFields>
+        <queriedFields>Supplier_Buyer_Map__c</queriedFields>
+        <queriedFields>Minimum_requested_amount__c</queriedFields>
+        <queriedFields>advanced_amount__c</queriedFields>
+        <queriedFields>funded_amount__c</queriedFields>
+        <queriedFields>Supplier_Email_for_Approval__c</queriedFields>
+        <queriedFields>Com_Sales_Buyer__c</queriedFields>
+        <queriedFields>Com_Sales_Supplier__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_invoice</name>
+        <label>Update invoice</label>
+        <locationX>517</locationX>
+        <locationY>53</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>invoice.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Com_Sales_Buyer__c</field>
+            <value>
+                <elementReference>SupplierBuyerMap.Buyer_Com_Sales__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Com_Sales_Supplier__c</field>
+            <value>
+                <elementReference>SupplierBuyerMap.Com_Sales__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>invoice_finance_deal__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>lookup_invoice</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>formattedmessage_template</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>New Allocation(s) for Invoice : *{!invoice.Invoice_name__c}*
+Please check if there is an insurance instalment to Withdraw
+Ops Owner: *{!OwnerName}*</text>
+    </textTemplates>
+    <textTemplates>
+        <description>When the Amount founded is &lt; min amount requested , the Supplier must go to the platform to confirm the invoice</description>
+        <name>SupplierConfirmation</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>Dear Customer
+Please connect to the Incomlend platform , to validate the invoice  you submitted recently 
+https://login.marketplace.incomlend.com/
+Kind Regards, 
+Incomlend Operation team</text>
+    </textTemplates>
+    <variables>
+        <name>invoice</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>invoice_finance_deal__c</objectType>
+    </variables>
+    <variables>
+        <name>InvoiceallocationID</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Invoice_Allocation__c</objectType>
+    </variables>
+    <variables>
+        <name>invoiceID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>a09N000000BMm9D</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>OwnerAccount</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>User</objectType>
+    </variables>
+    <variables>
+        <name>OwnerName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>:warning: Ops Owner is not set, please amend the Supplier Buyer Map :warning:</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>SupplierBuyerMap</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Supplier_Buyer_Map__c</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Affiliates of Company</fullName>
+        <default>false</default>
+        <label>Affiliates of Company</label>
+    </customValue>
+    <customValue>
+        <fullName>Annual Turnover match Registration Form</fullName>
+        <default>false</default>
+        <label>Annual Turnover match Registration Form</label>
+    </customValue>
+    <customValue>
+        <fullName>Bank Accounts Details</fullName>
+        <default>false</default>
+        <label>Bank Accounts Details</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Activities</fullName>
+        <default>false</default>
+        <label>Business Activities</label>
+    </customValue>
+    <customValue>
+        <fullName>Certificate of Incorporation</fullName>
+        <default>false</default>
+        <label>Certificate of Incorporation</label>
+    </customValue>
+    <customValue>
+        <fullName>Company&apos;s Proof Of Address</fullName>
+        <default>false</default>
+        <label>Company&apos;s Proof Of Address</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Address match Registration Form</fullName>
+        <default>false</default>
+        <label>Company Address match Registration Form</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Name match Registration Form</fullName>
+        <default>false</default>
+        <label>Company Name match Registration Form</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Registration Number match Registration Form</fullName>
+        <default>false</default>
+        <label>Company Registration Number match Registration Form</label>
+    </customValue>
+    <customValue>
+        <fullName>Credit Rating</fullName>
+        <default>false</default>
+        <label>Credit Rating</label>
+    </customValue>
+    <customValue>
+        <fullName>Credit Report / ACRA</fullName>
+        <default>false</default>
+        <label>Credit Report / ACRA</label>
+    </customValue>
+    <customValue>
+        <fullName>Director&apos;s Information</fullName>
+        <default>false</default>
+        <label>Director&apos;s Information</label>
+    </customValue>
+    <customValue>
+        <fullName>Director&apos;s Information match Registration Form</fullName>
+        <default>false</default>
+        <label>Director&apos;s Information match Registration Form</label>
+    </customValue>
+    <customValue>
+        <fullName>Director&apos;s Resolution if P.C is not Director</fullName>
+        <default>false</default>
+        <label>Director&apos;s Resolution if P.C is not Director</label>
+    </customValue>
+    <customValue>
+        <fullName>Directors ID with certifying signature</fullName>
+        <default>false</default>
+        <label>Directors ID with certifying signature</label>
+    </customValue>
+    <customValue>
+        <fullName>Financial Statements</fullName>
+        <default>false</default>
+        <label>Financial Statements</label>
+    </customValue>
+    <customValue>
+        <fullName>GTC Supplier Acknowledged</fullName>
+        <default>false</default>
+        <label>GTC Supplier Acknowledged</label>
+    </customValue>
+    <customValue>
+        <fullName>Litigitations</fullName>
+        <default>false</default>
+        <label>Litigitations</label>
+    </customValue>
+    <customValue>
+        <fullName>Memorandum &amp; Articles of Association (N.M)</fullName>
+        <default>false</default>
+        <label>Memorandum &amp; Articles of Association (N.M)</label>
+    </customValue>
+    <customValue>
+        <fullName>Negative media released</fullName>
+        <default>false</default>
+        <label>Negative media released</label>
+    </customValue>
+    <customValue>
+        <fullName>On-going investigations</fullName>
+        <default>false</default>
+        <label>On-going investigations</label>
+    </customValue>
+    <customValue>
+        <fullName>Primary Contact&apos;s ID with certifying signature</fullName>
+        <default>false</default>
+        <label>Primary Contact&apos;s ID with certifying signature</label>
+    </customValue>
+    <customValue>
+        <fullName>Primary Contact&apos;s POA with certifying signature</fullName>
+        <default>false</default>
+        <label>Primary Contact&apos;s POA with certifying signature</label>
+    </customValue>
+    <customValue>
+        <fullName>Register of Directors</fullName>
+        <default>false</default>
+        <label>Register of Directors</label>
+    </customValue>
+    <customValue>
+        <fullName>Register of Shareholders</fullName>
+        <default>false</default>
+        <label>Register of Shareholders</label>
+    </customValue>
+    <customValue>
+        <fullName>Shareholder&apos;s Information</fullName>
+        <default>false</default>
+        <label>Shareholder&apos;s Information</label>
+    </customValue>
+    <customValue>
+        <fullName>Shareholder&apos;s Information match Registration Form</fullName>
+        <default>false</default>
+        <label>Shareholder&apos;s Information match Registration Form</label>
+    </customValue>
+    <customValue>
+        <fullName>Signature of Supplier</fullName>
+        <default>false</default>
+        <label>Signature of Supplier</label>
+    </customValue>
+    <customValue>
+        <fullName>Winding Up</fullName>
+        <default>false</default>
+        <label>Winding Up</label>
+    </customValue>
+    <description>list of check to perform on boarding</description>
+    <masterLabel>On Boarding Check Factoring Supplier</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

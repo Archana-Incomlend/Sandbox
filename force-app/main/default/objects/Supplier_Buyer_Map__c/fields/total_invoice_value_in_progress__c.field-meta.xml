@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>total_invoice_value_in_progress__c</fullName>
+    <externalId>false</externalId>
+    <label>total invoice value in progress</label>
+    <summarizedField>invoice_finance_deal__c.invoice_amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>invoice_finance_deal__c.Phase__c</field>
+        <operation>equals</operation>
+        <value>3:IN PROGRESS</value>
+    </summaryFilterItems>
+    <summaryForeignKey>invoice_finance_deal__c.Supplier_Buyer_Map__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>fxRateToInvoice</name>
+        <label>fxRateToInvoice</label>
+        <locationX>536</locationX>
+        <locationY>383</locationY>
+        <actionName>PopulateInvoiceFxRateController</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>fxRateToTransaction</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fxRate</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>fxRateToTransaction</name>
+        <label>fxRateToTransaction</label>
+        <locationX>536</locationX>
+        <locationY>503</locationY>
+        <actionName>PopulateTransactionFxRateController</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fxRate</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>51.0</apiVersion>
+    <description>Migrated from the Process Builder to Flow.
+1 . FX rate invoice&amp;transaction - Update Transaction and Invoice FX, when an FX rate in created, scheduled batch for invoice and transaction</description>
+    <environments>Default</environments>
+    <interviewLabel>FX Rates - After Insert Actions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FX Rates - After Insert Actions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>410</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>fxRateToInvoice</targetReference>
+        </connector>
+        <filterFormula>AND({!$Setup.ICL_Settings__c.Enable_migrate_flow__c} , NOT(ISPICKVAL({!$Record.from_currency__c}, &apos;USD&apos;)), NOT(ISPICKVAL({!$Record.from_currency__c}, &apos;XXX&apos;)))</filterFormula>
+        <object>FX_Rates__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

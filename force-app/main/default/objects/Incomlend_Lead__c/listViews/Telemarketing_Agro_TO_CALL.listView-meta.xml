@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Telemarketing_Agro_TO_CALL</fullName>
+    <columns>NAME</columns>
+    <columns>full_name__c</columns>
+    <columns>Position__c</columns>
+    <columns>phone_number__c</columns>
+    <columns>Comments__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>marketing_campaign__c</field>
+        <operation>contains</operation>
+        <value>agro,food</value>
+    </filters>
+    <filters>
+        <field>Telemarketing_Status__c</field>
+        <operation>equals</operation>
+        <value>To be called</value>
+    </filters>
+    <label>Telemarketing Agro - TO CALL</label>
+</ListView>

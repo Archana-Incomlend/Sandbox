@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>Invoice_Finance_Deal_invoice_ID_Is_Not_0</name>
+        <label>Invoice Finance Deal: invoice ID Is Not 0</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Invoice_Finance_Deal_invoice_ID_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Invoice_Finance_Deal__r.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>0</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sales_Calculation_creation</targetReference>
+            </connector>
+            <label>Invoice Finance Deal: invoice ID != 0</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the Workflow to Flow.
+1. Sales Calculation creation - Take the Data from the invoice finance deal about sales commission to put in the sales calculation object when it&apos;s created</description>
+    <environments>Default</environments>
+    <interviewLabel>Sales Calculation - Deprecated - After Insert Actions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Sales Calculation - Deprecated - After Insert Actions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Sales_Calculation_creation</name>
+        <label>Sales Calculation creation</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <inputAssignments>
+            <field>Buyer_Owner__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Buyer__r.Sales_Owner__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Com__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Com_Sales__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Field1__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Buyer_Sales_Zone__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Supplier_Sales_Owner__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Supplier_Zone__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Supplier_owner__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Supplier__r.Sales_Owner__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Invoice_Finance_Deal_invoice_ID_Is_Not_0</targetReference>
+        </connector>
+        <filterFormula>{!$Setup.ICL_Settings__c.Enable_migrate_flow__c}</filterFormula>
+        <object>Sales_Calculation__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

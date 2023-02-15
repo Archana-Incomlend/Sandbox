@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onboarding_stage__c</fullName>
+    <externalId>false</externalId>
+    <label>onboarding stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>10.Checking Buyers</fullName>
+                <default>false</default>
+                <label>10.Checking Buyers</label>
+            </value>
+            <value>
+                <fullName>20.Invitation to Register</fullName>
+                <default>false</default>
+                <label>20.Invitation to Register</label>
+            </value>
+            <value>
+                <fullName>30.Submitting Application Forms</fullName>
+                <default>false</default>
+                <label>30.Submitting Application Forms</label>
+            </value>
+            <value>
+                <fullName>40.Document Prep</fullName>
+                <default>false</default>
+                <label>40.Document Prep</label>
+            </value>
+            <value>
+                <fullName>45. Basic Data Entry</fullName>
+                <default>false</default>
+                <label>45. Basic Data Entry</label>
+            </value>
+            <value>
+                <fullName>50.Screening</fullName>
+                <default>false</default>
+                <label>50.Screening</label>
+            </value>
+            <value>
+                <fullName>55. Complete Data Entry</fullName>
+                <default>false</default>
+                <label>55. Complete Data Entry</label>
+            </value>
+            <value>
+                <fullName>60.Approvals</fullName>
+                <default>false</default>
+                <label>60.Approvals</label>
+            </value>
+            <value>
+                <fullName>65: approval by CMA</fullName>
+                <default>false</default>
+                <label>65: approval by CMA</label>
+            </value>
+            <value>
+                <fullName>70.Systems Setup</fullName>
+                <default>false</default>
+                <label>70.Systems Setup</label>
+            </value>
+            <value>
+                <fullName>99.Onboarded</fullName>
+                <default>false</default>
+                <label>99.Onboarded</label>
+            </value>
+            <value>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+                <label>Not Applicable</label>
+            </value>
+            <value>
+                <fullName>*dormant*</fullName>
+                <default>false</default>
+                <label>*dormant*</label>
+            </value>
+            <value>
+                <fullName>112.Rejected (by Incomlend)</fullName>
+                <default>false</default>
+                <label>112.Rejected (by Incomlend)</label>
+            </value>
+            <value>
+                <fullName>111.Rejected (by other party)</fullName>
+                <default>false</default>
+                <label>111.Rejected (by other party)</label>
+            </value>
+            <value>
+                <fullName>10.Prospect</fullName>
+                <default>false</default>
+                <label>10.Prospect</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Start_Onboarding_Notification_to_Compliance</name>
+        <label>Start Onboarding Notification to Compliance</label>
+        <locationX>595</locationX>
+        <locationY>697</locationY>
+        <actionName>Invoice_Opportunity__c.Start_Onboarding_Notification_to_Compliance</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Update_task_for_sales</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <name>Check_for_Opportunity_Status</name>
+        <label>Check for Opportunity Status</label>
+        <locationX>273</locationX>
+        <locationY>594</locationY>
+        <defaultConnector>
+            <targetReference>Supplier_Buyer_Map_Field_Update_True</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Status_2_OIP</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opportunity_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>OIP</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity_Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Start_Onboarding_Notification_to_Compliance</targetReference>
+            </connector>
+            <label>Opportunity Status = 2-OIP</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_for_TS_Date</name>
+        <label>Check for TS Date</label>
+        <locationX>272</locationX>
+        <locationY>389</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_Opportunity_Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>TS_Auto_Date</name>
+            <conditionLogic>(1 AND 2) OR (3 AND 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Date_Termsheet_Sent_auto__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Date_Termsheet_Signed_auto__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Date_Termsheet_Sent__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Date_Term_sheet_Signedt__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Termsheet_date</targetReference>
+            </connector>
+            <label>TS Auto Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Supplier_Buyer_Map_Field_Update_True</name>
+        <label>Supplier Buyer Map Field Update = True</label>
+        <locationX>272</locationX>
+        <locationY>967</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_for_Supplier_Buyer_Map_Field_Update</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Supplier_Buyer_Map__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Supplier_Buyer_Map__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Supplier_Buyer_Map</targetReference>
+            </connector>
+            <label>Check for Supplier Buyer Map Field Update</label>
+        </rules>
+    </decisions>
+    <description>Sales Opportunity 
+1. Update TS dates.
+2. Send an email to compliance once the Opportunity status changes to OIP
+3. Set lead origin in Supplier Buyer map from Sales Opportunity.</description>
+    <environments>Default</environments>
+    <interviewLabel>Sales Opportunies update TS Date {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Sales Opportunity - After Create / Update Action (No Fast Field Action)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Supplier_Buyer_Map</name>
+        <label>Update Supplier Buyer Map</label>
+        <locationX>600</locationX>
+        <locationY>1192</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Buyer_Lead_Origin__c</field>
+            <value>
+                <elementReference>$Record.Buyer_Lead_Origin__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Supplier_Lead_Origin__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Lead_Origin__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Supplier_Buyer_Map__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_task_for_sales</name>
+        <label>Update task for sales</label>
+        <locationX>595</locationX>
+        <locationY>917</locationY>
+        <connector>
+            <targetReference>Supplier_Buyer_Map_Field_Update_True</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>SALES_TASK__c</field>
+            <value>
+                <stringValue>1-Collect Trade Doc</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Termsheet_date</name>
+        <label>Update Termsheet date</label>
+        <locationX>594</locationX>
+        <locationY>479</locationY>
+        <connector>
+            <targetReference>Check_for_Opportunity_Status</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Date_Term_sheet_Signedt__c</field>
+            <value>
+                <elementReference>$Record.Date_Termsheet_Signed_auto__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Termsheet_Sent__c</field>
+            <value>
+                <elementReference>$Record.Date_Termsheet_Sent_auto__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>411</locationX>
+        <locationY>49</locationY>
+        <connector>
+            <targetReference>Check_for_TS_Date</targetReference>
+        </connector>
+        <object>Invoice_Opportunity__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

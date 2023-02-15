@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Map Legal Document</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Map Legal Documents</value>
+    </caseValues>
+    <layouts>
+        <layout>Map Supporting Documents Layout</layout>
+        <sections>
+            <label></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Docusign</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label></label>
+        <name>Send_with_docusign</name>
+    </webLinks>
+</CustomObjectTranslation>

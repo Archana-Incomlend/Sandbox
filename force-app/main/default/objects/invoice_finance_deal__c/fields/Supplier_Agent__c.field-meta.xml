@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supplier_Agent__c</fullName>
+    <description>Agent from the Map, Changed the fomula on 10/12/2019, as before it was always the Supplier Agent, new it is the Map Agent</description>
+    <externalId>false</externalId>
+    <formula>Supplier_Buyer_Map__r.Supplier__r.Agent__r.Name</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Take the Agent from the Map, if Agent fro the Map is null , take the Supplier Agent</inlineHelpText>
+    <label>Map Agent</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

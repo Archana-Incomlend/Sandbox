@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spread_USD_Phase_Trigger_Agent_Fee__c</fullName>
+    <externalId>false</externalId>
+    <formula>Spread_USD_Trigger_Phase__c -  Actual_Agent_Com_Ammount_USD__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Spread USD ( Phase Trigger) - Agent Fee</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

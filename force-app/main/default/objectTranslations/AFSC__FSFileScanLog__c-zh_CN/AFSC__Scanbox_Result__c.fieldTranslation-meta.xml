@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Scanbox_Result__c</name>
+    <picklistValues>
+        <masterLabel>Clean</masterLabel>
+        <translation>干净</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grayware</masterLabel>
+        <translation>灰色软件</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Infected</masterLabel>
+        <translation>受感染</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Suspected</masterLabel>
+        <translation>可疑</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unknown</masterLabel>
+        <translation>未知</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Whitelisted</masterLabel>
+        <translation>已列入白名单</translation>
+    </picklistValues>
+</CustomFieldTranslation>

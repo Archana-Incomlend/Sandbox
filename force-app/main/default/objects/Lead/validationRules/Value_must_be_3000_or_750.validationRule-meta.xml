@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Value_must_be_3000_or_750</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( Maintenance_of_dedicated_bank_account__c != 3000 &amp;&amp; Maintenance_of_dedicated_bank_account__c != 750, true, false)</errorConditionFormula>
+    <errorDisplayField>Maintenance_of_dedicated_bank_account__c</errorDisplayField>
+    <errorMessage>Fees must be 3000 / year or 750 / quater.</errorMessage>
+</ValidationRule>

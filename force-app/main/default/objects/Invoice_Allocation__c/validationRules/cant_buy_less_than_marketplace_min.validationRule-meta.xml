@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cant_buy_less_than_marketplace_min</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( ISBLANK( CreatedDate),amount__c &lt; marketplace_Min_purchase_amount__c,FALSE)</errorConditionFormula>
+    <errorDisplayField>amount__c</errorDisplayField>
+    <errorMessage>Amount is less than marketplace minimum amount</errorMessage>
+</ValidationRule>

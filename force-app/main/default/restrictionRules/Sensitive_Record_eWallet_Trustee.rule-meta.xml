@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RestrictionRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <enforcementType>Restrict</enforcementType>
+    <masterLabel>Sensitive Record</masterLabel>
+    <recordFilter>Sensitive_Record__c=false</recordFilter>
+    <targetEntity>eWallet_Trustee__c</targetEntity>
+    <userCriteria>$User.Operation_Finance_CEO__c=false</userCriteria>
+    <version>1</version>
+</RestrictionRule>

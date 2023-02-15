@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>FX Rate</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>FX Rates</value>
+    </caseValues>
+    <layouts>
+        <layout>FX Rate Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label></label>
+        <name>Udpate_FX_Rate_invoice</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Update</name>
+    </webLinks>
+</CustomObjectTranslation>

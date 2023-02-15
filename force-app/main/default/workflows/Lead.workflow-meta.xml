@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Investor_Data_Room_Request_Approved</fullName>
+        <description>Investor Data Room Request Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Incomlend_emails/Lead_Investor_Data_Room_Access_Approed</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Email_for_submission_CL_to_Op</fullName>
+        <description>Lead-Email for submission CL to Op</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Team_Recipient</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Incomlend_emails/Lead_Submit_CL_to_Insurer</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Incomlend_send_Supplier_CL_approved</fullName>
+        <description>Lead Incomlend : send Supplier CL approved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Incomlend_emails/Lead_CL_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Incomlend_send_Welcome_Email_Agent</fullName>
+        <description>Lead : Incomlend send Welcome Email Agent</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Agent_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/LEAD_Welcome_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Incomlend_send_Welcome_Email_Customer</fullName>
+        <description>Lead : Incomlend send Welcome Email customer</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/LEAD_Welcome_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Incomlend_send_Welcome_Email_Customer_BUYER</fullName>
+        <description>Lead : Incomlend send Welcome Email customer BUYER</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/LEAD_Welcome_Email_buyer</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Incomlend_send_Welcome_Email_Customer_SUPPLIER</fullName>
+        <description>Lead : Incomlend send Welcome Email customer SUPPLIER</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/LEAD_Welcome_Email_supplier</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Shipfin_send_Welcome_Email_Agent</fullName>
+        <description>Lead : Shipfin send Welcome Email Agent</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Agent_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>operations@shipfin.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Shipfin_email/LEAD_Welcome_Email_Shipfin</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Shipfin_send_Welcome_Email_customer</fullName>
+        <description>Lead : Shipfin send Welcome Email customer</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>operations@shipfin.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Shipfin_email/LEAD_Welcome_Email_Shipfin</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Shipfin_send_Welcome_Email_customer_BUYER</fullName>
+        <description>Lead : Shipfin send Welcome Email customer BUYER</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>operations@shipfin.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/LEAD_Welcome_Email_Shipfin_BUYER</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Shipfin_send_Welcome_Email_customer_SUPPLIER</fullName>
+        <description>Lead : Shipfin send Welcome Email customer SUPPLIER</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>operations@shipfin.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/LEAD_Welcome_Email_Shipfin_SUPPLIER</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Termsheet_Approval_Request_Approved</fullName>
+        <description>Lead Termsheet Approval Request - Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Incomlend_emails/Lead_Termsheet_Approval_Request_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Termsheet_Approval_Request_Rejected</fullName>
+        <description>Lead Termsheet Approval Request - Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Incomlend_emails/Lead_Termsheet_Approval_Request_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Lead_Funding_Email</fullName>
+        <description>New Lead Funding Email</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Team_Recipient</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Incomlend_emails/Lead_New_Lead</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Sales_Opportunity_Created</fullName>
+        <description>New Sales Opportunity Created</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/New_Opportunity_created</template>
+    </alerts>
+    <alerts>
+        <fullName>New_lead_Notif_Mail</fullName>
+        <description>New lead Notif Mail</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Team_Recipient</recipient>
+            <type>role</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/Lead_New_Lead</template>
+    </alerts>
+    <alerts>
+        <fullName>lead_send_email_to_supplier_for_CL</fullName>
+        <description>lead Shipfin : send email to supplier for CL</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Shipfin_email/Lead_CL_Approved_Shipfin</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Actual_insurer_response_date</fullName>
+        <field>Insurer_actual_response_date__c</field>
+        <formula>TODAY()</formula>
+        <name>Actual insurer response date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Agent_Record_type</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>lead_Agent_Origination</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Agent Record type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Credit_Limit</fullName>
+        <field>Status</field>
+        <literalValue>Credit Limit Requested</literalValue>
+        <name>Credit limit requested</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Credit_Limit_Atradius_Cover_Id_Undo</fullName>
+        <field>Atradius_Cover_Id__c</field>
+        <name>Credit Limit Atradius Cover Id Undo</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Credit_Limit_Atradius_Status_Undo</fullName>
+        <field>Atradius_Status__c</field>
+        <name>Credit Limit Atradius Status Undo</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Credit_Limit_Decision_Undo</fullName>
+        <field>Decision__c</field>
+        <name>Credit Limit Decision Undo</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Credit_Limit_Rejected_by_Risk</fullName>
+        <field>Status</field>
+        <literalValue>Credit Limit Rejected by Risk</literalValue>
+        <name>Credit Limit Rejected by Risk</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Credit_Limit_Submitted_by_Risk_Undo</fullName>
+        <field>Credit_Limit_Request_Approved__c</field>
+        <literalValue>0</literalValue>
+        <name>Credit Limit Submitted by Risk Undo</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Credit_Limit_provided_by_insurer</fullName>
+        <field>Status</field>
+        <literalValue>Credit Limit Provided  by Insurer</literalValue>
+        <name>Credit Limit provided by insurer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Credit_Limit_requested_approved</fullName>
+        <description>Check to tick box credit limit approved</description>
+        <field>Credit_Limit_Request_Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Credit Limit requested approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Credit_Limit_requested_approved2</fullName>
+        <field>Status</field>
+        <literalValue>Credit Limit Approved from Risk</literalValue>
+        <name>Credit Limit requested approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Date_Request_Credit_Limit</fullName>
+        <field>Date_Credit_Limit_Requested__c</field>
+        <formula>TODAY()</formula>
+        <name>Date Request Credit Limit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Layout_Funder</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Lead_Funder</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Lead Layout Funder</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Supplier_Layout</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Lead_Supplier</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Lead Supplier Layout</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_layout_RAIF</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>RAIF</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Lead layout RAIF</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Record_Type_Funder</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Lead_Funder</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Record Type Funder</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Record_type_Buyer</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Lead_buyer</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Record type Buyer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Term_Sheet_Approved</fullName>
+        <field>Termsheet_Approved_By_Sales_Head__c</field>
+        <literalValue>1</literalValue>
+        <name>Term Sheet Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Term_Sheet_Rejected</fullName>
+        <field>Termsheet_Rejected_By_Sales_Head__c</field>
+        <literalValue>1</literalValue>
+        <name>Term Sheet Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_lead_status_insurance</fullName>
+        <field>Status</field>
+        <literalValue>Credit Limit Rejected by Insurer</literalValue>
+        <name>Update lead status insurance</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_email_Cl_sent_to_supplier</fullName>
+        <description>when the mail is sent once we have the CL for the insurer</description>
+        <field>Mail_send_Supplier__c</field>
+        <literalValue>1</literalValue>
+        <name>lead : email Cl sent to supplier</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Force Funder Record Type</fullName>
+        <actions>
+            <name>Record_Type_Funder</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Temp_Force_Funder_record_type__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Insurer response CL %3E0</fullName>
+        <actions>
+            <name>Actual_insurer_response_date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Credit_Limit_provided_by_insurer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Task_Credit_Limit_approved</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Credit_Limit_Provided_by_Insurer__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>when the field credit limit providced by insurer is edited , status of lead is r</description>
+        <failedMigrationToolVersion>238.10.5</failedMigrationToolVersion>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Insurer response CL%3D0</fullName>
+        <actions>
+            <name>Update_lead_status_insurance</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Credit_Limit_Provided_by_Insurer__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>when the field credit limit providced by insurer is edited , status of lead is r</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Insurer response date</fullName>
+        <actions>
+            <name>Actual_insurer_response_date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Credit_Limit_provided_by_insurer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Credit_Limit_Obtained</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Credit_Limit_Provided_by_Insurer__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>when the field credit limit providced by insurer is edited , status of lead is r</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Incomlend %3A Send email to Supplier Lead</fullName>
+        <actions>
+            <name>Lead_Incomlend_send_Supplier_CL_approved</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>lead_email_Cl_sent_to_supplier</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND 2 and (3 or 4) and 5</booleanFilter>
+        <criteriaItems>
+            <field>Lead.Credit_Limit_Provided_by_Insurer__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Platfrom_Origin__c</field>
+            <operation>contains</operation>
+            <value>Incomlend</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Customer_Type__c</field>
+            <operation>contains</operation>
+            <value>Buyer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Product_type__c</field>
+            <operation>contains</operation>
+            <value>Buyer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Mail_send_Supplier__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Send an email when the credit limit is aprproved , when the Platform origin is Incomlend or Shipfin</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Layout Funder</fullName>
+        <actions>
+            <name>Lead_Layout_Funder</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Product_type__c</field>
+            <operation>equals</operation>
+            <value>Funder</value>
+        </criteriaItems>
+        <description>when Prodcut contain Funder</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Layout buyer</fullName>
+        <actions>
+            <name>Record_type_Buyer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Product_type__c</field>
+            <operation>contains</operation>
+            <value>Buyer</value>
+        </criteriaItems>
+        <failedMigrationToolVersion>238.10.5</failedMigrationToolVersion>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Layout supplier</fullName>
+        <actions>
+            <name>Lead_Supplier_Layout</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Product_type__c</field>
+            <operation>contains</operation>
+            <value>Supplier</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead New lead Origination Alert</fullName>
+        <actions>
+            <name>New_lead_Notif_Mail</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>New_lead_Created</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 or 3) and 2</booleanFilter>
+        <criteriaItems>
+            <field>Lead.Platfrom_Origin__c</field>
+            <operation>equals</operation>
+            <value>Incomlend</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Product_type__c</field>
+            <operation>notContain</operation>
+            <value>Funder</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Platfrom_Origin__c</field>
+            <operation>equals</operation>
+            <value>Shipfin</value>
+        </criteriaItems>
+        <description>When a new lead is created send an email when created from 123form and product type is not Funder</description>
+        <failedMigrationToolVersion>238.10.5</failedMigrationToolVersion>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead New lead funding  Alert</fullName>
+        <actions>
+            <name>New_Lead_Funding_Email</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>New_Lead_Created3</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 or 3)and 2</booleanFilter>
+        <criteriaItems>
+            <field>Lead.Platfrom_Origin__c</field>
+            <operation>notEqual</operation>
+            <value>Incomlend</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Product_type__c</field>
+            <operation>contains</operation>
+            <value>Funder</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Platfrom_Origin__c</field>
+            <operation>notEqual</operation>
+            <value>Shipfin</value>
+        </criteriaItems>
+        <description>When a new lead is created send an email when created from 123form and product type is not Funder</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Reapply Atradius Origination</fullName>
+        <actions>
+            <name>Credit_Limit_Atradius_Cover_Id_Undo</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Credit_Limit_Atradius_Status_Undo</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Credit_Limit_Decision_Undo</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Credit_Limit_Submitted_by_Risk_Undo</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Credit Limit Requested</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Credit_Limit_requested__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Insured_by__c</field>
+            <operation>notEqual</operation>
+            <value>BCC Trade Credit Pty Ltd - Reverse Factoring,FCI-NFC,ICEIC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Company</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Country</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Shipfin %3A Send email to Supplier Lead</fullName>
+        <actions>
+            <name>lead_send_email_to_supplier_for_CL</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>lead_email_Cl_sent_to_supplier</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND 2 and 5  and (3 or 4)</booleanFilter>
+        <criteriaItems>
+            <field>Lead.Credit_Limit_Provided_by_Insurer__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Platfrom_Origin__c</field>
+            <operation>contains</operation>
+            <value>Shipfin</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Product_type__c</field>
+            <operation>contains</operation>
+            <value>Buyer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Customer_Type__c</field>
+            <operation>contains</operation>
+            <value>Buyer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Mail_send_Supplier__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Send an email when the credit limit is aprproved , when the Platform origin is Incomlend or Shipfin</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Shipfin %3A inform Sales CL approved</fullName>
+        <actions>
+            <name>Task_Credit_Limit_approved</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1  and (2 or 3)</booleanFilter>
+        <criteriaItems>
+            <field>Lead.Credit_Limit_Provided_by_Insurer__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Product_type__c</field>
+            <operation>contains</operation>
+            <value>Buyer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Customer_Type__c</field>
+            <operation>contains</operation>
+            <value>Buyer</value>
+        </criteriaItems>
+        <description>send a task to sales when Credit limit is approved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead inform Sales CL provided by insurer</fullName>
+        <actions>
+            <name>Task_Credit_Limit_approved</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1  and (2 or 3)</booleanFilter>
+        <criteriaItems>
+            <field>Lead.Credit_Limit_Provided_by_Insurer__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Product_type__c</field>
+            <operation>contains</operation>
+            <value>Buyer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Customer_Type__c</field>
+            <operation>contains</operation>
+            <value>Buyer</value>
+        </criteriaItems>
+        <description>send a task to sales when Credit limit is approved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead layout Agent</fullName>
+        <actions>
+            <name>Agent_Record_type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Product_type__c</field>
+            <operation>contains</operation>
+            <value>Agent</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead layout RAIF</fullName>
+        <actions>
+            <name>Lead_layout_RAIF</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Product_type__c</field>
+            <operation>contains</operation>
+            <value>RAIF</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>CL_Limit_approved</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>The Credit Limit submission  for your Buyer has been approved internally , next step we will send the request to the insurer, you will receive a notification once the insurer provided a limit</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>CL Limit approved</subject>
+    </tasks>
+    <tasks>
+        <fullName>Credit_Limit_Obtained</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>An opportunity With this buyer has been created :
+
+Please :
+1-Update this opportunity with the supplier lead
+2-Fill First invoice Amount and First Cycle amount
+3-Prepare Term sheet and send to Ops team</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Credit Limit Obtained</subject>
+    </tasks>
+    <tasks>
+        <fullName>Credit_Limit_Requested</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>You submitted a Credit limit request. you will receive an update when the Credit limit has been provided by Insurer,
+You can check the Approval process on Approval Section on lead .</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Low</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Info : Credit Limit Requested</subject>
+    </tasks>
+    <tasks>
+        <fullName>New_Lead_Created2</fullName>
+        <assignedTo>Team_Recipient</assignedTo>
+        <assignedToType>role</assignedToType>
+        <description>Hi,
+
+A new lead has been created ,please qualify it, and Convert It in account once the qualification is completed 
+
+
+Incomlend Team</description>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Lead.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>New Lead Created</subject>
+    </tasks>
+    <tasks>
+        <fullName>New_Lead_Created3</fullName>
+        <assignedTo>Team_Recipient</assignedTo>
+        <assignedToType>role</assignedToType>
+        <description>Hi, 
+
+A new lead funding has been created, please qualify it 
+
+Incomlend team</description>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Lead.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>New Lead Created</subject>
+    </tasks>
+    <tasks>
+        <fullName>New_lead_Created</fullName>
+        <assignedTo>Team_Recipient</assignedTo>
+        <assignedToType>role</assignedToType>
+        <description>Hi, there is a new lead created, please check it and submit the Credit Limit Approval in case of Buyer.
+
+Incomlend team</description>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Lead.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>New lead Created</subject>
+    </tasks>
+    <tasks>
+        <fullName>Task_Credit_Limit_approved</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>the Credit limit have been provided by insurer , and an opportunity wit this buyer  has been created please :
+-Update this opportunity with the Supplier lead 
+-Update first cycle amount and first Cycle Date 
+-Prepare term sheet and send to ops</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Task Credit Limit Provided by Insurer</subject>
+    </tasks>
+</Workflow>

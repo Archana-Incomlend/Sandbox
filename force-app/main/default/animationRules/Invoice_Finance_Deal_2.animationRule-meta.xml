@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnimationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <animationFrequency>always</animationFrequency>
+    <developerName>Invoice_Finance_Deal_2</developerName>
+    <isActive>true</isActive>
+    <masterLabel>Invoice Finance Deal 2</masterLabel>
+    <recordTypeContext>Custom</recordTypeContext>
+    <recordTypeName>Auction_Product</recordTypeName>
+    <sobjectType>invoice_finance_deal__c</sobjectType>
+    <targetField>Phase__c</targetField>
+    <targetFieldChangeToValues>3:IN PROGRESS,4:CLOSED</targetFieldChangeToValues>
+</AnimationRule>

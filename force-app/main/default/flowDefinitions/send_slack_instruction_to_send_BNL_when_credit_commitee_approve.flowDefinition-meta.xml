@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>4</activeVersionNumber>
+    <description>Slack message content updated to display the account owner of the new allocations Supplier -&gt; Factoring / Buyer - &gt; Reverse Factoring) to give instruction to send the BNL</description>
+    <masterLabel>send slack instruction to send BNL when credit commitee approve</masterLabel>
+</FlowDefinition>

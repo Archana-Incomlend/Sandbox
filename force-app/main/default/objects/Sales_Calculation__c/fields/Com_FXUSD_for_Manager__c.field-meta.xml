@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Com_FXUSD_for_Manager__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  Com_Agent__c &gt;0, IF (TEXT (Type__c) = &quot;Sales Buyer&quot;, (FX_USD_Advanced_amount__c /2)* 0.010/100 * Buyer_Sales_owner_pct__c, (FX_USD_Advanced_amount__c /2)* 0.010/100 * Supplier_Sales_Owner__c ), IF (TEXT (Type__c) = &quot;Sales Buyer&quot;, (FX_USD_Advanced_amount__c /2)* 0.015/100 * Buyer_Sales_owner_pct__c, (FX_USD_Advanced_amount__c /2)* 0.015/100 * Supplier_Sales_Owner__c ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Commission Sales Manager</inlineHelpText>
+    <label>Com FXUSD for Manager</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

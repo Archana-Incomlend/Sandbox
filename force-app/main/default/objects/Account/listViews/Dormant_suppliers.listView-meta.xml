@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dormant_suppliers</fullName>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>onboarding_stage__c</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>onboarding_next_action_on__c</columns>
+    <columns>Onboarding_days__c</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>Detailed_registration_submitted_date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>onboarding_stage__c</field>
+        <operation>equals</operation>
+        <value>*dormant*,112.Rejected (by Incomlend),111.Rejected (by other party)</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Customer</value>
+    </filters>
+    <filters>
+        <field>Sub_type__c</field>
+        <operation>equals</operation>
+        <value>Supplier,Buyer</value>
+    </filters>
+    <label>Dormant / Rejected - suppliers</label>
+</ListView>

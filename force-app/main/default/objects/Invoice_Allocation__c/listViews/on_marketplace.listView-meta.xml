@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>on_marketplace</fullName>
+    <columns>CREATEDBY_USER</columns>
+    <columns>NAME</columns>
+    <columns>invoice_phase__c</columns>
+    <columns>Funder__c</columns>
+    <columns>eWallet__c</columns>
+    <columns>Invoice__c</columns>
+    <columns>CCY__c</columns>
+    <columns>amount__c</columns>
+    <columns>percentage_of_requested_amount__c</columns>
+    <columns>Status__c</columns>
+    <columns>funder_discount_amount__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>invoice_phase__c</field>
+        <operation>contains</operation>
+        <value>marketplace</value>
+    </filters>
+    <filters>
+        <field>CCY__c</field>
+        <operation>notEqual</operation>
+        <value>XXX</value>
+    </filters>
+    <label>on marketplace</label>
+</ListView>

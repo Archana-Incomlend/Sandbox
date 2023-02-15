@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>Check_advance_amount</name>
+        <label>Check advance amount</label>
+        <locationX>446</locationX>
+        <locationY>3911</locationY>
+        <defaultConnector>
+            <targetReference>Due_day_delta_change</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Advance_amount_not_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Phase__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2:ON MARKETPLACE,3:IN PROGRESS,4:CLOSED</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.funded_amount__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.funded_amount__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Invoice_Amount</targetReference>
+            </connector>
+            <label>Advance amount not null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_for_Expected_supplier_discount_rate</name>
+        <label>Check for Expected supplier discount rate</label>
+        <locationX>446</locationX>
+        <locationY>4919</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_Supplier_Buyer_Map_s_Marketplace</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_for_Expected_supplier_discount_rate_condition</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Total_Supplier_Discount__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Total_Supplier_Discount__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Overdue_Supplier_discount_rate_old</targetReference>
+            </connector>
+            <label>Check for Expected supplier discount rate condition</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_for_Field_Updates</name>
+        <label>Check for Field Updates</label>
+        <locationX>666</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_Supplier_Invoice_Approval1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Advance_Amount_Credit_To_Wallet_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.advance_send_to_supplier_date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.advance_send_to_supplier_date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Listing_Start_Date_1</targetReference>
+            </connector>
+            <label>Advance Amount Credit To Wallet Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_for_Supplier_Buyer_Map_Account_Agent</name>
+        <label>Check for Supplier Buyer Map - Account Agent</label>
+        <locationX>226</locationX>
+        <locationY>767</locationY>
+        <defaultConnector>
+            <targetReference>Update_Ops_Instruction_and_Trustee</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Supplier_Buyer_Map_Account_Agent_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Supplier_Buyer_Map__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Supplier_Buyer_Map__r.Account_Agent__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Agent_from_the_Map</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Supplier Buyer Map - Account Agent not null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_for_Supplier_Buyer_Map_s_Marketplace</name>
+        <label>Check for Supplier Buyer Map&apos;s Marketplace</label>
+        <locationX>446</locationX>
+        <locationY>5255</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_for_Supplier_Buyer_Map_s_Marketplace_Condition</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Supplier_Buyer_Map__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Supplier_Buyer_Map__r.Marketplace__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Marketplace_link__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Invoice_Marketplace_Link</targetReference>
+            </connector>
+            <label>Check for Supplier Buyer Map&apos;s Marketplace Condition</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_for_Supplier_Invoice_Approval1</name>
+        <label>Check for Supplier Invoice Approval</label>
+        <locationX>666</locationX>
+        <locationY>767</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_Waiting_for_allocations</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Supplier_Invoice_Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.supplier_approval_status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.supplier_approval_status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Listing_Start_Date_with_Supplier_Approval_Date</targetReference>
+            </connector>
+            <label>Supplier Invoice Approved</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_for_View</name>
+        <label>Check for View</label>
+        <locationX>446</locationX>
+        <locationY>3119</locationY>
+        <defaultConnector>
+            <targetReference>Invoice_Ready_for_posting</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>External_View_c_True</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.External_View__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_External_RecordType</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>External View</label>
+        </rules>
+        <rules>
+            <name>Reverse_Factoring</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.External_View__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Incomlend_product_del__r.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Standart</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Auction_Product_Recordtype</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Reverse Factoring</label>
+        </rules>
+        <rules>
+            <name>Factoring_View</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.External_View__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Incomlend_product_del__r.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Reverse</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Pricing_V2_2018_Record_Type</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Factoring View</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_for_Waiting_for_allocations</name>
+        <label>Check for Waiting for allocations</label>
+        <locationX>446</locationX>
+        <locationY>2783</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_View</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Waiting_for_allocations_c_True</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Waiting_for_allocations__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Waiting_For_Allocation_Date</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Waiting_for_allocations__c = True</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Due_day_delta_change</name>
+        <label>Due day delta change</label>
+        <locationX>446</locationX>
+        <locationY>4247</locationY>
+        <defaultConnector>
+            <targetReference>Phase_In_Progress</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Due_day_delta_changed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Phase__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Phase__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>due_date_delta</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>63.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_due_date_delta_bucket</targetReference>
+            </connector>
+            <label>Due day delta changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>First_invoice_for_Map</name>
+        <label>First invoice for Map</label>
+        <locationX>226</locationX>
+        <locationY>2015</locationY>
+        <defaultConnector>
+            <targetReference>Passthrough_Equal_to_False</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>First_Invoice_for_Map1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>First_Cycle</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Passthrough</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_First_deal_for_Map</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>First Invoice for Map</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Invoice_Ready_for_posting</name>
+        <label>Invoice Ready for posting</label>
+        <locationX>446</locationX>
+        <locationY>3575</locationY>
+        <defaultConnector>
+            <targetReference>Check_advance_amount</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Invoice_Ready_for_posting1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Invoice_ready_for_Posting__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Ready_for_posting_date</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Invoice Ready for posting</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_New</name>
+        <label>Is New</label>
+        <locationX>446</locationX>
+        <locationY>311</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_Field_Updates</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_New2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sales_owner_set_on_map_are_not_empty</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Is New</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Passthrough_Equal_to_False</name>
+        <label>Passthrough Equal to False</label>
+        <locationX>226</locationX>
+        <locationY>2351</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_Waiting_for_allocations</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Passthrough_False</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Passthrough</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Funder_Supplier_rate_update</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Passthrough = False</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Phase_In_Progress</name>
+        <label>Phase = In Progress</label>
+        <locationX>446</locationX>
+        <locationY>4583</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_Expected_supplier_discount_rate</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Phase_Is_In_Progress</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Phase__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3:IN PROGRESS</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_in_Progress_Date</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Phase = In Progress</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Sales_owner_set_on_map_are_not_empty</name>
+        <label>Sales owner set on map are not empty</label>
+        <locationX>226</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_Supplier_Buyer_Map_Account_Agent</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Sales_Owner_Set_DD_and_Created_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Sales_Owner_Set_DD</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CreatedDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <dateTimeValue>2019-05-07T00:30:00.000Z</dateTimeValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Sales_Owner_and_UPDATE_COM_INVOICE</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Sales owner set on map not empty</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Sales_zone_are_not_empty</name>
+        <label>Sales zone % are not empty</label>
+        <locationX>226</locationX>
+        <locationY>1223</locationY>
+        <defaultConnector>
+            <targetReference>Update_Buyer_coordinate</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Sales_zone1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Sales_zone</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CreatedDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <dateTimeValue>2019-08-30T04:00:00.000Z</dateTimeValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Buyer_supplier_account</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Sales zone % not empty</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Update_Buyer_coordinate</name>
+        <label>Update Buyer coordinate</label>
+        <locationX>226</locationX>
+        <locationY>1559</locationY>
+        <defaultConnector>
+            <targetReference>Update_Overdue_discount_rate_old</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Buyer_coordinate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CreatedDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <dateTimeValue>2019-01-04T16:00:00.000Z</dateTimeValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Buyer_coordinate_for_email</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Buyer coordinate</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the workflow
+1. Activate external View
+2. Factoring View
+3. Reverse Factoring View
+4. Ready for posting (update date)
+5. Waiting for Allications date
+6. UPDATE COM % INVOICE 
+7. first invoice for Map
+8. Funder supplier rate update
+9. Update due date delta bucket
+10. Update Invoice Amount
+11. Update in Progress Date
+Migrated from the Process Builder
+1. Update invoice with Map Data v2 (some duplicate with 6)
+2. Update instruction for Ops Invoice
+3. Update Agent from Map+trustee</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Buyer_Insured_By</name>
+        <dataType>String</dataType>
+        <expression>Text({!$Record.Supplier_Buyer_Map__r.Buyer__r.Insured_By__c})</expression>
+    </formulas>
+    <formulas>
+        <name>ComSalesBuyer</name>
+        <dataType>Number</dataType>
+        <expression>IF ( AND( {!$Record.Supplier_Buyer_Map__r.Buyer__r.Account_transferred_another_Sales__c} = TRUE, {!$Record.Supplier_Buyer_Map__r.Buyer__r.Transferred_Date__c}  &gt;  DateTimeValue({!$Record.Supplier_Buyer_Map__r.approval_date__c}) ), {!$Record.Supplier_Buyer_Map__r.Buyer__r.Sales_Owner__r.sales_Com_3__c} ,IF( OR ( {!$Record.Supplier_Buyer_Map__r.Account_Agent__c} = &quot;0012800000zY3QT&quot;, IF( OR( ISNULL( {!$Record.Supplier_Buyer_Map__r.Value_of_agent_s_fee__c} ) = TRUE,  {!$Record.Supplier_Buyer_Map__r.Value_of_agent_s_fee__c} =0), TRUE, FALSE)),  IF (  {!$Record.Supplier_Buyer_Map__r.approval_date__c} 
+  &gt;=  Date (2019,10,01),  {!$Record.Supplier_Buyer_Map__r.Buyer__r.Sales_Owner__r.com_4__c} , {!$Record.Supplier_Buyer_Map__r.Buyer__r.Sales_Owner__r.Sales_Com_1__c} ), IF(  {!$Record.Supplier_Buyer_Map__r.approval_date__c}  
+  &gt;=  Date (2019,10,01),  {!$Record.Supplier_Buyer_Map__r.Buyer__r.Sales_Owner__r.Com_5_new_Map__c} , {!$Record.Supplier_Buyer_Map__r.Buyer__r.Sales_Owner__r.Sales_Com_2__c}) )) * 100</expression>
+        <scale>3</scale>
+    </formulas>
+    <formulas>
+        <name>ComSalesSupplier</name>
+        <dataType>Number</dataType>
+        <expression>IF ( AND( {!$Record.Supplier_Buyer_Map__r.Supplier__r.Account_transferred_another_Sales__c} = TRUE, {!$Record.Supplier_Buyer_Map__r.Supplier__r.Transferred_Date__c}  &gt;  DateTimeValue({!$Record.Supplier_Buyer_Map__r.approval_date__c}) ), {!$Record.Supplier_Buyer_Map__r.Supplier__r.Sales_Owner__r.sales_Com_3__c} ,IF( OR ( {!$Record.Supplier_Buyer_Map__r.Account_Agent__c} = &quot;0012800000zY3QT&quot;, IF( OR( ISNULL( {!$Record.Supplier_Buyer_Map__r.Value_of_agent_s_fee__c} ) = TRUE,  {!$Record.Supplier_Buyer_Map__r.Value_of_agent_s_fee__c} =0), TRUE, FALSE)),  IF (  {!$Record.Supplier_Buyer_Map__r.approval_date__c} 
+  &gt;=  Date (2019,10,01),  {!$Record.Supplier_Buyer_Map__r.Supplier__r.Sales_Owner__r.com_4__c} , {!$Record.Supplier_Buyer_Map__r.Supplier__r.Sales_Owner__r.Sales_Com_1__c} ), IF(  {!$Record.Supplier_Buyer_Map__r.approval_date__c}  
+  &gt;=  Date (2019,10,01),  {!$Record.Supplier_Buyer_Map__r.Supplier__r.Sales_Owner__r.Com_5_new_Map__c} , {!$Record.Supplier_Buyer_Map__r.Supplier__r.Sales_Owner__r.Sales_Com_2__c}) )) * 100</expression>
+        <scale>3</scale>
+    </formulas>
+    <formulas>
+        <name>CreatedDate</name>
+        <dataType>Date</dataType>
+        <expression>If( IsNew(), Now(), {!$Record.CreatedDate})</expression>
+    </formulas>
+    <formulas>
+        <name>due_date_delta</name>
+        <dataType>Number</dataType>
+        <expression>If( IsBlank({!$Record.Expected_Payment_Date__c}), {!$Record.Due_Date__c}, {!$Record.Expected_Payment_Date__c}) - If( IsBlank({!$Record.Actual_Repayment_Received_Date__c}), today(), {!$Record.Actual_Repayment_Received_Date__c})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>due_date_delta_bucket</name>
+        <dataType>String</dataType>
+        <expression>IF((0 &gt; {!due_date_delta} &amp;&amp; {!due_date_delta} &gt; -8), &apos;06. Overdue 1-7&apos;, 
+IF((-7 &gt; {!due_date_delta} &amp;&amp; {!due_date_delta} &gt; -15), &apos;07. Overdue 8-14&apos;, 
+IF((-14 &gt; {!due_date_delta} &amp;&amp; {!due_date_delta} &gt; -31), &apos;08. Overdue 15-30&apos;, 
+IF((-30 &gt; {!due_date_delta} &amp;&amp; {!due_date_delta} &gt; -60), &apos;09. Overdue 31-59&apos;, 
+IF(({!due_date_delta} = -60 || -60 &gt; {!due_date_delta}), &apos;10. Overdue 60+&apos;, 
+IF((({!due_date_delta} = 0 || 0 &lt; {!due_date_delta}) &amp;&amp; {!due_date_delta} &lt; 8), &apos;01. Due 0-7&apos;, 
+IF((7 &lt; {!due_date_delta} &amp;&amp; {!due_date_delta} &lt; 15), &apos;02. Due 8-14&apos;, 
+IF((14 &lt; {!due_date_delta} &amp;&amp; {!due_date_delta} &lt; 31), &apos;03. Due 15-30&apos;, 
+IF((30 &lt; {!due_date_delta} &amp;&amp; {!due_date_delta} &lt; 60), &apos;04. Due 31-59&apos;, 
+IF((60 &lt; {!due_date_delta} || {!due_date_delta} = 60), &apos;05. Due 60+&apos;, 
+NULL))))))))))</expression>
+    </formulas>
+    <formulas>
+        <name>First_Cycle</name>
+        <dataType>Boolean</dataType>
+        <expression>IF( {!$Record.Supplier_Buyer_Map__r.invoice_deal_closed_amount__c} &gt;0, False, True)</expression>
+    </formulas>
+    <formulas>
+        <name>InvoiceAmount</name>
+        <dataType>Currency</dataType>
+        <expression>MIN({!$Record.Real_Face_Value__c}, {!$Record.funded_amount__c} / MIN( IF({!$Record.Supplier_Buyer_Map__r.Max_advance_amount_percentage__c} &gt; 0 , {!$Record.Supplier_Buyer_Map__r.Max_advance_amount_percentage__c}, 100), percentage_of_financing ) )</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>IsNew</name>
+        <dataType>Boolean</dataType>
+        <expression>IsNew()</expression>
+    </formulas>
+    <formulas>
+        <name>over_due_days</name>
+        <dataType>Number</dataType>
+        <expression>if( {!due_date_delta} &gt; 0, 0, {!due_date_delta}*-1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>OverdueSupplierdiscountrate</name>
+        <dataType>Number</dataType>
+        <expression>({!$Record.Supplier_Buyer_Map__r.Supplier_Discount_Rate__c} + {!$Record.Supplier_Buyer_Map__r.Overdue_Additional_Discount_rate__c}) * 100</expression>
+        <scale>4</scale>
+    </formulas>
+    <formulas>
+        <name>Passthrough</name>
+        <dataType>Boolean</dataType>
+        <expression>text({!$Record.Incomlend_product_del__r.Auction_Type__c} ) ==&apos;Passthrough&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>percentage_of_financing</name>
+        <dataType>Number</dataType>
+        <expression>If( Not(IsBlank({!$Record.Supplier_Buyer_Map__r.Percentage_of_financin_Manualg__c})), {!$Record.Supplier_Buyer_Map__r.Percentage_of_financin_Manualg__c}
+, If( Buyer_Insured_By = &apos;Volofin&apos;, 0.85
+, If( AND( Buyer_Insured_By = &apos;ICIEC&apos;, Not( {!$Record.Supplier_Buyer_Map__r.Buyer__c} = &apos;0010I00002ByYt8&apos;)), 0.80
+, If( {!$Record.Supplier_Buyer_Map__r.Principal_amount_for_SDR__c}, 1.00
+, If( IsPickVal({!$Record.Supplier_Buyer_Map__r.Supplier__r.Country_of_Incorporation__c}, &apos;Bangladesh&apos;), 0.95
+, If( Begins({!$Record.Supplier_Buyer_Map__r.Incomlend_product__r.Name}, &apos;In Transit&apos;), 0.8
+, 0.90))))))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>Primary_contact_email</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Supplier_Buyer_Map__r.Buyer__r.Primary_contact_email__c}</expression>
+    </formulas>
+    <formulas>
+        <name>Primary_contact_First_Name</name>
+        <dataType>String</dataType>
+        <expression>TEXT ({!$Record.Supplier_Buyer_Map__r.Buyer__r.Primary_Contact__r.Salutation}) + {!$Record.Supplier_Buyer_Map__r.Buyer__r.Primary_Contact__r.FirstName} +&quot; &quot;+  {!$Record.Supplier_Buyer_Map__r.Buyer__r.Primary_Contact__r.LastName}</expression>
+    </formulas>
+    <formulas>
+        <name>Sales_Owner_Buyer</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Supplier_Buyer_Map__r.Buyer__r.Sales_Owner__r.FirstName} + &quot; &quot; + {!$Record.Supplier_Buyer_Map__r.Buyer__r.Sales_Owner__r.LastName}</expression>
+    </formulas>
+    <formulas>
+        <name>Sales_Owner_Set_DD</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+OR (
+ISBLANK(  {!$Record.Supplier_Buyer_Map__r.Buyer__r.Sales_Owner__c}  ),
+ISBLANK(  {!$Record.Supplier_Buyer_Map__r.Supplier__r.Sales_Owner__c}  )), 
+FALSE, TRUE)</expression>
+    </formulas>
+    <formulas>
+        <name>Sales_Owner_Supplier</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Supplier_Buyer_Map__r.Supplier__r.Sales_Owner__r.FirstName} + &quot; &quot; + {!$Record.Supplier_Buyer_Map__r.Supplier__r.Sales_Owner__r.LastName}</expression>
+    </formulas>
+    <formulas>
+        <name>Sales_zone</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+OR (
+ISBLANK(  {!$Record.Supplier_Buyer_Map__r.Buyer_Sales_Zone__c}  ),
+ISBLANK(  {!$Record.Supplier_Buyer_Map__r.Supplier_Zone__c}  )),
+FALSE, TRUE)</expression>
+    </formulas>
+    <interviewLabel>Migrate Invoice Finance Deal - Fast Field Update Action {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Invoice Finance Deal - Fast Field Update Action</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Auction_Product_Recordtype</name>
+        <label>Get Auction Product Recordtype</label>
+        <locationX>314</locationX>
+        <locationY>3239</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Auction_Product_Record_Type</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>invoice_finance_deal__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Auction_Product</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_External_RecordType</name>
+        <label>Get External RecordType</label>
+        <locationX>50</locationX>
+        <locationY>3239</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_External_View_Recordtype</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>invoice_finance_deal__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>External_View</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Pricing_V2_2018_Record_Type</name>
+        <label>Get Pricing V2 2018 Record Type</label>
+        <locationX>578</locationX>
+        <locationY>3239</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Pricing_V2_2018_Recordtype</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>invoice_finance_deal__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pricing_V2_2018</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Funder_Supplier_rate_update</name>
+        <label>Funder &amp; Supplier rate update</label>
+        <locationX>94</locationX>
+        <locationY>2471</locationY>
+        <connector>
+            <targetReference>Check_for_Waiting_for_allocations</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Total_Supplier_Discount__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Supplier_Discount_Rate__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>credit_insurance_fee_percentage__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Supplier__r.Credit_insurance_fee__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>discount_rate__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Funder_Discount_Rate__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Agent_from_the_Map</name>
+        <label>Update Agent from the Map</label>
+        <locationX>94</locationX>
+        <locationY>887</locationY>
+        <connector>
+            <targetReference>Update_Ops_Instruction_and_Trustee</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Agent_from_the_Map__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Account_Agent__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Auction_Product_Record_Type</name>
+        <label>Update Auction Product Record Type</label>
+        <locationX>314</locationX>
+        <locationY>3359</locationY>
+        <connector>
+            <targetReference>Invoice_Ready_for_posting</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Auction_Product_Recordtype.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Buyer_coordinate_for_email</name>
+        <label>Update Buyer coordinate for email</label>
+        <locationX>94</locationX>
+        <locationY>1679</locationY>
+        <connector>
+            <targetReference>Update_Overdue_discount_rate_old</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Contact_for_Reminder_email__c</field>
+            <value>
+                <elementReference>Primary_contact_First_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Email_buyer_for_reminder_email__c</field>
+            <value>
+                <elementReference>Primary_contact_email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Buyer_supplier_account</name>
+        <label>Update - Buyer supplier account</label>
+        <locationX>94</locationX>
+        <locationY>1343</locationY>
+        <connector>
+            <targetReference>Update_Buyer_coordinate</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Buyer_Name__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Buyer__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Buyer_Owner__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Buyer_Sales_Zone__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Supplier_Owner__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Supplier_Zone__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Supplier_name__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Supplier__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_due_date_delta_bucket</name>
+        <label>Update due date delta bucket</label>
+        <locationX>314</locationX>
+        <locationY>4367</locationY>
+        <connector>
+            <targetReference>Phase_In_Progress</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>due_date_delta_bucket_value__c</field>
+            <value>
+                <elementReference>due_date_delta_bucket</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>over_due_days_value__c</field>
+            <value>
+                <elementReference>over_due_days</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_External_View_Recordtype</name>
+        <label>Update External View Recordtype</label>
+        <locationX>50</locationX>
+        <locationY>3359</locationY>
+        <connector>
+            <targetReference>Invoice_Ready_for_posting</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_External_RecordType.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_First_deal_for_Map</name>
+        <label>Update - First deal for Map</label>
+        <locationX>94</locationX>
+        <locationY>2135</locationY>
+        <connector>
+            <targetReference>Passthrough_Equal_to_False</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>first_deal_for_map__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_in_Progress_Date</name>
+        <label>Update in Progress Date</label>
+        <locationX>314</locationX>
+        <locationY>4703</locationY>
+        <connector>
+            <targetReference>Check_for_Expected_supplier_discount_rate</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>in_progress_date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Invoice_Amount</name>
+        <label>Update Invoice Amount</label>
+        <locationX>314</locationX>
+        <locationY>4031</locationY>
+        <connector>
+            <targetReference>Due_day_delta_change</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>advanced_amount__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>invoice_amount__c</field>
+            <value>
+                <elementReference>InvoiceAmount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Invoice_Marketplace_Link</name>
+        <label>Update Invoice Marketplace Link</label>
+        <locationX>314</locationX>
+        <locationY>5375</locationY>
+        <inputAssignments>
+            <field>Marketplace_link__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Marketplace__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Listing_Start_Date_1</name>
+        <label>Update Listing Start Date 1</label>
+        <locationX>534</locationX>
+        <locationY>551</locationY>
+        <connector>
+            <targetReference>Check_for_Supplier_Invoice_Approval1</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Listing_Start__c</field>
+            <value>
+                <elementReference>$Record.advance_send_to_supplier_date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Listing_Start_Date_with_Supplier_Approval_Date</name>
+        <label>Update Listing Start Date with Supplier Approval Date</label>
+        <locationX>534</locationX>
+        <locationY>887</locationY>
+        <connector>
+            <targetReference>Check_for_Waiting_for_allocations</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Listing_Start__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Confirmed_Date_2__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Ops_Instruction_and_Trustee</name>
+        <label>Update Ops Instruction and Trustee</label>
+        <locationX>226</locationX>
+        <locationY>1103</locationY>
+        <connector>
+            <targetReference>Sales_zone_are_not_empty</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Invoice_Validation_Notes_for_OPs__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.invoice_validation_instructions_for_ops__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Public_Verification_Requirements__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Public_Verification_Requirements__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustee__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Trustee__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Overdue_discount_rate_old</name>
+        <label>Update Overdue discount rate(old)</label>
+        <locationX>226</locationX>
+        <locationY>1895</locationY>
+        <connector>
+            <targetReference>First_invoice_for_Map</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Overdue_sSupplier_discount_rate__c</field>
+            <value>
+                <elementReference>OverdueSupplierdiscountrate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Overdue_Supplier_discount_rate_old</name>
+        <label>Update Overdue Supplier discount rate (old)</label>
+        <locationX>314</locationX>
+        <locationY>5039</locationY>
+        <connector>
+            <targetReference>Check_for_Supplier_Buyer_Map_s_Marketplace</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Overdue_sSupplier_discount_rate__c</field>
+            <value>
+                <elementReference>$Record.Total_Supplier_Discount__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Pricing_V2_2018_Recordtype</name>
+        <label>Update Pricing_V2_2018 Recordtype</label>
+        <locationX>578</locationX>
+        <locationY>3359</locationY>
+        <connector>
+            <targetReference>Invoice_Ready_for_posting</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Pricing_V2_2018_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Ready_for_posting_date</name>
+        <label>Update Ready for posting date</label>
+        <locationX>314</locationX>
+        <locationY>3695</locationY>
+        <connector>
+            <targetReference>Check_advance_amount</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ready_for_posting_date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Sales_Owner_and_UPDATE_COM_INVOICE</name>
+        <label>Update Sales Owner and UPDATE COM % INVOICE</label>
+        <locationX>94</locationX>
+        <locationY>551</locationY>
+        <connector>
+            <targetReference>Check_for_Supplier_Buyer_Map_Account_Agent</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Com_Sales_Buyer__c</field>
+            <value>
+                <elementReference>ComSalesBuyer</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Com_Sales_Supplier__c</field>
+            <value>
+                <elementReference>ComSalesSupplier</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sales_Owner_Buyer__c</field>
+            <value>
+                <elementReference>Sales_Owner_Buyer</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sales_Owner_Supplier__c</field>
+            <value>
+                <elementReference>Sales_Owner_Supplier</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Waiting_For_Allocation_Date</name>
+        <label>Update Waiting For Allocation Date</label>
+        <locationX>314</locationX>
+        <locationY>2903</locationY>
+        <connector>
+            <targetReference>Check_for_View</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Waiting_for_Allocations_date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_New</targetReference>
+        </connector>
+        <object>invoice_finance_deal__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

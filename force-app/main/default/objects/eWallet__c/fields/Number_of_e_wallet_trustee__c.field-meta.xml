@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_e_wallet_trustee__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>to count the number of e-wallet trustee</inlineHelpText>
+    <label>Number of e-wallet trustee</label>
+    <summaryForeignKey>eWallet_Trustee__c.Main_eWallet__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

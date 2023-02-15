@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tradetech_invoices</fullName>
+    <columns>Tradeteck_Deal__c</columns>
+    <columns>NAME</columns>
+    <columns>Dispute_Optional_Y_N__c</columns>
+    <columns>ArrangerFee__c</columns>
+    <columns>CreditInsurancePercentage__c</columns>
+    <columns>Retention_Amount__c</columns>
+    <columns>Real_Face_Value__c</columns>
+    <columns>Tradeteq_Repayment_Amount__c</columns>
+    <columns>InstrumentType__c</columns>
+    <columns>BookReference__c</columns>
+    <columns>BuyerCorporateReference__c</columns>
+    <columns>SellerCorporateReference__c</columns>
+    <columns>buyer__c</columns>
+    <columns>supplier_del__c</columns>
+    <columns>EffectiveDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Tradeteck_Deal__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>invoice_finance_deal__c.Pricing_V2_2018</value>
+    </filters>
+    <label>Tradetech invoices</label>
+    <sharedTo>
+        <group>Group_Funding</group>
+    </sharedTo>
+</ListView>

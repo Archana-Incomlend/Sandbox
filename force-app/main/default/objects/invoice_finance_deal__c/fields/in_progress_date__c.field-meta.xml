@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>in_progress_date__c</fullName>
+    <description>date when the invoice goes in progress</description>
+    <externalId>false</externalId>
+    <inlineHelpText>date when the invoice goes in progress</inlineHelpText>
+    <label>in progress date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

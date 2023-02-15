@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Passthrough_In_Progress</fullName>
+    <columns>NAME</columns>
+    <columns>invoice_amount__c</columns>
+    <columns>CCY__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>buyer__c</columns>
+    <columns>supplier_del__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>invoice_finance_deal__c.Passthrough_Record</value>
+    </filters>
+    <filters>
+        <field>Phase__c</field>
+        <operation>equals</operation>
+        <value>3:IN PROGRESS</value>
+    </filters>
+    <label>Passthrough In Progress</label>
+    <sharedTo>
+        <group>Operation</group>
+    </sharedTo>
+</ListView>

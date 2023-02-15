@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>insurable__c</fullName>
+    <externalId>false</externalId>
+    <formula>if (begins(buyer_EH_rating__c ,&apos;*&apos;), false,
+if(
+ value(buyer_EH_rating__c) &lt;=5,
+true,
+false)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>insurable</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

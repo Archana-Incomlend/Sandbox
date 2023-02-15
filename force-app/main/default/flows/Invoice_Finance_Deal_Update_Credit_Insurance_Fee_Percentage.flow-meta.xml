@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <name>Check_for_Insurance_Premium_Logic</name>
+        <label>Check for Insurance Premium Logic</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Insurance_premium_logic_Invoice_based</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Supplier_Buyer_Map__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Supplier_Buyer_Map__r.Insurance_Premium_Logic__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Invoice based</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Supplier_Buyer_Map__r.Insurance_cost_for_Supplier__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Credit_Insurance_Fees_Percentage</targetReference>
+            </connector>
+            <label>Insurance premium logic  = Invoice based</label>
+        </rules>
+    </decisions>
+    <description>If a new invoice finance deal is created AND Insurance premium logic == “Invoice based” in the corresponding supplier-buyer map then Invoice Finance Deal -  Credit Insurance Fee Percentage = Supplier Buyer Map - Insurance cost for Supplier</description>
+    <environments>Default</environments>
+    <interviewLabel>Invoice Finance Deal Update Credit Insurance Fee Percentage {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Invoice Finance Deal Update Credit Insurance Fee Percentage</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Credit_Insurance_Fees_Percentage</name>
+        <label>Update Credit Insurance Fees Percentage</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>credit_insurance_fee_percentage__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>credit_insurance_fee_percentage__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Insurance_cost_for_Supplier__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_for_Insurance_Premium_Logic</targetReference>
+        </connector>
+        <object>invoice_finance_deal__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

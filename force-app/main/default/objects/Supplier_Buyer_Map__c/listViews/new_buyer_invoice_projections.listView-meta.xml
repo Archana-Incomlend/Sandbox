@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>new_buyer_invoice_projections</fullName>
+    <booleanFilter>4 and ( 1 or 3 or 5 or 6 or 2)</booleanFilter>
+    <columns>Supplier_Owner__c</columns>
+    <columns>NAME</columns>
+    <columns>Supplier__c</columns>
+    <columns>supplier_onboarding_stage__c</columns>
+    <columns>Offer_Sent_Date__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>Buyer_Country__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Incomlend_product__c</columns>
+    <columns>Projected_total_yearly_Invoice_Value__c</columns>
+    <columns>International_Domestic__c</columns>
+    <columns>Credit_Insurance_Limit_confirmed_USD__c</columns>
+    <columns>projected_revenue_per_invoice_USD__c</columns>
+    <columns>expected_funding_demand_at_any_time__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>supplier_onboarding_stage__c</field>
+        <operation>equals</operation>
+        <value>Screening / Doc collection</value>
+    </filters>
+    <filters>
+        <field>supplier_onboarding_stage__c</field>
+        <operation>equals</operation>
+        <value>Onboarded</value>
+    </filters>
+    <filters>
+        <field>supplier_onboarding_stage__c</field>
+        <operation>contains</operation>
+        <value>Systems</value>
+    </filters>
+    <filters>
+        <field>insurable__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>supplier_onboarding_stage__c</field>
+        <operation>contains</operation>
+        <value>Doc</value>
+    </filters>
+    <filters>
+        <field>supplier_onboarding_stage__c</field>
+        <operation>contains</operation>
+        <value>Approvals</value>
+    </filters>
+    <label>new buyer invoice projections</label>
+</ListView>

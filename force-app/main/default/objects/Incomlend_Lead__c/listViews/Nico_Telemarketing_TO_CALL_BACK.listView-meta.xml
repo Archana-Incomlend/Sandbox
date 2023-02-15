@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nico_Telemarketing_TO_CALL_BACK</fullName>
+    <columns>NAME</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>marketing_campaign__c</field>
+        <operation>contains</operation>
+        <value>telemarketing</value>
+    </filters>
+    <filters>
+        <field>Telemarketing_Status__c</field>
+        <operation>equals</operation>
+        <value>To call back</value>
+    </filters>
+    <label>Nico Telemarketing TO CALL BACK</label>
+</ListView>

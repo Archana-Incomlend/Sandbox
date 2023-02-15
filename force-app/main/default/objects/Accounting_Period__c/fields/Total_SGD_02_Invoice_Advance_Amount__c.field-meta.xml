@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_SGD_02_Invoice_Advance_Amount__c</fullName>
+    <externalId>false</externalId>
+    <label>Total SGD 02.Invoice Advance Amount</label>
+    <summarizedField>Transaction__c.Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Transaction__c.CCY__c</field>
+        <operation>equals</operation>
+        <value>SGD</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Transaction__c.Type__c</field>
+        <operation>equals</operation>
+        <value>02.Invoice Advance Amount</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Transaction__c.DebitCredit__c</field>
+        <operation>equals</operation>
+        <value>CR</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Transaction__c.Accounting_Period__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

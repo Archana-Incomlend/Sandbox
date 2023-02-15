@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Balance_Rollup__c</fullName>
+    <description>Technical field, SUM eWallet trustee Balance
+Existing Balance eWallet too risky to be replace by Rollup</description>
+    <externalId>false</externalId>
+    <label>Balance Rollup</label>
+    <summarizedField>eWallet_Trustee__c.Balance__c</summarizedField>
+    <summaryForeignKey>eWallet_Trustee__c.Main_eWallet__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

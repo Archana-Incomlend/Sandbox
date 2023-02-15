@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delta_Created_date_Today__c</fullName>
+    <description>to calculate the Delta between today and created date , for report and KPI</description>
+    <externalId>false</externalId>
+    <formula>TODAY() -    DATEVALUE( CreatedDate )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>to calculate the Delta between today and created date , for report and KPI</inlineHelpText>
+    <label>Delta  Created date -Today</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

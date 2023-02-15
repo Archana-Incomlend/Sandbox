@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>将 DocuSign 亲自签名页面设置为在自身窗口中显示，而不是嵌入 Salesforce 标题和/或边栏内部。</help>
+    <label></label>
+    <name>dsfs__DisplayInPersonSigningInOwnWindow__c</name>
+</CustomFieldTranslation>

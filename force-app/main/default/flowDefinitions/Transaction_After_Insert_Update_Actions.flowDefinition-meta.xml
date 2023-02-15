@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>2</activeVersionNumber>
+    <description>Migrate from workflow rule to flow.
+Email alert New Deposit</description>
+    <masterLabel>Migrate Transaction - Email alert New Deposit</masterLabel>
+</FlowDefinition>

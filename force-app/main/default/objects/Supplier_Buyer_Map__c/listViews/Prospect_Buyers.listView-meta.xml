@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prospect_Buyers</fullName>
+    <columns>NAME</columns>
+    <columns>Supplier__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>supplier_onboarding_stage__c</columns>
+    <columns>map_onboarding_stage__c</columns>
+    <columns>Buyer_Country__c</columns>
+    <columns>Credit_Insurance_limit_requested_USD__c</columns>
+    <columns>Credit_Insurance_Limit_confirmed_USD__c</columns>
+    <columns>buyer_EH_rating__c</columns>
+    <columns>Rating_Request_Date__c</columns>
+    <columns>Rating_Response_Date__c</columns>
+    <columns>Rating_revision_Date__c</columns>
+    <columns>Projected_total_yearly_Invoice_Value_USD__c</columns>
+    <columns>projected_revenue_per_invoice_USD__c</columns>
+    <columns>Projected_Total_Yearly_Invoice_Count__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>buyer_supplier_map_approved__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>supplier_onboarding_stage__c</field>
+        <operation>notEqual</operation>
+        <value>*Dormant*</value>
+    </filters>
+    <filters>
+        <field>supplier_onboarding_stage__c</field>
+        <operation>notContain</operation>
+        <value>rejected</value>
+    </filters>
+    <label>Prospect Buyers</label>
+</ListView>

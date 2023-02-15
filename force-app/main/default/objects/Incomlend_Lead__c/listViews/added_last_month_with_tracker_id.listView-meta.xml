@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>added_last_month_with_tracker_id</fullName>
+    <columns>NAME</columns>
+    <columns>Company_Name__c</columns>
+    <columns>First_Name__c</columns>
+    <columns>Last_Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>Type__c</columns>
+    <columns>Source__c</columns>
+    <columns>next_action__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>marketing_tracking_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>marketing_tracking_ID__c</field>
+        <operation>greaterThan</operation>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Supplier</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>LAST_MONTH</value>
+    </filters>
+    <label>added last month with tracker id</label>
+</ListView>

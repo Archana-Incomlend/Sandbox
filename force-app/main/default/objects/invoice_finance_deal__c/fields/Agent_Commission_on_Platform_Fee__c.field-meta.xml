@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agent_Commission_on_Platform_Fee__c</fullName>
+    <externalId>false</externalId>
+    <formula>ROUND(platform_fee_variable_amount__c * Supplier_Buyer_Map__r.Supplier__r.Agent__r.Agent_Commision_Supplier_Platform_Fee__c,2)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Supplier&apos;s Agent Com. on Platform Fee</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>due_date2__c</fullName>
+    <description>with time for activation of the workflow timing</description>
+    <externalId>false</externalId>
+    <formula>DATETIMEVALUE(Due_Date__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>with time for activation of the workflow timing</inlineHelpText>
+    <label>due date2</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

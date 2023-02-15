@@ -1,0 +1,225 @@
+<apex:page controller="TransactionCashFlowController" standardStylesheets="false"  docType="html-5.0">
+    <apex:pageMessages id="message" escape="false"/>
+    <apex:form id="theForm" >
+        <table>
+            <tr>
+                <td><apex:outputLabel >&nbsp;Account Name &nbsp;</apex:outputLabel>
+                    <apex:input label="Account Name" required="true" type="text" value="{!accountName}" size="10" id="accountName" /></td>
+                <td><apex:outputLabel >&nbsp;Min Date &nbsp;</apex:outputLabel>
+                    <apex:input required="true" type="date" value="{!minDate}" size="10" id="minDate" /></td>
+                <td><apex:outputLabel >&nbsp;Max Date &nbsp;</apex:outputLabel>
+                    <apex:input type="date" value="{!maxDate}" size="10" id="maxDate" /></td>
+            </tr>
+            <tr>                
+                <td><apex:outputLabel >&nbsp;Balance Lending USD &nbsp;</apex:outputLabel>
+                    <apex:input type="number" value="{!balanceLendingUSD}" id="balanceLendingUSD" style="float:right"/></td>
+                <td><apex:outputLabel >&nbsp;Balance Lending EUR &nbsp;</apex:outputLabel>
+                    <apex:input type="number" value="{!balanceLendingEUR}" id="balanceLendingEUR" style="float:right"/></td>
+                <td><apex:outputLabel >&nbsp;Balance Lending Other &nbsp;</apex:outputLabel>
+                    <apex:input type="number" value="{!balanceLendingOther}" id="balanceLendingOther" style="float:right"/></td>
+            </tr>
+            <tr>
+                <td><apex:outputLabel >&nbsp;Balance Collection USD &nbsp;</apex:outputLabel>
+                    <apex:input type="number" value="{!balanceCollectionUSD}" id="balanceCollectionUSD" style="float:right"/></td>
+                <td><apex:outputLabel >&nbsp;Balance Collection EUR &nbsp;</apex:outputLabel>
+                    <apex:input type="number" value="{!balanceCollectionEUR}" id="balanceCollectionEUR" style="float:right"/></td>
+                <td><apex:outputLabel >&nbsp;Balance Collection Other &nbsp;</apex:outputLabel>
+                    <apex:input type="number" value="{!balanceCollectionOther}" id="balanceCollectionOther" style="float:right"/></td>
+            </tr>
+        </table>
+        <apex:outputLabel >&nbsp;Currency &nbsp;</apex:outputLabel>
+        <apex:selectList size="1" value="{!ccy}">
+            <apex:selectOptions value="{!items}"/>
+        </apex:selectList>
+        <br/>
+        <apex:commandButton value="Search" action="{!search}" reRender="ResultPanel,message" status="status"/>
+        <br/>
+        <br/>
+        <apex:outputPanel id="ResultPanel" style="padding-left: 5px;display: inline-block;">
+            <apex:outputLabel >Showing {!IF(countTotalRecords > 0,offSetSize + 1,0)} to {!IF(countTotalRecords - offSetSize - maxSize > 0,offSetSize + maxSize,countTotalRecords)} of {!countTotalRecords} records&nbsp;&nbsp;</apex:outputLabel>
+            <apex:input type="number" value="{!maxSize}" id="maxSize" style="width: 5%;"/>
+            <apex:outputLabel >Records/Page</apex:outputLabel>
+            <apex:commandButton value="End" action="{!endPage}" disabled="{!nxt}" reRender="ResultPanel" style="float:right" status="status"/>
+            <apex:commandButton value="Next" action="{!nextPage}" disabled="{!nxt}" reRender="ResultPanel" style="float:right" status="status"/>
+            <apex:commandButton value="Previous" action="{!prvPage}" disabled="{!prv}" reRender="ResultPanel" style="float:right" status="status"/>
+            <apex:commandButton value="Begining" action="{!firstPage}" disabled="{!prv}" reRender="ResultPanel" style="float:right" status="status"/>
+            <table border="1" style="width:100%">
+                <tr>
+                    <th rowspan="2">No</th>
+                    <th rowspan="2">Posting ID</th>
+                    <th rowspan="2">Invoice</th>
+                    <th rowspan="2">CCY</th>
+                    <th rowspan="2">Type</th>
+                    <th rowspan="2">Effective Date</th>
+                    <th rowspan="2">Amount</th>
+                    <th rowspan="2">Tranche</th>
+                    <th rowspan="2">Tranche USD</th>
+                    <th rowspan="2">Tranche %</th>
+                    <th colspan = "5"> Lending account</th>
+                    <th colspan = "5"> Collection account</th>
+                </tr>
+                <tr>
+                    <th>USD</th>
+                    <th>EUR</th>
+                    <th>EUR(USD)</th>
+                    <th>Other</th>
+                    <th>Other(USD)</th>
+                    <th>USD</th>
+                    <th>EUR</th>
+                    <th>EUR(USD)</th>
+                    <th>Other</th>
+                    <th>Other(USD)</th>
+                </tr>
+                <apex:variable var="count" value="{!offSetSize + 1}"/>
+                <apex:repeat id="transactionDetails" value="{!detailResults}" var="detail">
+                    <tr>
+                        <td>
+                            <apex:outputText value="{!count}"/>
+                        </td>
+                        <td>
+                            <apex:commandLink target="_blank" action="/{!detail.Id}" value="{!detail.postingID}"/>
+                        </td>
+                        <td>
+                            <apex:commandLink target="_blank" action="/{!detail.invoiceAllocationId}" value="{!detail.invoiceAllocationName}"/>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!detail.ccy}"/>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!detail.type}"/>
+                        </td>
+                        <td>
+                            <apex:outputText value="{0,date,yyyy-MM-dd}">
+                                <apex:param value="{!detail.effectiveDate}"/>
+                            </apex:outputText>
+                        </td>
+                        <td>
+                            <apex:outputPanel rendered="{!detail.amount > 0}" layout="none">
+                                <apex:outputText value="{!detail.amount}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!detail.amount < 0}" layout="none">
+                                ({!TEXT(ABS(detail.amount))})
+                            </apex:outputPanel>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!detail.trancheNumber}"/>
+                        </td>
+                        <td>
+                            <apex:outputPanel rendered="{!detail.trancheAmountUSD > 0}" layout="none">
+                                <apex:outputText value="{!detail.trancheAmountUSD}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!detail.trancheAmountUSD < 0}" layout="none">
+                                ({!TEXT(ABS(detail.trancheAmountUSD))})
+                            </apex:outputPanel>
+                        </td>
+                        <td>
+                            <apex:outputPanel rendered="{!detail.trancheAmountPercent > 0}" layout="none">
+                                <apex:outputText value="{!detail.trancheAmountPercent}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!detail.trancheAmountPercent < 0}" layout="none">
+                                ({!TEXT(ABS(detail.trancheAmountPercent))})
+                            </apex:outputPanel>
+                        </td>
+                        <td>
+                            <apex:outputPanel rendered="{!detail.trancheLendingUSD > 0}" layout="none">
+                                <apex:outputText value="{!detail.trancheLendingUSD}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!detail.trancheLendingUSD < 0}" layout="none">
+                                ({!TEXT(ABS(detail.trancheLendingUSD))})
+                            </apex:outputPanel>
+                        </td>
+                        
+                        <td>
+                            <apex:outputPanel rendered="{!detail.trancheLendingEUR > 0}" layout="none">
+                                <apex:outputText value="{!detail.trancheLendingEUR}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!detail.trancheLendingEUR < 0}" layout="none">
+                                ({!TEXT(ABS(detail.trancheLendingEUR))})
+                            </apex:outputPanel>
+                        </td>
+                        <td>
+                            <apex:outputPanel rendered="{!detail.trancheLendingEURUSD > 0}" layout="none">
+                                <apex:outputText value="{!detail.trancheLendingEURUSD}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!detail.trancheLendingEURUSD < 0}" layout="none">
+                                ({!TEXT(ABS(detail.trancheLendingEURUSD))})
+                            </apex:outputPanel>
+                        </td>
+                        <td>
+                            <apex:outputPanel rendered="{!detail.trancheLendingOther > 0}" layout="none">
+                                <apex:outputText value="{!detail.trancheLendingOther}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!detail.trancheLendingOther < 0}" layout="none">
+                                ({!TEXT(ABS(detail.trancheLendingOther))})
+                            </apex:outputPanel>
+                        </td>
+                        <td>
+                            <apex:outputPanel rendered="{!detail.trancheLendingOtherUSD > 0}" layout="none">
+                                <apex:outputText value="{!detail.trancheLendingOtherUSD}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!detail.trancheLendingOtherUSD < 0}" layout="none">
+                                ({!TEXT(ABS(detail.trancheLendingOtherUSD))})
+                            </apex:outputPanel>
+                        </td>
+                        <td>
+                            <apex:outputPanel rendered="{!detail.trancheCollectionUSD > 0}" layout="none">
+                                <apex:outputText value="{!detail.trancheCollectionUSD}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!detail.trancheCollectionUSD < 0}" layout="none">
+                                ({!TEXT(ABS(detail.trancheCollectionUSD))})
+                            </apex:outputPanel>
+                        </td>
+                        <td>
+                            <apex:outputPanel rendered="{!detail.trancheCollectionEUR > 0}" layout="none">
+                                <apex:outputText value="{!detail.trancheCollectionEUR}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!detail.trancheCollectionEUR < 0}" layout="none">
+                                ({!TEXT(ABS(detail.trancheCollectionEUR))})
+                            </apex:outputPanel>
+                        </td>
+                        <td>
+                            <apex:outputPanel rendered="{!detail.trancheCollectionEURUSD > 0}" layout="none">
+                                <apex:outputText value="{!detail.trancheCollectionEURUSD}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!detail.trancheCollectionEURUSD < 0}" layout="none">
+                                ({!TEXT(ABS(detail.trancheCollectionEURUSD))})
+                            </apex:outputPanel>
+                        </td>
+                        <td>
+                            <apex:outputPanel rendered="{!detail.trancheCollectionOther > 0}" layout="none">
+                                <apex:outputText value="{!detail.trancheCollectionOther}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!detail.trancheCollectionOther < 0}" layout="none">
+                                ({!TEXT(ABS(detail.trancheCollectionOther))})
+                            </apex:outputPanel>
+                        </td>
+                        <td>
+                            <apex:outputPanel rendered="{!detail.trancheCollectionOtherUSD > 0}" layout="none">
+                                <apex:outputText value="{!detail.trancheCollectionOtherUSD}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!detail.trancheCollectionOtherUSD < 0}" layout="none">
+                                ({!TEXT(ABS(detail.trancheCollectionOtherUSD))})
+                            </apex:outputPanel>
+                        </td>
+                        <apex:variable var="count" value="{!count+1}"/>
+                    </tr>
+                </apex:repeat>
+            </table>
+            <apex:outputLabel >Showing {!IF(countTotalRecords > 0,offSetSize + 1,0)} to {!IF(countTotalRecords - offSetSize - maxSize > 0,offSetSize + maxSize,countTotalRecords)} of {!countTotalRecords} records&nbsp;&nbsp;</apex:outputLabel>
+            <apex:commandButton value="End" action="{!endPage}" disabled="{!nxt}" reRender="ResultPanel" style="float:right" status="status"/>
+            <apex:commandButton value="Next" action="{!nextPage}" disabled="{!nxt}" reRender="ResultPanel" style="float:right" status="status"/>
+            <apex:commandButton value="Previous" action="{!prvPage}" disabled="{!prv}" reRender="ResultPanel" style="float:right" status="status"/>
+            <apex:commandButton value="Begining" action="{!firstPage}" disabled="{!prv}" reRender="ResultPanel" style="float:right" status="status"/>
+        </apex:outputPanel>
+        <apex:actionStatus id="status">
+            <apex:facet name="start">
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.75; z-index: 1000; background-color: black;">
+                    &nbsp;
+                </div>
+                <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 30% 50%">
+                    <img src="/img/loading.gif" />
+                </div>
+            </apex:facet>
+        </apex:actionStatus>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Overdue_day_capped__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* the overdue is limited to 60 cap overdue days*/
+if( !isBlank(Buybacked_Date__c), 0, Min( If( No_Cap_Overdue__c, 65535, 60), Invoice__r.over_due_days__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Overdue day capped</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

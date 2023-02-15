@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>One_time_fees_for_opening_dedicated_bank__c</fullName>
+    <defaultValue>1500</defaultValue>
+    <externalId>false</externalId>
+    <label>One time fees for opening dedicated bank</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

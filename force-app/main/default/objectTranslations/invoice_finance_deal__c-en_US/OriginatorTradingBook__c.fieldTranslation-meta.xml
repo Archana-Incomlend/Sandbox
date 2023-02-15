@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help></help>
+    <label></label>
+    <name>OriginatorTradingBook__c</name>
+    <picklistValues>
+        <masterLabel>FCT 2 EUR_ORG_EUR_TD_2</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NNIP FCT_ORG_USD_TB</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NNIP Flex_ORG_USD_TB</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>As_of_DateTime__c</columns>
+    <columns>Bank_Account_Detail__c</columns>
+    <columns>Currency__c</columns>
+    <columns>amount__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>As_of_Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>9/30/2019</value>
+    </filters>
+    <label>All</label>
+</ListView>

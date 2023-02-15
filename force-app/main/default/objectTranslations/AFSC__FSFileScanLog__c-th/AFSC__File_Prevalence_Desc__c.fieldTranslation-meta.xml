@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__File_Prevalence_Desc__c</name>
+    <picklistValues>
+        <masterLabel>Common</masterLabel>
+        <translation>พบบ่อย</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rare</masterLabel>
+        <translation>น้อย</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unique</masterLabel>
+        <translation>ที่ไม่ซ้ำ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Universal</masterLabel>
+        <translation>เอนกประสงค์</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unknown</masterLabel>
+        <translation>ไม่รู้จัก</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Very common</masterLabel>
+        <translation>พบบ่อยมาก</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Very rare</masterLabel>
+        <translation>น้อยมาก</translation>
+    </picklistValues>
+</CustomFieldTranslation>

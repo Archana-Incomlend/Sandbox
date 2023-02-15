@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_on_Platform_details_funder</fullName>
+    <columns>NAME</columns>
+    <columns>buyer__c</columns>
+    <columns>Requested_Amount_USD_Equivalent__c</columns>
+    <columns>supplier_del__c</columns>
+    <columns>Supplier_Buyer_Map__c</columns>
+    <columns>Real_Face_Value__c</columns>
+    <columns>CCY__c</columns>
+    <columns>FDR_Missing__c</columns>
+    <columns>Funding_Status__c</columns>
+    <columns>Funding_Comments__c</columns>
+    <columns>Allocation_Date_Funders__c</columns>
+    <columns>internal_validation_notes__c</columns>
+    <columns>Waiting_for_allocations__c</columns>
+    <columns>Buyer_Confirmed_acceptance__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Phase__c</field>
+        <operation>equals</operation>
+        <value>1:PRE LISTING,2:ON MARKETPLACE</value>
+    </filters>
+    <filters>
+        <field>supplier_buyer_map_public_name__c</field>
+        <operation>notContain</operation>
+        <value>test</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>invoice_finance_deal__c.Pricing_V2_2018</value>
+    </filters>
+    <filters>
+        <field>supplier_del__c</field>
+        <operation>notContain</operation>
+        <value>Sino</value>
+    </filters>
+    <filters>
+        <field>Product_type__c</field>
+        <operation>notContain</operation>
+        <value>Pass</value>
+    </filters>
+    <label>Invoice on Platform details funder</label>
+    <sharedTo>
+        <group>Funding</group>
+        <group>Group_Funding</group>
+    </sharedTo>
+</ListView>

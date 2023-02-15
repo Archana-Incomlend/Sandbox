@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Configurer le balisage DocuSign pour qu&apos;il s&apos;affiche dans sa propre fenêtre plutôt que d&apos;être intégré à l&apos;en-tête et/ou la barre latérale Salesforce.</help>
+    <label></label>
+    <name>dsfs__DisplayTaggerInOwnWindow__c</name>
+</CustomFieldTranslation>

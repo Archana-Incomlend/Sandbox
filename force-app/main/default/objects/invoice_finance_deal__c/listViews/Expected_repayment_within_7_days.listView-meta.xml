@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_repayment_within_7_days</fullName>
+    <booleanFilter>1 AND 2 AND 3 and 4</booleanFilter>
+    <columns>NAME</columns>
+    <columns>buyer__c</columns>
+    <columns>advance_amount_usd_equiv__c</columns>
+    <columns>CCY__c</columns>
+    <columns>supplier_del__c</columns>
+    <columns>calculated_expected_payment_date__c</columns>
+    <columns>advanced_amount__c</columns>
+    <columns>Due_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>calculated_expected_payment_date__c</field>
+        <operation>equals</operation>
+        <value>NEXT_N_DAYS:15</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Progress</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>notEqual</operation>
+        <value>invoice_finance_deal__c.Passthrough_Record</value>
+    </filters>
+    <filters>
+        <field>supplier_del__c</field>
+        <operation>notContain</operation>
+        <value>Sino</value>
+    </filters>
+    <label>Expected repayment within 7 days</label>
+</ListView>

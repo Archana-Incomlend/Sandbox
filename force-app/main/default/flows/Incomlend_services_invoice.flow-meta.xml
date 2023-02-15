@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <name>create_double_entry_from_apex_class</name>
+        <label>create double entry from apex class</label>
+        <locationX>392</locationX>
+        <locationY>455</locationY>
+        <actionName>Double_Entry_Transaction</actionName>
+        <actionType>apex</actionType>
+        <inputParameters>
+            <name>amount</name>
+            <value>
+                <elementReference>amount</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ccy</name>
+            <value>
+                <elementReference>Currency</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Effective_date</name>
+            <value>
+                <elementReference>effective_date</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>status</name>
+            <value>
+                <stringValue>Confirmed by operations</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>to_account</name>
+            <value>
+                <elementReference>toAccount</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <elementReference>transaction_Type</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>from_account</name>
+            <value>
+                <elementReference>supplierid</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <description>Activated by button on supplier acount &quot;send incomlend services invoice&quot; no on use it, not sure about what it is doing, seems to be able to create transaction</description>
+    <dynamicChoiceSets>
+        <name>CCY</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>CCY__c</picklistField>
+        <picklistObject>Transaction__c</picklistObject>
+        <sortOrder>Asc</sortOrder>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>transactiontype</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Type__c</picklistField>
+        <picklistObject>Transaction__c</picklistObject>
+        <sortOrder>Asc</sortOrder>
+    </dynamicChoiceSets>
+    <formulas>
+        <name>negAmount</name>
+        <dataType>Currency</dataType>
+        <expression>{!amount} * -1</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Incomlend services invoice {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Incomlend services invoice</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Incomlend_services_Invoice</name>
+        <label>Incomlend services Invoice</label>
+        <locationX>374</locationX>
+        <locationY>226</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>create_double_entry_from_apex_class</targetReference>
+        </connector>
+        <fields>
+            <name>transaction_Type</name>
+            <choiceReferences>transactiontype</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>transactionType</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>amount</name>
+            <dataType>Currency</dataType>
+            <fieldText>amount</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <scale>0</scale>
+        </fields>
+        <fields>
+            <name>Currency</name>
+            <choiceReferences>CCY</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>CCY</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>effective_date</name>
+            <dataType>Date</dataType>
+            <fieldText>effective date</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>external_ref_number</name>
+            <dataType>String</dataType>
+            <fieldText>external ref number</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>lookup_incomlend_fees_account</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>lookup_incomlend_fees_account</name>
+        <label>lookup incomlend fees account</label>
+        <locationX>383</locationX>
+        <locationY>75</locationY>
+        <connector>
+            <targetReference>Incomlend_services_Invoice</targetReference>
+        </connector>
+        <flowName>Lookup_Incomlend_Feed_Account_ID</flowName>
+        <outputAssignments>
+            <assignToReference>toAccount</assignToReference>
+            <name>FeesAccountID</name>
+        </outputAssignments>
+    </subflows>
+    <variables>
+        <name>supplierid</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>toAccount</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>tranlinkid</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

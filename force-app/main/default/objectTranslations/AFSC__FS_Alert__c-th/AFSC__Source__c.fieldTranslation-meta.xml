@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Source__c</name>
+    <picklistValues>
+        <masterLabel>Administration</masterLabel>
+        <translation>ผู้ดูแลระบบ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>File Protection</masterLabel>
+        <translation>การป้องกันไฟล์</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>License</masterLabel>
+        <translation>ใบอนุญาต</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Security Cloud</masterLabel>
+        <translation>ความปลอดภัยของระบบคลาวด์</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>URL Protection</masterLabel>
+        <translation>การป้องกัน URL</translation>
+    </picklistValues>
+</CustomFieldTranslation>

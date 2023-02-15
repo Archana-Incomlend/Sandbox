@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funder_prepayment__c</fullName>
+    <defaultValue>&quot;No prepayment&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>Funder prepayment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No prepayment</fullName>
+                <default>true</default>
+                <label>No prepayment</label>
+            </value>
+            <value>
+                <fullName>Net EFDA -15days</fullName>
+                <default>false</default>
+                <label>Net EFDA -15days</label>
+            </value>
+            <value>
+                <fullName>Gross EFDA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gross EFDA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

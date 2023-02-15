@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>passtrough2</name>
+        <label>passtrough</label>
+        <locationX>539</locationX>
+        <locationY>93</locationY>
+        <defaultConnector>
+            <targetReference>Sales_Calculation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>passtrough</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>invoice.Product_type__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Passthrough </stringValue>
+                </rightValue>
+            </conditions>
+            <label>passtrough</label>
+        </rules>
+    </decisions>
+    <description>Updated with double sales calculation</description>
+    <interviewLabel>Subflow Sales Calculation Invoice paid {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflow Sales Calculation Invoice paid</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Object to calcualte the commission when the invoice is funded</description>
+        <name>Sales_Calculation</name>
+        <label>Sales Calculation supplier</label>
+        <locationX>853</locationX>
+        <locationY>85</locationY>
+        <connector>
+            <targetReference>Sales_Calculation_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Commission_Type__c</field>
+            <value>
+                <stringValue>Paid</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Invoice_Finance_Deal__c</field>
+            <value>
+                <elementReference>invoice.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Supplier_Buyer_Map__c</field>
+            <value>
+                <elementReference>invoice.Supplier_Buyer_Map__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Sales Supplier</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Sales_Calculation__c</object>
+    </recordCreates>
+    <recordCreates>
+        <description>Object to calcualte the commission when the invoice is funded</description>
+        <name>Sales_Calculation_0</name>
+        <label>Sales Calculation supplier</label>
+        <locationX>1037</locationX>
+        <locationY>77</locationY>
+        <inputAssignments>
+            <field>Commission_Type__c</field>
+            <value>
+                <stringValue>Paid</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Invoice_Finance_Deal__c</field>
+            <value>
+                <elementReference>invoice.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Supplier_Buyer_Map__c</field>
+            <value>
+                <elementReference>invoice.Supplier_Buyer_Map__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Sales Buyer</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Sales_Calculation__c</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_invoice</name>
+        <label>Get invoice</label>
+        <locationX>262</locationX>
+        <locationY>85</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>passtrough2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>invoiceID</elementReference>
+            </value>
+        </filters>
+        <object>invoice_finance_deal__c</object>
+        <outputReference>invoice</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Supplier_Buyer_Map__c</queriedFields>
+        <queriedFields>CreatedDate</queriedFields>
+        <queriedFields>advance_send_to_supplier_date__c</queriedFields>
+        <queriedFields>Transferred_to_Incomlend__c</queriedFields>
+        <queriedFields>Product_type__c</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Get_invoice</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>formattedmessage_template</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>*{!invoice.Invoice_name__c} Phase -&gt; {!invoice.Phase__c}*
+ {!invoice.CCY__c} {!invoice.invoice_amount__c}
+Ops Owner: *{!OwnerName}*</text>
+    </textTemplates>
+    <variables>
+        <name>invoice</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>invoice_finance_deal__c</objectType>
+    </variables>
+    <variables>
+        <name>invoiceID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>a09N000000BMm9D</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>OwnerAccount</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>User</objectType>
+    </variables>
+    <variables>
+        <name>OwnerName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>:warning: Ops Owner is not set, please amend the Supplier Buyer Map :warning:</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>SupplierBuyerMap</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Supplier_Buyer_Map__c</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Migrated from the Process Builder to Flow.
+1. New Supporting Doc Map</description>
+    <masterLabel>In-Active Migrate Map Supporting document - After Insert / Update Action</masterLabel>
+</FlowDefinition>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalyticSnapshot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <groupColumn>GRAND_SUMMARY</groupColumn>
+    <mappings>
+        <aggregateType>Sum</aggregateType>
+        <sourceField>Supplier_Buyer_Map__c$Inprogress_invoice_amount_usd_equiv__c</sourceField>
+        <sourceType>summary</sourceType>
+        <targetField>SnapShot_CL_Incomlend_Limit_utilisation__c.Inprogress_invoice_amount_usd_equiv__c</targetField>
+    </mappings>
+    <mappings>
+        <aggregateType>Maximum</aggregateType>
+        <sourceField>Supplier_Buyer_Map__c$Buyer_Credit_Limit_USD_Equiv__c</sourceField>
+        <sourceType>summary</sourceType>
+        <targetField>SnapShot_CL_Incomlend_Limit_utilisation__c.Potential_CL_increment_available__c</targetField>
+    </mappings>
+    <mappings>
+        <aggregateType>Sum</aggregateType>
+        <sourceField>Supplier_Buyer_Map__c$CL_USD_Incomlend_for_this_Map__c</sourceField>
+        <sourceType>summary</sourceType>
+        <targetField>SnapShot_CL_Incomlend_Limit_utilisation__c.CL_USD_Incomlend_for_this_Map__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>FORMULA1</sourceField>
+        <sourceType>summary</sourceType>
+        <targetField>SnapShot_CL_Incomlend_Limit_utilisation__c.Incomlend_Limit_Utilization__c</targetField>
+    </mappings>
+    <name>Credit Limit Utilisation</name>
+    <runningUser>loic@incomlend.com</runningUser>
+    <sourceReport>Incomlend_Risk/Incomlend_Limit_Utilization_report</sourceReport>
+    <targetObject>SnapShot_CL_Incomlend_Limit_utilisation__c</targetObject>
+</AnalyticSnapshot>

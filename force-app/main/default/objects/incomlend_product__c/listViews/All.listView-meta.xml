@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>approved__c</columns>
+    <columns>NAME</columns>
+    <columns>public_product_name__c</columns>
+    <columns>active__c</columns>
+    <columns>List_on_Marketplace__c</columns>
+    <columns>disclosed_to_buyer__c</columns>
+    <columns>CCYs__c</columns>
+    <columns>insured__c</columns>
+    <columns>Minimum_Financing_Period__c</columns>
+    <columns>Maximum_Financing_Period__c</columns>
+    <columns>minimum_face_value__c</columns>
+    <columns>max_invoice_value__c</columns>
+    <columns>minimum_funding_pct__c</columns>
+    <columns>charge_variable_platform_fee__c</columns>
+    <columns>Fixed_Platform_Fee__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

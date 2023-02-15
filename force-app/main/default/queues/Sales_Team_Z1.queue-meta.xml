@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <name>Sales Team Z1</name>
+    <queueMembers>
+        <users>
+            <user>ashley.oh@incomlend.com</user>
+            <user>gareth@incomlend.com</user>
+            <user>jack.teh@incomlend.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Task</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>dsfs__DocuSign_Status__c</sobjectType>
+    </queueSobject>
+</Queue>

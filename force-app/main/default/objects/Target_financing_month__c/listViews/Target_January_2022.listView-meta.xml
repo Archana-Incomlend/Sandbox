@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_January_2022</fullName>
+    <columns>NAME</columns>
+    <columns>Sales__c</columns>
+    <columns>Target_New_invoice__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>New_invoice_Value__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>End_Date__c</field>
+        <operation>equals</operation>
+        <value>1/31/2022</value>
+    </filters>
+    <label>Target Jan 2022</label>
+    <sharedTo>
+        <group>Head_of_Department</group>
+    </sharedTo>
+</ListView>

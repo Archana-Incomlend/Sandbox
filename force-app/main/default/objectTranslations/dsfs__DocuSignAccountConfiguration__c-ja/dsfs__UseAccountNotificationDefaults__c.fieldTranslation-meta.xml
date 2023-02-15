@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>リマインダ送信と期限切れの設定を有効にすると、DocuSign For Salesforce のリマインダ送信と期限切れのデフォルト設定を指定できます。これらの設定は、お使いの DocuSign アカウントのリマインダと期限切れのデフォルト設定を上書きします。</help>
+    <label></label>
+    <name>dsfs__UseAccountNotificationDefaults__c</name>
+</CustomFieldTranslation>

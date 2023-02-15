@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_supplier_s_Agent_Commission_amt__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*If( Supplier_s_Agent_Commission_amount__c == 0, 0, 
+If( Contains( Agent_s_fee_type__c, &quot;Part of the supplier discount rate&quot;), Supplier_s_Agent_Commission_amount__c * Actual_total_supplier_discount_amount__c / Total_supplier_discount_amount_expected__c,
+Supplier_s_Agent_Commission_amount__c))*/
+Supplier_s_Agent_Commission_amount__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Actual origination Agent Commission amt</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

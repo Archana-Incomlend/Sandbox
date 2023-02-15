@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COMPANY_FUNDER_To_follow_up</fullName>
+    <columns>NAME</columns>
+    <columns>Additional_Contacts__c</columns>
+    <columns>Company_Name__c</columns>
+    <columns>Country_of_Incorporation_residence__c</columns>
+    <columns>Description__c</columns>
+    <columns>phone_number__c</columns>
+    <columns>Status__c</columns>
+    <columns>Telemarketing_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Source__c</field>
+        <operation>equals</operation>
+        <value>Telemarketing</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Funder Company</value>
+    </filters>
+    <filters>
+        <field>Telemarketing_Status__c</field>
+        <operation>equals</operation>
+        <value>To call back,Email requested</value>
+    </filters>
+    <label>COMPANY FUNDER - To follow up</label>
+</ListView>

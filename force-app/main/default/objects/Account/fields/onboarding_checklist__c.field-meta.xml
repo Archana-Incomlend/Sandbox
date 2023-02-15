@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onboarding_checklist__c</fullName>
+    <externalId>false</externalId>
+    <label>onboarding checklist</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Invitation to register sent</fullName>
+                <default>false</default>
+                <label>Invitation to register sent</label>
+            </value>
+            <value>
+                <fullName>Detailed Application Form started</fullName>
+                <default>false</default>
+                <label>Detailed Application Form started</label>
+            </value>
+            <value>
+                <fullName>Detailed Application Form Submitted</fullName>
+                <default>false</default>
+                <label>Detailed Application Form Submitted</label>
+            </value>
+            <value>
+                <fullName>Passed Pre Screening</fullName>
+                <default>false</default>
+                <label>Passed Pre Screening</label>
+            </value>
+            <value>
+                <fullName>Passed Screening</fullName>
+                <default>false</default>
+                <label>Passed Screening</label>
+            </value>
+            <value>
+                <fullName>Signed Platform T&amp;C</fullName>
+                <default>false</default>
+                <label>Signed Platform T&amp;C</label>
+            </value>
+            <value>
+                <fullName>Passed KYC</fullName>
+                <default>false</default>
+                <label>Passed KYC</label>
+            </value>
+            <value>
+                <fullName>Buyers Setup</fullName>
+                <default>false</default>
+                <label>Buyers Setup</label>
+            </value>
+            <value>
+                <fullName>Signed RPA</fullName>
+                <default>false</default>
+                <label>Signed RPA</label>
+            </value>
+            <value>
+                <fullName>Signed Lenders Agreement</fullName>
+                <default>false</default>
+                <label>Signed Lenders Agreement</label>
+            </value>
+            <value>
+                <fullName>Signed Buyer&apos;s Acknowlegement</fullName>
+                <default>false</default>
+                <label>Signed Buyer&apos;s Acknowlegement</label>
+            </value>
+            <value>
+                <fullName>Insurance Setup</fullName>
+                <default>false</default>
+                <label>Insurance Setup</label>
+            </value>
+            <value>
+                <fullName>passed penny test</fullName>
+                <default>false</default>
+                <label>passed penny test</label>
+            </value>
+            <value>
+                <fullName>Incomlend Approvals</fullName>
+                <default>false</default>
+                <label>Incomlend Approvals</label>
+            </value>
+            <value>
+                <fullName>Trustee Approval</fullName>
+                <default>false</default>
+                <label>Trustee Approval</label>
+            </value>
+            <value>
+                <fullName>exchange.incomlend.com setup</fullName>
+                <default>false</default>
+                <label>exchange.incomlend.com setup</label>
+            </value>
+            <value>
+                <fullName>Signed Agent&apos;s Agreement</fullName>
+                <default>false</default>
+                <label>Signed Agent&apos;s Agreement</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

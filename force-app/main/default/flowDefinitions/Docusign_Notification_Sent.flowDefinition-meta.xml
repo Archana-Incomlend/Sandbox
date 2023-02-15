@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>14</activeVersionNumber>
+    <description>Flow to send notification Mail and Slack when a docusign is completed</description>
+    <masterLabel>Docusign Notification Sent</masterLabel>
+</FlowDefinition>

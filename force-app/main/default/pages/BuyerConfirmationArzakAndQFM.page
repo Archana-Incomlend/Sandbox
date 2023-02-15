@@ -1,0 +1,187 @@
+<apex:page Controller="CombinedNOASaveAsPDF" renderAs="PDF" cache="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" showHeader="false" sidebar="false">
+    <head>
+        <style type="text/css" media="print">
+           
+            @page {
+                @top-center {
+                    content: element(header);
+                }
+                @bottom-left {
+                    content: element(footer);
+                }
+            }
+            div.header {
+                padding: 20px;
+                position: running(header);
+                font-family: sans-serif; font-size: 9pt;
+            }
+            div.footer {
+                display: block;
+                padding-top: 5px;
+                padding-bottom: 10px;
+                padding-right: 10px;
+                padding-left: 10px;
+                position: running(footer);
+                font-family: sans-serif; font-size: 6pt;
+            }
+            .pagenumber:before {
+                content: counter(page);
+            }
+            .pagecount:before {
+                content: counter(pages);
+            }
+            div.content {
+                padding-top: 50px;
+                font-family: sans-serif; 
+                font-size: 10pt;
+            }
+            
+            ol { list-style-type: decimal; }
+        </style>
+    </head>
+    <body>
+    <div style="font-family: Calibri">
+        <div class="header">
+            <div style="float:left;">
+                <apex:image id="image1" url="{!imageURL}" alt="Incomlend Logo" title="Incomlend Logo" height="70" width="300"/>
+            </div>
+            <div style="float:right;">
+                Company Registration No : 201600941W<br/>
+            </div>
+        </div>
+        <div class="footer">
+            <!--<div>Page <span class="pagenumber"/> of <span class="pagecount"/></div>-->
+        </div>
+        <div class="content">
+            <center>
+                <h3>
+                    Buyer Confirmation
+                </h3>
+            </center>
+            <p>
+                Date: <apex:outputText value=" {0,date,MM/dd/YYYY}"> <apex:param value="{!Today()}" /> </apex:outputText>
+            </p>
+            <p>
+                <apex:outputText value="{!objSupplierBuyerMap.Buyer_Name__c}"> </apex:outputText>
+            </p>
+            <p>
+                <apex:outputField value=" {!objSupplierBuyerMap.Buyer__r.buyer_full_address__c}"> </apex:outputField>
+            </p>
+            <p>
+                <b>(hereinafter known as « Buyer »)</b> <br/>
+            </p>
+            <p>
+                and
+            </p>
+            <p>
+                <apex:outputText value=" {!objSupplierBuyerMap.Supplier_name__c} "> </apex:outputText>
+            </p>
+            <p>
+                <apex:outputField value=" {!objSupplierBuyerMap.Supplier__r.Full_billing_Address__c}"> </apex:outputField>
+            </p>
+            <p>
+                <b>(hereinafter known as « Seller »)</b> <br/>
+            </p>
+            
+            
+            <Table style="border-style: solid;border-collapse: collapse; margin-left: 6.16998pt" cellspacing="0" width="95%">
+                <tr>
+                    <th width="16.66%" style="border-style: solid;background-color:#D3D3D3;text-align:center;">
+                        Purchase Order
+                    </th>
+                    <th width="16.66%" style="border-style: solid;background-color:#D3D3D3;text-align:center;">
+                        Invoice No.
+                    </th>
+                    
+                    <th width="16.66%" style="border-style: solid;background-color:#D3D3D3;text-align:center;">
+                        Amount USD
+                    </th>
+                    
+                    <th width="16.66%" style="border-style: solid;background-color:#D3D3D3;text-align:center;">
+                        Due Date
+                    </th>
+                    <th width="16.66%" style="border-style: solid;background-color:#D3D3D3;text-align:center;">
+                        Bill of Lading No.
+                    </th>
+                </tr>
+                <apex:repeat value="{!lstSelectedInvoice}" var="invoice">
+                    <tr>
+                        <td width="16.66%" style="border-style: solid;text-align:center;">
+                            <apex:outputField value="{!invoice.buyer_purchase_order_reference__c}"/>
+                        </td>
+                        <td width="16.66%" style="border-style: solid;text-align:center;">
+                            <apex:outputField value="{!invoice.supplier_invoice_reference_number__c}"/>
+                        </td>
+                        <td width="16.66%" style="border-style: solid;text-align:center;">
+                            <apex:outputField value="{!invoice.Real_Face_Value__c}"/>
+                        </td>
+                        
+                        <td width="16.66%" style="border-style: solid;text-align:center;">
+                            <apex:outputField value="{!invoice.Due_Date__c}"/>
+                        </td>
+                        <td width="16.66%" style="border-style: solid;text-align:center;">
+                            <apex:outputField value="{!invoice.Bill_of_Lading_No__c}"/>
+                        </td>
+                    </tr>
+                </apex:repeat>
+                <tr>
+                    <td colspan="5" style="border-style: solid;text-left;">
+                        <p>
+                            With this Receipt, it is hereby acknowledges as under:
+                        </p>
+                        <p>
+                            <ol>
+                                <li>
+                                    That the order for the named goods as mentioned in the invoice are made by <apex:outputText value=" {!objSupplierBuyerMap.Buyer_Name__c} "> </apex:outputText>
+                                </li>
+                                
+                                <li>
+                                    That an amount of $( {!decTotalFaceValue} ) remains outstanding and payable on the invoice as an absolute and whole debt.
+                                </li>
+                                
+                                <li>
+                                    Notwithstanding any agreement to the contrary, it is hereby further acknowledges to make any / all payments in respect of the above referenced Seller Invoice(s) and any set-off rights against (<apex:outputText value=" {!objSupplierBuyerMap.Buyer_Name__c} "> </apex:outputText>) shall be terminated.
+                                </li>
+                                <li>
+                                    That it is further acknowledged that the named goods are absent of aby credit / debit notes applicable to this invoice(s) and the buyer is fully aware of the content and intent of this letter which will be having a force of an agreement, and it shall remain in full force and effect until the repayment of all the invoice(s).
+                                </li>
+                                
+                                <li>
+                                    It is agreed to perform, execute, acknowledge, and deliver or cause to be performed, executed, acknowledged, and delivered all such further and other acts, instruments and assurance as may be reasonably required by Incomlend Pte Ltd for carrying out and achieving the objective of this letter.
+                                </li>
+                                
+                                <li>
+                                    In the event of any dispute arising after, or of which Incomlend Pte Ltd is notified after, the financing of and/or assignment of any invoice by Incomlend Pte Ltd, Incomlend has full right to obtain legal action for the recovery of the receivable. 
+                                </li> 
+                                <li>
+                                    It is hereby agreed to pay the above listed Seller invoice(s) to the following account:<br/>
+                                    <i>
+                                       <apex:outputField value="{!lstSelectedInvoice[0].Bank_Information_for_Payment__c}"/> 
+                                    </i><br/>
+                                </li> 
+                            </ol>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <div id="div1" style="page-break-before: always;"></div>
+            <br /><br /><br /><br />
+            <p>
+                Received and Accepted By (signature):  
+            </p>
+            <p>
+                Print Name: 
+            </p>
+            <p>
+                Company: <apex:outputText value=" {!objSupplierBuyerMap.Buyer_Name__c}"> </apex:outputText>
+            </p>
+            <p>
+                Date:
+            </p>
+           <p>
+                Title:
+            </p>
+        </div>
+    </div>
+    </body>
+</apex:page>

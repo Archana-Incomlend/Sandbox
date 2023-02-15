@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <description>Flos for Maintenance invoice</description>
+    <interviewLabel>INVOICE flow Maintenance {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>INVOICE flow Maintenance</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>get_invoice</name>
+        <label>get invoice</label>
+        <locationX>276</locationX>
+        <locationY>61</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>update_invoice</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Phase__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>3:IN PROGRESS</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>invoiceID</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>invoice_finance_deal__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Overdue_sSupplier_discount_rate__c</queriedFields>
+        <queriedFields>Total_Supplier_Discount__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>update_invoice</name>
+        <label>update invoice</label>
+        <locationX>586</locationX>
+        <locationY>59</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Phase__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>3:IN PROGRESS</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Overdue_sSupplier_discount_rate__c</field>
+            <value>
+                <elementReference>lookupinvoicee.Total_Supplier_Discount__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>invoice_finance_deal__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>45</locationX>
+        <locationY>60</locationY>
+        <connector>
+            <targetReference>get_invoice</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>invoiceID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>lookupinvoicee</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>invoice_finance_deal__c</objectType>
+    </variables>
+    <variables>
+        <name>Supplierdiscountrate2</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+</Flow>

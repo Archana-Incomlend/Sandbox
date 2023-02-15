@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Minimum_Spread</fullName>
+    <active>false</active>
+    <description>Minimum Spread of 0.1 between Supplier rate and Funder Rate</description>
+    <errorConditionFormula>Spread_invoice__c  &lt;=  0.001</errorConditionFormula>
+    <errorDisplayField>discount_rate__c</errorDisplayField>
+    <errorMessage>the Funder Discount rate is to high , increase the Supplier Discount Rate or Decrease the Funder discount Rate.</errorMessage>
+</ValidationRule>

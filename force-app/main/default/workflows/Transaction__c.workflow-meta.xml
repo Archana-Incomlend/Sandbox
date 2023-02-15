@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>New_Deposit</fullName>
+        <ccEmails>operations@incomlend.com</ccEmails>
+        <description>New Deposit</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Funder_First_contact_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/Purchaser_33_A2_First_funds_received_French_HTML_SF</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Udapte_Crystallized_value_of_e_wallet</fullName>
+        <field>Value_E_wallet_after_transaction_created__c</field>
+        <formula>eWallet__r.Balance__c</formula>
+        <name>Udapte Crystallized value of e-wallet</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_email</fullName>
+        <field>Funder_First_contact_Email__c</field>
+        <formula>Account__r.Primary_Contact__r.Email</formula>
+        <name>Update email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_type_transaction</fullName>
+        <description>Update with 06.transaction fee</description>
+        <field>Type__c</field>
+        <literalValue>06.Transaction Fee</literalValue>
+        <name>Update type transaction</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>transactions_archiving</fullName>
+        <description>Archive past transactions of Incomlend Operation eWallet</description>
+        <field>isArchived__c</field>
+        <literalValue>1</literalValue>
+        <name>transactions archiving</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_SGD_amount</fullName>
+        <field>Amount_SGD_equiv__c</field>
+        <formula>amount_USD_equiv__c * 1 / Account__r.Marketplace_for_SGD_FX_rate__r.latest_to_usd_rate__c</formula>
+        <name>update SGD amount</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Maintenance transaction</fullName>
+        <actions>
+            <name>Update_type_transaction</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Transaction__c.Type__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Update des transaction dont le type est vide et drevait etre 06.transaction fee</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Customer Email in Transaction</fullName>
+        <actions>
+            <name>Update_email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Filed update for Customer email (funder) when the transaction is created or edited</description>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update e-wallet trustee</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Transaction__c.eWallet_Trustee_TXT__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update e-wallet value filed when transaction is created</fullName>
+        <actions>
+            <name>Udapte_Crystallized_value_of_e_wallet</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Transaction__c.Amount__c</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>to keep a crystallised value of e-wallet when transaction is created</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>isToBeArchived</fullName>
+        <actions>
+            <name>transactions_archiving</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>1=1</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>update SGD amount</fullName>
+        <actions>
+            <name>update_SGD_amount</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Transaction__c.Amount__c</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

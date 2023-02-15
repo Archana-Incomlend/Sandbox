@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>eWallet_Trustee__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <externalId>false</externalId>
+    <label>eWallet Trustee</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <filterItems>
+            <field>$Source.Account__c</field>
+            <operation>equals</operation>
+            <valueField>eWallet_Trustee__c.Account__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.CCY__c</field>
+            <operation>equals</operation>
+            <valueField>eWallet_Trustee__c.CCY__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.Trustee__c</field>
+            <operation>equals</operation>
+            <valueField>eWallet_Trustee__c.Trustee__c</valueField>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>eWallet_Trustee__c</referenceTo>
+    <relationshipLabel>Transactions</relationshipLabel>
+    <relationshipName>Transactions</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

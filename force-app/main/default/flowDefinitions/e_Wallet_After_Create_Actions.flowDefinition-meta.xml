@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>5</activeVersionNumber>
+    <description>Migrated Process Builder to Flow.
+1. TRUSTEE create e-wallet trustee</description>
+    <masterLabel>Migrate eWallet - After Create Actions</masterLabel>
+</FlowDefinition>

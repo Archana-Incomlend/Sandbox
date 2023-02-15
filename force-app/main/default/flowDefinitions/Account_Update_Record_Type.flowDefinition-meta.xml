@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Flow Migration from Workflows
+1. External View Account activation
+2. Supplier External View desactivation
+3. Buyer View desactivation</description>
+    <masterLabel>In-Active Migrate Account - Update Record Type</masterLabel>
+</FlowDefinition>

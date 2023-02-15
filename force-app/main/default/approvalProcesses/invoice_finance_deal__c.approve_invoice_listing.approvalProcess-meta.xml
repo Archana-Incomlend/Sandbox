@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Invoice_name__c</field>
+        <field>invoice_amount__c</field>
+        <field>CCY__c</field>
+        <field>Invoice_date__c</field>
+        <field>internal_validation_notes__c</field>
+        <field>Approval_Needed_Reason__c</field>
+        <field>Total_Supplier_Discount__c</field>
+        <field>discount_rate__c</field>
+        <field>Spread_invoice__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>mel.dinh@incomlend.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Step 1</label>
+        <name>Step_1</name>
+    </approvalStep>
+    <description>When the funding team put the funder rate they ask for approval to Morgan and Mathieu</description>
+    <emailTemplate>Incomlend_emails/invoice_verification_exception</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.RecordType</field>
+            <operation>notEqual</operation>
+            <value>Passthrough Record</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Total_Supplier_Discount__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.discount_rate__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Spread_invoice__c</field>
+            <operation>greaterThan</operation>
+            <value>0.05</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>update_floating_rate</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>approve invoice listing</label>
+    <processOrder>1</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apexPluginCalls>
+        <name>Send_Email</name>
+        <label>Send Email</label>
+        <locationX>810</locationX>
+        <locationY>647</locationY>
+        <apexClass>sendHTMLEmailPlugin</apexClass>
+        <connector>
+            <targetReference>Operation_succeeded</targetReference>
+        </connector>
+        <inputParameters>
+            <name>BCC Email Addresses (comma-separated)</name>
+            <value>
+                <stringValue>operations@incomlend.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>htmlBody</name>
+            <value>
+                <elementReference>EmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Other Emails (comma-separated)</name>
+            <value>
+                <elementReference>Contact.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Save As Activity</name>
+            <value>
+                <stringValue>true</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Sender Address</name>
+            <value>
+                <stringValue>operations@incomlend.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Sender Display Name</name>
+            <value>
+                <stringValue>Operations Team</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Subject</name>
+            <value>
+                <elementReference>EmailTitle</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Target Object Id</name>
+            <value>
+                <elementReference>Contact.Id</elementReference>
+            </value>
+        </inputParameters>
+    </apexPluginCalls>
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>Does_Invoice_Require_Reminder</name>
+        <label>Does Invoice Require Reminder</label>
+        <locationX>212</locationX>
+        <locationY>308</locationY>
+        <defaultConnector>
+            <targetReference>Lookup_Buyer</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>No_Invoice_Not_InProgress</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Invoice.Phase__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>3:IN PROGRESS</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Cannot_send_an_email_reminder</targetReference>
+            </connector>
+            <label>No - Invoice Not InProgress</label>
+        </rules>
+        <rules>
+            <name>No_Reminder_Not_Required</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>DaysBeforeDueDate</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>7.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Invoice.Phase__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3:IN PROGRESS</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Are_you_sure_reminder_not_required</targetReference>
+            </connector>
+            <label>No - Reminder Not Required</label>
+        </rules>
+        <rules>
+            <name>No_Reminder_Already_Sent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Invoice.Last_sent_re_payment_reminder_email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Invoice.Phase__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3:IN PROGRESS</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Are_you_sure_reminder_already_sent</targetReference>
+            </connector>
+            <label>No - Reminder Already Sent</label>
+        </rules>
+    </decisions>
+    <description>version with Email Template This flow sends the payment reminder email to the Buyer - version 2 working but generating error message
+update the amount of invoice by real face value</description>
+    <formulas>
+        <name>DaysBeforeDueDate</name>
+        <dataType>Number</dataType>
+        <expression>{!Invoice.Due_Date__c} -  {!$Flow.CurrentDate}</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Email Buyer Invoice Payment Reminder {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>Email Buyer Invoice Payment Reminder</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Lookup_Buyer</name>
+        <label>Lookup Buyer</label>
+        <locationX>228</locationX>
+        <locationY>515</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Lookup_Contact</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SupplierBuyerMap.Buyer__c</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputReference>Buyer</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Primary_Contact__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Lookup_Contact</name>
+        <label>Lookup Contact</label>
+        <locationX>228</locationX>
+        <locationY>648</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Lookup_Supplier</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Buyer.Primary_Contact__c</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+        <outputReference>Contact</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>FirstName</queriedFields>
+        <queriedFields>LastName</queriedFields>
+        <queriedFields>Email</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Gathers all the required invoice information</description>
+        <name>Lookup_Invoice</name>
+        <label>Lookup Invoice</label>
+        <locationX>49</locationX>
+        <locationY>169</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Lookup_Supplier_Buyer_Map</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>InvoiceID</elementReference>
+            </value>
+        </filters>
+        <object>invoice_finance_deal__c</object>
+        <outputReference>Invoice</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Invoice_name__c</queriedFields>
+        <queriedFields>invoice_amount__c</queriedFields>
+        <queriedFields>CCY__c</queriedFields>
+        <queriedFields>Phase__c</queriedFields>
+        <queriedFields>Due_Date__c</queriedFields>
+        <queriedFields>Expected_Payment_Date__c</queriedFields>
+        <queriedFields>Last_sent_re_payment_reminder_email__c</queriedFields>
+        <queriedFields>Supplier_Buyer_Map__c</queriedFields>
+        <queriedFields>Real_Face_Value__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Lookup_Supplier</name>
+        <label>Lookup Supplier</label>
+        <locationX>371</locationX>
+        <locationY>648</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Are_you_sure_send_email</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SupplierBuyerMap.Supplier__c</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputReference>Supplier</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Lookup_Supplier_Buyer_Map</name>
+        <label>Lookup Supplier Buyer Map</label>
+        <locationX>50</locationX>
+        <locationY>306</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Invoice_Require_Reminder</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Invoice.Supplier_Buyer_Map__c</elementReference>
+            </value>
+        </filters>
+        <object>Supplier_Buyer_Map__c</object>
+        <outputReference>SupplierBuyerMap</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Supplier__c</queriedFields>
+        <queriedFields>Buyer__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_last_sent_re_payment_reminder_email</name>
+        <label>Update last sent re-payment reminder email</label>
+        <locationX>657</locationX>
+        <locationY>646</locationY>
+        <connector>
+            <targetReference>Send_Email</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>InvoiceID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Last_sent_re_payment_reminder_email__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <object>invoice_finance_deal__c</object>
+    </recordUpdates>
+    <screens>
+        <name>Are_you_sure_reminder_already_sent</name>
+        <label>Are you sure?</label>
+        <locationX>819</locationX>
+        <locationY>323</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Lookup_Buyer</targetReference>
+        </connector>
+        <fields>
+            <name>ReminderAlreadySent</name>
+            <fieldText>A reminder email has already been sent. Are you sure?
+
+Invoice: {!Invoice.Invoice_name__c}
+Due Date: {!Invoice.Due_Date__c}
+Last Sent Re-Payment Reminder Email: {!Invoice.Last_sent_re_payment_reminder_email__c}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Are_you_sure_reminder_not_required</name>
+        <label>Are you sure?</label>
+        <locationX>386</locationX>
+        <locationY>143</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Lookup_Buyer</targetReference>
+        </connector>
+        <fields>
+            <name>ReminderNotRequired</name>
+            <fieldText>A reminder email is not required yet. Are you sure?
+
+Invoice: {!Invoice.Invoice_name__c}
+Due Date: {!Invoice.Due_Date__c}
+Days before Due Date: {!DaysBeforeDueDate}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Are_you_sure_send_email</name>
+        <label>Are you sure?</label>
+        <locationX>524</locationX>
+        <locationY>648</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Update_last_sent_re_payment_reminder_email</targetReference>
+        </connector>
+        <fields>
+            <name>Reminder</name>
+            <fieldText>You&apos;re about to send a reminder email. Are you sure?
+
+Invoice: {!Invoice.Invoice_name__c}
+Due Date: {!Invoice.Due_Date__c}
+Days before Due Date: {!DaysBeforeDueDate}
+Due Amount: {!Invoice.CCY__c} {!Invoice.invoice_amount__c}
+Supplier: {!Supplier.Name}
+Buyer: {!Buyer.Name}
+Buyer Contact Name: {!Contact.FirstName} {!Contact.LastName}
+Buyer Contact Email: {!Contact.Email}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Cannot_send_an_email_reminder</name>
+        <label>Cannot send an email reminder !</label>
+        <locationX>220</locationX>
+        <locationY>138</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>InvoiceNotInProgress</name>
+            <fieldText>Invoice&apos;s phase is not &quot;In Progress&quot;. Process aborted.
+
+Invoice: {!Invoice.Invoice_name__c}
+Current Phase: {!Invoice.Phase__c}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Operation_succeeded</name>
+        <label>Operation succeeded</label>
+        <locationX>957</locationX>
+        <locationY>654</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>email_sent</name>
+            <fieldText>Re-payment reminder email has been sent:</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>email_body</name>
+            <fieldText>{!EmailBody}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Lookup_Invoice</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <textTemplates>
+        <name>EmailBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;DIV ALIGN=&quot;LEFT&quot;&gt;
+    &lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:2px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;IMG SRC=&quot;https://incomlend--c.ap2.content.force.com/servlet/servlet.ImageServer?id=01528000002r2ag&amp;oid=00D28000001bV5p&quot;&gt;&lt;/FONT&gt;
+&lt;/DIV&gt;
+&lt;BR /&gt;
+
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;
+    &lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Dear {!Contact.FirstName},&lt;/FONT&gt;
+&lt;/DIV&gt;
+&lt;BR /&gt;
+
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;
+    &lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;We are writing to advise you that the invoice #{!Invoice.Invoice_name__c} of amount {!Invoice.CCY__c} {!Invoice.Real_Face_Value__c} issued by {!Supplier.Name} is reaching its due date on {!Invoice.Due_Date__c}.&lt;/FONT&gt;
+&lt;/DIV&gt;
+&lt;BR /&gt;
+
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;
+    &lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Kindly make payment on or before due date to:&lt;/FONT&gt;
+&lt;/DIV&gt;
+&lt;BR /&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;
+    &lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;b&gt;Bank name:&lt;/b&gt; DBS Singapore&lt;/FONT&gt;
+&lt;/DIV&gt;
+&lt;BR /&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;
+    &lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;b&gt;Beneficiary name/Account name:&lt;/b&gt; AMICORP TRUSTEES – Incomlend PL Buyer&lt;/FONT&gt;
+&lt;/DIV&gt;
+&lt;BR /&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;
+    &lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;b&gt;A/C #:&lt;/b&gt; 003-956034-6  (applies to all currencies)&lt;/FONT&gt;
+&lt;/DIV&gt;
+&lt;BR /&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;
+    &lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;b&gt;SWIFT:&lt;/b&gt; DBSSSGSG&lt;/FONT&gt;
+&lt;/DIV&gt;
+&lt;BR /&gt;
+&lt;BR /&gt;
+
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;
+    &lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Kind regards,&lt;/FONT&gt;
+&lt;/DIV&gt;
+&lt;BR /&gt;
+&lt;DIV ALIGN=&quot;LEFT&quot;&gt;
+    &lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;The Incomlend team&lt;/FONT&gt;
+&lt;/DIV&gt;
+&lt;BR /&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailTitle</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>Incomlend - Invoice #{!Invoice.Invoice_name__c} - Due date: {!Invoice.Due_Date__c}</text>
+    </textTemplates>
+    <variables>
+        <name>Buyer</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>Contact</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>EmailMessage</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>EmailMessage</objectType>
+    </variables>
+    <variables>
+        <name>EmailMessageID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Gathered information about the invoice on which send the reminder to</description>
+        <name>Invoice</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>invoice_finance_deal__c</objectType>
+    </variables>
+    <variables>
+        <description>InvoiceID parameter - passed through this flow - on which the reminder is sent</description>
+        <name>InvoiceID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>Supplier</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>SupplierBuyerMap</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Supplier_Buyer_Map__c</objectType>
+    </variables>
+</Flow>

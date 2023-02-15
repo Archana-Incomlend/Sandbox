@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <name>Check_for_the_Funders_email_notification</name>
+        <label>Check for the Funders email notification</label>
+        <locationX>182</locationX>
+        <locationY>278</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_the_Suppliers_Email_Notification</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Email_to_Funders</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Email_Funders_for_Invoice_Paid_Repayment</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Email_Supplier_Subflow</targetReference>
+            </connector>
+            <label>Send Email to Funders</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_for_the_Suppliers_Email_Notification</name>
+        <label>Check for the Suppliers Email Notification</label>
+        <locationX>182</locationX>
+        <locationY>614</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Email_to_Suppliers</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Email_Suppliers_for_Invoice_Paid_Repayment</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Email_Funders</targetReference>
+            </connector>
+            <label>Send Email to Suppliers</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Send Email - Invoice Paid - Repayment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send Email - Invoice Paid - Repayment</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Invoice_Paid_Repayment_Email_Options</name>
+        <label>Invoice Paid - Repayment Email Options</label>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Check_for_the_Funders_email_notification</targetReference>
+        </connector>
+        <fields>
+            <name>Email_Funders_for_Invoice_Paid_Repayment</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Email Funders for Invoice Paid - Repayment</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Email_Suppliers_for_Invoice_Paid_Repayment</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Email Suppliers for Invoice Paid - Repayment</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Invoice_Paid_Repayment_Email_Options</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Email_Funders</name>
+        <label>Email Funders</label>
+        <locationX>50</locationX>
+        <locationY>734</locationY>
+        <flowName>Email_Funder_Invoice_Repayment_Subflow</flowName>
+        <inputAssignments>
+            <name>invoiceid</name>
+            <value>
+                <elementReference>InvoiceId</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>Email_Supplier_Subflow</name>
+        <label>Email Supplier - Subflow</label>
+        <locationX>50</locationX>
+        <locationY>398</locationY>
+        <connector>
+            <targetReference>Check_for_the_Suppliers_Email_Notification</targetReference>
+        </connector>
+        <flowName>Email_Supplier_invoice_paid_subflow</flowName>
+        <inputAssignments>
+            <name>invoiceid</name>
+            <value>
+                <elementReference>InvoiceId</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <variables>
+        <name>InvoiceId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,122 @@
+<apex:page standardController="invoice_finance_deal__c" recordSetVar="sc" extensions="SendBuyerConfirmationInvoice" action="{!populateTemplate}" lightningStylesheets="true" cache="false">
+    <apex:sectionHeader title="Task" subtitle="Send an Email"/>
+
+    <style>
+        .boldText {
+            font-weight:bold;
+        }
+        .labelText {
+            font-weight:bold;
+            display:inline-block;
+            text-align:right;
+        }
+        .wideTextArea {
+            width:400px;
+        }
+        .mediumTextField {
+            width:200px;
+        }
+        .longTextField {
+            width:400px;
+        }
+        .extraDeepTextArea {
+            width:90%;
+            height:200px;
+        }
+
+    </style>
+    <apex:form >
+        <apex:pageMessages id="pageMessages" />
+        <apex:pageBlock id="dataSection">
+            <apex:pageBlockSection title="Edit Email" id="pbEmail" collapsible="false" columns="1">
+                <apex:panelGrid columns="2" cellpadding="5%" cellspacing="5%" width="100%">
+
+                    <apex:outputLabel styleClass="labelText">To</apex:outputLabel>
+                    <apex:inputText id="idRecipient" styleClass="longTextField" required="true"
+                        value="{!emailMsg.ToAddress}"/>
+
+                    <apex:outputLabel styleClass="labelText">From</apex:outputLabel>
+                    <apex:outputLabel id="idSender" value="{!emailMsg.FromAddress}"
+                        styleClass="longTextField"/>
+
+                    <apex:outputLabel styleClass="labelText">Related To</apex:outputLabel>
+                    <apex:outputField value="{!emailMsg.Subject}"/>
+
+                    <apex:outputLabel styleClass="labelText">Additional To:</apex:outputLabel>
+                    <apex:inputTextarea id="idAddlRecipients" styleClass="wideTextArea" value="{!addlRecipients}"/>
+
+                    <apex:outputLabel styleClass="labelText">CC:</apex:outputLabel>
+                    <apex:inputTextarea id="idCcRecipients" styleClass="wideTextArea"                       
+                        value="{!emailMsg.CcAddress}"/>
+
+                    <apex:outputLabel styleClass="labelText">BCC:</apex:outputLabel>
+                    <apex:inputTextarea id="idBccRecipients" styleClass="wideTextArea"                      
+                        value="{!emailMsg.BccAddress}"/>
+
+                    <apex:outputLabel styleClass="labelText">Subject:</apex:outputLabel>
+                    <apex:inputText id="idSubject" required="true" styleClass="longTextField" 
+                        value="{!emailMsg.Subject}"/>
+
+                    <apex:outputLabel styleClass="labelText">Body:</apex:outputLabel>
+                    <apex:inputTextarea id="idBody" value="{!emailMsg.TextBody}" richText="true" rows="50"/>
+
+                </apex:panelGrid>
+            </apex:pageBlockSection>
+            </apex:pageBlock>
+        
+            <apex:pageBlock >
+            <apex:outputPanel id="opAttachments">
+            <apex:pageBlockSection title="Invoice Attachments" collapsible="False" columns="1" ID="pbAttachments">
+                <!--<apex:pageBlockTable value="{!Attachments}" var="objWrapperAttachment" first="{!offset}" rows="{!PageSize}">
+                    <apex:column title="Invoice #" value="{!objWrapperAttachment.objAttachment.Parent.Name}">
+                    </apex:column>
+                    <apex:column title="Name" value="{!objWrapperAttachment.objAttachment.Name}">
+                    </apex:column>
+                    <apex:column title="Action">
+                        <apex:commandLink value="Delete" action="{!DeleteAttachments}" ReRender="opAttachments">
+                            <apex:param name="strAttachmentId" value="{!objWrapperAttachment.objAttachment.Id}" assignTo="{!strAttachmentId}"/>
+                        </apex:commandLink>
+                    </apex:column>
+                </apex:pageBlockTable>-->
+                <apex:pageBlockTable id="tableAccounts" 
+                            value="{!Paging.allAttachments}" 
+                            var="objWrapperAttachment"
+                            first="{!Paging.offset}"
+                            rows="{!Paging.PageSize}">
+
+                            <apex:column title="Invoice #" value="{!objWrapperAttachment.objAttachment.Parent.Name}">
+                            </apex:column>
+                            <apex:column title="Name" value="{!objWrapperAttachment.objAttachment.Name}">
+                            </apex:column>
+                            <apex:column >
+                                <apex:commandLink value="Delete" action="{!DeleteAttachments}" ReRender="opAttachments">
+                                    <apex:param name="strAttachmentId" value="{!objWrapperAttachment.objAttachment.Id}" assignTo="{!strAttachmentId}"/>
+                                </apex:commandLink>
+                            </apex:column>
+                        </apex:pageBlockTable>
+
+                        <c:PagingToolbar paging="{!Paging}" rerender="tableAccounts" />
+            </apex:pageBlockSection>
+            
+            </apex:outputPanel>
+        </apex:pageBlock>
+        
+    </apex:form>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection collapsible="false" columns="2" title="Upload new file">
+            <apex:repeat value="{!lstNewAttachments}" var="objAtt">
+                <apex:outputLabel styleClass="labelText">Attach File</apex:outputLabel>
+                <apex:inputFile value="{!objAtt.body}" filename="{!objAtt.name}"/>
+            </apex:repeat>
+            
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <center>
+            <apex:commandButton value="Send" action="{!send}"/>
+            <apex:commandButton value="Cancel" action="{!cancel}" immediate="true" />
+        </center>
+    </apex:form>
+        
+        
+</apex:page>

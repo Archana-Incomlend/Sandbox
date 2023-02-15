@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Scanbox_Result__c</name>
+    <picklistValues>
+        <masterLabel>Clean</masterLabel>
+        <translation>Nettoyer</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grayware</masterLabel>
+        <translation>Grayware</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Infected</masterLabel>
+        <translation>Infecté(s)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Suspected</masterLabel>
+        <translation>Suspect(s)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unknown</masterLabel>
+        <translation>Inconnu</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Whitelisted</masterLabel>
+        <translation>Liste blanche</translation>
+    </picklistValues>
+</CustomFieldTranslation>

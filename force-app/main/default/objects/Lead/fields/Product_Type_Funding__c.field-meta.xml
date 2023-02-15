@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Type_Funding__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Type of investment Product they provide</inlineHelpText>
+    <label>Product Type Funding</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Product_type_Funding</valueSetName>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

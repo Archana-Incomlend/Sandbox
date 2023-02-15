@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Termsheet_Approved_By_Sales_Head__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This to use in approval process and validate before sending an Termsheet to client</description>
+    <externalId>false</externalId>
+    <label>Termsheet Approved By Sales Head</label>
+    <type>Checkbox</type>
+</CustomField>

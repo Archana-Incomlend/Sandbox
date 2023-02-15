@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BNL_Signed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When the BNL is signed , the box must be ticked</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When the BNL is signed , the box must be ticked</inlineHelpText>
+    <label>BNL Signed</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

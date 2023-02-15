@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>与通过 DocuSign 发送时的收件人角色值对应的收件人角色名称。</help>
+    <label></label>
+    <name>dsfs__DefaultRoleValues__c</name>
+</CustomFieldTranslation>

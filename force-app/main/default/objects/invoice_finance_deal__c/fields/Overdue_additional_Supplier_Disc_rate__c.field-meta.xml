@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Overdue_additional_Supplier_Disc_rate__c</fullName>
+    <description>additional % on supplier discount rate in case of overdue</description>
+    <externalId>false</externalId>
+    <formula>(Supplier_Buyer_Map__r.Overdue_Supplier_discount_rate__c -  Total_Supplier_Discount__c )/30</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>additional % on supplier discount rate in case of overdue</inlineHelpText>
+    <label>Overdue Supplier Disc rate /day</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

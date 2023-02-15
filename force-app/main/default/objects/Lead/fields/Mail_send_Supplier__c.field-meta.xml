@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mail_send_Supplier__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Mail CL approved send , automatic form a wrokflow rules</description>
+    <externalId>false</externalId>
+    <inlineHelpText>when the mail for CL approved has been sent to the supplier</inlineHelpText>
+    <label>Mail CL send Supplier</label>
+    <type>Checkbox</type>
+</CustomField>

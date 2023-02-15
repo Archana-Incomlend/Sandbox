@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funder_agent_list</fullName>
+    <columns>NAME</columns>
+    <columns>phone_number__c</columns>
+    <columns>Description__c</columns>
+    <columns>Status__c</columns>
+    <columns>Comments__c</columns>
+    <columns>First_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Broker</value>
+    </filters>
+    <filters>
+        <field>Broker_Type__c</field>
+        <operation>equals</operation>
+        <value>Funder Agent – Financial Adviser</value>
+    </filters>
+    <label>Funder agent list - Financial advisors</label>
+</ListView>

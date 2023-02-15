@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>invoice_finance_deal__c</entityName>
+    <fieldName>Phase__c</fieldName>
+    <masterLabel>Invoice Finance Deal 2</masterLabel>
+    <recordTypeName>Auction_Product</recordTypeName>
+</PathAssistant>

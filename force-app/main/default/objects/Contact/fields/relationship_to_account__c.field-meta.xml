@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>relationship_to_account__c</fullName>
+    <externalId>false</externalId>
+    <label>relationship to account</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>employee</fullName>
+                <default>false</default>
+                <label>employee</label>
+            </value>
+            <value>
+                <fullName>director</fullName>
+                <default>false</default>
+                <label>director</label>
+            </value>
+            <value>
+                <fullName>shareholder (ubo)</fullName>
+                <default>false</default>
+                <label>shareholder (ubo)</label>
+            </value>
+            <value>
+                <fullName>consultant</fullName>
+                <default>false</default>
+                <label>consultant</label>
+            </value>
+            <value>
+                <fullName>Personal Account</fullName>
+                <default>false</default>
+                <label>Personal Account</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

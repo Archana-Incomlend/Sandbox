@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <description>Migrated from the workflow - Send Slack when funder feedback positive</description>
+    <environments>Default</environments>
+    <interviewLabel>Migrate Supplier Buyer Map - Send Slack when funder feedback positive {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Supplier Buyer Map - Send Slack when funder feedback positive</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Slack_when_funder_feeback_positive</targetReference>
+        </connector>
+        <filterFormula>!{!$Setup.ICL_Settings__c.Disable_Migrate_Flow__c} &amp;&amp; ISPICKVAL({!$Record.map_onboarding_stage__c}, &apos;05.Funders feedback Positive&apos;)  &amp;&amp; ISCHANGED({!$Record.map_onboarding_stage__c})</filterFormula>
+        <object>Supplier_Buyer_Map__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Send_Slack_when_funder_feeback_positive</name>
+        <label>Send_Slack_when_funder_feeback_positive</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <flowName>Send_Slack_when_funder_feeback_positive</flowName>
+        <inputAssignments>
+            <name>mapId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>Is_New</name>
+        <label>Is New</label>
+        <locationX>517</locationX>
+        <locationY>361</locationY>
+        <defaultConnector>
+            <targetReference>Update_Customer_Email2</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_New2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Alloc_Applied_Fund_Disc_Prof_Share_Pct</targetReference>
+            </connector>
+            <label>Is New</label>
+        </rules>
+    </decisions>
+    <description>Migrated workflows to Flow.
+1. Update Customer Email (plus one extra)
+2. Applied Funder Discount Profit Share Pct</description>
+    <formulas>
+        <name>CustomerEmail</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Funder__r.Primary_Contact__r.Email}</expression>
+    </formulas>
+    <formulas>
+        <name>CustomerEmail2</name>
+        <dataType>String</dataType>
+        <expression>If( Contains( {!CustomerEmail}, &quot;@aditumim.com&quot;), &quot;sfi@aditumim.com&quot;, null)</expression>
+    </formulas>
+    <formulas>
+        <name>FunderProfitShare</name>
+        <dataType>Number</dataType>
+        <expression>If( IsPickVal({!$Record.CCY__c}, &apos;USD&apos;), {!$Record.Funder__r.Discount_Profit_Share_Percent_USD__c},
+If( IsPickVal({!$Record.CCY__c}, &apos;EUR&apos;), {!$Record.Funder__r.Discount_Profit_Share_Percent_EUR__c},
+If( IsPickVal({!$Record.CCY__c}, &apos;GBP&apos;), {!$Record.Funder__r.Discount_Profit_Share_Percent_GBP__c},
+If( IsPickVal({!$Record.CCY__c}, &apos;SGD&apos;), {!$Record.Funder__r.Discount_Profit_Share_Percent_SGD__c},
+If( IsPickVal({!$Record.CCY__c}, &apos;HKD&apos;), {!$Record.Funder__r.Discount_Profit_Share_Percent_HKD__c},
+{!$Record.Funder__r.discount_profit_share_percent__c})))))</expression>
+        <scale>4</scale>
+    </formulas>
+    <formulas>
+        <name>FunderProfitShare100</name>
+        <dataType>Number</dataType>
+        <expression>{!FunderProfitShare}*100</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>IsNew</name>
+        <dataType>Boolean</dataType>
+        <expression>IsNew()</expression>
+    </formulas>
+    <interviewLabel>Migrate Invoice Allocation - Fast Field Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Invoice Allocation - Fast Field Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Alloc_Applied_Fund_Disc_Prof_Share_Pct</name>
+        <label>Alloc Applied Fund Disc Prof Share Pct</label>
+        <locationX>385</locationX>
+        <locationY>471</locationY>
+        <connector>
+            <targetReference>Update_Customer_Email2_0</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Applied_Funder_Discount_Profit_Share_Pct__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Applied_Funder_Discount_Profit_Share_Pct__c</field>
+            <value>
+                <elementReference>FunderProfitShare100</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Customer_Email</name>
+        <label>Update Customer Email</label>
+        <locationX>522</locationX>
+        <locationY>821</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Customer_Email__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>CustomerEmail</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Customer_Email__c</field>
+            <value>
+                <elementReference>CustomerEmail</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Customer_Email2</name>
+        <label>Update Customer Email 2</label>
+        <locationX>522</locationX>
+        <locationY>638</locationY>
+        <connector>
+            <targetReference>Update_Customer_Email</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Customer_Email__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>CustomerEmail</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Customer_Email_2_Typesafe__c</field>
+            <value>
+                <elementReference>CustomerEmail2</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Customer_Email2_0</name>
+        <label>Update Customer Email 2 OnCreate</label>
+        <locationX>382</locationX>
+        <locationY>638</locationY>
+        <connector>
+            <targetReference>Update_Customer_Email</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Customer_Email_2_Typesafe__c</field>
+            <value>
+                <elementReference>CustomerEmail2</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>399</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Is_New</targetReference>
+        </connector>
+        <object>Invoice_Allocation__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

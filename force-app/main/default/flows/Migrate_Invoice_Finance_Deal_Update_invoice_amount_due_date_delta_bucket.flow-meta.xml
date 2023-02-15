@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>Phase_In_Progress</name>
+        <label>Phase = In Progress</label>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Phase_Is_In_Progress</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Phase__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3:IN PROGRESS</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_in_Progress_Date</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Phase = In Progress</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the workflow
+1. Update due date delta bucket
+2. Update Invoice Amount
+3. Update in Progress Date</description>
+    <formulas>
+        <name>Buyer_Insured_By</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Supplier_Buyer_Map__r.Buyer__r.Insured_by__c}</expression>
+    </formulas>
+    <formulas>
+        <name>due_date_delta</name>
+        <dataType>Number</dataType>
+        <expression>If( IsBlank({!$Record.Expected_Payment_Date__c}), {!$Record.Due_Date__c}, {!$Record.Expected_Payment_Date__c}) - If( IsBlank({!$Record.Actual_Repayment_Received_Date__c}), today(), {!$Record.Actual_Repayment_Received_Date__c})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>due_date_delta_bucket</name>
+        <dataType>String</dataType>
+        <expression>IF((0 &gt; {!due_date_delta} &amp;&amp; {!due_date_delta} &gt; -8), &apos;06. Overdue 1-7&apos;, 
+IF((-7 &gt; {!due_date_delta} &amp;&amp; {!due_date_delta} &gt; -15), &apos;07. Overdue 8-14&apos;, 
+IF((-14 &gt; {!due_date_delta} &amp;&amp; {!due_date_delta} &gt; -31), &apos;08. Overdue 15-30&apos;, 
+IF((-30 &gt; {!due_date_delta} &amp;&amp; {!due_date_delta} &gt; -60), &apos;09. Overdue 31-59&apos;, 
+IF(({!due_date_delta} = -60 || -60 &gt; {!due_date_delta}), &apos;10. Overdue 60+&apos;, 
+IF((({!due_date_delta} = 0 || 0 &lt; {!due_date_delta}) &amp;&amp; {!due_date_delta} &lt; 8), &apos;01. Due 0-7&apos;, 
+IF((7 &lt; {!due_date_delta} &amp;&amp; {!due_date_delta} &lt; 15), &apos;02. Due 8-14&apos;, 
+IF((14 &lt; {!due_date_delta} &amp;&amp; {!due_date_delta} &lt; 31), &apos;03. Due 15-30&apos;, 
+IF((30 &lt; {!due_date_delta} &amp;&amp; {!due_date_delta} &lt; 60), &apos;04. Due 31-59&apos;, 
+IF((60 &lt; {!due_date_delta} || {!due_date_delta} = 60), &apos;05. Due 60+&apos;, 
+NULL))))))))))</expression>
+    </formulas>
+    <formulas>
+        <name>InvoiceAmount</name>
+        <dataType>Currency</dataType>
+        <expression>MIN({!$Record.Real_Face_Value__c}, {!$Record.funded_amount__c} / MIN( IF({!$Record.Supplier_Buyer_Map__r.Max_advance_amount_percentage__c} &gt; 0 , {!$Record.Supplier_Buyer_Map__r.Max_advance_amount_percentage__c}, 100), percentage_of_financing ) )</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>over_due_days</name>
+        <dataType>Number</dataType>
+        <expression>if( {!due_date_delta} &gt; 0, 0, {!due_date_delta}*-1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>percentage_of_financing</name>
+        <dataType>Number</dataType>
+        <expression>If( Not(IsBlank({!$Record.Supplier_Buyer_Map__r.Percentage_of_financin_Manualg__c})), {!$Record.Supplier_Buyer_Map__r.Percentage_of_financin_Manualg__c}
+, If( Buyer_Insured_By__c = &apos;Volofin&apos;, 0.85
+, If( AND( Buyer_Insured_By__c = &apos;ICIEC&apos;, Not( Buyer__c = &apos;0010I00002ByYt8&apos;)), 0.80
+, If( {!$Record.Supplier_Buyer_Map__r.Principal_amount_for_SDR__c}, 1.00
+, If( IsPickVal({!$Record.Supplier_Buyer_Map__r.Supplier__r.Country_of_Incorporation__c}, &apos;Bangladesh&apos;), 0.95
+, If( Begins({!$Record.Supplier_Buyer_Map__r.Incomlend_product__r.Name}, &apos;In Transit&apos;), 0.8
+, 0.90))))))</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Migrate Invoice Finance Deal - Update invoice amount, {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Invoice Finance Deal - Update invoice amount, due date delta bucket, In Progress Date</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_due_date_delta_bucket</name>
+        <label>Update due date delta bucket</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <connector>
+            <targetReference>Update_Invoice_Amount</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>due_date_delta_bucket_value__c</field>
+            <value>
+                <elementReference>due_date_delta_bucket</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>over_due_days_value__c</field>
+            <value>
+                <elementReference>over_due_days</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_in_Progress_Date</name>
+        <label>Update in Progress Date</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <inputAssignments>
+            <field>in_progress_date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Invoice_Amount</name>
+        <label>Update Invoice Amount</label>
+        <locationX>182</locationX>
+        <locationY>455</locationY>
+        <connector>
+            <targetReference>Phase_In_Progress</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>advanced_amount__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>invoice_amount__c</field>
+            <value>
+                <elementReference>InvoiceAmount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_due_date_delta_bucket</targetReference>
+        </connector>
+        <object>invoice_finance_deal__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>InvalidDraft</status>
+</Flow>

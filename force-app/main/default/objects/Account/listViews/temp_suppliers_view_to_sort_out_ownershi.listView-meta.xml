@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>temp_suppliers_view_to_sort_out_ownershi</fullName>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Sales_Owner__c</columns>
+    <columns>Agent__c</columns>
+    <columns>head_office_country__c</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <columns>onboarding_stage__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Supplier</value>
+    </filters>
+    <filters>
+        <field>onboarding_stage__c</field>
+        <operation>equals</operation>
+        <value>99.Onboarded</value>
+    </filters>
+    <label>Account / Sales Owner</label>
+</ListView>

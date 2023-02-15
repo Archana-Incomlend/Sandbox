@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accounting_Period__c</fullName>
+    <externalId>false</externalId>
+    <label>Accounting Period</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>$Source.Effective_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <valueField>Accounting_Period__c.Start_Date__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.Effective_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <valueField>Accounting_Period__c.End_Date__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Accounting_Period__c</referenceTo>
+    <relationshipLabel>Transactions</relationshipLabel>
+    <relationshipName>Transactions</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

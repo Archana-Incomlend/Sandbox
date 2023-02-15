@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Accounting Period</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Accounting Periods</value>
+    </caseValues>
+    <layouts>
+        <layout>Accounting Period Layout</layout>
+        <sections>
+            <label></label>
+            <section>02.Invoice Advance Amount</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>70.Deposit / 80.Withdrawal</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Platform Bank Account Balances</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

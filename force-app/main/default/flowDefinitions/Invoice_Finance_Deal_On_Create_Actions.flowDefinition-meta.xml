@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Migrated from Workflows rule
+1. first invoice for Map 
+2. Funder&amp;supplier rate update 
+3. UPDATE COM % INVOICE</description>
+    <masterLabel>In-Active Migrate Invoice Finance Deal - On Create Actions</masterLabel>
+</FlowDefinition>

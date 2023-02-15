@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QuickStartLayout</fullName>
+    <fields>Name</fields>
+    <fields>Account_type__c</fields>
+    <fields>AccountId</fields>
+    <fields>Account_Onboarding_Status__c</fields>
+    <fields>account_eWallet_total_USD_Equiv__c</fields>
+    <label>Quick Start Layout</label>
+</CompactLayout>

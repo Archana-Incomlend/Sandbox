@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Admite grandes sobres de DocuSign enviando sobres a DocuSign sin datos de documentos y permitiendo que DocuSign obtenga dichos datos según se precisen. Active esta opción únicamente si el envío de sobres supera los límites de notificaciones de Salesforce.</help>
+    <label></label>
+    <name>dsfs__FetchDocuments__c</name>
+</CustomFieldTranslation>

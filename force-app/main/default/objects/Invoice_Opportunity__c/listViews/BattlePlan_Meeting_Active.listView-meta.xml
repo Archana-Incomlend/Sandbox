@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BattlePlan_Meeting_Active</fullName>
+    <columns>NAME</columns>
+    <columns>Supplier_Buyer_txt__c</columns>
+    <columns>Sales_Owner__c</columns>
+    <columns>Operation_Owner__c</columns>
+    <columns>Supplier_Buyer_Map__c</columns>
+    <columns>Remaining_Credit_Limit_USD_Equiv__c</columns>
+    <columns>Expected_Amount__c</columns>
+    <columns>Expected_Submission_Date__c</columns>
+    <columns>Comments_Funding__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Opportunity_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Supplier_Buyer_txt__c</field>
+        <operation>notContain</operation>
+        <value>Sino</value>
+    </filters>
+    <label>BattlePlan Active Next invoice</label>
+</ListView>

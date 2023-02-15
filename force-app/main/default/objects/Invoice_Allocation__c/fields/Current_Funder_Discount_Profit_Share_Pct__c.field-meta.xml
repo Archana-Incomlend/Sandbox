@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Funder_Discount_Profit_Share_Pct__c</fullName>
+    <description>Current Funder Discount Profit Share Percent from Funder Account</description>
+    <externalId>false</externalId>
+    <formula>/* Replace old formula with CCY based percenteage field */
+/* Funder__r.discount_profit_share_percent__c */
+
+IF(ISPICKVAL(CCY__c, &apos;USD&apos;), Funder__r.Discount_Profit_Share_Percent_USD__c,
+IF(ISPICKVAL(CCY__c, &apos;EUR&apos;), Funder__r.Discount_Profit_Share_Percent_EUR__c,
+IF(ISPICKVAL(CCY__c, &apos;HKD&apos;), Funder__r.Discount_Profit_Share_Percent_HKD__c,
+IF(ISPICKVAL(CCY__c, &apos;GBP&apos;), Funder__r.Discount_Profit_Share_Percent_GBP__c,
+IF(ISPICKVAL(CCY__c, &apos;SGD&apos;), Funder__r.Discount_Profit_Share_Percent_SGD__c, Funder__r.discount_profit_share_percent__c)))))</formula>
+    <label>Current Funder Discount Profit Share Pct</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Progress_Auto_Status__c</fullName>
+    <description>This field is created to use in scheduled flow as an entry criteria as flow is not supporting Auto_Status__c field in entry criteria due to cross object field reference.
+So do not delete it.</description>
+    <externalId>false</externalId>
+    <formula>if(text(Phase__c) == &apos;3:IN PROGRESS&apos; , if( !ISBLANK(Repayment_Agreement__c), &apos;Repayment agreement signed&apos;, if( OVERDUE__c ,if( (over_due_days__c &gt;= 60 || text(Status__c) = &apos;Collections&apos;),&apos;Collections&apos;,&apos;Delayed&apos;),&apos;Awaiting due date&apos;)), text(Status__c))</formula>
+    <label>In Progress Auto Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

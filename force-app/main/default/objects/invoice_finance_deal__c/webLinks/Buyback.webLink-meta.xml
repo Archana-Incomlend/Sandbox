@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Buyback</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Buyback</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/flow/Invoice_buyback_transactions_creation?invoiceId={!invoice_finance_deal__c.Id}&amp;retURL={!invoice_finance_deal__c.Id}</url>
+</WebLink>

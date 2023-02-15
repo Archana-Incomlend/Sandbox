@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <description>Update all invoice in progress</description>
+    <interviewLabel>Maintenance Invoices {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Maintenance Invoices</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Invoice_in_Progress</name>
+        <label>Get Invoice in Progress</label>
+        <locationX>364</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_invoice_in_Progress</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Phase__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>3:IN PROGRESS</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>auto_status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Delayed</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>invoice_finance_deal__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_invoice_in_Progress</name>
+        <label>Update invoice in Progress</label>
+        <locationX>781</locationX>
+        <locationY>50</locationY>
+        <inputReference>Get_Invoice_in_Progress</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Get_Invoice_in_Progress</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+</Flow>

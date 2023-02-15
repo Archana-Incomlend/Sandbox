@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Marketplace</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Markeplaces</value>
+    </caseValues>
+    <layouts>
+        <layout>Marketplace Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Over due statistics</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Statistics</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Status</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

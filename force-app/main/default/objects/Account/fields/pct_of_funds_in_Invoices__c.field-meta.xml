@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pct_of_funds_in_Invoices__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Total_Position_USD_Equiv__c = 0,0,Total_in_progress_Invoices_USD_Equiv__c /Total_Position_USD_Equiv__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>pct of funds in Invoices</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

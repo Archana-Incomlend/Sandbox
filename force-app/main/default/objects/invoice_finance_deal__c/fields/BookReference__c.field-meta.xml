@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BookReference__c</fullName>
+    <externalId>false</externalId>
+    <label>BookReference</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TASC_NNIP FCT_TB</fullName>
+                <default>false</default>
+                <label>TASC_NNIP FCT_TB</label>
+            </value>
+            <value>
+                <fullName>TASC_FCT 2 EUR_TD_2</fullName>
+                <default>false</default>
+                <label>TASC_FCT 2 EUR_TD_2</label>
+            </value>
+            <value>
+                <fullName>TASC_NNIP Flex_TB</fullName>
+                <default>false</default>
+                <label>TASC_NNIP Flex_TB</label>
+            </value>
+            <value>
+                <fullName>NN (L) Flex 1_ORG_USD_TD</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NN (L) Flex 1_ORG_USD_TD</label>
+            </value>
+            <value>
+                <fullName>TASC_NN (L) Flex 1_TD</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TASC_NN (L) Flex 1_TD</label>
+            </value>
+            <value>
+                <fullName>TASC_Series FCT _TD</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TASC_Series FCT _TD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

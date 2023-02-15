@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Temp_FDA__c</fullName>
+    <externalId>false</externalId>
+    <formula>Min( Real_Face_Value__c, funded_amount__c / Min( If( Supplier_Buyer_Map__r.Max_advance_amount_percentage__c &gt; 0, Supplier_Buyer_Map__r.Max_advance_amount_percentage__c, 100), Supplier_Buyer_Map__r.percentage_of_financing__c))</formula>
+    <label>Temp FDA</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

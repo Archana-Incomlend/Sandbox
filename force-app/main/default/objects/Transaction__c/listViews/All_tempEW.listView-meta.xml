@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_tempEW</fullName>
+    <columns>eWallet__c</columns>
+    <columns>Effective_Date__c</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>transaction_ID__c</columns>
+    <columns>transaction_link_id__c</columns>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Type__c</columns>
+    <columns>CCY__c</columns>
+    <columns>Amount__c</columns>
+    <columns>Status__c</columns>
+    <columns>DebitCredit__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>eWallet__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>All - ewallets temp</label>
+</ListView>

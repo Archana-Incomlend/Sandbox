@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BattlePlan_Meeting_Highlight</fullName>
+    <columns>NAME</columns>
+    <columns>Sales_Owner__c</columns>
+    <columns>Supplier_Buyer_txt__c</columns>
+    <columns>Top_of_the_Month__c</columns>
+    <columns>Operation_Owner__c</columns>
+    <columns>SDR__c</columns>
+    <columns>Expected_Tenor__c</columns>
+    <columns>Insurance__c</columns>
+    <columns>Ops_Comments__c</columns>
+    <columns>Comments_Funding__c</columns>
+    <columns>CL_Provided_by_insurer__c</columns>
+    <columns>Date_First_Invoice__c</columns>
+    <columns>First_invoice_Amount__c</columns>
+    <columns>Supplier_Buyer_Map__c</columns>
+    <columns>Opportunity_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Opportunity_Status__c</field>
+        <operation>equals</operation>
+        <value>Pipeline</value>
+    </filters>
+    <label>BattlePlan Meeting Highlight</label>
+</ListView>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>agent</fullName>
+    <columns>NAME</columns>
+    <columns>Zone__c</columns>
+    <columns>Supplier_Buyer_Map__c</columns>
+    <columns>supplier_buyer_map_name__c</columns>
+    <columns>Supplier_Agent__c</columns>
+    <columns>Agent_s_fee_type__c</columns>
+    <columns>Actual_supplier_s_Agent_Commission_amt__c</columns>
+    <columns>advance_send_to_supplier_date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Supplier_Agent__c</field>
+        <operation>notEqual</operation>
+        <value>Incomlend - agent</value>
+    </filters>
+    <filters>
+        <field>Phase__c</field>
+        <operation>equals</operation>
+        <value>3:IN PROGRESS</value>
+    </filters>
+    <filters>
+        <field>Actual_supplier_s_Agent_Commission_amt__c</field>
+        <operation>notEqual</operation>
+        <value>0</value>
+    </filters>
+    <label>agent commission</label>
+    <sharedTo>
+        <group>Operation</group>
+    </sharedTo>
+</ListView>

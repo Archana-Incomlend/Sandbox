@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>due_date_delta__c</fullName>
+    <externalId>false</externalId>
+    <formula>If( IsBlank(Expected_Payment_Date__c), Due_Date__c, Expected_Payment_Date__c) - If( IsBlank(Actual_Repayment_Received_Date__c), today(), Actual_Repayment_Received_Date__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>due date delta</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

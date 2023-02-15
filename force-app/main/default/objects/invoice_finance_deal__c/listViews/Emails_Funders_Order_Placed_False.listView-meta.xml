@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Emails_Funders_Order_Placed_False</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>supplier_invoice_reference_number__c</columns>
+    <columns>Supplier_Buyer_Map__c</columns>
+    <columns>supplier_del__c</columns>
+    <columns>buyer__c</columns>
+    <columns>CCY__c</columns>
+    <columns>Real_Face_Value__c</columns>
+    <columns>invoice_amount__c</columns>
+    <columns>requested_amount__c</columns>
+    <columns>internal_validation_notes__c</columns>
+    <columns>Funding_Status__c</columns>
+    <columns>Buyer_Confirmed_acceptance__c</columns>
+    <columns>Funds_Available__c</columns>
+    <columns>Funding_Comments__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Phase__c</field>
+        <operation>equals</operation>
+        <value>3:IN PROGRESS</value>
+    </filters>
+    <filters>
+        <field>supplier_buyer_map_public_name__c</field>
+        <operation>notContain</operation>
+        <value>test</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>invoice_finance_deal__c.Pricing_V2_2018</value>
+    </filters>
+    <filters>
+        <field>Emails_Order_placed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Emails Funders Order Placed - False</label>
+    <sharedTo>
+        <group>Funding</group>
+        <group>Operation</group>
+    </sharedTo>
+</ListView>

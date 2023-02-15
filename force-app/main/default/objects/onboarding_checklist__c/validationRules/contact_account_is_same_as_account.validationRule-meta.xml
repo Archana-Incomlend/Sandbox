@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>contact_account_is_same_as_account</fullName>
+    <active>false</active>
+    <errorConditionFormula>(account__r.Id &lt;&gt; Contact__r.Account.Id)
+  || 
+( ISBLANK( Contact__r.Id ) = TRUE )</errorConditionFormula>
+    <errorDisplayField>account__c</errorDisplayField>
+    <errorMessage>choose the same account as the contacts account</errorMessage>
+</ValidationRule>

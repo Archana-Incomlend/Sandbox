@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>啟用「提醒和到期」設定後，就可以在 DocuSign for Salesforce 中調整提醒和到期的預設設定。這些設定會覆寫您 DocuSign 帳戶預設的「提醒和到期」設定。</help>
+    <label></label>
+    <name>dsfs__UseAccountNotificationDefaults__c</name>
+</CustomFieldTranslation>

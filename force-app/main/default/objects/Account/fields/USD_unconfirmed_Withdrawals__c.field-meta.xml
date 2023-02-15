@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>USD_unconfirmed_Withdrawals__c</fullName>
+    <externalId>false</externalId>
+    <label>USD unconfirmed Withdrawals</label>
+    <summarizedField>Transaction__c.Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Transaction__c.Type__c</field>
+        <operation>equals</operation>
+        <value>80.Withdrawal</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Transaction__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Requested</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Transaction__c.CCY__c</field>
+        <operation>equals</operation>
+        <value>USD</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Transaction__c.isArchived__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Transaction__c.Account__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

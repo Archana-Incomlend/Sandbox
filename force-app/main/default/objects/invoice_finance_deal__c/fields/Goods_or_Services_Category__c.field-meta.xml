@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Goods_or_Services_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Goods or Services Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Goods Chemicals, oils and greases</fullName>
+                <default>false</default>
+                <label>Goods Chemicals, oils and greases</label>
+            </value>
+            <value>
+                <fullName>Goods Pharmaceuticals</fullName>
+                <default>false</default>
+                <label>Goods Pharmaceuticals</label>
+            </value>
+            <value>
+                <fullName>Goods Metals</fullName>
+                <default>false</default>
+                <label>Goods Metals</label>
+            </value>
+            <value>
+                <fullName>Goods Machines and engines</fullName>
+                <default>false</default>
+                <label>Goods Machines and engines</label>
+            </value>
+            <value>
+                <fullName>Goods Apparatus and instruments</fullName>
+                <default>false</default>
+                <label>Goods Apparatus and instruments</label>
+            </value>
+            <value>
+                <fullName>Goods Vehicles</fullName>
+                <default>false</default>
+                <label>Goods Vehicles</label>
+            </value>
+            <value>
+                <fullName>Goods Firearms</fullName>
+                <default>false</default>
+                <label>Goods Firearms</label>
+            </value>
+            <value>
+                <fullName>Goods Musical instruments</fullName>
+                <default>false</default>
+                <label>Goods Musical instruments</label>
+            </value>
+            <value>
+                <fullName>Goods Materials</fullName>
+                <default>false</default>
+                <label>Goods Materials</label>
+            </value>
+            <value>
+                <fullName>Goods Furniture and Household ustensil</fullName>
+                <default>false</default>
+                <label>Goods Furniture and Household ustensil</label>
+            </value>
+            <value>
+                <fullName>Goods Textile</fullName>
+                <default>false</default>
+                <label>Goods Textile</label>
+            </value>
+            <value>
+                <fullName>Goods Food and Beverages</fullName>
+                <default>false</default>
+                <label>Goods Food and Beverages</label>
+            </value>
+            <value>
+                <fullName>Goods Tobacco</fullName>
+                <default>false</default>
+                <label>Goods Tobacco</label>
+            </value>
+            <value>
+                <fullName>Services Advertising, administration and marketing</fullName>
+                <default>false</default>
+                <label>Services Advertising, administration and marketing</label>
+            </value>
+            <value>
+                <fullName>Services Finance</fullName>
+                <default>false</default>
+                <label>Services Finance</label>
+            </value>
+            <value>
+                <fullName>Services Building construction</fullName>
+                <default>false</default>
+                <label>Services Building construction</label>
+            </value>
+            <value>
+                <fullName>Services Telecommunications</fullName>
+                <default>false</default>
+                <label>Services Telecommunications</label>
+            </value>
+            <value>
+                <fullName>Services Transport</fullName>
+                <default>false</default>
+                <label>Services Transport</label>
+            </value>
+            <value>
+                <fullName>Services Treatment of materials</fullName>
+                <default>false</default>
+                <label>Services Treatment of materials</label>
+            </value>
+            <value>
+                <fullName>Services Education</fullName>
+                <default>false</default>
+                <label>Services Education</label>
+            </value>
+            <value>
+                <fullName>Services Scientific and technological services</fullName>
+                <default>false</default>
+                <label>Services Scientific and technological services</label>
+            </value>
+            <value>
+                <fullName>Services Services for providing food and drink</fullName>
+                <default>false</default>
+                <label>Services Services for providing food and drink</label>
+            </value>
+            <value>
+                <fullName>Services Medical services</fullName>
+                <default>false</default>
+                <label>Services Medical services</label>
+            </value>
+            <value>
+                <fullName>Services Legal services</fullName>
+                <default>false</default>
+                <label>Services Legal services</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revised_Due_Date__c</fullName>
+    <externalId>false</externalId>
+    <formula>If( And( Not( IsBlank( Revised_payment_date__c)), Or( Id_Buyer__c = &apos;0010I000028QvXXQA0&apos;, Id_Buyer__c = &apos;0010I000024OwXLQA0&apos;)), Revised_payment_date__c, Due_Date__c)</formula>
+    <label>Revised Due Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

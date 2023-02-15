@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ternsheet_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+Total_Finance_Value_All_Time__c &gt; 0, &quot;10.2-Financed Trade&quot;,
+IF (AND(ISBLANK( Supplier_Buyer_Map__c )=FALSE, TXT_status_opp__c = &quot;OIP&quot;, Map_Onboarding_Stage__c =&quot;90.Onboarded&quot;), &quot;10.1-OIP Map Onboarded&quot;,
+IF(
+AND(Supplier_Buyer_Map__c &lt;&gt; &quot;&quot;, TXT_status_opp__c = &quot;Inactive&quot;)=TRUE ,&quot;2-Inactive&quot;,
+IF (
+AND( ISBLANK( Ops_Comments__c )=FALSE, TXT_status_opp__c = &quot;Dopped&quot;)=TRUE,&quot;8-OIP Dropped&quot;,
+IF (
+AND( ISBLANK( Ops_Comments__c )=FALSE, TXT_status_opp__c = &quot;Inactive&quot;)=TRUE,&quot;9-OIP Inactive&quot;,
+IF (
+AND( ISBLANK( Ops_Comments__c )=FALSE, TXT_status_opp__c = &quot;Others&quot;)=TRUE,&quot;9.1-OIP Others&quot;,
+IF(
+AND(Supplier_Buyer_Map__c &lt;&gt; &quot;&quot;, TXT_status_opp__c = &quot;Dopped&quot;)=TRUE ,&quot;1-Dropped&quot;,
+IF ( TXT_status_opp__c = &quot;Inactive&quot;,&quot;2-Inactive&quot;,
+IF( TXT_status_opp__c = &quot;Dopped&quot;,&quot;1-Dropped&quot;,
+IF(ISBLANK( Date_Termsheet_Sent__c ),&quot;3-No Term Sheet&quot;,
+IF (ISBLANK( Date_Term_sheet_Signedt__c ), &quot;4-Term Sheet Sent&quot; ,
+IF (AND(ISBLANK( Supplier_Buyer_Map__c )=FALSE, TXT_status_opp__c = &quot;OIP&quot;), &quot;7-OIP Map Created&quot;,
+IF (TXT_status_opp__c = &quot;OIP&quot;, &quot;6-OIP&quot;,&quot;5-Term sheet Signed&quot;
+)))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Opportunity Auto Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

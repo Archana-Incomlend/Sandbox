@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FundingMargin__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>For a funded participation the amount of return that is paid to the investor for the funding for the funding of the position (can be 0) keep blank</inlineHelpText>
+    <label>FundingMargin</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Customer Type old</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Factoring Supplier</fullName>
+                <default>false</default>
+                <label>Factoring Supplier</label>
+            </value>
+            <value>
+                <fullName>Factoring Buyer</fullName>
+                <default>false</default>
+                <label>Factoring Buyer</label>
+            </value>
+            <value>
+                <fullName>Reverse Factoring Supplier</fullName>
+                <default>false</default>
+                <label>Reverse Factoring Supplier</label>
+            </value>
+            <value>
+                <fullName>Reverse Factoring Buyer</fullName>
+                <default>false</default>
+                <label>Reverse Factoring Buyer</label>
+            </value>
+            <value>
+                <fullName>Funder</fullName>
+                <default>false</default>
+                <label>Funder</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>RAIF</fullName>
+                <default>false</default>
+                <label>RAIF</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sum_Overdue_Costs_Supplier_USD_eq__c</fullName>
+    <description>for marketplace account buyer dashboard</description>
+    <externalId>false</externalId>
+    <label>Sum Overdue Costs Supplier USD eq</label>
+    <precision>12</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

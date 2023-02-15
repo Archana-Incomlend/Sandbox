@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AFSC__File_Reputation_Desc1__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(AFSC__File_Reputation_Rating__c &lt; 0, &quot;Unknown&quot;,
+IF(AFSC__File_Reputation_Rating__c &lt; 10, &quot;Clean&quot;,
+IF(AFSC__File_Reputation_Rating__c &lt; 90, &quot;Suspicious&quot;,
+IF(AFSC__File_Reputation_Rating__c &lt; 101, &quot;Malicious&quot;,
+&quot;Unknown&quot;
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>File Reputation</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

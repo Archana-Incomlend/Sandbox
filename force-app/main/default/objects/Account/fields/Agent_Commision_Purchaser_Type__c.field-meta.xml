@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agent_Commision_Purchaser_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Agent Commision Purchaser Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Annual Rate (360d/year)</fullName>
+                <default>false</default>
+                <label>Annual Rate (360d/year)</label>
+            </value>
+            <value>
+                <fullName>Annual Rate (365d/year)</fullName>
+                <default>false</default>
+                <label>Annual Rate (365d/year)</label>
+            </value>
+            <value>
+                <fullName>Part of profit share (%)</fullName>
+                <default>true</default>
+                <label>Part of profit share (%)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

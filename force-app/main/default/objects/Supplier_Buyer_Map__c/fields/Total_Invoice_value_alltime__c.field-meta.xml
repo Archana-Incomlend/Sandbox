@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Invoice_value_alltime__c</fullName>
+    <externalId>false</externalId>
+    <label>Total Invoice value alltime</label>
+    <summarizedField>invoice_finance_deal__c.invoice_amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>invoice_finance_deal__c.Phase__c</field>
+        <operation>equals</operation>
+        <value>3:IN PROGRESS, 4:CLOSED, 2:ON MARKETPLACE</value>
+    </summaryFilterItems>
+    <summaryForeignKey>invoice_finance_deal__c.Supplier_Buyer_Map__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

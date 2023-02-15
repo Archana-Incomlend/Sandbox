@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alberto_Leads_View</fullName>
+    <booleanFilter>(1 AND 2 AND 3) OR 4</booleanFilter>
+    <columns>NAME</columns>
+    <columns>First_Name__c</columns>
+    <columns>Last_Name__c</columns>
+    <columns>email__c</columns>
+    <columns>phone_number__c</columns>
+    <columns>Telemarketing_Status__c</columns>
+    <columns>Status__c</columns>
+    <columns>Company_Name__c</columns>
+    <columns>Country_of_Incorporation_residence__c</columns>
+    <columns>marketing_campaign__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Pierre Petesch</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>1/11/2019 11:30 AM</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>lessThan</operation>
+        <value>1/11/2019 12:00 PM</value>
+    </filters>
+    <filters>
+        <field>marketing_campaign__c</field>
+        <operation>equals</operation>
+        <value>Alberto</value>
+    </filters>
+    <label>Alberto Leads View</label>
+</ListView>

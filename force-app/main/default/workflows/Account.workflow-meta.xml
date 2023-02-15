@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_for_submission_CL_to_op</fullName>
+        <description>Email for submission CL to op</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Team_Recipient</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Incomlend_emails/Submit_CL_to_Insurer</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_op_credit_limit_request</fullName>
+        <description>Send op credit limit request</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Team_Recipient</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Incomlend_emails/Submit_CL_to_Insurer</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>AMICORP_APPROVAL</fullName>
+        <field>Onboarding_Amicorp_Escrow_Status__c</field>
+        <literalValue>Onboarded</literalValue>
+        <name>AMICORP APPROVAL</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_buyer_Record_ty</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Buyer</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Account buyer Record ty</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_supplier</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Supplier</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Account supplier</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Amicorp_Trustee</fullName>
+        <field>Onboarding_Amicorp_Trustee_Status__c</field>
+        <literalValue>Onboarded</literalValue>
+        <name>Approval Amicorp Trustee</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Credit_Limit_requested_approved</fullName>
+        <field>Credit_Limit_Request_Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Credit Limit requested approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Credit_limit_request_approved</fullName>
+        <description>When The risk Manager approve the request</description>
+        <field>Credit_Limit_Request_Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Credit limit request approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>External_layout</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>External_view</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>External layout</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Onboarded_Completed_Date</fullName>
+        <field>Onboarding_completed_date__c</field>
+        <formula>Today()</formula>
+        <name>Onboarded Completed Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Primary_Contact</fullName>
+        <field>Primary_contact_email__c</field>
+        <formula>Primary_Contact__r.Email</formula>
+        <name>Primary Contact</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Transferred_Date</fullName>
+        <field>Transferred_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Transferred Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Agent_email</fullName>
+        <field>Agent_Email__c</field>
+        <formula>Agent__r.Primary_contact_email__c</formula>
+        <name>Update Agent email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Credit_limit_Incomlend</fullName>
+        <field>Total_CL_Limit_from_Incomlend__c</field>
+        <formula>Credit_limit_insurance_currency__c</formula>
+        <name>Update Credit limit Incomlend</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Master_Agent_Email</fullName>
+        <field>Master_Agent_Email__c</field>
+        <formula>Agent__r.Agent__r.Primary_contact_email__c</formula>
+        <name>Update Master Agent Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Od_Credit_Limit_amount</fullName>
+        <field>Credit_limit_insurance_currency__c</field>
+        <formula>Total_CL_Limit_from_Incomlend__c</formula>
+        <name>Update Od Credit Limit amount</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_To_status_99</fullName>
+        <field>onboarding_stage__c</field>
+        <literalValue>99.Onboarded</literalValue>
+        <name>Update To status 99</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>account_unique_name</fullName>
+        <field>Account_Name_for_unique_index__c</field>
+        <formula>Name + &quot; : &quot; +  text(Type) + &apos; : &apos; +  text(Sub_type__c)</formula>
+        <name>account unique name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>checkbox_submitted_for_approval</fullName>
+        <field>Submitted_for_approvals__c</field>
+        <formula>DATETIMEVALUE(TODAY())</formula>
+        <name>checkbox submitted for approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>onboarding_approval_CMA</fullName>
+        <field>onboarding_stage__c</field>
+        <literalValue>65: approval by CMA</literalValue>
+        <name>onboarding approval CMA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>onboarding_completed_date</fullName>
+        <field>Onboarding_completed_date__c</field>
+        <formula>Today()</formula>
+        <name>onboarding completed date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_onboarding_approved_checkbox</fullName>
+        <field>onboarding_approved__c</field>
+        <literalValue>1</literalValue>
+        <name>update onboarding approved checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_onboarding_stage</fullName>
+        <field>onboarding_stage__c</field>
+        <literalValue>99.Onboarded</literalValue>
+        <name>update onboarding stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_onboarding_stage_agent</fullName>
+        <field>onboarding_stage__c</field>
+        <literalValue>99.Onboarded</literalValue>
+        <name>update onboarding stage agent</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Buyer View desactivation</fullName>
+        <actions>
+            <name>Account_buyer_Record_ty</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.External_View__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Account_Name_for_unique_index__c</field>
+            <operation>contains</operation>
+            <value>Buyer</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Create withdrawal Supplier</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Supplier</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Ready_for_Withdrawal__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.onboarded__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.XXX_Available_eWallet__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>to be deteted - no Actions</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>External View Account activation</fullName>
+        <actions>
+            <name>External_layout</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.External_View__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Onboarded Modification Check</fullName>
+        <active>true</active>
+        <description>Onboarded accounts should not be modified</description>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Supplier  External View desactivation</fullName>
+        <actions>
+            <name>Account_supplier</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.External_View__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Account_Name_for_unique_index__c</field>
+            <operation>contains</operation>
+            <value>Supplier</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Transferred Date</fullName>
+        <actions>
+            <name>Transferred_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>When a sales transfer his account, update the date of the transfert</description>
+        <formula>AND (ISCHANGED( Account_transferred_another_Sales__c), Account_transferred_another_Sales__c  = TRUE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Agent email</fullName>
+        <actions>
+            <name>Update_Agent_email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Field update for Agent email in Account</description>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Master Agent email</fullName>
+        <actions>
+            <name>Update_Master_Agent_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update Master Agent email on Account object</description>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Onboarded Completed Date</fullName>
+        <actions>
+            <name>Onboarded_Completed_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.onboarding_stage__c</field>
+            <operation>equals</operation>
+            <value>99.Onboarded</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Primary Contact Email</fullName>
+        <actions>
+            <name>Primary_Contact</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update Primary Contact Email on Account</description>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>account unique name</fullName>
+        <actions>
+            <name>account_unique_name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update field account name in Account,</description>
+        <formula>(Name + &quot; : &quot; + text(Type) + &quot; : &quot; + text(Sub_type__c) ) &lt;&gt;  Account_Name_for_unique_index__c</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

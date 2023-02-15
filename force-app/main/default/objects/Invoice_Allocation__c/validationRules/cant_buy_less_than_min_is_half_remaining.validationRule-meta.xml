@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cant_buy_less_than_min_is_half_remaining</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( ISBLANK( CreatedDate),
+( (Invoice__r.remaining_amount__c  -  amount__c ) &gt; 0  )  &amp;&amp;  ( (Invoice__r.remaining_amount__c  -  amount__c )  &lt; marketplace_Min_purchase_amount__c )
+,FALSE)</errorConditionFormula>
+    <errorMessage>Reservation can not leave less than the minimum allowed reservation amount for this marketplace.</errorMessage>
+</ValidationRule>

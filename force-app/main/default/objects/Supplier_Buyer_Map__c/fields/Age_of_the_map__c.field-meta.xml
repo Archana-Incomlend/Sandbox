@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Age_of_the_map__c</fullName>
+    <externalId>false</externalId>
+    <formula>FLOOR((TODAY() - First_Invoice_Funded__c + 1)/365)+1</formula>
+    <inlineHelpText>Age in years of the map after the first funded invoice date</inlineHelpText>
+    <label>Age of the map</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

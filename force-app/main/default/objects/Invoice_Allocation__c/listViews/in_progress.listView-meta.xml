@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>in_progress</fullName>
+    <columns>CREATEDBY_USER</columns>
+    <columns>NAME</columns>
+    <columns>invoice_phase__c</columns>
+    <columns>eWallet__c</columns>
+    <columns>Invoice__c</columns>
+    <columns>CCY__c</columns>
+    <columns>amount__c</columns>
+    <columns>Funder__c</columns>
+    <columns>percentage_of_requested_amount__c</columns>
+    <columns>Status__c</columns>
+    <columns>funder_discount_amount__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>invoice_phase__c</field>
+        <operation>contains</operation>
+        <value>in progress</value>
+    </filters>
+    <filters>
+        <field>Funder__c</field>
+        <operation>equals</operation>
+        <value>SHELFORD S.C.A SICAV-RAIF - Sub-Fund INCOMLEND</value>
+    </filters>
+    <label>in progress</label>
+</ListView>

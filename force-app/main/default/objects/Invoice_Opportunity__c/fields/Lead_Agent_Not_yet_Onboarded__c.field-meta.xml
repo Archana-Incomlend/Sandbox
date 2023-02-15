@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Agent_Not_yet_Onboarded__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>Lead agent when the account agent is not yet created ( not onboarded yet)</inlineHelpText>
+    <label>Lead Agent (Not yet Onboarded)</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Lead.Product_type__c</field>
+            <operation>equals</operation>
+            <value>Agent</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Lead</referenceTo>
+    <relationshipLabel>Sales Opportunities (Lead Agent (Not yet Onboarded))</relationshipLabel>
+    <relationshipName>Sales_Opportunities1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

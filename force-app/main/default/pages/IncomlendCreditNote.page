@@ -1,0 +1,188 @@
+<apex:page title="Incomlend Credit Note" standardController="Tax_Invoice__c" extensions="InvoiceFeesController_v1" standardStylesheets="false"
+           showHeader="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" readOnly="true" renderAs="PDF">
+  <apex:stylesheet value="{!URLFOR($Resource.Invoice, 'creditnote.css')}"/>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8"/>
+    </head>
+    
+    <body>
+      <section class="inv-padding">
+        <header>
+          <div id="icl-header">
+            <div id="logo">
+              <apex:image url="{!URLFOR($Resource.Invoice, 'logo-incomlend.png')}" width="60%"/>
+            </div>
+            
+            <div id="icl-address">
+              <div class="icl"><strong>Incomlend Pte. Ltd.</strong></div>
+              <div>112 Robinson Road, #03-03</div>
+              <div>Singapore 068902</div>
+            </div>
+          </div>
+          
+          <div id="box">
+            <div id="client-details">
+              <span class="lbl">Credit Note To:</span>
+              <div><strong>{!Tax_Invoice__c.Customer_Name__c}</strong></div>
+              <div style="display:{!IF(ISBLANK(Tax_Invoice__c.Customer_Address__c), 'none', 'block')}">{!Tax_Invoice__c.Customer_Address__c},</div>
+              <div style="display:{!IF(NOT(ISBLANK(Tax_Invoice__c.City__c)), IF(ISBLANK(Tax_Invoice__c.Postal_Code__c), 'block', 'none'), 'none')}">{!Tax_Invoice__c.City__c}</div>
+              <div style="display:{!IF(NOT(ISBLANK(Tax_Invoice__c.Postal_Code__c)), IF(ISBLANK(Tax_Invoice__c.City__c), 'block', 'none'), 'none')}">{!Tax_Invoice__c.Postal_Code__c}</div>
+              <div style="display:{!IF(NOT(ISBLANK(Tax_Invoice__c.City__c)), IF(NOT(ISBLANK(Tax_Invoice__c.Postal_Code__c)), 'block', 'none'), 'none')}">{!Tax_Invoice__c.City__c}, {!Tax_Invoice__c.Postal_Code__c}</div>
+              <div>{!Tax_Invoice__c.Country__c}</div>
+              <br/>
+              <div>{!Tax_Invoice__c.Contact_Number__c}</div>
+              <div>{!Tax_Invoice__c.Email__c}</div>
+              <div>Attn: {!Tax_Invoice__c.Contact_Name__c}</div>
+            </div>
+            
+            <div id="inv-details">
+              <h1>Credit Note</h1>
+              <div class="data">
+                <span class="lbl">Credit Note Date:</span>
+                <span class="val"><apex:outputText value="{0, date, dd'/'MM'/'yyyy}"><apex:param value="{!Tax_Invoice__c.Invoice_Date__c}"/></apex:outputText></span>
+              </div>
+              
+              <div class="data">
+                <span class="lbl">Credit Note No.:</span>
+                <span class="val">{!Tax_Invoice__c.Invoice_Reference_Number__c}</span>
+              </div>
+              
+              <div class="data">
+                <span class="lbl">Original Invoice No.:</span>
+                <span class="val">{!Tax_Invoice__c.Original_Invoice_Number__c}</span>
+              </div>
+              
+              <div class="data">
+                <span class="lbl">Original Invoice Date:</span>
+                <span class="val"><apex:outputText value="{0, date, dd'/'MM'/'yyyy}"><apex:param value="{!Tax_Invoice__c.Original_Invoice_Date__c}"/></apex:outputText></span>
+              </div>
+            </div>
+          </div>
+        </header>
+        
+        <main>
+          <table id="items">
+            <thead>
+              <tr>
+                <th width="9%" class="tbl-hdr">Date of Service</th>
+                <th width="50%" class="desc tbl-hdr">Description/Reason for Credit</th>
+                <th width="5%" class="tbl-hdr">Quantity</th>
+                <th width="15%" class="tbl-hdr">Unit Price</th>
+                <th width="3%" class="tbl-hdr">Currency</th>
+                <th width="3%" class="tbl-hdr">GST Rate</th>
+                <th width="15%" class="tbl-hdr">Amount<br/>(Excl. GST)</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              <apex:repeat value="{!invoiceFeesList}" var="invoiceFees">
+                <tr>
+                  <td class="service"><apex:outputText value="{0, date, dd'/'MM'/'yyyy}"><apex:param value="{!Tax_Invoice__c.Date_of_Service__c}"/></apex:outputText></td>
+                  <td class="desc">
+                    <span class="long-txt"><apex:outputText value="{!invoiceFees.Description__c}"/></span>
+                    <div class="data" style="display:{!IF(invoiceFees.Description__c == 'Administrative Fees', 'none', 'block')}">
+                      <span class="lbl">Invoice:</span>
+                      <span class="val">{!Tax_Invoice__c.Invoice__r.Name}</span>
+                    </div>
+                  
+                    <div class="data" style="display:{!IF(invoiceFees.Description__c == 'Administrative Fees', 'none', 'block')}">
+                      <span class="lbl">External Reference:</span>
+                      <span class="val">{!Tax_Invoice__c.Invoice__r.supplier_invoice_reference_number__c}</span>
+                    </div>
+                  </td>
+                  <td class="qty">{!invoiceFees.Quantity__c}</td>
+                  <td class="unit">(<apex:outputField value="{!invoiceFees.Unit_Price__c}"/>)</td>
+                  <td class="ccy">{!Tax_Invoice__c.Currency__c}</td>
+                  <td class="unit"><apex:outputField value="{!Tax_Invoice__c.Tax_Rate_Percentage__c}"/></td>
+                  <td class="amt">(<apex:outputField value="{!invoiceFees.Amount_Excl_GST__c}"/>)</td>
+                </tr>
+              </apex:repeat>
+              
+              <tr>
+                <td class="calc" colspan="2"></td>
+                <td class="calc lbl" colspan="3">Total Amount (Excl. GST at&nbsp;<apex:outputField value="{!Tax_Invoice__c.Tax_Rate_Percentage__c}"/>):</td>
+                <td class="calc noP amt" colspan="2">(<apex:outputField value="{!Tax_Invoice__c.Invoice_Amount__c}"/>)</td>
+              </tr>
+              
+              <tr>
+                <td colspan="2"></td>
+                <td class="lbl" colspan="3">GST Amount:</td>
+                <td class="noP amt" colspan="2">(<apex:outputField value="{!Tax_Invoice__c.GST_Amount__c}"/>)</td>
+              </tr>
+              
+              <tr>
+                <td colspan="2"></td>
+                <td class="lbl" colspan="3">Total Amount (Incl. GST at&nbsp;<apex:outputField value="{!Tax_Invoice__c.Tax_Rate_Percentage__c}"/>):</td>
+                <td class="noP amt" colspan="2">(<apex:outputField value="{!Tax_Invoice__c.Total_Amount__c}"/>)</td>
+              </tr>
+              
+              <tr>
+                <td colspan="2"></td>
+                <td class="lbl" colspan="3">Total Amount (Excl. GST at 0%):</td>
+                <td class="noP amt" colspan="2">(<apex:outputField value="{!Tax_Invoice__c.No_Tax_Total_Amount__c}"/>)</td>
+              </tr>
+              
+              <tr>
+                <td colspan="2"></td>
+                <td class="lbl" colspan="3">Refunded Amount:</td>
+                <td class="noP amt" colspan="2"><apex:outputField value="{!Tax_Invoice__c.Total_Amount__c}"/></td>
+              </tr>
+
+              <tr>
+                <td colspan="2"></td>
+                <td class="lbl noP bgColor" colspan="3">Balance Due</td>
+                <td class="noP bgColor amt" colspan="2">0.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </main>
+          
+        <div id="gst" style="display:{!IF(Tax_Invoice__c.Currency__c == 'SGD', 'none', 'block')}">
+          <table>
+            <tbody>
+              <tr>
+                <td colspan="2"><strong>For Goods and Services Tax purpose only:</strong></td>
+              </tr>
+              
+              <tr>
+                <td class="lbl">Total amount refundable excluding GST at&nbsp;<apex:outputField value="{!Tax_Invoice__c.Tax_Rate_Percentage__c}"/>:</td>
+                <td class="val">SGD&nbsp;<apex:outputField value="{!Tax_Invoice__c.Invoice_Amount_SGD_Equiv__c}"/></td>
+              </tr>
+              
+              <tr>
+                <td class="lbl">Total amount refundable including GST at&nbsp;<apex:outputField value="{!Tax_Invoice__c.Tax_Rate_Percentage__c}"/>:</td>
+                <td class="val">SGD&nbsp;<apex:outputField value="{!Tax_Invoice__c.Total_Amount_SGD_Equiv__c}"/></td>
+              </tr>
+              
+              <tr>
+                <td class="lbl">Total GST refundable:</td>
+                <td class="val">SGD&nbsp;<apex:outputField value="{!Tax_Invoice__c.GST_Amount_SGD_Equiv__c}"/></td>
+              </tr>
+              
+              <tr>
+                <td class="lbl">Total amount refundable excluding GST at 0%:</td>
+                <td class="val">SGD&nbsp;<apex:outputField value="{!Tax_Invoice__c.No_Tax_Total_Amount_SGD_Equiv__c}"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="disclaimer">
+          <div class="lbl"><strong>Disclaimer</strong></div>
+          <div class="notice">This is a computer generated invoice. No signature is required.</div>
+          <div class="notice">Please note that any sums owed by you to Incomlend may be directly deducted from your e-Wallet balance, as authorized by you in the [Accounts Receivable Purchase Agreement/Invoice Purchase Agreement].</div>
+          <div class="notice">For General Terms and Conditions, please refer to https://marketplace.incomlend.com.</div>
+        </div>
+      </section>
+      
+      <section id="other-info">
+        <footer>
+          <span><strong>GST Registration No.:</strong> 201600941W &nbsp;&#8226;&nbsp;</span>
+          <span><strong>Phone:</strong> +65 6604 0264 &nbsp;&#8226;&nbsp;</span>
+          <span><strong>Address:</strong> 112 Robinson Road, #03-03, Singapore 068902</span>
+        </footer>
+      </section>
+    </body>
+  </html>
+</apex:page>

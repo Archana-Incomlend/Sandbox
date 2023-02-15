@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SGD_eWallet_USD_Equivalent__c</fullName>
+    <externalId>false</externalId>
+    <formula>SGD_eWallet__r.Balance__c * Marketplace_for_SGD_FX_rate__r.latest_to_usd_rate__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SGD eWallet USD Equivalent</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

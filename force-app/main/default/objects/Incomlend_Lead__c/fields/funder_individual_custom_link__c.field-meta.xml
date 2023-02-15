@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>funder_individual_custom_link__c</fullName>
+    <externalId>false</externalId>
+    <formula>&apos;https://forms.incomlend.com/sf.php?s=123contactform-2248432&apos; 
++ &apos;&amp;control22868440=&apos; +  substitute(email__c ,&apos; &apos;,&apos;%20&apos;)
++ &apos;&amp;control24047684-1=&apos; +  substitute(First_Name__c ,&apos; &apos;,&apos;%20&apos;)
++ &apos;&amp;control24047684-2=&apos;  + substitute(Last_Name__c,&apos; &apos;,&apos;%20&apos;)
++ &apos;&amp;control22902674=&apos; +  substitute(phone_number__c,&apos; &apos;,&apos;%20&apos;)
++ &apos;&amp;control22868319-6=&apos; +  substitute(Country_of_Incorporation_residence__c,&apos; &apos;,&apos;%20&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>OLD funder individual custom link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

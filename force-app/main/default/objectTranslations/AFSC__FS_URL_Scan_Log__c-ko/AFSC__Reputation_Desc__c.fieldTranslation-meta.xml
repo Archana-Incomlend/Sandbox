@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Reputation_Desc__c</name>
+    <picklistValues>
+        <masterLabel>Malicious</masterLabel>
+        <translation>악성</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not available</masterLabel>
+        <translation>사용 불가</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Safe</masterLabel>
+        <translation>안전함</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Suspicious</masterLabel>
+        <translation>의심스러움</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trusted</masterLabel>
+        <translation>신뢰할 수 있음</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unknown</masterLabel>
+        <translation>알 수 없음</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unsafe</masterLabel>
+        <translation>안전하지 않음</translation>
+    </picklistValues>
+</CustomFieldTranslation>

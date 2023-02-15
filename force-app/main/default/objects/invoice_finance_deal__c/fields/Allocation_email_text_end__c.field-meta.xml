@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allocation_email_text_end__c</fullName>
+    <description>Allocation email text end for template</description>
+    <externalId>false</externalId>
+    <formula>&quot;Expected Repayment Date : &quot; + text( Expected_Payment_Date__c ) + br()+ 
+&quot;Expected Investment Term : &quot; + text(  Start_Date_Due_Date__c ) + &quot; days&quot; + br()+ 
+&quot;Credit Insurer : &quot; + text( Supplier_Buyer_Map__r.Buyer__r.Insured_by__c ) + br() + 
+
+
+&quot;Number of outstanding invoices overdue from 15 to 29 days: &quot; + text(Buyer_other_Overdue_15_29__c) + br() + 
+&quot;Number of invoices paid back all time: &quot; + text(Buyer_number_invoice_paid_back_all_time__c)+ br()+ 
+
+
+&quot;Please check the invoice&apos;s information through the following link:&quot; + br() + 
+&quot;https://marketplace.incomlend.com/#/app/invoice-detail/marketplace/&quot; + Marketplace_link__c + &quot;/&quot; + Id + &quot; &quot; + br() + br()+ br()</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Allocation email text end for template</inlineHelpText>
+    <label>Allocation email text end</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

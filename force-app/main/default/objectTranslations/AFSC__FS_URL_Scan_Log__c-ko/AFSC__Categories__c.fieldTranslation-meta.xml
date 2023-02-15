@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Categories__c</name>
+    <picklistValues>
+        <masterLabel>abortion</masterLabel>
+        <translation>중단</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>adserving</masterLabel>
+        <translation>광고 게재 중</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>adult</masterLabel>
+        <translation>성인</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>alcohol and tobacco</masterLabel>
+        <translation>주류 및 담배</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>anonymizers</masterLabel>
+        <translation>익명화 도구</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>auctions</masterLabel>
+        <translation>경매</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>banking</masterLabel>
+        <translation>뱅킹</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>blogs</masterLabel>
+        <translation>블로그</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>chat</masterLabel>
+        <translation>채팅</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>dating</masterLabel>
+        <translation>데이트</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>drugs</masterLabel>
+        <translation>약물</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>entertainment</masterLabel>
+        <translation>엔터테인먼트</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>gambling</masterLabel>
+        <translation>도박</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>games</masterLabel>
+        <translation>게임</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>hacking</masterLabel>
+        <translation>해킹</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>hate</masterLabel>
+        <translation>증오</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>job search</masterLabel>
+        <translation>구직</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>paymentservice</masterLabel>
+        <translation>결제 서비스</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>scam</masterLabel>
+        <translation>사기</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>shopping</masterLabel>
+        <translation>쇼핑</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>social networking</masterLabel>
+        <translation>소셜 네트워킹</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>software download</masterLabel>
+        <translation>소프트웨어 다운로드</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>spam</masterLabel>
+        <translation>스팸</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>streaming media</masterLabel>
+        <translation>스트리밍 미디어</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>violence</masterLabel>
+        <translation>폭력</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>warez</masterLabel>
+        <translation>와레즈</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>weapons</masterLabel>
+        <translation>무기</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>webmail</masterLabel>
+        <translation>웹메일</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_1_Repayment_Com_Amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>pct_Owner_1__c * pct_Com_Repayment__c * pct_Com_Owner__c * Agent_Percentage_Portion__c
+* IF (Invoice_Allocation__c != null,
+Invoice_Allocation__r.amount__c ,
+Invoice_Finance_Deal__r.funded_amount__c )
+* Actual_Fin_Period_Capped__c
+* 1 / IF (Invoice_Allocation__c != null, 360, 30)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>in USD equiv of the funded amount and overdue capped 60 days</inlineHelpText>
+    <label>Owner 1 Repayment Com Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

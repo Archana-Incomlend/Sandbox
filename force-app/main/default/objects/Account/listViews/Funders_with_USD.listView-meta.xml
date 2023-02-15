@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funders_with_USD</fullName>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>discount_profit_share_percent__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>USD_Available_eWallet__c</columns>
+    <columns>USD_eWallet_Balance__c</columns>
+    <columns>USD_expected_first_deposit__c</columns>
+    <columns>USD_Percentage_of_eWallet_In_invoices__c</columns>
+    <columns>USD_Position__c</columns>
+    <columns>USD_total_discount_earned__c</columns>
+    <columns>USD_Total_in_progress_invoices__c</columns>
+    <columns>USD_total_reservations__c</columns>
+    <columns>USD_unconfirmed_Withdrawals__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Customer</value>
+    </filters>
+    <filters>
+        <field>Sub_type__c</field>
+        <operation>equals</operation>
+        <value>Purchaser</value>
+    </filters>
+    <filters>
+        <field>onboarded__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>USD_Available_eWallet__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <label>_Funders with USD</label>
+</ListView>

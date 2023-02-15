@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Supplier_Buyer_Map__c</entityName>
+    <fieldName>map_onboarding_stage__c</fieldName>
+    <masterLabel>Map Supplier Buyer phase</masterLabel>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

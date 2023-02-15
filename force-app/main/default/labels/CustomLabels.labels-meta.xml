@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>First_Page</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>First Page Label</shortDescription>
+        <value>First Page</value>
+    </labels>
+    <labels>
+        <fullName>GST</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Singapore GST</shortDescription>
+        <value>7%</value>
+    </labels>
+    <labels>
+        <fullName>Incomlend_Logo_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Incomlend Logo URL</shortDescription>
+        <value>https://incomlend--icldv04dvp.sandbox.file.force.com/servlet/servlet.ImageServer?id=01528000002r2ag&amp;oid=00D0T0000008aoe&amp;lastMod=1629714916000</value>
+    </labels>
+    <labels>
+        <fullName>Last_Page</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Last Page Label</shortDescription>
+        <value>Last Page</value>
+    </labels>
+    <labels>
+        <fullName>Next</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Next Label</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>No_Of_Attachments_on_Buyer_Confirmation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Of Attachments on Buyer Confirmation</shortDescription>
+        <value>12</value>
+    </labels>
+    <labels>
+        <fullName>Page_Counts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Page Counts Label</shortDescription>
+        <value>Page {0} of {1}</value>
+    </labels>
+    <labels>
+        <fullName>Previous</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Previous Label</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>Record_Counts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Record Counts Label</shortDescription>
+        <value>{0}-{1} of {2}</value>
+    </labels>
+</CustomLabels>

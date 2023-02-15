@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incomlend_Membership_Fees</fullName>
+    <columns>Effective_Date__c</columns>
+    <columns>transaction_ID__c</columns>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Type__c</columns>
+    <columns>notes__c</columns>
+    <columns>DebitCredit__c</columns>
+    <columns>Invoice_Finance_Deal__c</columns>
+    <columns>Invoice_Financing_Deal_name__c</columns>
+    <columns>CCY__c</columns>
+    <columns>Amount__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>88.Annual membership fee,888.Additional buyer onboarding fee</value>
+    </filters>
+    <label>Incomlend Membership Fees</label>
+</ListView>

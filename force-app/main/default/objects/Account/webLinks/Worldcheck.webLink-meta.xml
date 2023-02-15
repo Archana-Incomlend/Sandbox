@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Worldcheck</fullName>
+    <availability>online</availability>
+    <description>Worldcheck</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Worldcheck</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://signon.thomsonreuters.com/?productId=MKTACC&amp;returnto=https%3A%2F%2Fapp.accelus.com%2F%23login%2F%257B%2522redirect%2522%253A%2522accelus%252Ffsp%252F%25257B%252522location%252522%25253A%252522%25253Flocale%25253Den-GB%252523fsp%25252Fscreening%25252Fgroup%25252Fa49e7422-b878-453f-b5d4-ea3cfbd875f8%25252Fmode%25252FINITIAL%25252Ftype%25252FINDIVIDUAL%25252Fprovider%25252FWATCHLIST%252522%25257D%2522%257D&amp;bhcp=1</url>
+</WebLink>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ARPA_IPA_Ref_Number__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Give the reference number of the ARPA Signed from the supplier or the IPA in case of Funder</inlineHelpText>
+    <label>ARPA / IPA Ref Number Escrow</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

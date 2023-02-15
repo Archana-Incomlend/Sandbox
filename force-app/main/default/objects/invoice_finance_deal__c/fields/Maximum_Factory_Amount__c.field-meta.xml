@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maximum_Factory_Amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Bangladesh_special_case__c = &quot;With factory&quot;, Real_Face_Value__c - Total_supplier_discount_amount_expected__c -  invoice_amount__c * 70/30 * (Total_Supplier_Discount__c + 0.005), 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Theoretical max factory amount based on 70 days of overdue, +0.5% SDR</inlineHelpText>
+    <label>Maximum Factory Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

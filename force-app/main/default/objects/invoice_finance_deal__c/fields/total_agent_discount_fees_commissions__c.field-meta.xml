@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>total_agent_discount_fees_commissions__c</fullName>
+    <externalId>false</externalId>
+    <label>Total funder&apos;s agent discount fees com</label>
+    <summarizedField>Invoice_Allocation__c.Funder_Agent_Commission_Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Invoice_Allocation__c.Status__c</field>
+        <operation>notEqual</operation>
+        <value>Canceled</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Invoice_Allocation__c.Invoice__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

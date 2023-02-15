@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Underlying_Goods_or_Services__c</fullName>
+    <externalId>false</externalId>
+    <formula>Supplier_Buyer_Map__r.Good_or_Services_Offered__c</formula>
+    <label>Underlying Goods or Services</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

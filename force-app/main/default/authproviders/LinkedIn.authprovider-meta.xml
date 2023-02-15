@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <executionUser>admin@incomlend.com.icldv04dvp</executionUser>
+    <friendlyName>LinkedIn</friendlyName>
+    <iconUrl>https://login.salesforce.com/icons/linkedin-black.png</iconUrl>
+    <includeOrgIdInIdentifier>false</includeOrgIdInIdentifier>
+    <providerType>LinkedIn</providerType>
+    <registrationHandler>AutocreatedRegHandler1505065264975</registrationHandler>
+    <sendAccessTokenInHeader>false</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>false</sendClientCredentialsInHeader>
+    <sendSecretInApis>true</sendSecretInApis>
+</AuthProvider>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowTest xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flowApiName>e_Wallet_After_Create_Actions</flowApiName>
+    <label>New eWallet</label>
+    <testPoints>
+        <elementApiName>Start</elementApiName>
+        <parameters>
+            <leftValueReference>$Record</leftValueReference>
+            <type>InputTriggeringRecordInitial</type>
+            <value>
+                <sobjectValue>{&quot;Account__c&quot;:&quot;0010T00000MZr4XQAT&quot;,&quot;Balance__c&quot;:&quot;100&quot;,&quot;CCY__c&quot;:&quot;XXX&quot;,&quot;In_Progress__c&quot;:&quot;100&quot;,&quot;Marketplace_for_FX__c&quot;:&quot;a052800000TkqMYAAZ&quot;,&quot;Reservations__c&quot;:1000000,&quot;Sensitive_Record__c&quot;:false,&quot;Total_Discount_Earned__c&quot;:&quot;100&quot;,&quot;Unique_Name__c&quot;:&quot;Test Agent APXXX&quot;}</sobjectValue>
+            </value>
+        </parameters>
+    </testPoints>
+    <testPoints>
+        <assertions>
+            <conditions>
+                <leftValueReference>$Record.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+        </assertions>
+        <elementApiName>Finish</elementApiName>
+    </testPoints>
+</FlowTest>

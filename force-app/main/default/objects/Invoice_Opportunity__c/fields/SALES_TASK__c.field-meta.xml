@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SALES_TASK__c</fullName>
+    <externalId>false</externalId>
+    <label>SALES TASK</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1-Collect Trade Doc</fullName>
+                <default>false</default>
+                <label>1-Collect Trade Doc</label>
+            </value>
+            <value>
+                <fullName>1.2 Collect Additional Doc following Legal Comments ( If Any)</fullName>
+                <default>false</default>
+                <label>1.2 Collect Additional Doc following Legal Comments ( If Any)</label>
+            </value>
+            <value>
+                <fullName>2-Organise Supplier Call</fullName>
+                <default>false</default>
+                <label>2-Organise Supplier Call</label>
+            </value>
+            <value>
+                <fullName>3-Organise Buyer Call</fullName>
+                <default>false</default>
+                <label>3-Organise Buyer Call</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

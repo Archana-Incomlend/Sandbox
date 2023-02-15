@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>send_Slack_to_Onboarding_Channel</name>
+        <label>send Slack to Onboarding Channel</label>
+        <locationX>619</locationX>
+        <locationY>30</locationY>
+        <actionName>SendSlackMessageToOnboarding</actionName>
+        <actionType>apex</actionType>
+        <inputParameters>
+            <name>Message</name>
+            <value>
+                <elementReference>message</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <description>As an Operations user, I want to receive a slack alert when funding team updates the Onboarding map status to &quot;05-Funders feedback Positive&quot;</description>
+    <interviewLabel>Send Slack when {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send Slack when funder feedback is positive</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>get_map</name>
+        <label>get map</label>
+        <locationX>436</locationX>
+        <locationY>27</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>send_Slack_to_Onboarding_Channel</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>mapId</elementReference>
+            </value>
+        </filters>
+        <object>Supplier_Buyer_Map__c</object>
+        <outputReference>map</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Supplier_name__c</queriedFields>
+        <queriedFields>Buyer_Name__c</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>get_map</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>message</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>The Map No: {!map.Name} {!map.Supplier_name__c} Selling to {!map.Buyer_Name__c} has a positive funder feedback, please send to the customer ARPA, GTC, BNL.</text>
+    </textTemplates>
+    <variables>
+        <name>map</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Supplier_Buyer_Map__c</objectType>
+    </variables>
+    <variables>
+        <name>mapId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+</Flow>

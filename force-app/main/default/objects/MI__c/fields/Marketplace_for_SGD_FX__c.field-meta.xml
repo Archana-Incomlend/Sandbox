@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketplace_for_SGD_FX__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Marketplace for SGD FX</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Marketplace__c.Currency__c</field>
+            <operation>equals</operation>
+            <value>SGD</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Marketplace__c</referenceTo>
+    <relationshipLabel>MI (Marketplace for SGD FX)</relationshipLabel>
+    <relationshipName>MI1</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

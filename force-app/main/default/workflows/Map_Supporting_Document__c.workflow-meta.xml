@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Buyer_Name_Update</fullName>
+        <field>Buyer_Name__c</field>
+        <formula>Buyer__r.Account_Name_for_unique_index__c</formula>
+        <name>Buyer Name Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Supplier_name_update</fullName>
+        <field>Supplier_name__c</field>
+        <formula>Supplier__r.Account_Name_for_unique_index__c</formula>
+        <name>Supplier name update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Map Supporting Document Created</fullName>
+        <actions>
+            <name>Buyer_Name_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Supplier_name_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Map_Supporting_Document__c.Supplier_name__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Populate the Supporting Document for the MAP, Desactived and Setup on process builder</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

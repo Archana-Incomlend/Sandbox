@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HKD_eWallet_Balance__c</fullName>
+    <externalId>false</externalId>
+    <label>HKD eWallet Balance</label>
+    <summarizedField>Transaction__c.Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Transaction__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Confirmed by operations, Confirmed by Finance</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Transaction__c.CCY__c</field>
+        <operation>equals</operation>
+        <value>HKD</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Transaction__c.Account__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

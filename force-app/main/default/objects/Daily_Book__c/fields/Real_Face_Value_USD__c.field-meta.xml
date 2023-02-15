@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Real_Face_Value_USD__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Sum of all Real Face value USD for invoice in progress</inlineHelpText>
+    <label>Real Face Value USD</label>
+    <precision>10</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Invoice Finance Deal</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Invoice Finance Deals</value>
+    </caseValues>
+    <layouts>
+        <layout>External Layout</layout>
+        <sections>
+            <label></label>
+            <section>Basic Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Buyer Info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Finance Data</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Late Payment Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step 1 - Internal Verifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step 6 - Invoice Paid</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier Buyer Map info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>financing status</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Pricing V2 2018</layout>
+        <sections>
+            <label></label>
+            <section>Basic Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Buyer Info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Limit</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Discount rates</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>FX Daily</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fees - Funding stage</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fees - Payment stage</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Instructions for Ops</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Finance Data</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice outlook for Funding</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice outlook for Repayment &amp; Rolllover</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Late Payment Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Obsolete</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Overdue New Pricing</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Sales Owner</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step 1 - Internal Verifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step 2 - Buyer Confirmations</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step 3A - Supplier Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step 3B - Listing Information and financing details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step 5 - Invoice funded</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step 6 - Invoice Paid</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier Buyer Map info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trade Alert Text</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>financing status</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Trustee-Camelot</layout>
+        <sections>
+            <label></label>
+            <section>Basic Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Buyer Info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Limit</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>FX Daily</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fees - Payment stage</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Instructions for Ops</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Finance Data</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice outlook for Funding</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice outlook for Repayment &amp; Rolllover</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Late Payment Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Obsolete</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Overdue New Pricing</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Sales Owner</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step 1 - Internal Verifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step 2 - Buyer Confirmations</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step 3A - Supplier Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step 3B - Listing Information and financing details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step 5 - Invoice funded</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Step 6 - Invoice Paid</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier Buyer Map info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trade Alert Text</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>financing status</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>invoice Layout</layout>
+        <sections>
+            <label></label>
+            <section>Basic Information Invoice RF</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Buyer Confirmations</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Buyer Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Limit</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Discount rate</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>FX Daily</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Instruction for Ops</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Internal Verifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Finance Data</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Verifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice outlook for Repayment &amp; Rollover</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice outlook for funding</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Late Payment Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Listing Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Overdue</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Overdue New Pricing</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Sales Owner</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Settlement information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Special Whitefields Processing</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier Buyer Map info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trade Alert Text</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>fees</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>financing details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>financing status</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>invoice Layout_passthrough invoice</layout>
+        <sections>
+            <label></label>
+            <section>Buyer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Daily FX</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Documents</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Late Payment Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Overdue Rate</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Settlement information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier Buyer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier Buyer Map Info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier Buyer Map Product Info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>fees</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label></label>
+        <name>Auction_Product</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>External_View</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Passthrough_Record</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Pricing_V2_2018</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Factory_Amount_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Marketplace_Link_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Minimum_Spread</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>approval_by_CMA</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>ccys_must_match</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>ensure_unfunded_amount_covers_fees</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>financing_period_positive</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>Add_update_allocation</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Allocation_Aggregation</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>CAD_Invoice_Paid</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Consolidated_BC</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Container_and_BL_Tracking</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Create_repayment_cashflow</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Download_File</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Email_Buyer_Re_Payment_Reminder</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Email_Buyer_Request_Signature_Resubmission</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Email_Funder_Invoice_Paid</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Email_Funder_s_Invoice_Funded</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Email_Parties_for_Invoice_Funded</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Email_Parties_for_Invoice_Paid</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Email_Rosemont_Funding</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Email_Supplier_Invoice_Paid</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Email_Supplier_Invoice_funded</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Email_supplier_for_invoice_approval</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Email_supplier_invoice_paid_Passthrough</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Invoice_Paid_Passthrough</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Invoice_Partial_Repayment</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Invoice_is_funded</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Mass_Delete</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Vessel_Tracking</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>mass_update</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>send_docusign_doc</name>
+    </webLinks>
+    <workflowTasks>
+        <description></description>
+        <name>An_invoice_is_ready_for_posting</name>
+        <subject></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description></description>
+        <name>Invoice_approved_by_Supplie2r</name>
+        <subject></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description></description>
+        <name>Invoice_approved_by_Supplier</name>
+        <subject></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description></description>
+        <name>Invoice_ready_for_posting</name>
+        <subject></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description></description>
+        <name>Test_supplier_approved</name>
+        <subject></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

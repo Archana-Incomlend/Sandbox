@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>40</activeVersionNumber>
+    <description>Flow to create de transaction repaiement funder, Agent, when invoice is funded</description>
+    <masterLabel>SubFlow create transaction from allocations for repayment</masterLabel>
+</FlowDefinition>

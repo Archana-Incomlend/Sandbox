@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Progress_Rollup__c</fullName>
+    <description>Technical field, SUM eWallet trustee In Progress amount
+Existing In progress eWallet too risky to be replace by Rollup</description>
+    <externalId>false</externalId>
+    <label>In Progress Rollup</label>
+    <summarizedField>eWallet_Trustee__c.In_Progress__c</summarizedField>
+    <summaryForeignKey>eWallet_Trustee__c.Main_eWallet__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

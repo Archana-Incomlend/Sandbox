@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Migration from Workflows to Flow.
+update SGD amount
+Update Transaction Field Values</description>
+    <masterLabel>In-Active Migrate Transaction - After Insert Actions</masterLabel>
+</FlowDefinition>

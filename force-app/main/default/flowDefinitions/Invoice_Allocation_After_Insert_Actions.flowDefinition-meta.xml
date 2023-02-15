@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>7</activeVersionNumber>
+    <description>Migrated from the process buiilder
+1. TRUSTEE : Add e-wallet trustee on Allocation
+2. Email to funder on new allocation</description>
+    <masterLabel>Migrate Invoice Allocation - After Insert Actions</masterLabel>
+</FlowDefinition>

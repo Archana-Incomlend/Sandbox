@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Buyers</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Sales_Owner__c</columns>
+    <columns>Total_available_eWallets_USD_equi_2__c</columns>
+    <columns>Insured_by__c</columns>
+    <columns>insured_loss_percentage__c</columns>
+    <columns>Credit_Insurance_CCY__c</columns>
+    <columns>Credit_limit_insurance_currency__c</columns>
+    <columns>Credit_Limit_Remaining_usd_equiv__c</columns>
+    <columns>Insured_Loss_USD_Equiv__c</columns>
+    <columns>logo_URL__c</columns>
+    <columns>onboarding_approved__c</columns>
+    <columns>Sub_type__c</columns>
+    <columns>Credit_Limit_USD_Equiv__c</columns>
+    <columns>Insurance_Policy_Ownership__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Buyer</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Buyer</value>
+    </filters>
+    <filters>
+        <field>Total_CL_Limit_from_Incomlend__c</field>
+        <operation>greaterThan</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Insured_by__c</field>
+        <operation>equals</operation>
+        <value>Atradius,BCC Trade Credit Pty Ltd - Reverse Factoring,FCI-NFC,ICIEC,Funder&apos;s Insurance,FCI - Factofrance,FCI - Deutsche Factoring Bank,FCI - Factorit</value>
+    </filters>
+    <label>_Buyers</label>
+</ListView>

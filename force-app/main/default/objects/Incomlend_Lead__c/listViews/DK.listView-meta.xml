@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DK</fullName>
+    <columns>NAME</columns>
+    <columns>Company_Name__c</columns>
+    <columns>First_Name__c</columns>
+    <columns>Last_Name__c</columns>
+    <columns>Country_of_Incorporation_residence__c</columns>
+    <columns>referral_code__c</columns>
+    <columns>Type__c</columns>
+    <columns>Status__c</columns>
+    <columns>Source__c</columns>
+    <columns>email__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>contacted__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OWNER.ALIAS</field>
+        <operation>equals</operation>
+        <value>DK</value>
+    </filters>
+    <label>DK leads</label>
+</ListView>

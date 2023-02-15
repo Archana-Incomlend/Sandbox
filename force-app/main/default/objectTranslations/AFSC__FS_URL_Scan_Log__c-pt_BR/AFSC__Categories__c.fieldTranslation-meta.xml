@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Categories__c</name>
+    <picklistValues>
+        <masterLabel>abortion</masterLabel>
+        <translation>cancelamento</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>adserving</masterLabel>
+        <translation>veiculação de anúncios</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>adult</masterLabel>
+        <translation>conteúdo adulto</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>alcohol and tobacco</masterLabel>
+        <translation>álcool e tabaco</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>anonymizers</masterLabel>
+        <translation>anonimizadores</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>auctions</masterLabel>
+        <translation>leilões</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>banking</masterLabel>
+        <translation>Internet banking</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>blogs</masterLabel>
+        <translation>blogs</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>chat</masterLabel>
+        <translation>bate-papo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>dating</masterLabel>
+        <translation>namoro</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>drugs</masterLabel>
+        <translation>drogas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>entertainment</masterLabel>
+        <translation>entretenimento</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>gambling</masterLabel>
+        <translation>jogos de azar</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>games</masterLabel>
+        <translation>jogos</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>hacking</masterLabel>
+        <translation>hacking</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>hate</masterLabel>
+        <translation>discurso de ódio</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>job search</masterLabel>
+        <translation>pesquisa de vagas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>paymentservice</masterLabel>
+        <translation>serviço de pagamento</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>scam</masterLabel>
+        <translation>fraude</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>shopping</masterLabel>
+        <translation>compras</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>social networking</masterLabel>
+        <translation>redes sociais</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>software download</masterLabel>
+        <translation>download de software</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>spam</masterLabel>
+        <translation>spam</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>streaming media</masterLabel>
+        <translation>streaming de mídia</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>violence</masterLabel>
+        <translation>violência</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>warez</masterLabel>
+        <translation>pirataria</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>weapons</masterLabel>
+        <translation>armas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>webmail</masterLabel>
+        <translation>e-mail da web</translation>
+    </picklistValues>
+</CustomFieldTranslation>

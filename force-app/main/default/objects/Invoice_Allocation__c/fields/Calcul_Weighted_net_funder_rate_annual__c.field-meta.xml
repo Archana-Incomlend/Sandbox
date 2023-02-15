@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Calcul_Weighted_net_funder_rate_annual__c</fullName>
+    <description>Used fo Calcul of Weighted avarage discount rate net funder</description>
+    <externalId>false</externalId>
+    <formula>APR__c * amount__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Used fo Calcul of Weighted avarage discount rate net funder</inlineHelpText>
+    <label>Calcul Weighted net funder rate annual</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

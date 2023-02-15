@@ -1,0 +1,36 @@
+<apex:page title="Audit Trail Request" standardController="Audit_Trail__c"  showHeader="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" readOnly="true" renderAs="PDF">
+
+<html lang="en">
+    <head>
+      <div>
+           <img id="logo" src="https://incomlend-images.s3-ap-southeast-1.amazonaws.com/incomlend+logo+070220.png" width="220" height="55"/>
+      </div>
+    </head>
+    
+    <body>
+        <apex:outputText value="
+        {!SUBSTITUTE(
+            SUBSTITUTE(
+                SUBSTITUTE(
+                    SUBSTITUTE(
+                        MID(Audit_Trail__c.Request_Body__c, 2, LEN(Audit_Trail__c.Request_Body__c) - 2), 
+                    "\\\"", "\""),
+                "\\n",""),
+            "\\t",""),
+         "\\r","")}" escape="false"/>
+       
+        
+        <tr>
+            <td>Audit Trail Record Id: </td>
+            <td><apex:outputField value="{!Audit_Trail__c.guid__c}"/></td>
+        </tr>
+
+        <tr>
+            <td>e-signature: </td>
+            <td><apex:outputText value="{!LEFT(Audit_Trail__c.Signature__c,32)}" escape="false"/>...</td>
+        </tr>
+
+    </body>
+  </html>
+ 
+</apex:page>

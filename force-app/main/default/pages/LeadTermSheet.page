@@ -1,0 +1,1696 @@
+<apex:page Controller="LeadTermSheetExtension" renderAs="PDF" cache="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" showHeader="false" sidebar="false">
+
+
+    <head>
+    <style type="text/css" media="print">
+        * {
+            margin: 0;
+            padding: 0;
+            text-indent: 0;
+        }
+        .s1 {
+            color: #4471c4;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 10pt;
+          }
+          .s2 {
+            color: #4471c4;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+          }
+          .s3 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+          }
+          .s4 {
+            color: #585858;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 9pt;
+          }
+          .s5 {
+            color: #585858;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: underline;
+            font-size: 10pt;
+          }
+          p {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+            margin: 0pt;
+          }
+          h1 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 10pt;
+          }
+          .s6 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+            vertical-align: -4pt;
+          }
+          .s7 {
+            color: black;
+            font-family: "Lucida Console", monospace;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 9pt;
+          }
+          .s8 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+            vertical-align: 2pt;
+          }
+          .s9 {
+            color: #585858;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 8pt;
+          }
+          .s10 {
+            color: #0462c1;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: underline;
+            font-size: 8pt;
+          }
+          .s11 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 10pt;
+          }
+          .a {
+            color: #0462c1;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: underline;
+            font-size: 10pt;
+          }
+          .s12 {
+            color: #0462c1;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+          }
+          .s13 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+          }
+          .h3 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 10pt;
+          }
+          .s14 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: italic;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 10.5pt;
+          }
+          .h2 {
+            color: #4471c4;
+            font-family: Calibri, sans-serif;
+            font-style: italic;
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 10.5pt;
+          }
+          .s15 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: italic;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10.5pt;
+          }
+          .s16 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: underline;
+            font-size: 10pt;
+          }
+          .s17 {
+            color: #fff;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 9pt;
+          }
+          .s18 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 8pt;
+          }
+          .s19 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: italic;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 7pt;
+          }
+          .s20 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: italic;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 8.5pt;
+          }
+          .s21 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 8pt;
+          }
+          .s22 {
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 7pt;
+          }
+          li {
+            display: block;
+          }
+          #l1 {
+            padding-left: 0pt;
+          }
+          #l1 > li > *:first-child:before {
+            content: "- ";
+            color: #585858;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+          }
+          li {
+            display: block;
+          }
+          #l2 {
+            padding-left: 0pt;
+          }
+          #l2 > li > *:first-child:before {
+            content: "- ";
+            color: #585858;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+          }
+          li {
+            display: block;
+          }
+          #l3 {
+            padding-left: 0pt;
+            counter-reset: e1 1;
+          }
+          #l3 > li > *:first-child:before {
+            counter-increment: e1;
+            content: counter(e1, decimal) ". ";
+            color: #585858;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+          }
+          #l3 > li:first-child > *:first-child:before {
+            counter-increment: e1 0;
+          }
+          li {
+            display: block;
+          }
+          #l4 {
+            padding-left: 0pt;
+          }
+          #l4 > li > *:first-child:before {
+            content: " ";
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+          }
+          li {
+            display: block;
+          }
+          #l5 {
+            padding-left: 0pt;
+          }
+          #l5 > li > *:first-child:before {
+            content: "- ";
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 8pt;
+          }
+          #l6 {
+            padding-left: 0pt;
+          }
+          #l6 > li > *:first-child:before {
+            content: " ";
+            color: black;
+            font-family: Calibri, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 7pt;
+          }
+          table,
+          tbody {
+            vertical-align: top;
+            overflow: visible;
+          }
+        @page {
+            @top-center {
+                content: element(header);
+            }
+            @bottom-left {
+                content: element(footer);
+            }
+        }
+        div.header {
+            padding: 20px;
+            position: running(header);
+            font-family: sans-serif; 
+            font-size: 9pt;
+        }
+        div.footer {
+            display: block;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
+            position: running(footer);
+            font-family: sans-serif; 
+            font-size: 9pt;
+        }
+        .pagenumber:before {
+            content: counter(page);
+        }
+        .pagecount:before {
+            content: counter(pages);
+        }
+        div.content {
+            padding-top: 50px;
+            font-family: sans-serif; 
+            font-size: 10pt;
+        }
+        </style>
+    </head>
+    <div style="font-family: Calibri">
+    <div class="header">
+      <div style="float:left;">
+          <apex:image id="image1" url="{!imageURL}" alt="Incomlend Logo" title="Incomlend Logo" height="70" width="300"/>
+      </div>
+      <div style="float:right;">
+          Company Registration No : 201600941W<br/>
+          <div style="float:right;">Page <span class="pagenumber"/></div>
+      </div>
+    </div>
+    <div class="footer">
+        <!--<div>Page <span class="pagenumber"/> of <span class="pagecount"/></div>-->
+        <div style="float:left;">
+            Incomlend Pte Ltd<br/>
+            112 Robinson Road #03-03 Singapore 608902
+        </div>
+        <div style="float:right;">
+            http://www.incomlend.com/
+        </div>
+    </div>
+    <div class="content">
+       <div style="width:100%; height:1px; background:#4471c4;"></div>
+       <p class="s1" style="text-indent: 0pt;line-height: 14pt;text-align: center;">{!objLead.Company}</p>
+       <p class="s2" style="padding-bottom: 1pt; text-indent: 0pt; line-height: 13pt; text-align: center;">Term Sheet</p>
+       <div style="width:100%; height:1px; background:#4471c4;"></div>
+       <p style=" padding-top: 5pt; padding-left: 13pt; text-indent: 0pt; text-align: justify;">
+          This indicative term sheet (“Term Sheet”) summarizes the principal terms,
+          for negotiation purposes only, with respect to a potential financing
+          arrangement by Incomlend Pte. Ltd. Save as otherwise specifically
+          provided, nothing herein creates any legally binding obligation on the
+          part of any party, nor shall any legally binding obligations arise unless
+          and until the parties have executed definitive written agreements and
+          obtained all requisite governmental, corporate, management and legal
+          approvals.
+        </p>
+        
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <p style="padding-left: 212pt; text-indent: -192pt; text-align: left">
+          (Valid for acceptance 
+          <apex:outputText value=" {0,date,MM/dd/yy}"> <apex:param value="{!AcceptanceDate}" /> </apex:outputText>
+          the Term Sheet and all KYC documents
+          provided before <apex:outputText value=" {0,date,MM/dd/yy}"> <apex:param value="{!KYCDate}" /> </apex:outputText> from signing of Term Sheet)
+        </p>
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        
+        <table style="border-collapse: collapse; margin-left: 6.16998pt" cellspacing="0" width="95%">
+            <tr>
+                <td style="width: 30%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s3" style="padding-left: 5pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                        <apex:outputText value="1. Product"></apex:outputText>
+                        
+                    </p>
+                </td>
+                <td style="width: 70%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        <apex:outputText value="{!objLead.Product_type__c}"></apex:outputText>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 30%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s3" style="padding-left: 5pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                        <apex:outputText value="2. Financing Features"></apex:outputText>
+                        
+                    </p>
+                </td>
+                <td style="width: 70%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        <ul id="l1">
+                            <li data-list-text="-">
+                                <p class="s4" style="padding-left: 41pt; text-indent: -18pt; text-align: left">
+                                    All rights, title, proceeds, interests in the invoices assigned
+                                    to Incomlend
+                                </p>
+                            </li>
+                            <li data-list-text="-">
+                                <p class="s4" style="padding-left: 41pt;text-indent: -18pt;line-height: 12pt; text-align: left;">
+                                    Disclosed to the buyer
+                                </p>
+                            </li>
+                            <li data-list-text="-">
+                                <p class="s4" style="padding-left: 41pt;text-indent: -18pt;line-height: 12pt; text-align: left;">
+                                    Buyer payment of full invoice face value redirected to Incomlend
+                                </p>
+                            </li>
+                            <li data-list-text="-">
+                                <p class="s4" style="padding-left: 41pt; text-indent: -18pt; text-align: left">
+                                    Financing period: Max. 120 days; Max. overdue: to be defined
+                                </p>
+                            </li>
+                        </ul>
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="width: 30%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s3" style="padding-left: 5pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                        <apex:outputText value="3. Company Activity"></apex:outputText>
+                        
+                    </p>
+                </td>
+                <td style="width: 70%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        <apex:outputText value="{!objLead.Company_Activity__c}"></apex:outputText>
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="width: 30%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s3" style="padding-left: 5pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                        <apex:outputText value="4. Country of Incorporation"></apex:outputText>
+                        
+                    </p>
+                </td>
+                <td style="width: 70%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        <apex:outputText value="{!objLead.Country}"></apex:outputText>
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="width: 30%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s3" style="padding-left: 5pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                        <apex:outputText value="5. Advanced Amount"></apex:outputText>
+                        
+                    </p>
+                </td>
+                <td style="width: 70%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        <apex:outputText value="{!objLead.Advanced_Amount__c}" rendered="{!If(objLead.Advanced_Amount_Other__c == '' || objLead.Advanced_Amount_Other__c == null, true, false)}"></apex:outputText>
+                        <apex:outputText value="{!objLead.Advanced_Amount_Other__c}" rendered="{!If(objLead.Advanced_Amount_Other__c != '' && objLead.Advanced_Amount_Other__c != null, true, false)}"></apex:outputText>
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="width: 30%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s3" style="padding-left: 5pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                        <apex:outputText value="6. Currency"></apex:outputText>
+                        
+                    </p>
+                </td>
+                <td style="width: 70%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        <apex:outputText value="{!objLead.CCY__c}"></apex:outputText>
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="width: 30%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s3" style="padding-left: 5pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                        <apex:outputText value="7. Pre-Qualified Buyer(s), Credit Limit, Annual Supplier Discount Rate* (on Invoice Face Value)"></apex:outputText>
+                        
+                    </p>
+                </td>
+                <td style="width: 70%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        
+                        <table width="90%" style="margin-top:5pt;border-style: solid;border-color: #bebebe; border-collapse: collapse;">
+                            <tr>
+                            
+                                <th style="border-style: solid;border-color: #bebebe; border-collapse: collapse;">
+                                    Pre-Qualified Buyers
+                                </th>
+                                
+                                <th style="border-style: solid;border-color: #bebebe; border-collapse: collapse;">
+                                    Credit Limt
+                                </th>
+                                <th style="border-style: solid;border-color: #bebebe; border-collapse: collapse;">
+                                    Currency
+                                </th>
+                                
+                                <th style="border-style: solid;border-color: #bebebe; border-collapse: collapse;">
+                                    Discount Rate
+                                </th>
+                                
+                            </tr>
+                            <apex:repeat value="{!lstSalesOpportunity}" var="Supplier">
+                            <tr>
+                            
+                                <td style="border-style: solid;border-color: #bebebe; border-collapse: collapse;">
+                                    <apex:outputField value="{!Supplier.Lead_Name__r.Company}"/>
+                                </td>
+                                
+                                <td style="border-style: solid;border-color: #bebebe; border-collapse: collapse;">
+                                    <apex:outputField value="{!Supplier.Lead_Name__r.Credit_Limit_Provided_by_Insurer__c}"/>
+                                </td>
+                                
+                                <td style="border-style: solid;border-color: #bebebe; border-collapse: collapse;">
+                                    <apex:outputField value="{!Supplier.Lead_Name__r.Credit_Limit_Requested_CCY__c}"/>
+                                </td>
+                                
+                                <td style="border-style: solid;border-color: #bebebe; border-collapse: collapse;">
+                                    <apex:outputText rendered="{!if(objLead.CCY__c == 'USD',true,false)}" value="3-Month SOFR plus"></apex:outputText>
+                                    <apex:outputText rendered="{!if(objLead.CCY__c == 'EUR',true,false)}" value="3-Month EURIBOR plus"></apex:outputText>
+                                    <apex:outputText rendered="{!if(objLead.CCY__c == 'GBP',true,false)}" value="3-Month Daily SONIA plus"></apex:outputText>
+                                    [<apex:outputField value="{!Supplier.SDR__c}" rendered="{!if(Supplier.SDR__c != null, true,false)}"/>
+                                    <apex:outputField value="{!objLead.Supplier_Discount_Rate__c}" rendered="{!if(Supplier.SDR__c == null, true,false)}"/>
+                                    ]
+                                    <apex:outputText value=" per annum"></apex:outputText>
+                                </td>
+                                
+                            </tr>
+                            </apex:repeat>
+                        </table>
+                    </p>
+                    <br/>
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        <u>Conditions:</u>
+                    </p>
+                    <p class="s4" style="padding-left: 15pt; text-indent: 0pt; text-align: left">
+                        <apex:outputText value="-Average invoice size: "></apex:outputText>  <apex:outputField value=" {!objLead.First_Invoice_amount__c}"/>
+                    </p>
+                    <p class="s4" style="padding-left: 15pt; text-indent: 0pt; text-align: left">
+                        <apex:outputText value="-Average funding period: "></apex:outputText> <apex:outputField value=" {!objLead.Average_Funding_Period__c}"/>
+                    </p>
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="width: 30%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s3" style="padding-left: 5pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                        <apex:outputText value="8. Revised Supplier Discount Rate"></apex:outputText>
+                        
+                    </p>
+                </td>
+                <td style="width: 70%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        <apex:outputText value="0.5% in addition to the Supplier Discount Rate (as set out in s/n 7 above) "></apex:outputText>
+                        <b><apex:outputText value="(Applies only for the period from the Invoice Due Date to the Actual Repayment Date, i.e, only for the overdue period, non-compounded)"></apex:outputText></b>
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="width: 30%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s3" style="padding-left: 5pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                        <apex:outputText value="9. Processing fee**"></apex:outputText>
+                        
+                    </p>
+                </td>
+                <td style="width: 70%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        <apex:outputText value="1. USD {!objLead.Processing_Fees__c} / per trade partner (indirect customer) non-refundable, payable on acceptance of term sheet"></apex:outputText> <br/>
+                        <apex:outputText value="2. USD 50 per invoice processed [IF PASS-THROUGH]"></apex:outputText>
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="width: 30%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s3" style="padding-left: 5pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                        <apex:outputText value="10. Administrative Fee"></apex:outputText>
+                        
+                    </p>
+                </td>
+                <td style="width: 70%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="width: 30%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s3" style="padding-left: 21pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                        <apex:outputText value="10.1 Facility fee***"></apex:outputText>
+                        
+                    </p>
+                </td>
+                <td style="width: 70%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        <apex:outputText value="{!objLead.Facility_Fees__c} % of {!objLead.Facility_Fees_To_Be_Paid__c}."></apex:outputText>
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="width: 30%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s3" style="padding-left: 21pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                        <apex:outputText value="10.2 Annual fee"></apex:outputText>
+                        
+                    </p>
+                </td>
+                <td style="width: 70%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        <apex:outputText value="USD {!objLead.Annual_Fees__c} payable on financing for the first year and USD [{!objLead.Annual_Fees__c} for direct customer + {!objLead.Annual_Fees_Per_Trade_Partner__c} per trade partner] every subsequent year on anniversary date of initial annual fee"></apex:outputText>
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="width: 30%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s3" style="padding-left: 5pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                        <apex:outputText value="11. Buyer Verification"></apex:outputText>
+                        
+                    </p>
+                </td>
+                <td style="width: 70%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        <ol id="l3">
+                        <li data-list-text="1.">
+                            <p class="s4" style="padding-left: 41pt;padding-right: 29pt;text-indent: -18pt;text-align: left;">
+                                Acknowledgement of Incomlend or its trustee as a new payee of selected invoices
+                            </p>
+                        </li>
+                        <li data-list-text="2.">
+                        <p class="s4" style="padding-left: 41pt;padding-right: 29pt;text-indent: -18pt;text-align: left;">
+                                Buyer confirmation of each transaction (pre-funding)
+                            </p>
+                        </li>
+                    </ol>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 30%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <apex:outputPanel rendered="{!objLead.Dedicated_account_fee__c}">
+                    <p class="s3" style="padding-left: 5pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                        <apex:outputText value="12. Dedicated account fee" rendered="{!objLead.Dedicated_account_fee__c}"></apex:outputText>
+                        
+                    </p>
+                    </apex:outputPanel>
+                </td>
+                <td style="width: 70%;border-top-style: solid;border-top-width: 1pt;border-top-color: #bebebe;border-left-style: solid;border-left-width: 1pt;border-left-color: #bebebe;border-bottom-style: solid;
+                    border-bottom-width: 1pt;border-bottom-color: #bebebe;border-right-style: solid;border-right-width: 1pt;border-right-color: #bebebe;">
+                    <apex:outputPanel rendered="{!objLead.Dedicated_account_fee__c}">
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                        <ol id="l3">
+                        <li data-list-text="1.">
+                            <p class="s4" style="padding-left: 41pt;padding-right: 29pt;text-indent: -18pt;text-align: left;">
+                                <apex:outputText value="USD {!objLead.One_time_fees_for_opening_dedicated_bank__c } one-time for opening of dedicated bank account, " rendered="{!objLead.Dedicated_account_fee__c}"/> 
+                            </p>
+                        </li>
+                        <li data-list-text="2.">
+                            <p class="s4" style="padding-left: 41pt;padding-right: 29pt;text-indent: -18pt;text-align: left;">
+                               <apex:outputText value="USD {!objLead.Maintenance_of_dedicated_bank_account__c }" rendered="{!objLead.Dedicated_account_fee__c}"/>  <apex:outputText value="{!if(objLead.Maintenance_of_dedicated_bank_account__c == 750, ' quaterly for maintenance of bank account,', ' yearly for maintenance of bank account,')}" rendered="{!objLead.Dedicated_account_fee__c}"></apex:outputText> 
+                            </p>
+                        </li>
+                    </ol>
+                    </p>
+                    <p class="s4" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                    To be deducted from any amount to be transferred to the Supplier in respect of invoices financed on the Platform.
+                    </p>
+                    </apex:outputPanel>
+                </td>
+            </tr>
+        </table>
+        <div id="div1" style="page-break-before: always;"></div>
+        <br /><br /><br />
+        <div style="width:100%; height:1px; background:#4471c4;"></div>
+        <p class="s1" style="text-indent: 0pt;line-height: 14pt;text-align: center;">{!objLead.Company}</p>
+        <p class="s2" style="padding-bottom: 1pt; text-indent: 0pt; line-height: 13pt; text-align: center;">Term Sheet</p>
+        <div style="width:100%; height:1px; background:#4471c4;"></div>
+        
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <h1 style="padding-top: 2pt; padding-left: 13pt; text-indent: 0pt; text-align: left;">
+          Please note that for Singapore entities, the fees above are subject to {!$Label.GST} GST.
+        </h1>
+        <!--<h1 style="padding-top: 2pt;padding-left: 13pt;text-indent: 0pt;text-align: justify;">
+          Please refer to Annex 1 for an example on how the fees above are calculated.
+        </h1>-->
+        </div>
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <p style="font-size: 9pt; padding-left: 13pt; text-indent: 0pt; text-align: justify">
+          By signing this agreement, you additionally undertake to keep all
+          sensitive information (including but not limited to rates, fees payable
+          and other information acquired in consequence of the issuance of this Term
+          Sheet) confidential except where (a) you are entitled or bound to disclose
+          such information under compulsion of law; or (b) it is reasonably
+          necessary for the performance of the transaction envisaged under this Term
+          Sheet. Where such disclosure is made to a third party (other than a
+          governmental/regulatory authority), you will ensure that such third
+          parties are under a duty of confidentiality. Any breach or threatened
+          breach of such confidentiality obligations may cause irreparable injury to
+          Incomlend for which monetary damages would be an inadequate remedy, and
+          Incomlend is entitled to obtain any other relief against such breach
+          without the necessity of proving actual loss or damage.
+        </p>
+        
+        <br/>
+        <p style="padding-left: 13pt; text-indent: 0pt; text-align: justify"><br /></p>
+        <p style="padding-left: 13pt; text-indent: 0pt; text-align: justify">Name: {!objLead.FirstName} {!objLead.LastName}<br/></p>
+        <p style="padding-left: 13pt; text-indent: 0pt; text-align: justify">Designation: {!objLead.Title}<br/></p>
+        <p style="padding-left: 13pt; text-indent: 0pt; text-align: justify">Date:<br/></p>
+        <p style="padding-left: 13pt; text-indent: 0pt; text-align: justify"><br/></p>
+        <p style="padding-left: 13pt; text-indent: 0pt; text-align: justify"><br/></p>
+        
+        <p class="s9" style="padding-left: 13pt; text-indent: 0pt; text-align: left">
+            * applied at disbursement, annualized for the credit period, non-compounded
+            <br/>
+            <apex:outputPanel rendered="{!if(objLead.CCY__c == 'USD',true,false)}">
+            <p class="s9" style="padding-left: 13pt; text-indent: 0pt; text-align: left">
+                <b>"3 MONTH SOFR"</b> means, in relation to US Dollars, any amount for which an interest rate is to be determined, the Secured Overnight Financing Rate offered rate for a period of 3 months for that currency that is:
+            </p>
+            <br/>
+            <ul>
+                <li>
+                    <p class="s9" style="padding-left: 20pt; text-indent: 0pt; text-align: left">
+                    (a) administered by New York Federal Reserve Bank (or any other person which takes over the administration of that rate); and
+                    </p>
+                </li>
+                <li>
+                    <p class="s9" style="padding-left: 20pt; text-indent: 0pt; text-align: left">
+                    (b) appearing:
+                    </p>
+                    <ul>
+                        <li>
+                            <p class="s4" style="padding-left: 35pt; text-indent: 0pt; text-align: left">
+                                (i) on <a href="https://www.cmegroup.com/market-data/cme-group-benchmark-administration/term-sofr.html" style="color: #0462c1;" target="_blank">https://www.cmegroup.com/market-data/cme-group-benchmark-administration/term-sofr.html</a>, administered by CME Group Benchmark Administration Limited (or any other person which takes over the administration of that rate); and
+                            </p>
+                        </li>
+                        <li>
+                            <p class="s4" style="padding-left: 35pt; text-indent: 0pt; text-align: left">
+                                (ii) at or about 10:00 a.m. (Singapore time) on the day of financing (unless market practice differs for that currency or period, in which case, on the day dictated by market practice, or the latest of those days if there is more than one),
+                            </p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p class="s9" style="padding-left: 20pt; text-indent: 0pt; text-align: left">
+                    (c) provided that, if in any case the rate is less than zero, the SOFR shall be deemed to be [zero].
+                    </p>
+                </li>
+            </ul>
+            
+            <br/>
+            <p class="s9" style="padding-left: 13pt; text-indent: 0pt; text-align: left">
+                unless the specified rate is unavailable at the relevant time, in which case Incomlend may specify another determination of the appropriate rate (acting reasonably after consultation with the other party). 
+            </p>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!if(objLead.CCY__c == 'EUR',true,false)}">
+            <p class="s9" style="padding-left: 13pt; text-indent: 0pt; text-align: left">
+                <b>"3 MONTH EURIBOR"</b> means, in relation to the Euro currency, any amount for which an interest rate is to be determined, the Euro Interbank Offered Rate for a period of 3 months for that currency that is:
+            </p>
+            <br/>
+            <ul>
+                <li>
+                    <p class="s9" style="padding-left: 20pt; text-indent: 0pt; text-align: left">
+                    (a) administered by Global Rate Set Systems Ltd (or any other person which takes over the administration of that rate); and
+                    </p>
+                </li>
+                <li>
+                    <p class="s9" style="padding-left: 20pt; text-indent: 0pt; text-align: left">
+                    (b) appearing:
+                    </p>
+                    <ul>
+                        <li>
+                            <p class="s9" style="padding-left: 35pt; text-indent: 0pt; text-align: left">
+                                (i) on <a href="https://www.euribor-rates.eu/en/" style="color: #0462c1;" target="_blank">https://www.euribor-rates.eu/en/</a>; and
+                            </p>
+                        </li>
+                        <li>
+                            <p class="s9" style="padding-left: 35pt; text-indent: 0pt; text-align: left">
+                                (ii) at or about 10:00 a.m. (Singapore time) on the day of financing (unless market practice differs for that currency or period, in which case, on the day dictated by market practice, or the latest of those days if there is more than one),
+                            </p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p class="s9" style="padding-left: 20pt; text-indent: 0pt; text-align: left">
+                    (c) provided that, if in any case the rate is less than zero, the EURIBOR shall be deemed to be [zero].
+                    </p>
+                </li>
+            </ul>
+       
+        <br/>
+        <p class="s9" style="padding-left: 13pt; text-indent: 0pt; text-align: left">
+            unless the specified rate is unavailable at the relevant time, in which case Incomlend may specify another determination of the appropriate rate (acting reasonably after consultation with the other party).
+        </p>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!if(objLead.CCY__c == 'GBP',true,false)}">
+            <p class="s9" style="padding-left: 13pt; text-indent: 0pt; text-align: left">
+            <b>"DAILY SONIA"</b> means, in relation to the British pound sterling currency, any amount for which an interest rate is to be determined, the Sterling Overnight Index Average for a period of 3 months for that currency that is:
+            </p>
+            <br/>
+            <ul>
+                <li>
+                    <p class="s9" style="padding-left: 20pt; text-indent: 0pt; text-align: left">
+                    (a) administered by Bank of England (or any other person which takes over the administration of that rate); and
+                    </p>
+                </li>
+                <li>
+                    <p class="s9" style="padding-left: 20pt; text-indent: 0pt; text-align: left">
+                    (b) appearing:
+                    </p>
+                    <ul>
+                        <li>
+                            <p class="s9" style="padding-left: 35pt; text-indent: 0pt; text-align: left">
+                                <!--(i) on <a href="https://www.bankofengland.co.uk/boeapps/database/fromshowcolumns.asp?Travel=NIxSUx&FromSeries=1&ToSeries=50&DAT=RNG&FD=1&FM=Jan&FY=2012&TD=28&TM=Jul&TY=2022&FNY=&CSVF=TT&html.x=190&html.y=47&C=5JK&Filter=N" style="color: #0462c1;" target="_blank">https://www.bankofengland.co.uk/boeapps/database/fromshowcolumns.asp?Travel=NIxSUx&FromSeries=1&ToSeries=50&DAT=RNG&FD=1&FM=Jan&FY=2012&TD=28&TM=Jul&TY=2022&FNY=&CSVF=TT&html.x=190&html.y=47&C=5JK&Filter=N</a>; and
+                                -->
+                            </p>
+                        </li>
+                        <li>
+                            <p class="s9" style="padding-left: 35pt; text-indent: 0pt; text-align: left">
+                                (ii) at or about 10:00 a.m. (Singapore time) on the day of financing (unless market practice differs for that currency or period, in which case, on the day dictated by market practice, or the latest of those days if there is more than one),
+                            </p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p class="s9" style="padding-left: 20pt; text-indent: 0pt; text-align: left">
+                    (c) provided that, if in any case the rate is less than zero, the SONIA shall be deemed to be [zero].
+                    </p>
+                </li>
+            </ul>
+            <p class="s9" style="padding-left: 13pt; text-indent: 0pt; text-align: left">
+                unless the specified rate is unavailable at the relevant time, in which case Incomlend may specify another determination of the appropriate rate (acting reasonably after consultation with the other party). 
+               <br/>
+            </p>
+            </apex:outputPanel>
+        </p>
+        
+        <br/>
+        
+        <p class="s9" style="padding-left: 13pt; text-indent: 0pt; line-height: 10pt; text-align: left;">
+          ** Payable online
+        </p>
+        <p class="s9" style="padding-left: 13pt; text-indent: 0pt; line-height: 10pt;text-align: left;">
+          <apex:outputPanel rendered="{!if(objLead.Facility_Fees_To_Be_Paid__c == 'Annual invoice volume',true,false)}">
+          *** to be paid in two instalments (1st instalment at 1st invoice financing and 2nd instalment after 6 months from 1st invoice financing)
+          </apex:outputPanel>
+        </p>
+        <!--<p style="padding-left: 13pt; text-indent: 0pt; text-align: left">
+          <a href="https://iciec.isdb.org/dump/member" style="color: #585858;font-family: Calibri, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 8pt;" target="_blank">+ Listed here </a><a href="https://iciec.isdb.org/dump/member" class="s10" target="_blank">https://iciec.isdb.org/dump/member</a>
+        </p>-->
+        
+         
+        <div id="div1" style="page-break-before: always;"></div>
+        <br /><br /><br />
+        <div style="width:100%; height:1px; background:#4471c4;"></div>
+        <p class="s1" style="text-indent: 0pt;line-height: 14pt;text-align: center;">{!objLead.Company}</p>
+        <p class="s2" style="padding-bottom: 1pt; text-indent: 0pt; line-height: 13pt; text-align: center;">Term Sheet</p>
+        <div style="width:100%; height:1px; background:#4471c4;"></div>
+        
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <p style="padding-top: 2pt; padding-left: 13pt; text-indent: 0pt; text-align: left;">
+          Annexure:
+        </p>
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <p style="padding-left: 13pt; text-indent: 0pt; text-align: left">
+          Please be informed that upon the signing of this term sheet, Incomlend will be contacting the Pre-Qualified Buyer(s) (as indicated herein) directly in order to facilitate the onboarding process. As such, please fill in the details of the Pre-Qualified Buyer(s) in the below table:
+        </p>
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        
+        <table style="border-collapse: collapse; margin-left: 13pt" cellspacing="0" width="95%">
+          <tr>
+            <td style="border-top-style: solid;border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;">
+              <p class="s11" style="padding-left: 5pt; text-indent: 0pt; line-height: 12pt;text-align: left;">
+                Supplier
+              </p>
+            </td>
+            <td style="border-top-style: solid;border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;">
+              <p class="s11" style="padding-left: 5pt; text-indent: 0pt; line-height: 12pt;text-align: left;">
+                Contact Person
+              </p>
+            </td>
+            <td style="border-top-style: solid;border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;">
+              <p class="s11" style="padding-left: 5pt; text-indent: 0pt; line-height: 12pt;text-align: left;">
+                Designation
+              </p>
+            </td>
+            <td style="border-top-style: solid;border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;">
+              <p class="s11" style="padding-left: 5pt; text-indent: 0pt; line-height: 12pt;text-align: left;">
+                Contact Number
+              </p>
+            </td>
+            <td style="border-top-style: solid;border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;">
+              <p class="s11" style="padding-left: 5pt; text-indent: 0pt; line-height: 12pt;text-align: left;">
+                Email Address
+              </p>
+            </td>
+          </tr>
+          <apex:repeat value="{!lstSalesOpportunity}" var="Supplier">
+            <tr>
+                <td style="border-top-style: solid;border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;">
+                  <p style="padding-left: 5pt; text-indent: 0pt; line-height: 12pt;text-align: left;">
+                    <apex:outputText value="{!Supplier.Lead_Name__r.Company}"/>
+                  </p>
+                </td>
+                <td style="border-top-style: solid;border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;">
+                  <p style="padding-left: 5pt; text-indent: 0pt; line-height: 12pt;text-align: left;">
+                    <apex:outputText value="{!Supplier.Lead_Name__r.FirstName} {!Supplier.Lead_Name__r.LastName}"/>
+                  </p>
+                </td>
+                <td style="border-top-style: solid;border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;">
+                  <p style="padding-left: 5pt; text-indent: 0pt; line-height: 12pt;text-align: left;">
+                    <apex:outputText value="{!Supplier.Lead_Name__r.Title}"/>
+                  </p>
+                </td>
+                <td style="border-top-style: solid;border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;">
+                  <p style="padding-left: 5pt; text-indent: 0pt; line-height: 12pt;text-align: left;">
+                    <apex:outputText value="{!Supplier.Lead_Name__r.Phone}"/>
+                  </p>
+                </td>
+                <td style="border-top-style: solid;border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;">
+                  <p style="padding-left: 5pt; text-indent: 0pt; line-height: 12pt;text-align: left;">
+                    <apex:outputText value="{!Supplier.Lead_Name__r.Email}"/>
+                  </p>
+                </td>
+            </tr>
+         </apex:repeat>
+      </table>
+      <br/>
+      <br/>
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <p style="padding-lect:11pt;text-indent: 0pt; line-height: 1pt;text-align: left;"/>
+        <div style="width:100%; height:1px; background:#4471c4;"></div>
+        <p class="s2" style="padding-bottom: 1pt;text-indent: 0pt;text-align: center;">
+          ANNEXURE 1 – FEES CALCULATION AND EXAMPLE
+        </p>
+        <div style="width:100%; height:1px; background:#4471c4;"></div>
+        <p style="padding-left: 11pt;text-indent: 0pt;line-height: 1pt;text-align: left;"/>
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <p style="padding-top: 2pt;padding-left: 13pt;text-indent: 0pt;text-align: left;">
+          To estimate your fees, use our online fees simulator by clicking on the
+          following link:
+        </p>
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <p class="s12" style="padding-left: 13pt; text-indent: 0pt; text-align: left">
+          <a href="https://forms.incomlend.com/form-5833132/financing-service-stimulator" class="a" target="_blank">https://forms.incomlend.com/form-5833132/financing-service-stimulator</a>
+          <br/><span style="color: #000">Password: Operations2021</span>
+        </p>
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <p style="padding-left: 13pt; text-indent: 0pt; text-align: left">
+          The information below is provided for indicative purposes only and is non
+          binding. Actual fees will be communicated by Incomlend in the Offer of
+          Invoice Financing.
+        </p>
+        <div id="div1" style="page-break-before: always;"></div>
+        <br/>
+        <br/>
+        <br/>
+        <div style="width:100%; height:1px; background:#4471c4;"></div>
+        <p class="s1" style="text-indent: 0pt;line-height: 14pt;text-align: center;">{!objLead.Company}</p>
+        <p class="s2" style="padding-bottom: 1pt; text-indent: 0pt; line-height: 13pt; text-align: center;">Term Sheet</p>
+        <div style="width:100%; height:1px; background:#4471c4;"></div>
+        
+        <p style="text-indent: 0pt; text-align: left"><br /></p>       
+        <p style="padding-left: 11pt; text-indent: 0pt; line-height: 1pt; text-align: left;"/>
+        <div style="width:100%; height:1px; background:#4471c4;"></div>
+        <p class="s2" style="padding-bottom: 1pt;text-indent: 0pt; text-align: center;">
+          ANNEXURE 2: KYC DOCUMENTS
+        </p>
+        <div style="width:100%; height:1px; background:#4471c4;"></div>
+        <p style="padding-left: 11pt;text-indent: 0pt;line-height: 1pt;text-align: left;"/>
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <p class="s13" style="padding-top: 3pt;padding-left: 13pt;text-indent: 0pt;text-align: justify;">
+          Before you initiate with our on-boarding process, our onboarding
+          specialist will reach out to you to ensure you have a smooth experience
+          through the process.
+        </p>
+        <p class="s13" style="padding-left: 13pt; text-indent: 0pt; text-align: justify">
+          Our aim is that you complete the on-boarding process in a single sitting.
+          This appendix is meant to assist you in collecting information and
+          documents required prior to completing the process.
+        </p>
+        <p class="s14" style="padding-top: 2pt; padding-left: 13pt; text-indent: 0pt;text-align: justify;">
+          <span class="h3">Please review the requirements below and prepare as needed. The
+            onboarding process will be performed through this link </span>
+            (<span class="h2">https://onboarding.incomlend.com/auth/login</span>)
+          <span class="h3">and may take approximately 30-45 minutes of your time. Feel free to
+            call us (+65 96184090 or +65 66040264) or email us
+            (onboarding@incomlend.com) if you have any questions. We look forward to
+            working with you! </span><span class="s15">(Please note all the required KYC documents to be provided within stated date on Term Sheet.)
+          </span>
+        </p>
+        <p class="s13" style="padding-top: 2pt; padding-left: 13pt;text-indent: 0pt;text-align: justify;">
+          To facilitate Onboarding, we would appreciate if you could provide us with the following information of yourself and your buyer: 
+        </p>
+        <ul id="l4">
+          <li>
+            <p class="s13" style="padding-left: 49pt; text-indent: -18pt; text-align: left">
+              • Full Legal Name 
+            </p>
+          </li>
+          <li>
+            <p class="s13" style="padding-left: 49pt; text-indent: -18pt; text-align: left">
+              • Country of Incorporation 
+            </p>
+          </li>
+          <li>
+            <p class="s13" style="padding-left: 49pt; text-indent: -18pt; text-align: left">
+              • Primary Contact Person and Designation 
+            </p>
+          </li>
+          <li>
+            <p class="s13" style="padding-left: 49pt; text-indent: -18pt; text-align: left">
+              • Contact Number 
+            </p>
+          </li>
+          <li>
+            <p class="s13" style="padding-left: 49pt; text-indent: -18pt; text-align: left">
+              • Email Address
+            </p>
+          </li>
+        </ul>
+        <br/><br/>
+        <p class="s16" style=" padding-top: 2pt;padding-left: 13pt;text-indent: 0pt;text-align: justify;">
+          <u>Documents required by yourself: </u>
+        </p>
+        <ul>
+          <li>
+            <p class="s13" style="padding-left: 49pt; text-indent: -18pt; text-align: left">
+              a) Certificate of Incorporation 
+            </p>
+          </li>
+          
+          <li>
+            <p class="s13" style="padding-left: 49pt; text-indent: -18pt; text-align: left">
+              b) List of Director 
+            </p>
+          </li>
+          <li>
+            <p class="s13" style="padding-left: 49pt; text-indent: -18pt; text-align: left">
+              c) List of Shareholder 
+            </p>
+          </li>
+          <li>
+            <p class="s13" style="padding-left: 49pt; text-indent: -18pt; text-align: left">
+              d) Proof of Company Operations – Utility bills or Bank Statement etc 
+            </p>
+          </li>
+          <li>
+            <p class="s13" style="padding-left: 49pt; text-indent: -18pt; text-align: left">
+              e) Bank Statement – showing bank name, account number and beneficiary name. 
+            </p>
+          </li>
+          <li>
+            <p class="s13" style="padding-left: 49pt; text-indent: -18pt; text-align: left">
+              f) 2 Set of Trade Documents (Invoice, Bill of Lading, Packing List and Certificate of Origin), Proof of Payment Receipt and Sales Contract – One set from 1 year ago, another set within the year. 
+            </p>
+          </li>
+          <li>
+            <p class="s13" style="padding-left: 49pt; text-indent: -18pt; text-align: left">
+              g) Director Resolution/Authorisation Letter <i>(Mandatory if primary contact is not a director).</i>
+            </p>
+          </li>
+          <li>
+            <p class="s13" style="padding-left: 49pt; text-indent: -18pt; text-align: left">
+              h) Primary Contact Identification Copy – Passport Copy (valid for at least 6 months.)
+            </p>
+          </li>
+        </ul>
+        
+        
+        
+        <!--<table style="border-collapse: collapse; margin-left: 13.49pt" cellspacing="0" width="90%">
+          <tr style="height: 14pt">
+            <td style="width: 242pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;" bgcolor="#4471C4">
+              <p class="s17" style="padding-left: 62pt;text-indent: 0pt;line-height: 11pt; text-align: left;" >
+                Documents required by you.
+              </p>
+            </td>
+            <td style="width: 256pt;border-top-style: solid;border-top-width: 1pt; border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;" bgcolor="#4471C4">
+              <p class="s17" style="padding-left: 46pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                Documents required by your supplier.
+              </p>
+            </td>
+          </tr>
+          <tr style="height: 38pt">
+            <td
+              style="width: 242pt;border-top-style: solid; border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;">
+              <p class="s18" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                Certificate of Incorporation
+                *Company Registration Document – Any legal document containing the company official name, registration number date and country of registration.
+              </p>
+            </td>
+            <td style="width: 256pt; border-top-style: solid;border-top-width: 1pt; border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt; border-right-style: solid;border-right-width: 1pt;">
+              <p class="s18" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+                Certificate of Incorporation
+                *Company Registration Document – Any legal document containing the
+                company official name, registration number, registration date and country of registration.
+              </p>
+            </td>
+          </tr>
+          <tr style="height: 29pt">
+            <td style="width: 242pt;border-top-style: solid;border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;">
+              <p class="s18" style="padding-left: 5pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                Register of Directors <span class="s20">(if required)</span>
+                *Any legal document containing the latest list of directors of the company.
+              </p>
+            </td>
+            <td style="width: 256pt; border-top-style: solid;border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;">
+              <p class="s18" style="padding-left: 5pt; text-indent: 0pt;line-height: 10pt;text-align: left;">
+                Register of Directors (<span class="s20">if required)</span> 
+                *Any legal document containing the latest list of directors of the  company.
+            </p>
+            </td>
+          </tr>
+          <tr style="height: 29pt">
+            <td style="width: 242pt;border-top-style: solid;border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 1pt;">
+              <p class="s18" style="padding-left: 5pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                Register of Shareholders <span class="s20">(if required)</span>
+               *Any legal document containing the latest list of shareholders of the company.
+              </p>
+              
+            </td>
+            <td
+              style="
+                width: 256pt;
+                border-top-style: solid;
+                border-top-width: 1pt;
+                border-left-style: solid;
+                border-left-width: 1pt;
+                border-bottom-style: solid;
+                border-bottom-width: 1pt;
+                border-right-style: solid;
+                border-right-width: 1pt;
+              "
+            >
+              <p
+                class="s18"
+                style="
+                  padding-left: 5pt;
+                  text-indent: 0pt;
+                  line-height: 10pt;
+                  text-align: left;
+                "
+              >
+                Register of Shareholders <span class="s20">(if required)</span>
+              </p>
+              <p
+                class="s19"
+                style="
+                  padding-left: 5pt;
+                  text-indent: 0pt;
+                  line-height: 9pt;
+                  text-align: left;
+                "
+              >
+                *Any legal document containing the latest list of shareholders of the
+              </p>
+              <p
+                class="s19"
+                style="
+                  padding-left: 5pt;
+                  text-indent: 0pt;
+                  line-height: 8pt;
+                  text-align: left;
+                "
+              >
+                company.
+              </p>
+            </td>
+          </tr>
+          <tr style="height: 29pt">
+            <td
+              style="
+                width: 242pt;
+                border-top-style: solid;
+                border-top-width: 1pt;
+                border-left-style: solid;
+                border-left-width: 1pt;
+                border-bottom-style: solid;
+                border-bottom-width: 1pt;
+                border-right-style: solid;
+                border-right-width: 1pt;
+              "
+            >
+              <p
+                class="s18"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+              >
+                Company Proof of Operating Address
+              </p>
+              <p
+                class="s19"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+              >
+                *The bank statement serves as proof of address and must be less
+              </p>
+              <p
+                class="s19"
+                style="
+                  padding-left: 5pt;
+                  text-indent: 0pt;
+                  line-height: 8pt;
+                  text-align: left;
+                "
+              >
+                than 3 months. Value can be redacted.
+              </p>
+            </td>
+            <td
+              style="
+                width: 256pt;
+                border-top-style: solid;
+                border-top-width: 1pt;
+                border-left-style: solid;
+                border-left-width: 1pt;
+                border-bottom-style: solid;
+                border-bottom-width: 1pt;
+                border-right-style: solid;
+                border-right-width: 1pt;
+              "
+            >
+              <p
+                class="s18"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+              >
+                Company Proof of Operating Address
+              </p>
+              <p
+                class="s19"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+              >
+                *The bank statement serves as proof of address and must be less than 3
+              </p>
+              <p
+                class="s19"
+                style="
+                  padding-left: 5pt;
+                  text-indent: 0pt;
+                  line-height: 8pt;
+                  text-align: left;
+                "
+              >
+                months. Value can be redacted.
+              </p>
+            </td>
+          </tr>
+          <tr style="height: 38pt">
+            <td
+              style="
+                width: 242pt;
+                border-top-style: solid;
+                border-top-width: 1pt;
+                border-left-style: solid;
+                border-left-width: 1pt;
+                border-bottom-style: solid;
+                border-bottom-width: 1pt;
+                border-right-style: solid;
+                border-right-width: 1pt;
+              "
+            >
+              <p
+                class="s18"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+              >
+                Bank Document
+              </p>
+              <p
+                class="s19"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+              >
+                *Bank details (bank name, bank account number, beneficiary name)
+              </p>
+              <p
+                class="s19"
+                style="
+                  padding-left: 5pt;
+                  padding-right: 8pt;
+                  text-indent: 0pt;
+                  line-height: 9pt;
+                  text-align: left;
+                "
+              >
+                from a document issued by the bank or bank statement or bank letter of
+                good standing with bank account details.
+              </p>
+            </td>
+            <td
+              style="
+                width: 256pt;
+                border-top-style: solid;
+                border-top-width: 1pt;
+                border-left-style: solid;
+                border-left-width: 1pt;
+                border-bottom-style: solid;
+                border-bottom-width: 1pt;
+                border-right-style: solid;
+                border-right-width: 1pt;
+              "
+            >
+              <p
+                class="s18"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+              >
+                Bank Document
+              </p>
+              <p
+                class="s19"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+              >
+                *Bank details (bank name, bank account number, beneficiary name) from
+              </p>
+              <p
+                class="s19"
+                style="
+                  padding-left: 5pt;
+                  text-indent: 0pt;
+                  line-height: 9pt;
+                  text-align: left;
+                "
+              >
+                a document issued by the bank or bank statement or bank letter of good
+                standing with bank account details
+              </p>
+            </td>
+          </tr>
+          <tr style="height: 20pt">
+            <td
+              style="
+                width: 242pt;
+                border-top-style: solid;
+                border-top-width: 1pt;
+                border-left-style: solid;
+                border-left-width: 1pt;
+                border-bottom-style: solid;
+                border-bottom-width: 1pt;
+                border-right-style: solid;
+                border-right-width: 1pt;
+              "
+            >
+              <p
+                class="s18"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+              >
+                Directors Resolution/Authorisation Letter
+              </p>
+              <p
+                class="s19"
+                style="
+                  padding-left: 5pt;
+                  text-indent: 0pt;
+                  line-height: 8pt;
+                  text-align: left;
+                "
+              >
+                (Mandatory if signatory is not a director)
+              </p>
+            </td>
+            <td
+              style="
+                width: 256pt;
+                border-top-style: solid;
+                border-top-width: 1pt;
+                border-left-style: solid;
+                border-left-width: 1pt;
+                border-bottom-style: solid;
+                border-bottom-width: 1pt;
+                border-right-style: solid;
+                border-right-width: 1pt;
+              "
+            >
+              <p
+                class="s18"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+              >
+                Directors Resolution/Authorisation Letter
+              </p>
+              <p
+                class="s19"
+                style="
+                  padding-left: 5pt;
+                  text-indent: 0pt;
+                  line-height: 8pt;
+                  text-align: left;
+                "
+              >
+                (Mandatory if signatory is not a director)
+              </p>
+            </td>
+          </tr>
+          <tr style="height: 20pt">
+            <td
+              style="
+                width: 242pt;
+                border-top-style: solid;
+                border-top-width: 1pt;
+                border-left-style: solid;
+                border-left-width: 1pt;
+                border-bottom-style: solid;
+                border-bottom-width: 1pt;
+                border-right-style: solid;
+                border-right-width: 1pt;
+              "
+            >
+              <p
+                class="s18"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+              >
+                Primary Contact Identification Copy
+              </p>
+              <p
+                class="s19"
+                style="
+                  padding-left: 5pt;
+                  text-indent: 0pt;
+                  line-height: 8pt;
+                  text-align: left;
+                "
+              >
+                *Passport Copy. Document must be valid for at least 6 months.
+              </p>
+            </td>
+            <td
+              style="
+                width: 256pt;
+                border-top-style: solid;
+                border-top-width: 1pt;
+                border-left-style: solid;
+                border-left-width: 1pt;
+                border-bottom-style: solid;
+                border-bottom-width: 1pt;
+                border-right-style: solid;
+                border-right-width: 1pt;
+              "
+            >
+              <p
+                class="s18"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+              >
+                Primary Contact Identification Copy
+              </p>
+              <p
+                class="s19"
+                style="
+                  padding-left: 5pt;
+                  text-indent: 0pt;
+                  line-height: 8pt;
+                  text-align: left;
+                "
+              >
+                *Passport Copy. Document must be valid for at least 6 months.
+              </p>
+            </td>
+          </tr>
+          <tr style="height: 47pt">
+            <td
+              style="
+                width: 242pt;
+                border-top-style: solid;
+                border-top-width: 1pt;
+                border-left-style: solid;
+                border-left-width: 1pt;
+                border-bottom-style: solid;
+                border-bottom-width: 1pt;
+                border-right-style: solid;
+                border-right-width: 1pt;
+              "
+            >
+              <p
+                class="s18"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: justify"
+              >
+                Audited Financial Statement and Management Accounts
+              </p>
+              <p
+                class="s19"
+                style="
+                  padding-left: 5pt;
+                  padding-right: 22pt;
+                  text-indent: 0pt;
+                  text-align: justify;
+                "
+              >
+                *Latest audited Financial Report. If an Audited Report is not available,
+                please provide any other financial document, which allows Incomlend to
+                assess the financial situation of your
+              </p>
+              <p
+                class="s19"
+                style="
+                  padding-left: 5pt;
+                  text-indent: 0pt;
+                  line-height: 8pt;
+                  text-align: left;
+                "
+              >
+                company.
+              </p>
+            </td>
+            <td
+              style="
+                width: 256pt;
+                border-top-style: solid;
+                border-top-width: 1pt;
+                border-left-style: solid;
+                border-left-width: 1pt;
+                border-bottom-style: solid;
+                border-bottom-width: 1pt;
+                border-right-style: solid;
+                border-right-width: 1pt;
+              "
+            >
+              <p style="text-indent: 0pt; text-align: left"><br /></p>
+            </td>
+          </tr>
+          <tr style="height: 76pt">
+            <td
+              style="
+                width: 242pt;
+                border-top-style: solid;
+                border-top-width: 1pt;
+                border-left-style: solid;
+                border-left-width: 1pt;
+                border-bottom-style: solid;
+                border-bottom-width: 1pt;
+                border-right-style: solid;
+                border-right-width: 1pt;
+              "
+            >
+              <p
+                class="s18"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+              >
+                Trade Documents and Proof of Payment Receipt
+              </p>
+              <ul id="l5">
+                <li data-list-text="-">
+                  <p
+                    class="s21"
+                    style="padding-left: 23pt; text-indent: -18pt; text-align: left"
+                  >
+                    2 set is required.
+                  </p>
+                  <ul id="l6">
+                    <li data-list-text="">
+                      <p
+                        class="s22"
+                        style="padding-left: 59pt; text-indent: -18pt; text-align: left"
+                      >
+                        One set from 1 year ago
+                      </p>
+                    </li>
+                    <li data-list-text="">
+                      <p
+                        class="s22"
+                        style="padding-left: 59pt; text-indent: -18pt; text-align: left"
+                      >
+                        One set within the year.
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <p
+                class="s19"
+                style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+              >
+                *Evidence of previous successful transactions with this supplier, such a
+                Purchase Orders, Invoices, Bill of Lading, Packing List, Certificate of
+                Origin, Insurance Policy/Certificate to perfect a
+              </p>
+              <p
+                class="s19"
+                style="
+                  padding-left: 5pt;
+                  text-indent: 0pt;
+                  line-height: 8pt;
+                  text-align: left;
+                "
+              >
+                trade<b>.</b>
+              </p>
+            </td>
+            <td
+              style="
+                width: 256pt;
+                border-top-style: solid;
+                border-top-width: 1pt;
+                border-left-style: solid;
+                border-left-width: 1pt;
+                border-bottom-style: solid;
+                border-bottom-width: 1pt;
+                border-right-style: solid;
+                border-right-width: 1pt;
+              "
+            >
+              <p style="text-indent: 0pt; text-align: left"><br /></p>
+            </td>
+          </tr>
+          <tr style="height: 20pt">Lead
+                "
+              >
+                *Contracts that you have with this supplier.
+              </p>
+            </td>
+            <td
+              style="
+                width: 256pt;
+                border-top-style: solid;
+                border-top-width: 1pt;
+                border-left-style: solid;
+                border-left-width: 1pt;
+                border-bottom-style: solid;
+                border-bottom-width: 1pt;
+                border-right-style: solid;
+                border-right-width: 1pt;
+              "
+            >
+              <p style="text-indent: 0pt; text-align: left"><br /></p>
+            </td>
+          </tr>
+        </table>--> 
+        
+    </div>
+    
+</apex:page>

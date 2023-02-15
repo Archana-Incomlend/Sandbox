@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_in_progress_Invoices_USD_Equiv__c</fullName>
+    <externalId>false</externalId>
+    <formula>USD_Total_in_progress_invoices__c + EUR_Total_in_progress_invoices_USD_Equiv__c + SGD_Total_in_progress_Invoices_USD_Equiv__c + HKD_Total_in_progress_Invoices_USD_Equiv__c + GBP_Total_in_progress_Invoices_USD_Equiv__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total in progress Invoices USD Equiv</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

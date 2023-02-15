@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Buyer_Contact_Who_Confirmed__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Buyer Contact Who Confirmed</label>
+    <lookupFilter>
+        <active>false</active>
+        <filterItems>
+            <field>Contact.Account_type__c</field>
+            <operation>equals</operation>
+            <value>Buyer</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Invoice Finance Deals (Buyer Contact Who Confirmed)</relationshipLabel>
+    <relationshipName>Invoice_Finance_Deals1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

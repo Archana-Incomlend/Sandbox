@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Transaction</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Transactions</value>
+    </caseValues>
+    <layouts>
+        <layout>Closed Accounting Period</layout>
+        <sections>
+            <label></label>
+            <section>Account Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>FX USD Daily</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Financing Deal</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Offer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Related Transaction</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>External Auditor</layout>
+        <sections>
+            <label></label>
+            <section>Account Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Financing Deal</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Related Transaction</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Transaction Layout</layout>
+        <sections>
+            <label></label>
+            <section>Account Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Block Chain</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>FX Tranche</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>FX daily</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Financing Deal</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Offer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Related Transaction</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>withdrawal/deposit</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label></label>
+        <name>Closed_Period</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Open_Period</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Flag_only_tick_for_deposit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Tranche_Amount_Only_For_FxContract</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>Double_Entry_Transaction</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Double_Entry_Transaction_for_accounts</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Mass_Update</name>
+    </webLinks>
+</CustomObjectTranslation>

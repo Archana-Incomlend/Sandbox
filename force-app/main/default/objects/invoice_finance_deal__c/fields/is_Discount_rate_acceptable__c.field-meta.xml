@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>is_Discount_rate_acceptable__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(discount_rate__c&lt;=Supplier_Buyer_Map__r.Max_Discount_accepted_without_warning__c,discount_rate__c&gt;=Supplier_Buyer_Map__r.Min_Discount_accepted_without_warning__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>is Discount rate acceptable</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>eWallet__c</fullName>
+    <externalId>false</externalId>
+    <label>eWallet</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>$Source.Account__c</field>
+            <operation>equals</operation>
+            <valueField>eWallet__c.Account__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.CCY__c</field>
+            <operation>equals</operation>
+            <valueField>eWallet__c.CCY__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>eWallet__c</referenceTo>
+    <relationshipLabel>Withdrawals Deposits</relationshipLabel>
+    <relationshipName>Withdrawals_Deposits</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

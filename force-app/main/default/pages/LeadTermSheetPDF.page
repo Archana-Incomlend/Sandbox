@@ -1,0 +1,74 @@
+<apex:page controller="LeadTermSheetSaveAsPDF" docType="html-5.0" tabStyle="Lead" lightningStylesheets="true">
+    
+    <apex:sectionHeader title="Buyers" />
+    
+    <apex:form >
+    
+        <apex:pageMessages id="pbm"/>
+        
+        <apex:pageBlock rendered="{!if(wrapperRecordList == null || wrapperRecordList.size == 0,true,false)}">
+            <apex:pageBlockSection rendered="{!if(wrapperRecordList == null || wrapperRecordList.size == 0,true,false)}">
+                No potential buyers are available for this supplier.
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="All Potential Buyers" rendered="{!wrapperRecordList.size!=0}" id="pbId" >
+            <apex:pageBlockTable value="{!wrapperRecordList}" var="objSalesOpp" id="pbTable">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox value="{!blnSelectAll}">
+                            <apex:actionSupport event="onchange" action="{!SelectAll}" reRender="pbId"/>
+                        </apex:inputCheckbox>
+                        <!--<apex:actionStatus id="selectAllStatus">
+                            <apex:facet name="start">
+                                Please wait...<img src="/img/loading32.gif" style="width: 18px;"/>
+                            </apex:facet>
+                        </apex:actionStatus>-->
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!objSalesOpp.isSelected}"/>
+                </apex:column>
+                <apex:column headerValue="Buyer">
+                    <apex:outputField value="{!objSalesOpp.objOpportunity.Lead_Name__r.Company}"/>
+                </apex:column>
+                <apex:column headerValue="Credit Limit">
+                    <apex:outputField value="{!objSalesOpp.objOpportunity.Lead_Name__r.Credit_Limit_Provided_by_Insurer__c}"/>
+                </apex:column>
+                <apex:column headerValue="CCY">
+                    <apex:outputField value="{!objSalesOpp.objOpportunity.Lead_Name__r.Credit_Limit_Requested_CCY__c}"/>
+                </apex:column>
+                <apex:column headerValue="Discount Rate">
+                    <apex:outputText rendered="{!if(objLead.CCY__c == 'USD',true,false)}" value="3-Month SOFR plus"></apex:outputText>
+                    <apex:outputText rendered="{!if(objLead.CCY__c == 'EUR',true,false)}" value="3-Month EURIBOR plus"></apex:outputText>
+                    <apex:outputText rendered="{!if(objLead.CCY__c == 'GBP',true,false)}" value="3-Month Daily SONIA plus"></apex:outputText>
+                    [<apex:outputField value="{!objSalesOpp.objOpportunity.SDR__c}" rendered="{!if(objSalesOpp.objOpportunity.SDR__c != null, true,false)}"/>
+                    <apex:outputField value="{!objLead.Supplier_Discount_Rate__c}" rendered="{!if(objSalesOpp.objOpportunity.SDR__c == null, true,false)}"/>
+                    ]
+                    <apex:outputText value=" per annum"></apex:outputText>
+                </apex:column>
+                
+            </apex:pageBlockTable>
+         <br/> <br/>
+            <apex:outputPanel style="text-align:center;" layout="block">
+                <apex:commandButton value="First" reRender="pbId" action="{!first}" disabled="{!NOT(hasPrevious)}" status="paginationStatus"/>
+                <apex:commandButton value="Previous" rerender="pbId" action="{!previous}" disabled="{!NOT(hasPrevious)}" status="paginationStatus"/>&nbsp;Page {!pageNumber} of {!totalPages}&nbsp;
+                <apex:commandButton value="Next" rerender="pbId" action="{!next}" disabled="{!NOT(hasNext)}" status="paginationStatus"/>
+                <apex:commandButton value="Last" rerender="pbId" action="{!last}" disabled="{!NOT(hasNext)}" status="paginationStatus"/>
+                <apex:actionStatus id="paginationStatus">
+                    <apex:facet name="start">
+                        Please wait...<img src="/img/loading32.gif" style="width: 18px;"/>
+                    </apex:facet>
+                </apex:actionStatus>
+                
+            </apex:outputPanel>
+            
+            <br/><br/>
+            
+            <apex:outputPanel style="text-align:center;" layout="block">
+                
+                <apex:commandButton value="Generate Termsheet for Selected Buyers" action="{!savePdf}"/>
+            </apex:outputPanel>
+            
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1_PRE_LISTING_info_for_buyer_ackno</fullName>
+    <columns>NAME</columns>
+    <columns>supplier_del__c</columns>
+    <columns>Status__c</columns>
+    <columns>Buyer_acknowledgment_date__c</columns>
+    <columns>Buyer_acknowledgment_received_date__c</columns>
+    <columns>Buyer_Confirmed_Date__c</columns>
+    <columns>Buyer_Contact_Who_Confirmed__c</columns>
+    <columns>Buyer_acknowledgment_details__c</columns>
+    <columns>Buyer_Confirmation_Status__c</columns>
+    <columns>buyer_confirmed_PO_details__c</columns>
+    <columns>buyer_confirmed_invoice_details__c</columns>
+    <columns>Supplier_Approval_Details__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Phase__c</field>
+        <operation>equals</operation>
+        <value>1:PRE LISTING</value>
+    </filters>
+    <filters>
+        <field>supplier_invoice_reference_number__c</field>
+        <operation>notContain</operation>
+        <value>test</value>
+    </filters>
+    <filters>
+        <field>buyer__c</field>
+        <operation>notContain</operation>
+        <value>test</value>
+    </filters>
+    <label>1 PRE LISTING - info for buyer ackno</label>
+</ListView>

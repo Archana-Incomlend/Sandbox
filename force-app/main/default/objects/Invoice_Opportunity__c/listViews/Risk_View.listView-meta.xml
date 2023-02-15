@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_View</fullName>
+    <columns>NAME</columns>
+    <columns>Lead_Name__c</columns>
+    <columns>Buyer_Name__c</columns>
+    <columns>Insurer_Name__c</columns>
+    <columns>CL_Requested__c</columns>
+    <columns>CL_Provided_by_insurer__c</columns>
+    <columns>Date_Answer_Insurer__c</columns>
+    <columns>Sales_Owner__c</columns>
+    <columns>Buyer_Country__c</columns>
+    <columns>Risk_Comments__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Buyer_Name__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Risk View</label>
+</ListView>

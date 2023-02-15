@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bank_Account__c</fullName>
+    <externalId>false</externalId>
+    <label>Bank Account</label>
+    <lookupFilter>
+        <active>false</active>
+        <filterItems>
+            <field>$Source.CCY__c</field>
+            <operation>equals</operation>
+            <valueField>Bank_Account__c.Currency__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Bank_Account__c.Name</field>
+            <operation>contains</operation>
+            <value>Platform</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Bank_Account__c</referenceTo>
+    <relationshipLabel>eWallets</relationshipLabel>
+    <relationshipName>eWallets</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>true</trackHistory>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

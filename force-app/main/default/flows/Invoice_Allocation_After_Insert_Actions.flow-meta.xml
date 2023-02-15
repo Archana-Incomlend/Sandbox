@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Email_funder_new_allocation</name>
+        <label>Email_funder_new_allocation</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <actionName>Invoice_Allocation__c.Email_funder_new_allocation</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Update_Trustee</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>Check_for_customer_email</name>
+        <label>Check for customer email</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnector>
+            <targetReference>Update_Trustee</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>customer_email_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Customer_Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Email_funder_new_allocation</targetReference>
+            </connector>
+            <label>customer email !- null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Trustee_not_empty</name>
+        <label>Trustee not empty</label>
+        <locationX>182</locationX>
+        <locationY>791</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Trustee_is_not_empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Trustee__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Trustee_update_e_wallet_trustee_Allocation</targetReference>
+            </connector>
+            <label>Trustee is not empty</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the Process Builder 
+1. TRUSTEE : Add e-wallet trustee on Allocation
+2. Email to funder on new allocation</description>
+    <environments>Default</environments>
+    <interviewLabel>Migrate Invoice Allocation - After Insert Actions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Invoice Allocation - After Insert Actions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Trustee</name>
+        <label>Update Trustee</label>
+        <locationX>182</locationX>
+        <locationY>671</locationY>
+        <connector>
+            <targetReference>Trustee_not_empty</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Trustee__c</field>
+            <value>
+                <elementReference>$Record.Invoice__r.Trustee__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_for_customer_email</targetReference>
+        </connector>
+        <filterFormula>!{!$Setup.ICL_Settings__c.Disable_Migrate_Flow__c}</filterFormula>
+        <object>Invoice_Allocation__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Trustee_update_e_wallet_trustee_Allocation</name>
+        <label>Trustee - update e-wallet trustee Allocation</label>
+        <locationX>50</locationX>
+        <locationY>911</locationY>
+        <flowName>TRUSTEE_update_e_wallet_trustee</flowName>
+        <inputAssignments>
+            <name>IDallocation</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

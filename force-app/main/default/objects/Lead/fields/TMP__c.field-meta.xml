@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMP__c</fullName>
+    <externalId>false</externalId>
+    <label>TMP-3rd party telemarketing</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accelerando</fullName>
+                <default>false</default>
+                <label>Accelerando</label>
+            </value>
+            <value>
+                <fullName>Devonshire Warwick Capital</fullName>
+                <default>false</default>
+                <label>Devonshire Warwick Capital</label>
+            </value>
+            <value>
+                <fullName>Mont-Blanc Wealth Mgt Svc AG</fullName>
+                <default>false</default>
+                <label>Mont-Blanc Wealth Mgt Svc AG</label>
+            </value>
+            <value>
+                <fullName>Chevallion Advisors</fullName>
+                <default>false</default>
+                <label>Chevallion Advisors</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

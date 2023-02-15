@@ -1,0 +1,108 @@
+<apex:page standardController="FX_Contract__c" extensions="CalculateFXContractController" docType="html-5.0" showHeader="false" >
+    <apex:pageMessages id="message" escape="false"/>
+    <apex:form id="theForm" >
+        
+        <br/>
+        <apex:outputLabel > FX Contract for updating: {!FX_Contract_Name}</apex:outputLabel>
+        <apex:outputLabel >   Target CCY: {!CCY}</apex:outputLabel>
+        <apex:outputLabel >   Is Simulation </apex:outputLabel>
+        <apex:inputCheckbox value="{!isSimulation}"/>
+        <br/>
+        <apex:panelGrid columns="3" id="selectForm" >
+            <apex:selectList id="sel1" value="{!leftselected}" multiselect="true" style="width:365px" size="10">
+                <apex:selectOptions value="{!unselectedvalues}" />
+            </apex:selectList>
+            <apex:panelGroup >
+                <br/>
+                <apex:image value="/s.gif"  styleClass="rightArrowIcon">
+                    <apex:actionSupport event="onclick" action="{!selectclick}" reRender="selectForm" status="status"/>
+                </apex:image>
+                <br/><br/>
+                <apex:image value="/s.gif" styleClass="leftArrowIcon">
+                    <apex:actionSupport event="onclick" action="{!unselectclick}" reRender="selectForm" status="status"/>
+                </apex:image>
+            </apex:panelGroup>
+            <apex:selectList id="sel2" value="{!rightselected}" multiselect="true" style="width:365px" size="10">
+                <apex:selectOptions value="{!SelectedValues}" />
+            </apex:selectList>
+        </apex:panelGrid>
+        <br/>
+        <apex:outputLabel > List Account for calculating FX Contract (Reference config Tranche_Account_For_FX_Contract) </apex:outputLabel>
+        <apex:inputTextarea value="{!accounts}" rows="5" readonly="true" style="width: 97%; margin-left: 5px;" />
+        <br/>
+        <apex:outputLabel > Min Date  </apex:outputLabel>
+        <apex:input type="date" value="{!minDate}" size="10" id="minDate" />
+        <apex:outputLabel >  Max Date  </apex:outputLabel>
+        <apex:input type="date" value="{!maxDate}" size="10" id="maxDate" />
+        <apex:outputLabel >  </apex:outputLabel>
+        <apex:commandButton value="Execute" action="{!execute}" reRender="ResultPanel,message,theForm" status="status"/>
+        <apex:commandButton value="Close" action="{!close}"/>
+         
+        <apex:commandButton value="Unlink Transactions" action="{!unlink}"/>
+        <apex:commandButton value="Close" action="{!close}"/>
+         
+        <apex:commandButton value="Fix Remain Amt" action="{!recalculateRemainAmount}"/>
+        <apex:inputHidden id="validate" value="{!errorTransaction}"/>
+        <br/>
+        <br/>
+        <apex:outputPanel id="ResultPanel" style="padding-left: 5px;display: inline-block;">
+            <table border="1">
+                <tr>
+                    <th>FxContract</th>
+                    <th>Transaction</th>
+                    <th>Invoice</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+                <!-- <apex:repeat id="myRepeatHeader" value="{!resultList}" var="key"> -->
+                    <apex:variable var="count" value="{!1}"/>
+                    <apex:variable var="preRow" value="{!}"/>
+                    <!-- <apex:repeat id="contactDetails" value="{!resultDetails[key]}" var="detail"> -->
+                    <apex:repeat id="contactDetails" value="{!detailResults}" var="detail">
+                        <tr>
+                            <!-- <apex:outputPanel layout="none" rendered="{!count==1}"> -->
+                                <!-- <td rowspan="{!(resultCountMap[key])}"> -->
+                                <td>
+                                    <!-- <apex:outputText value="{!detail.fxContractName}"/> -->
+                                    <apex:outputText value="{!IF(detail.fxContractName==preRow,'',detail.fxContractName)}"/>
+                                    <apex:variable var="preRow" value="{!detail.fxContractName}"/>
+                                </td>
+                            <!-- </apex:outputPanel> -->
+                            <td>
+                                <apex:outputText value="{!detail.transactionName}"/>
+                            </td>
+                            <td>
+                                <apex:outputText value="{!detail.invoiceName}"/>
+                            </td>
+                            <td>
+                                <apex:outputText value="{!detail.amount}"/>
+                            </td>
+                            <td>
+                                <apex:outputText value="{!detail.status}"/>
+                            </td>
+                            <apex:variable var="count" value="{!count+1}"/>
+                        </tr>
+                    </apex:repeat>
+                <!-- </apex:repeat> -->
+            </table>
+        </apex:outputPanel>
+        <apex:actionStatus id="status">
+            <apex:facet name="start">
+            <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.75; z-index: 1000; background-color: black;">
+                 
+            </div>
+            <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 30% 50%">
+                <img src="/img/loading.gif" />
+            </div>
+            </apex:facet>
+        </apex:actionStatus>
+        
+        <script type="text/javascript">
+        var val = document.getElementById('{!$Component.theForm.validate}').value;
+        if(val != null && val == 'OK'){
+            window.opener.location.href="/{!$CurrentPage.parameters.id}";
+            window.top.close();
+        }
+        </script>
+    </apex:form>
+</apex:page>

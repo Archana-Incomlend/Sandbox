@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Display_on_Secondary_Marketplace__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>the invoices that are currently funded by Incomlend’s Balance Sheet on the Secondary Marketplace to allow other funders to buy back the invoice</description>
+    <externalId>false</externalId>
+    <label>Display on Secondary Marketplace</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<apex:page standardController="Account" extensions="ListViewController" lightningStylesheets="false" action="{!downloadInit}">
+    <apex:pageMessages id="message" escape="false"/>
+    <br/>
+    <apex:outputLabel >Please click close after download</apex:outputLabel>
+    <br/>
+    <apex:form >
+        <br/>
+        <a href="data:application/zip;content-disposition:attachment;base64,{!newblobMessage}" target="_blank" type="application/zip" download="document.zip">Download</a>
+        <br/>
+        <br/>
+        <apex:commandButton value="Close" action="{!close}"/>
+        <apex:inputHidden id="validate" value="{!errorMessage}"/>
+    </apex:form> 
+</apex:page>

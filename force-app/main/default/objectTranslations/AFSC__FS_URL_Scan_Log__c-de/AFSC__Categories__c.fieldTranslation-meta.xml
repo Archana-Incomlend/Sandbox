@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Categories__c</name>
+    <picklistValues>
+        <masterLabel>abortion</masterLabel>
+        <translation>Abtreibung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>adserving</masterLabel>
+        <translation>Adserving</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>adult</masterLabel>
+        <translation>Nicht jugendfrei</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>alcohol and tobacco</masterLabel>
+        <translation>Alkohol und Tabakwaren</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>anonymizers</masterLabel>
+        <translation>Anonymisierer</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>auctions</masterLabel>
+        <translation>Auktionen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>banking</masterLabel>
+        <translation>Banking</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>blogs</masterLabel>
+        <translation>Blogs</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>chat</masterLabel>
+        <translation>Chat</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>dating</masterLabel>
+        <translation>Dating</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>drugs</masterLabel>
+        <translation>Drogen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>entertainment</masterLabel>
+        <translation>Unterhaltung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>gambling</masterLabel>
+        <translation>Glücksspiel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>games</masterLabel>
+        <translation>Spiele</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>hacking</masterLabel>
+        <translation>Hacking</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>hate</masterLabel>
+        <translation>Hass</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>job search</masterLabel>
+        <translation>Jobsuche</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>paymentservice</masterLabel>
+        <translation>Zahlungsservice</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>scam</masterLabel>
+        <translation>Betrug</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>shopping</masterLabel>
+        <translation>Shopping</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>social networking</masterLabel>
+        <translation>Soziale Netzwerke</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>software download</masterLabel>
+        <translation>Softwaredownload</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>spam</masterLabel>
+        <translation>Spam</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>streaming media</masterLabel>
+        <translation>Streaming-Medien</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>violence</masterLabel>
+        <translation>Gewalt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>warez</masterLabel>
+        <translation>Warez</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>weapons</masterLabel>
+        <translation>Waffen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>webmail</masterLabel>
+        <translation>Webmail</translation>
+    </picklistValues>
+</CustomFieldTranslation>

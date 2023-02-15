@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Direction__c</name>
+    <picklistValues>
+        <masterLabel>Open</masterLabel>
+        <translation>Apri</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Post</masterLabel>
+        <translation>Pubblica</translation>
+    </picklistValues>
+</CustomFieldTranslation>

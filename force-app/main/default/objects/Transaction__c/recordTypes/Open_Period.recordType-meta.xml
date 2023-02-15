@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Period</fullName>
+    <active>true</active>
+    <label>Open Period</label>
+    <picklistValues>
+        <picklist>CCY__c</picklist>
+        <values>
+            <fullName>AUD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EUR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GBP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HKD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SGD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USD</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>XXX</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>*** error ***</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed by Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed by operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Requested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>expected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Trustee__c</picklist>
+        <values>
+            <fullName>Amicorp Escrow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amicorp Trust</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>01%2EInvoice Purchase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>01%2EInvoice Purchase %28Tr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>02%2EInvoice Advance Amount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>03%2EInvoice Repayment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>031%2EPartial Payment Topup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>032%2EPartial Payment reimbursement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>04%2EInvoice Capital Repayment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>04%2EInvoice Capital Repayment %28Tr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05%2EInvoice Discount Amount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05%2EInvoice Discount Amount %28Tr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>051%2EAgent Commission on Discount Amount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>052%2Ediscount amount fees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>053%2EMaster Agent Commission on Discount Amount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>053%2Ediscount amount fees overdue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>054%2EInvoice Discount Amount Overdue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>054%2EInvoice Discount Amount Overdue %28Tr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06%2ETransaction Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>061%2EAgent Commission on Transaction Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>062%2ETransaction Fees overdue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>07%2ECredit Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>08%2EInvoice Balance Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>09%2EGST transaction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20%2ELegal fees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60%2EIntra-transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>70%2EDeposit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>70%2EDeposit %28Tr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>80%2EWithdrawal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>80%2EWithdrawal %28Tr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>88%2EAnnual membership fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>888%2EAdditional buyer onboarding fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>89%2EMaintenance fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>90%2EBank Fees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>99%2EAdjustment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>999%2E Past balance of archived transactions</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

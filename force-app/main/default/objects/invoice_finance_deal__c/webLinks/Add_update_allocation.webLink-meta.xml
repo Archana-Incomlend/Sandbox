@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_update_allocation</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Add update allocation</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/flow/Invoice_add_update_allocation_transactions_creation
+?invoiceId={!invoice_finance_deal__c.Id}&amp;retURL={!invoice_finance_deal__c.Id}</url>
+</WebLink>

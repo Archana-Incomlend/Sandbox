@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccys_must_match</fullName>
+    <active>false</active>
+    <errorConditionFormula>text(CCY__c) &lt;&gt; marketplace_ccy__c</errorConditionFormula>
+    <errorMessage>The Invoice Currency must equal the Marketplace Currency</errorMessage>
+</ValidationRule>

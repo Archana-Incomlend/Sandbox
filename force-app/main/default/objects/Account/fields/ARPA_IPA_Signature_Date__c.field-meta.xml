@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ARPA_IPA_Signature_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Fill with the Date when the IPA / ARPA is signed by the customer</inlineHelpText>
+    <label>ARPA / IPA Signature Date Escrow</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

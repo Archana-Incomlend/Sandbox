@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Migrated from the workflow :
+1. Update Master Agent email
+2. Update Agent Email
+3. Update Primary Contact Email</description>
+    <masterLabel>In-Active Migrate Account - Update Email Fields</masterLabel>
+</FlowDefinition>

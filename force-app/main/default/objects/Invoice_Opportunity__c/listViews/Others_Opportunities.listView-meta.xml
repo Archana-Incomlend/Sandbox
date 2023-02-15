@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Others_Opportunities</fullName>
+    <columns>NAME</columns>
+    <columns>Sale_Owner_Upload__c</columns>
+    <columns>Buyer_Name__c</columns>
+    <columns>Supplier_name__c</columns>
+    <columns>CL_Provided_by_insurer__c</columns>
+    <columns>Date_Termsheet_Sent__c</columns>
+    <columns>Date_Term_sheet_Signedt__c</columns>
+    <columns>Opportunity_Status__c</columns>
+    <columns>Expected_Amount__c</columns>
+    <columns>Expected_Submission_Date__c</columns>
+    <columns>Sales_Comments__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Buyer_Name__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Sale_Owner_Upload__c</field>
+        <operation>contains</operation>
+        <value>Others</value>
+    </filters>
+    <label>Others Opportunities</label>
+</ListView>

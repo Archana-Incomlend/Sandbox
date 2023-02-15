@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_HKD_80_Withdrawal__c</fullName>
+    <externalId>false</externalId>
+    <label>Total HKD 80.Withdrawal</label>
+    <summarizedField>Transaction__c.Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Transaction__c.CCY__c</field>
+        <operation>equals</operation>
+        <value>HKD</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Transaction__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Confirmed by Finance</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Transaction__c.Type__c</field>
+        <operation>equals</operation>
+        <value>80.Withdrawal</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Transaction__c.Accounting_Period__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

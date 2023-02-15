@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>online_contact_application__c</fullName>
+    <externalId>false</externalId>
+    <label>online contact application</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>skype</fullName>
+                <default>false</default>
+                <label>skype</label>
+            </value>
+            <value>
+                <fullName>whatsapp</fullName>
+                <default>false</default>
+                <label>whatsapp</label>
+            </value>
+            <value>
+                <fullName>viber</fullName>
+                <default>false</default>
+                <label>viber</label>
+            </value>
+            <value>
+                <fullName>facebook messenger</fullName>
+                <default>false</default>
+                <label>facebook messenger</label>
+            </value>
+            <value>
+                <fullName>weechat</fullName>
+                <default>false</default>
+                <label>weechat</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

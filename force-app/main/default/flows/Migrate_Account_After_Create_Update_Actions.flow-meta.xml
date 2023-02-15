@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <description>Check Agent</description>
+        <name>Check_Agent</name>
+        <label>Check Agent</label>
+        <locationX>374</locationX>
+        <locationY>455</locationY>
+        <defaultConnector>
+            <targetReference>Check_Email</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Agent_changed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Agent__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Agent__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Map_With_Agent</targetReference>
+            </connector>
+            <label>Agent changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check Email</description>
+        <name>Check_Email</name>
+        <label>Check Email</label>
+        <locationX>374</locationX>
+        <locationY>791</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Email_changed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Primary_contact_email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Primary_contact_email__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Map_With_Supplier_Contact</targetReference>
+            </connector>
+            <label>Email changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_New</name>
+        <label>Is New</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <defaultConnector>
+            <targetReference>Check_Agent</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_New2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Is New</label>
+        </rules>
+    </decisions>
+    <description>Migrate from the Process Builder
+1.  (SB Map) Update existing map with agent
+2.  (SB Map) Update Email Supplier for Approval</description>
+    <formulas>
+        <name>IsNew</name>
+        <dataType>Boolean</dataType>
+        <expression>IsNew()</expression>
+    </formulas>
+    <interviewLabel>Migrate Account After Create Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Account After Create Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Map_With_Agent</name>
+        <label>Update Map With Agent</label>
+        <locationX>242</locationX>
+        <locationY>575</locationY>
+        <connector>
+            <targetReference>Check_Email</targetReference>
+        </connector>
+        <filterLogic>(1 AND NOT(2)) OR (3 AND 4)</filterLogic>
+        <filters>
+            <field>Supplier__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Market_Place_Name__c</field>
+            <operator>StartsWith</operator>
+            <value>
+                <stringValue>Reverse</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Buyer__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Market_Place_Name__c</field>
+            <operator>StartsWith</operator>
+            <value>
+                <stringValue>Reverse</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Account_Agent__c</field>
+            <value>
+                <elementReference>$Record.Agent__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Supplier_Buyer_Map__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Map_With_Supplier_Contact</name>
+        <label>Update Map With Supplier Contact</label>
+        <locationX>506</locationX>
+        <locationY>911</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Supplier__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>supplier_contacts_for_invoice_approval__c</field>
+            <value>
+                <elementReference>$Record.Primary_contact_email__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Supplier_Buyer_Map__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_New</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

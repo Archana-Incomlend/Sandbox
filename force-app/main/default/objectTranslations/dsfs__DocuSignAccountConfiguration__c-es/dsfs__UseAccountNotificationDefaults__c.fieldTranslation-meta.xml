@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Activar la configuración de recordatorio y de caducidad permite que especifique los valores predeterminados de recordatorio y de caducidad en DocuSign para Salesforce. Esta configuración invalida la configuración de recordatorios y de caducidad predeterminada de su cuenta de DocuSign.</help>
+    <label></label>
+    <name>dsfs__UseAccountNotificationDefaults__c</name>
+</CustomFieldTranslation>

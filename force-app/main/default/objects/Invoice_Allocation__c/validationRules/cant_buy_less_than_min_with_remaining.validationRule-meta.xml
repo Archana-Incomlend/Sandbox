@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cant_buy_less_than_min_with_remaining</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( ISBLANK( CreatedDate),
+amount__c &lt; IF(( (Invoice__r.remaining_amount__c  -  marketplace_Min_purchase_amount__c)  &lt;  marketplace_Min_purchase_amount__c ), Invoice__r.remaining_amount__c, marketplace_Min_purchase_amount__c)
+,FALSE)</errorConditionFormula>
+    <errorMessage>Requested reservation amount is not available(e1)</errorMessage>
+</ValidationRule>

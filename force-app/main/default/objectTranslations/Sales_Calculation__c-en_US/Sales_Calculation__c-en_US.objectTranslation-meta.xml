@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sales Calculation - Deprecated</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sales Calculations</value>
+    </caseValues>
+    <layouts>
+        <layout>Sales Calculation Layout</layout>
+        <sections>
+            <label></label>
+            <section>Commission Sales</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Commission for Sales</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Data</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Data for Calculation (auto)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trade Info</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

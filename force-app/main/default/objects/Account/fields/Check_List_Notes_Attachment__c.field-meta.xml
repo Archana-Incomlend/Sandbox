@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_List_Notes_Attachment__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>List of Mandatory Check on Document and notes received</inlineHelpText>
+    <label>Check-List Notes&amp;Attachment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Trade_Model__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>On_Boarding_N_A_all</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B  R-Factoring Buyer</controllingFieldValue>
+            <valueName>Termsheet signed in docusign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B  R-Factoring Buyer</controllingFieldValue>
+            <valueName>Offer of invoice financing signed in docusign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B R-Factoring Supplier</controllingFieldValue>
+            <valueName>ARPA signed in docusign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B R-Factoring Supplier</controllingFieldValue>
+            <valueName>GTC Supplier Acknowledged via Registration Form</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B  R-Factoring Buyer</controllingFieldValue>
+            <valueName>Absence of common shareholder &amp; directors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Supplier</controllingFieldValue>
+            <valueName>Supplier Visit Report</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B  R-Factoring Buyer</controllingFieldValue>
+            <valueName>Due Diligence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B  R-Factoring Buyer</controllingFieldValue>
+            <valueName>Vertification of company&apos;s landline</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B  R-Factoring Buyer</controllingFieldValue>
+            <valueName>Vertification of primary contact landline</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B  R-Factoring Buyer</controllingFieldValue>
+            <valueName>Vertification of email address</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B  R-Factoring Buyer</controllingFieldValue>
+            <valueName>Email confirmation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B  R-Factoring Buyer</controllingFieldValue>
+            <valueName>WorldCheck - Incomlend</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B  R-Factoring Buyer</controllingFieldValue>
+            <valueName>GoogleCheck - Incomlend</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B R-Factoring Supplier</controllingFieldValue>
+            <controllingFieldValue>&gt;1B  R-Factoring Buyer</controllingFieldValue>
+            <valueName>Onboarding Checklist</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B  R-Factoring Buyer</controllingFieldValue>
+            <valueName>Credit Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>R-Factoring Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B Factoring-Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B  R-Factoring Buyer</controllingFieldValue>
+            <valueName>Buyer Visit Report</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Factoring-Buyer</controllingFieldValue>
+            <valueName>Signed Buyer&apos;s Notification Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>R-Factoring Buyer</controllingFieldValue>
+            <controllingFieldValue>&gt;1B  R-Factoring Buyer</controllingFieldValue>
+            <valueName>GTC Buyer + Deed Indemnity signed in docusign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>&gt;1B R-Factoring Supplier</controllingFieldValue>
+            <valueName>SNL signed by docusign</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

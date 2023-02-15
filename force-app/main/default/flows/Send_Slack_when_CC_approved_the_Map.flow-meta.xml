@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Slack_to_Onboarding_Channel</name>
+        <label>Send Slack to Onboarding Channel</label>
+        <locationX>753</locationX>
+        <locationY>504</locationY>
+        <actionName>SendSlackMessageToOnboarding</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Message</name>
+            <value>
+                <elementReference>formattedmessage_template</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>51.0</apiVersion>
+    <assignments>
+        <name>Set_OwnerName</name>
+        <label>Set OwnerName</label>
+        <locationX>844</locationX>
+        <locationY>50</locationY>
+        <assignmentItems>
+            <assignToReference>OwnerName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>{!OwnerAccount.Name} :white_check_mark:</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Slack_to_Onboarding_Channel</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Ops_Owner_found</name>
+        <label>Ops Owner found</label>
+        <locationX>646</locationX>
+        <locationY>52</locationY>
+        <defaultConnector>
+            <targetReference>Send_Slack_to_Onboarding_Channel</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OwnerAccount</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_OwnerName</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Slack message when the Credit Commity approve the MAP to give the instruction to send the BNL, merge
+    1. Send Slack when CC approved the Map (this)
+    2. Credit Commitee approved, send BNL (from workflow)</description>
+    <environments>Default</environments>
+    <interviewLabel>Send Slack when CC approved the Map {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send Slack when CC approved the Map</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Owner</name>
+        <label>Get Owner</label>
+        <locationX>491</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Ops_Owner_found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Ops_Owner__c</elementReference>
+            </value>
+        </filters>
+        <object>User</object>
+        <outputReference>OwnerAccount</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Get_Owner</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Credit_Committee_Status__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Credit_Committee_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Approved</stringValue>
+            </value>
+        </filters>
+        <object>Supplier_Buyer_Map__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>formattedmessage_template</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>@operations
+The Map {!$Record.Name} as been Approved by the Credit Committee 
+Please send the BNL by via docusign.
+Ops Owner: *{!OwnerName}*</text>
+    </textTemplates>
+    <variables>
+        <name>invoice</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>invoice_finance_deal__c</objectType>
+    </variables>
+    <variables>
+        <name>invoiceID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>a09N000000BMm9D</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>OwnerAccount</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>User</objectType>
+    </variables>
+    <variables>
+        <name>OwnerName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>:warning: Ops Owner is not set, please amend the Supplier Buyer Map :warning:</stringValue>
+        </value>
+    </variables>
+</Flow>

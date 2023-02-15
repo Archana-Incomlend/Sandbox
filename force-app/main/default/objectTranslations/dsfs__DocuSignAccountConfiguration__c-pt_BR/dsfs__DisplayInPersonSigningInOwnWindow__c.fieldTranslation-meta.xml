@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Ajuste a página de acesso do DocYouSign InPerson para ser mostrada em sua própria janela, e não fixada dentro do cabeçalho e/ou da barra lateral da Salesforce.</help>
+    <label></label>
+    <name>dsfs__DisplayInPersonSigningInOwnWindow__c</name>
+</CustomFieldTranslation>

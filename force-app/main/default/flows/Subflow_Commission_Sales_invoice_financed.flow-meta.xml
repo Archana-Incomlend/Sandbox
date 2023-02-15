@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <description>Update to have a com sales buyer and a com sales supplier when financed</description>
+    <interviewLabel>send slack for invoice phase change {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflow Commission Sales invoice financed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Object to calcualte the commission when the invoice is funded</description>
+        <name>Sales_Calculation_buyer</name>
+        <label>Sales Calculation Buyer</label>
+        <locationX>749</locationX>
+        <locationY>57</locationY>
+        <connector>
+            <targetReference>Sales_Calculation_Supplier</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Commission_Type__c</field>
+            <value>
+                <stringValue>Financed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Invoice_Finance_Deal__c</field>
+            <value>
+                <elementReference>invoice.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Supplier_Buyer_Map__c</field>
+            <value>
+                <elementReference>invoice.Supplier_Buyer_Map__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Sales Buyer</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Sales_Calculation__c</object>
+    </recordCreates>
+    <recordCreates>
+        <description>Object to calcualte the commission when the invoice is funded</description>
+        <name>Sales_Calculation_Supplier</name>
+        <label>Sales Calculation Supplier</label>
+        <locationX>1093</locationX>
+        <locationY>56</locationY>
+        <inputAssignments>
+            <field>Commission_Type__c</field>
+            <value>
+                <stringValue>Financed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Invoice_Finance_Deal__c</field>
+            <value>
+                <elementReference>invoice.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Supplier_Buyer_Map__c</field>
+            <value>
+                <elementReference>invoice.Supplier_Buyer_Map__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Sales Supplier</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Sales_Calculation__c</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_invoice</name>
+        <label>Get invoice</label>
+        <locationX>371</locationX>
+        <locationY>58</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Sales_Calculation_buyer</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>invoiceID</elementReference>
+            </value>
+        </filters>
+        <object>invoice_finance_deal__c</object>
+        <outputReference>invoice</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Supplier_Buyer_Map__c</queriedFields>
+        <queriedFields>CreatedDate</queriedFields>
+        <queriedFields>advance_send_to_supplier_date__c</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>58</locationY>
+        <connector>
+            <targetReference>Get_invoice</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <textTemplates>
+        <name>formattedmessage_template</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>*{!invoice.Invoice_name__c} Phase -&gt; {!invoice.Phase__c}*
+ {!invoice.CCY__c} {!invoice.invoice_amount__c}
+Ops Owner: *{!OwnerName}*</text>
+    </textTemplates>
+    <variables>
+        <name>invoice</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>invoice_finance_deal__c</objectType>
+    </variables>
+    <variables>
+        <name>invoiceID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OwnerAccount</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>User</objectType>
+    </variables>
+    <variables>
+        <name>OwnerName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>:warning: Ops Owner is not set, please amend the Supplier Buyer Map :warning:</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>SupplierBuyerMap</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Supplier_Buyer_Map__c</objectType>
+    </variables>
+</Flow>

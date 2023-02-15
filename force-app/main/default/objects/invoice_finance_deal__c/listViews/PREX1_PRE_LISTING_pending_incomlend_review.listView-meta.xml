@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PREX1_PRE_LISTING_pending_incomlend_review</fullName>
+    <columns>NAME</columns>
+    <columns>supplier_del__c</columns>
+    <columns>requested_amount__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Phase__c</field>
+        <operation>equals</operation>
+        <value>1:PRE LISTING</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>pending incomlend review</value>
+    </filters>
+    <filters>
+        <field>supplier_invoice_reference_number__c</field>
+        <operation>notContain</operation>
+        <value>test</value>
+    </filters>
+    <filters>
+        <field>buyer__c</field>
+        <operation>notContain</operation>
+        <value>test</value>
+    </filters>
+    <filters>
+        <field>buyer__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>1 PRE LISTING - pending incomlend review</label>
+    <sharedTo>
+        <group>Funding</group>
+        <group>Operation</group>
+    </sharedTo>
+</ListView>

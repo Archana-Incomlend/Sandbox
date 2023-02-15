@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Updated_by_Flow__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>to check if the transaction has been updated by the flow update transaction</description>
+    <externalId>false</externalId>
+    <inlineHelpText>to check if the transaction has been updated by the flow update transaction  ( for Maintenance)</inlineHelpText>
+    <label>Updated by Flow</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

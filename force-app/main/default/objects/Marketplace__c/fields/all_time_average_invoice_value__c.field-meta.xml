@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>all_time_average_invoice_value__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( All_time_invoice_count_RH__c  = 0, 0,
+ All_Time_Invoice_Value_RH__c  / All_time_invoice_count_RH__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>all time average invoice value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

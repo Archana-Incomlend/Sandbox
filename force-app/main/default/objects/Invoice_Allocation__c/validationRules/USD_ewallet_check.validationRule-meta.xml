@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>USD_ewallet_check</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( ISBLANK( CreatedDate),
+( (ISPICKVAL(CCY__c, &quot;USD&quot;) )  &amp;&amp;  (  amount__c  &gt;  Funder__r.USD_Available_eWallet__c  )  )
+,FALSE)</errorConditionFormula>
+    <errorMessage>You do not have available funds in your eWallet</errorMessage>
+</ValidationRule>

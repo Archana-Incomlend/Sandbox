@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funding_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Invoice Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0-Map Not Onboarded</fullName>
+                <default>false</default>
+                <label>0-Map Not Onboarded</label>
+            </value>
+            <value>
+                <fullName>Processing</fullName>
+                <default>false</default>
+                <label>1-Processing</label>
+            </value>
+            <value>
+                <fullName>2-Pending BC</fullName>
+                <default>false</default>
+                <label>2-Pending BC</label>
+            </value>
+            <value>
+                <fullName>Invoice Checked /Waiting for Allocation</fullName>
+                <default>false</default>
+                <label>3-Invoice Checked /Waiting for Allocation</label>
+            </value>
+            <value>
+                <fullName>Fund Available</fullName>
+                <default>false</default>
+                <label>4-Fund Available</label>
+            </value>
+            <value>
+                <fullName>Waiting for Repayment</fullName>
+                <default>false</default>
+                <label>5-Waiting for Repayment</label>
+            </value>
+            <value>
+                <fullName>No Credit Limit</fullName>
+                <default>false</default>
+                <label>6-No Credit Limit</label>
+            </value>
+            <value>
+                <fullName>Non Responsive</fullName>
+                <default>false</default>
+                <label>7-Non Responsive</label>
+            </value>
+            <value>
+                <fullName>Rejected by Incomlend</fullName>
+                <default>false</default>
+                <label>8-Rejected by Incomlend</label>
+            </value>
+            <value>
+                <fullName>No Funding Expected</fullName>
+                <default>false</default>
+                <label>9-No Funding Expected</label>
+            </value>
+            <value>
+                <fullName>10-Pending internal approval</fullName>
+                <default>false</default>
+                <label>10-Pending internal approval</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

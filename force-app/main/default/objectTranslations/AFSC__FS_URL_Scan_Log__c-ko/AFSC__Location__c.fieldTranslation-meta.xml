@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Location__c</name>
+    <picklistValues>
+        <masterLabel>Cases</masterLabel>
+        <translation>문자</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chatter</masterLabel>
+        <translation>채팅</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Email</masterLabel>
+        <translation>이메일</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Field Value</masterLabel>
+        <translation>필드 값</translation>
+    </picklistValues>
+</CustomFieldTranslation>

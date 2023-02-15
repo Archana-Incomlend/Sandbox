@@ -1,0 +1,3 @@
+<apex:component access="global" controller="LeadTermSheetExtension">
+     <apex:attribute name="LeadId" type="Id" description="Id of the Tree order" assignTo="{!objLead.Id}"/>
+</apex:component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Damages__c</fullName>
+    <description>Please list ALL damages to the bus BEFORE EVENT starts. All damages not document will be charged to the credit card on file.</description>
+    <externalId>false</externalId>
+    <label>Damages</label>
+    <length>4000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CL_Limit_Approval_CommentCredit_limit_Co__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Credit Limit Approval from Risk Manager</inlineHelpText>
+    <label>CL Limit Approval Comment</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

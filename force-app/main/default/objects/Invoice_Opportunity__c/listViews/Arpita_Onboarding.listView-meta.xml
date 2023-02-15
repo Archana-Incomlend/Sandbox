@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Arpita_Onboarding</fullName>
+    <columns>NAME</columns>
+    <columns>Sales_Owner__c</columns>
+    <columns>Product_type__c</columns>
+    <columns>Buyer_Name__c</columns>
+    <columns>Supplier_name__c</columns>
+    <columns>Process_Status__c</columns>
+    <columns>Opportunity_Status__c</columns>
+    <columns>Date_Term_sheet_Signedt__c</columns>
+    <columns>Ops_Comments__c</columns>
+    <columns>Date_First_Invoice__c</columns>
+    <columns>Planned_Date_for_CC__c</columns>
+    <columns>Welcome_call_Done__c</columns>
+    <columns>Buyer_Status__c</columns>
+    <columns>Supplier_Status__c</columns>
+    <columns>Operation_Owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Operation_Owner__c</field>
+        <operation>equals</operation>
+        <value>Arpita Pendyala</value>
+    </filters>
+    <label>Arpita_Onboarding</label>
+</ListView>

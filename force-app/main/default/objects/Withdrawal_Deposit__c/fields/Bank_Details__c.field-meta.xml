@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bank_Details__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;Beneficiary Name:&quot;+&quot; &quot;+Bank_Account__r.Beneficiary_Name__c + BR() +
+
+ &quot;Account:&quot;+&quot; &quot;+Bank_Account__r.Bank_Account_Number__c + BR() +
+ &quot;Beneficiary Bank Name:&quot;+&quot; &quot;+Bank_Account__r.Bank_Name__c + BR() +
+ &quot;SWIFT:&quot;+&quot; &quot;+Bank_Account__r.SWIFT_Code__c + BR() +
+ &quot;IBAN:&quot;+&quot; &quot;+Bank_Account__r.IBan__c + BR() +
+ &quot;Country:&quot;+&quot; &quot;+Bank_Account__r.Country__c + BR() +
+
+ &apos;bank details last modified: &apos; + text(Bank_Account__r.LastModifiedDate)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Bank Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

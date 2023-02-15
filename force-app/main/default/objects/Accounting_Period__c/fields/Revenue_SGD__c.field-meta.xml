@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revenue_SGD__c</fullName>
+    <externalId>false</externalId>
+    <label>Revenue SGD</label>
+    <summarizedField>Transaction__c.Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Transaction__c.CCY__c</field>
+        <operation>equals</operation>
+        <value>SGD</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Transaction__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Confirmed by operations, Confirmed by Finance</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Transaction__c.Type__c</field>
+        <operation>equals</operation>
+        <value>07.Credit Insurance, 06.Transaction Fee, 052.discount amount fees, 88.Annual membership fee, 888.Additional buyer onboarding fee</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Transaction__c.Accounting_Period__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

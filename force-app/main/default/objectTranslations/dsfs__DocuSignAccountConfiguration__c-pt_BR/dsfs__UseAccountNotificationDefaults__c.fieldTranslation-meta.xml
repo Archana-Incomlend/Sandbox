@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Ativar as configurações de Lembrete e Expiração permite que você especifique Lembrete e Expiração padrões no DocYouSign para Salesforce. Estas configurações substituem as configurações padrão de Lembrete e Expiração da sua conta do DocYouSign.</help>
+    <label></label>
+    <name>dsfs__UseAccountNotificationDefaults__c</name>
+</CustomFieldTranslation>

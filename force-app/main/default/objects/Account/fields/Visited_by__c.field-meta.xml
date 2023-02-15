@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visited_by__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>User visited the customer</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Who had the risk assessment meeting ?</inlineHelpText>
+    <label>Visited by :</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Accounts2</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

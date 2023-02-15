@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>approved_not_passthrough</fullName>
+    <columns>NAME</columns>
+    <columns>Marketplace__c</columns>
+    <columns>Incomlend_product__c</columns>
+    <columns>accepted_incoterms__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>Buyer_Country__c</columns>
+    <columns>Credit_Insurance_Limit_confirmed_USD__c</columns>
+    <columns>number_of_invoices_all_time__c</columns>
+    <columns>actual_funding_demand_on_expected__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>buyer_supplier_map_approved__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Incomlend_product__c</field>
+        <operation>notContain</operation>
+        <value>passthrough</value>
+    </filters>
+    <label>approved - not passthrough</label>
+</ListView>

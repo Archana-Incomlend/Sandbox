@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BEN_MQL_SQL_Registering</fullName>
+    <columns>NAME</columns>
+    <columns>Company_Name__c</columns>
+    <columns>Country_of_Incorporation_residence__c</columns>
+    <columns>First_Name__c</columns>
+    <columns>Last_Name__c</columns>
+    <columns>Source__c</columns>
+    <columns>Status__c</columns>
+    <columns>LAST_ACTIVITY</columns>
+    <columns>next_action__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>contains</operation>
+        <value>mql,sql,conv,hold</value>
+    </filters>
+    <filters>
+        <field>OWNER.ALIAS</field>
+        <operation>contains</operation>
+        <value>ben</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Supplier,Buyer</value>
+    </filters>
+    <label>BEN - SUP/BUY - MQL...</label>
+</ListView>

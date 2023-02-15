@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onboarded</fullName>
+    <columns>Incomlend_Account__c</columns>
+    <columns>Account__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>Bank_Account_Number__c</columns>
+    <columns>NAME</columns>
+    <columns>Beneficiary_Name__c</columns>
+    <columns>Currency__c</columns>
+    <columns>onboarding_stage__c</columns>
+    <columns>SWIFT_Code__c</columns>
+    <columns>estimated_transfer_time__c</columns>
+    <columns>Address__c</columns>
+    <columns>Active__c</columns>
+    <columns>Bank_Name__c</columns>
+    <columns>Country__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>onboarded__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>onboarded</label>
+</ListView>

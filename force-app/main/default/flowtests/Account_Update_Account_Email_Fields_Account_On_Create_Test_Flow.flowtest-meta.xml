@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowTest xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flowApiName>Account_Update_Account_Email_Fields</flowApiName>
+    <label>Account On Create - Test Flow</label>
+    <testPoints>
+        <elementApiName>Start</elementApiName>
+        <parameters>
+            <leftValueReference>$Record</leftValueReference>
+            <type>InputTriggeringRecordInitial</type>
+            <value>
+                <sobjectValue>{&quot;AccountSource&quot;:&quot;Sales Executive&quot;,&quot;Account_Agent_s_Type__c&quot;:&quot;Fixed&quot;,&quot;Account_Source__c&quot;:&quot;Facebook&quot;,&quot;Account_Status__c&quot;:&quot;Active&quot;,&quot;Account_transferred_another_Sales__c&quot;:false,&quot;Address_Shipping_is_Address_Billing__c&quot;:false,&quot;Agent_Commision_Obligor_Platform_Fee__c&quot;:30,&quot;Agent_Commision_Purchaser_Discount_Fee__c&quot;:10,&quot;Agent_Commision_Purchaser_Type__c&quot;:&quot;Part of profit share (%)&quot;,&quot;Agent_Commision_Supplier_Platform_Fee__c&quot;:13,&quot;Agent__c&quot;:&quot;0010T00000MZr4XQAT&quot;,&quot;BillingCity&quot;:&quot;Test City&quot;,&quot;BillingCountry&quot;:&quot;Test Country&quot;,&quot;BillingState&quot;:&quot;Test State&quot;,&quot;BillingStreet&quot;:&quot;Test Street&quot;,&quot;Check_List_Notes_Attachment__c&quot;:&quot;&quot;,&quot;Check_List_Onboarding__c&quot;:&quot;&quot;,&quot;Coface_Rating__c&quot;:&quot;0&quot;,&quot;Credit_Limit_Request_Approved__c&quot;:false,&quot;Credit_insurance_fee__c&quot;:0,&quot;Euler_Hermes_Credit_Rating__c&quot;:&quot;*not checked*&quot;,&quot;External_Credit_Report_Provider__c&quot;:&quot;Trelis Business Reports&quot;,&quot;External_View__c&quot;:false,&quot;Has_eWallet__c&quot;:false,&quot;Invoice_Submission_Bypass__c&quot;:false,&quot;IsExcludedFromRealign&quot;:false,&quot;Is_incomlend_Investor__c&quot;:false,&quot;KYC_Hits__c&quot;:false,&quot;Key_customer__c&quot;:false,&quot;Masked_Account_Name__c&quot;:&quot;masked name&quot;,&quot;Name&quot;:&quot;Test Account Flow 1&quot;,&quot;Onboarding_Amicorp_Escrow_Status__c&quot;:&quot;Onboarded&quot;,&quot;OwnerId&quot;:&quot;0050I000009nF6AQAU&quot;,&quot;PEP_flag__c&quot;:false,&quot;Pay_Commission__c&quot;:false,&quot;Penny_Test_Completed__c&quot;:false,&quot;Potential_Deposit_EUR__c&quot;:0,&quot;RPA_Sent__c&quot;:false,&quot;RPA_Signed__c&quot;:false,&quot;Ready_for_Withdrawal__c&quot;:false,&quot;TAX_Registered__c&quot;:false,&quot;Trustee__c&quot;:&quot;Amicorp Trust&quot;,&quot;VAT_applicable__c&quot;:true,&quot;auto_sweep_opt_in__c&quot;:false,&quot;autosweep_type__c&quot;:&quot;any invoice&quot;,&quot;dormant__c&quot;:false,&quot;is_Master_Agent__c&quot;:false,&quot;onboarded_onto_new_trust__c&quot;:false,&quot;onboarding_approved__c&quot;:false,&quot;onboarding_stage__c&quot;:&quot;99.Onboarded&quot;,&quot;priority_onboarding__c&quot;:false,&quot;suspended__c&quot;:false,&quot;underwriter_decision_approval__c&quot;:false,&quot;withdrawal_non_permitted__c&quot;:false}</sobjectValue>
+            </value>
+        </parameters>
+    </testPoints>
+    <testPoints>
+        <assertions>
+            <conditions>
+                <leftValueReference>$Record.Agent_Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+        </assertions>
+        <assertions>
+            <conditions>
+                <leftValueReference>$Record.Onboarding_completed_date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+        </assertions>
+        <elementApiName>Finish</elementApiName>
+    </testPoints>
+</FlowTest>

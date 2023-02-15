@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Buyer_Confirmation_Email_Invoice</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Send Buyer Confirmation Email</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>https://incomlend--icldv04dvp--c.sandbox.vf.force.com/apex/SelectTemplateForSingleBC?id={!invoice_finance_deal__c.Id}&amp;&amp;wrapMassAction=1&amp;scontrolCaching=1</url>
+</WebLink>

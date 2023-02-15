@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Under_insurance_coverage__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( (advance_send_to_supplier_date__c - Insurance_coverage_Starting_Date__c )&lt; 365, TRUE, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Check if the invoice is in the coverage insurance on the Map.</inlineHelpText>
+    <label>Under insurance coverage</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

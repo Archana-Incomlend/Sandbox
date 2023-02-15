@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_02_Invoice_Advance_Amount_USD_Equi__c</fullName>
+    <externalId>false</externalId>
+    <formula>MI__r.Marketplace_for_EUR_FX__r.Rate__c   *  Total_EUR_02_Invoice_Advance_Amount__c +
+MI__r.Marketplace_for_HKD_FX__r.Rate__c    *  Total_HKD_02_Invoice_Advance_Amount__c +
+MI__r.Marketplace_for_SGD_FX__r.Rate__c    *  Total_SGD_02_Invoice_Advance_Amount__c +
+
+Total_USD_02_Invoice_Advance_Amount__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total 02.Invoice Advance Amount USD Equi</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

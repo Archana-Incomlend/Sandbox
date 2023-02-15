@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Salesforce 머리글 및/또는 사이드바 내부에 포함시키는 대신 자체 창에 표시되도록 DocuSign 직접 서명 페이지를 설정하십시오.</help>
+    <label></label>
+    <name>dsfs__DisplayInPersonSigningInOwnWindow__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Migrated to Flow from Process Builder.
+1. Update instruction for Ops Invoice
+2. Update Agent from Map+trustee</description>
+    <masterLabel>In-Active Migrate Invoice Finance Deal - Update instruction for Ops Invoice, Agent and Trustee</masterLabel>
+</FlowDefinition>

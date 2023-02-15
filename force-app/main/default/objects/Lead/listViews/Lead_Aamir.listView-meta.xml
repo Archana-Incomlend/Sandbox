@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Aamir</fullName>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Product_type__c</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COUNTRY</columns>
+    <columns>Potential_Supplier_s__c</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Agent_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>contains</operation>
+        <value>Aamir</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Open,Contacted,Credit Limit Approved from Risk,Credit Limit Provided  by Insurer</value>
+    </filters>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>6/1/2021 12:00 AM</value>
+    </filters>
+    <label>Lead Aamir</label>
+    <sharedTo>
+        <role>Sales_Manager_Origination_Z3</role>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Buyer_Sales_Owner_pct</fullName>
+        <field>Field1__c</field>
+        <formula>Supplier_Buyer_Map__r.Buyer_Sales_Zone__c</formula>
+        <name>% Buyer Sales Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_owner_buyer</fullName>
+        <field>Buyer_Owner__c</field>
+        <formula>Supplier_Buyer_Map__r.Buyer__r.Sales_Owner__r.FirstName + &quot; &quot;  + Supplier_Buyer_Map__r.Buyer__r.Sales_Owner__r.LastName</formula>
+        <name>Sales owner buyer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Supplier_Sales_Owner_pct</fullName>
+        <field>Supplier_Sales_Owner__c</field>
+        <formula>Supplier_Buyer_Map__r.Supplier_Zone__c</formula>
+        <name>% Supplier Sales Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Supplier_Sales_owner</fullName>
+        <field>Supplier_owner__c</field>
+        <formula>Supplier_Buyer_Map__r.Supplier__r.Sales_Owner__r.FirstName + &quot; &quot; + Supplier_Buyer_Map__r.Supplier__r.Sales_Owner__r.LastName</formula>
+        <name>Supplier Sales owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>comsales</fullName>
+        <field>Com__c</field>
+        <formula>Supplier_Buyer_Map__r.Com_Sales__c</formula>
+        <name>%comsales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Sales Calculation creation</fullName>
+        <actions>
+            <name>Buyer_Sales_Owner_pct</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Sales_owner_buyer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Supplier_Sales_Owner_pct</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Supplier_Sales_owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>comsales</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Name</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>Take the Data from the invoice finance deal about sales commission to put in the sales calculation object when it&apos;s created</description>
+        <failedMigrationToolVersion>238.13</failedMigrationToolVersion>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Com_Sales_Buyer__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( AND( Invoice_Finance_Deal__r.advance_send_to_supplier_date__c &gt; Date(2020,6,1), TEXT(Commission_Type__c) = &quot;Financed&quot; ),0,
+IF ( AND( Invoice_Finance_Deal__r.advance_send_to_supplier_date__c &gt; Date(2020,6,1), TEXT(Commission_Type__c) = &quot;Paid&quot; ),FX_USD_Advanced_amount__c * Com_buyer__c   *  Buyer_Sales_owner_pct__c, FX_USD_Advanced_amount__c /2) * Com_buyer__c   *  Buyer_Sales_owner_pct__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Com Sales Buyer</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

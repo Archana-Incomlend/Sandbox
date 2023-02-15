@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Migration of Workflows for On Update Invoice Finance Deal.
+1. Slack on new allocation
+2. Funds Available
+3. Supplier Approved Invoice
+4. Activate external View
+5. Factoring View
+6. Reverse Factoring View
+7. Ready for posting
+8. Waiting for Allications date
+9. Update invoice amount
+10. Update due date delta bucket
+11. in Progress Date</description>
+    <masterLabel>In-Active Migrate Invoice Finance Deal - On Update Actions</masterLabel>
+</FlowDefinition>

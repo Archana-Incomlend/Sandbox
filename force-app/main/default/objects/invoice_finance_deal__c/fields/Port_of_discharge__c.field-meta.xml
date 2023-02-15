@@ -1,0 +1,3571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Port_of_discharge__c</fullName>
+    <externalId>false</externalId>
+    <label>Port of discharge</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Albania, Durres</fullName>
+                <default>false</default>
+                <label>Albania, Durres</label>
+            </value>
+            <value>
+                <fullName>Albania, Sarande</fullName>
+                <default>false</default>
+                <label>Albania, Sarande</label>
+            </value>
+            <value>
+                <fullName>Albania, Shengjjin</fullName>
+                <default>false</default>
+                <label>Albania, Shengjjin</label>
+            </value>
+            <value>
+                <fullName>Albania, Vlore</fullName>
+                <default>false</default>
+                <label>Albania, Vlore</label>
+            </value>
+            <value>
+                <fullName>Algeria, Algiers</fullName>
+                <default>false</default>
+                <label>Algeria, Algiers</label>
+            </value>
+            <value>
+                <fullName>Algeria, Annaba</fullName>
+                <default>false</default>
+                <label>Algeria, Annaba</label>
+            </value>
+            <value>
+                <fullName>Algeria, Arzew</fullName>
+                <default>false</default>
+                <label>Algeria, Arzew</label>
+            </value>
+            <value>
+                <fullName>Algeria, Bejaia</fullName>
+                <default>false</default>
+                <label>Algeria, Bejaia</label>
+            </value>
+            <value>
+                <fullName>Algeria, Dellys</fullName>
+                <default>false</default>
+                <label>Algeria, Dellys</label>
+            </value>
+            <value>
+                <fullName>Algeria, Ghazaouet</fullName>
+                <default>false</default>
+                <label>Algeria, Ghazaouet</label>
+            </value>
+            <value>
+                <fullName>Algeria, Mostaganem</fullName>
+                <default>false</default>
+                <label>Algeria, Mostaganem</label>
+            </value>
+            <value>
+                <fullName>Algeria, Oran</fullName>
+                <default>false</default>
+                <label>Algeria, Oran</label>
+            </value>
+            <value>
+                <fullName>Algeria, Skikda</fullName>
+                <default>false</default>
+                <label>Algeria, Skikda</label>
+            </value>
+            <value>
+                <fullName>Algeria, Tenes</fullName>
+                <default>false</default>
+                <label>Algeria, Tenes</label>
+            </value>
+            <value>
+                <fullName>American Samoa, Pago Pago</fullName>
+                <default>false</default>
+                <label>American Samoa, Pago Pago</label>
+            </value>
+            <value>
+                <fullName>Angola, Cabinda</fullName>
+                <default>false</default>
+                <label>Angola, Cabinda</label>
+            </value>
+            <value>
+                <fullName>Angola, Lobito</fullName>
+                <default>false</default>
+                <label>Angola, Lobito</label>
+            </value>
+            <value>
+                <fullName>Angola, Luanda</fullName>
+                <default>false</default>
+                <label>Angola, Luanda</label>
+            </value>
+            <value>
+                <fullName>Angola, Namibe</fullName>
+                <default>false</default>
+                <label>Angola, Namibe</label>
+            </value>
+            <value>
+                <fullName>Angola, Porto Amboim</fullName>
+                <default>false</default>
+                <label>Angola, Porto Amboim</label>
+            </value>
+            <value>
+                <fullName>Angola, Soyo</fullName>
+                <default>false</default>
+                <label>Angola, Soyo</label>
+            </value>
+            <value>
+                <fullName>Argentina, Bahia Blanca</fullName>
+                <default>false</default>
+                <label>Argentina, Bahia Blanca</label>
+            </value>
+            <value>
+                <fullName>Argentina, Buenos Aires</fullName>
+                <default>false</default>
+                <label>Argentina, Buenos Aires</label>
+            </value>
+            <value>
+                <fullName>Argentina, Comodoro Rivadavia</fullName>
+                <default>false</default>
+                <label>Argentina, Comodoro Rivadavia</label>
+            </value>
+            <value>
+                <fullName>Argentina, Concepcion del</fullName>
+                <default>false</default>
+                <label>Argentina, Concepcion del</label>
+            </value>
+            <value>
+                <fullName>Argentina, Mar del Plata</fullName>
+                <default>false</default>
+                <label>Argentina, Mar del Plata</label>
+            </value>
+            <value>
+                <fullName>Argentina, Necochea</fullName>
+                <default>false</default>
+                <label>Argentina, Necochea</label>
+            </value>
+            <value>
+                <fullName>Argentina, Puerto Madryn</fullName>
+                <default>false</default>
+                <label>Argentina, Puerto Madryn</label>
+            </value>
+            <value>
+                <fullName>Argentina, Rio Gallegos</fullName>
+                <default>false</default>
+                <label>Argentina, Rio Gallegos</label>
+            </value>
+            <value>
+                <fullName>Argentina, Rosario</fullName>
+                <default>false</default>
+                <label>Argentina, Rosario</label>
+            </value>
+            <value>
+                <fullName>Argentina, Santa Fe</fullName>
+                <default>false</default>
+                <label>Argentina, Santa Fe</label>
+            </value>
+            <value>
+                <fullName>Argentina, Ushuaia</fullName>
+                <default>false</default>
+                <label>Argentina, Ushuaia</label>
+            </value>
+            <value>
+                <fullName>Aruba, Oranjestad</fullName>
+                <default>false</default>
+                <label>Aruba, Oranjestad</label>
+            </value>
+            <value>
+                <fullName>Australia, Adelaide</fullName>
+                <default>false</default>
+                <label>Australia, Adelaide</label>
+            </value>
+            <value>
+                <fullName>Australia, Brisbane</fullName>
+                <default>false</default>
+                <label>Australia, Brisbane</label>
+            </value>
+            <value>
+                <fullName>Australia, Cairns</fullName>
+                <default>false</default>
+                <label>Australia, Cairns</label>
+            </value>
+            <value>
+                <fullName>Australia, Darwin</fullName>
+                <default>false</default>
+                <label>Australia, Darwin</label>
+            </value>
+            <value>
+                <fullName>Australia, Devonport</fullName>
+                <default>false</default>
+                <label>Australia, Devonport</label>
+            </value>
+            <value>
+                <fullName>Australia, Fremantle</fullName>
+                <default>false</default>
+                <label>Australia, Fremantle</label>
+            </value>
+            <value>
+                <fullName>Australia, Geelong</fullName>
+                <default>false</default>
+                <label>Australia, Geelong</label>
+            </value>
+            <value>
+                <fullName>Australia, Hobart</fullName>
+                <default>false</default>
+                <label>Australia, Hobart</label>
+            </value>
+            <value>
+                <fullName>Australia, Mackay</fullName>
+                <default>false</default>
+                <label>Australia, Mackay</label>
+            </value>
+            <value>
+                <fullName>Australia, Melbourne</fullName>
+                <default>false</default>
+                <label>Australia, Melbourne</label>
+            </value>
+            <value>
+                <fullName>Australia, Sydney</fullName>
+                <default>false</default>
+                <label>Australia, Sydney</label>
+            </value>
+            <value>
+                <fullName>Australia, Townsville</fullName>
+                <default>false</default>
+                <label>Australia, Townsville</label>
+            </value>
+            <value>
+                <fullName>Azerbaijan, Baku</fullName>
+                <default>false</default>
+                <label>Azerbaijan, Baku</label>
+            </value>
+            <value>
+                <fullName>Bahrain, Mina Salman</fullName>
+                <default>false</default>
+                <label>Bahrain, Mina Salman</label>
+            </value>
+            <value>
+                <fullName>Bahrain, Sitra</fullName>
+                <default>false</default>
+                <label>Bahrain, Sitra</label>
+            </value>
+            <value>
+                <fullName>Bangladesh, Chittagong</fullName>
+                <default>false</default>
+                <label>Bangladesh, Chittagong</label>
+            </value>
+            <value>
+                <fullName>Bangladesh, Mongla</fullName>
+                <default>false</default>
+                <label>Bangladesh, Mongla</label>
+            </value>
+            <value>
+                <fullName>Barbados, Bridgetown</fullName>
+                <default>false</default>
+                <label>Barbados, Bridgetown</label>
+            </value>
+            <value>
+                <fullName>Belgium, Antwerp</fullName>
+                <default>false</default>
+                <label>Belgium, Antwerp</label>
+            </value>
+            <value>
+                <fullName>Belgium, Brussels</fullName>
+                <default>false</default>
+                <label>Belgium, Brussels</label>
+            </value>
+            <value>
+                <fullName>Belgium, Ghent</fullName>
+                <default>false</default>
+                <label>Belgium, Ghent</label>
+            </value>
+            <value>
+                <fullName>Belgium, Liege</fullName>
+                <default>false</default>
+                <label>Belgium, Liege</label>
+            </value>
+            <value>
+                <fullName>Belgium, Zeebrugge</fullName>
+                <default>false</default>
+                <label>Belgium, Zeebrugge</label>
+            </value>
+            <value>
+                <fullName>Belize, Belize City</fullName>
+                <default>false</default>
+                <label>Belize, Belize City</label>
+            </value>
+            <value>
+                <fullName>Benin, Cotonou</fullName>
+                <default>false</default>
+                <label>Benin, Cotonou</label>
+            </value>
+            <value>
+                <fullName>Brazil, Belem</fullName>
+                <default>false</default>
+                <label>Brazil, Belem</label>
+            </value>
+            <value>
+                <fullName>Brazil, Fortaleza</fullName>
+                <default>false</default>
+                <label>Brazil, Fortaleza</label>
+            </value>
+            <value>
+                <fullName>Brazil, Imbituba</fullName>
+                <default>false</default>
+                <label>Brazil, Imbituba</label>
+            </value>
+            <value>
+                <fullName>Brazil, Manaus</fullName>
+                <default>false</default>
+                <label>Brazil, Manaus</label>
+            </value>
+            <value>
+                <fullName>Brazil, Paranagua</fullName>
+                <default>false</default>
+                <label>Brazil, Paranagua</label>
+            </value>
+            <value>
+                <fullName>Brazil, Porto Alegre</fullName>
+                <default>false</default>
+                <label>Brazil, Porto Alegre</label>
+            </value>
+            <value>
+                <fullName>Brazil, Recife</fullName>
+                <default>false</default>
+                <label>Brazil, Recife</label>
+            </value>
+            <value>
+                <fullName>Brazil, Rio De Janeiro</fullName>
+                <default>false</default>
+                <label>Brazil, Rio De Janeiro</label>
+            </value>
+            <value>
+                <fullName>Brazil, Rio Grande</fullName>
+                <default>false</default>
+                <label>Brazil, Rio Grande</label>
+            </value>
+            <value>
+                <fullName>Brazil, Salvador</fullName>
+                <default>false</default>
+                <label>Brazil, Salvador</label>
+            </value>
+            <value>
+                <fullName>Brazil, Santos</fullName>
+                <default>false</default>
+                <label>Brazil, Santos</label>
+            </value>
+            <value>
+                <fullName>Brazil, Vitoria</fullName>
+                <default>false</default>
+                <label>Brazil, Vitoria</label>
+            </value>
+            <value>
+                <fullName>Brunei Darussalam, Kuala Belait</fullName>
+                <default>false</default>
+                <label>Brunei Darussalam, Kuala Belait</label>
+            </value>
+            <value>
+                <fullName>Brunei Darussalam, Muara</fullName>
+                <default>false</default>
+                <label>Brunei Darussalam, Muara</label>
+            </value>
+            <value>
+                <fullName>Bulgaria, Varna</fullName>
+                <default>false</default>
+                <label>Bulgaria, Varna</label>
+            </value>
+            <value>
+                <fullName>Cambodia, Kompongsom</fullName>
+                <default>false</default>
+                <label>Cambodia, Kompongsom</label>
+            </value>
+            <value>
+                <fullName>Cambodia, Phnom Penh</fullName>
+                <default>false</default>
+                <label>Cambodia, Phnom Penh</label>
+            </value>
+            <value>
+                <fullName>Cameroon, Kribi</fullName>
+                <default>false</default>
+                <label>Cameroon, Kribi</label>
+            </value>
+            <value>
+                <fullName>Cameroon, Tiko</fullName>
+                <default>false</default>
+                <label>Cameroon, Tiko</label>
+            </value>
+            <value>
+                <fullName>Canada, Alberni</fullName>
+                <default>false</default>
+                <label>Canada, Alberni</label>
+            </value>
+            <value>
+                <fullName>Canada, Becancour</fullName>
+                <default>false</default>
+                <label>Canada, Becancour</label>
+            </value>
+            <value>
+                <fullName>Canada, Churchill</fullName>
+                <default>false</default>
+                <label>Canada, Churchill</label>
+            </value>
+            <value>
+                <fullName>Canada, Fraser River Port</fullName>
+                <default>false</default>
+                <label>Canada, Fraser River Port</label>
+            </value>
+            <value>
+                <fullName>Canada, Hamilton</fullName>
+                <default>false</default>
+                <label>Canada, Hamilton</label>
+            </value>
+            <value>
+                <fullName>Canada, Halifax</fullName>
+                <default>false</default>
+                <label>Canada, Halifax</label>
+            </value>
+            <value>
+                <fullName>Canada, Montreal</fullName>
+                <default>false</default>
+                <label>Canada, Montreal</label>
+            </value>
+            <value>
+                <fullName>Canada, Nanaimo</fullName>
+                <default>false</default>
+                <label>Canada, Nanaimo</label>
+            </value>
+            <value>
+                <fullName>Canada, Saguenay</fullName>
+                <default>false</default>
+                <label>Canada, Saguenay</label>
+            </value>
+            <value>
+                <fullName>Canada, Sept Iles (Seven</fullName>
+                <default>false</default>
+                <label>Canada, Sept Iles (Seven</label>
+            </value>
+            <value>
+                <fullName>Canada, St Johns</fullName>
+                <default>false</default>
+                <label>Canada, St Johns</label>
+            </value>
+            <value>
+                <fullName>Canada, Sydney</fullName>
+                <default>false</default>
+                <label>Canada, Sydney</label>
+            </value>
+            <value>
+                <fullName>Canada, Thunder Bay</fullName>
+                <default>false</default>
+                <label>Canada, Thunder Bay</label>
+            </value>
+            <value>
+                <fullName>Canada, Toronto</fullName>
+                <default>false</default>
+                <label>Canada, Toronto</label>
+            </value>
+            <value>
+                <fullName>Canada, Trois-Rivieres</fullName>
+                <default>false</default>
+                <label>Canada, Trois-Rivieres</label>
+            </value>
+            <value>
+                <fullName>Canada, Vancouver</fullName>
+                <default>false</default>
+                <label>Canada, Vancouver</label>
+            </value>
+            <value>
+                <fullName>Canada, Windsor</fullName>
+                <default>false</default>
+                <label>Canada, Windsor</label>
+            </value>
+            <value>
+                <fullName>Canary Islands, Las Palmas</fullName>
+                <default>false</default>
+                <label>Canary Islands, Las Palmas</label>
+            </value>
+            <value>
+                <fullName>Canary Islands, Santa Cruz</fullName>
+                <default>false</default>
+                <label>Canary Islands, Santa Cruz</label>
+            </value>
+            <value>
+                <fullName>Cape Verde, Porto Grande</fullName>
+                <default>false</default>
+                <label>Cape Verde, Porto Grande</label>
+            </value>
+            <value>
+                <fullName>Cayman Island, Georgetown, Grand Cayman</fullName>
+                <default>false</default>
+                <label>Cayman Island, Georgetown, Grand Cayman</label>
+            </value>
+            <value>
+                <fullName>Chile, Antofagasta</fullName>
+                <default>false</default>
+                <label>Chile, Antofagasta</label>
+            </value>
+            <value>
+                <fullName>Chile, Arica</fullName>
+                <default>false</default>
+                <label>Chile, Arica</label>
+            </value>
+            <value>
+                <fullName>Chile, Chanaral</fullName>
+                <default>false</default>
+                <label>Chile, Chanaral</label>
+            </value>
+            <value>
+                <fullName>Chile, Iquique</fullName>
+                <default>false</default>
+                <label>Chile, Iquique</label>
+            </value>
+            <value>
+                <fullName>Chile, Puerto Montt</fullName>
+                <default>false</default>
+                <label>Chile, Puerto Montt</label>
+            </value>
+            <value>
+                <fullName>Chile, Punta Arenas</fullName>
+                <default>false</default>
+                <label>Chile, Punta Arenas</label>
+            </value>
+            <value>
+                <fullName>Chile, San Antonio</fullName>
+                <default>false</default>
+                <label>Chile, San Antonio</label>
+            </value>
+            <value>
+                <fullName>Chile, San Vicente</fullName>
+                <default>false</default>
+                <label>Chile, San Vicente</label>
+            </value>
+            <value>
+                <fullName>Chile, Talcahuano</fullName>
+                <default>false</default>
+                <label>Chile, Talcahuano</label>
+            </value>
+            <value>
+                <fullName>Chile, Valparaiso</fullName>
+                <default>false</default>
+                <label>Chile, Valparaiso</label>
+            </value>
+            <value>
+                <fullName>China, Dalian</fullName>
+                <default>false</default>
+                <label>China, Dalian</label>
+            </value>
+            <value>
+                <fullName>China, Fuzhou</fullName>
+                <default>false</default>
+                <label>China, Fuzhou</label>
+            </value>
+            <value>
+                <fullName>China, Guangzhou</fullName>
+                <default>false</default>
+                <label>China, Guangzhou</label>
+            </value>
+            <value>
+                <fullName>China, Haikou</fullName>
+                <default>false</default>
+                <label>China, Haikou</label>
+            </value>
+            <value>
+                <fullName>China, Lianyungang</fullName>
+                <default>false</default>
+                <label>China, Lianyungang</label>
+            </value>
+            <value>
+                <fullName>China, Nantong</fullName>
+                <default>false</default>
+                <label>China, Nantong</label>
+            </value>
+            <value>
+                <fullName>China, Ningbo</fullName>
+                <default>false</default>
+                <label>China, Ningbo</label>
+            </value>
+            <value>
+                <fullName>China, Qingdao</fullName>
+                <default>false</default>
+                <label>China, Qingdao</label>
+            </value>
+            <value>
+                <fullName>China, Qinhuangdao</fullName>
+                <default>false</default>
+                <label>China, Qinhuangdao</label>
+            </value>
+            <value>
+                <fullName>China, Shanghai</fullName>
+                <default>false</default>
+                <label>China, Shanghai</label>
+            </value>
+            <value>
+                <fullName>China, Shantou</fullName>
+                <default>false</default>
+                <label>China, Shantou</label>
+            </value>
+            <value>
+                <fullName>China, Tianjin</fullName>
+                <default>false</default>
+                <label>China, Tianjin</label>
+            </value>
+            <value>
+                <fullName>China, Xiamen</fullName>
+                <default>false</default>
+                <label>China, Xiamen</label>
+            </value>
+            <value>
+                <fullName>China, Zhanjiang</fullName>
+                <default>false</default>
+                <label>China, Zhanjiang</label>
+            </value>
+            <value>
+                <fullName>Colombia, Barranquilla</fullName>
+                <default>false</default>
+                <label>Colombia, Barranquilla</label>
+            </value>
+            <value>
+                <fullName>Colombia, Buenaventura</fullName>
+                <default>false</default>
+                <label>Colombia, Buenaventura</label>
+            </value>
+            <value>
+                <fullName>Colombia, Cartagena</fullName>
+                <default>false</default>
+                <label>Colombia, Cartagena</label>
+            </value>
+            <value>
+                <fullName>Colombia, Puerto Bolivar</fullName>
+                <default>false</default>
+                <label>Colombia, Puerto Bolivar</label>
+            </value>
+            <value>
+                <fullName>Colombia, Tumaco</fullName>
+                <default>false</default>
+                <label>Colombia, Tumaco</label>
+            </value>
+            <value>
+                <fullName>Colombia, Turbo</fullName>
+                <default>false</default>
+                <label>Colombia, Turbo</label>
+            </value>
+            <value>
+                <fullName>Comoros, Moroni</fullName>
+                <default>false</default>
+                <label>Comoros, Moroni</label>
+            </value>
+            <value>
+                <fullName>Comoros, Mutsamudu</fullName>
+                <default>false</default>
+                <label>Comoros, Mutsamudu</label>
+            </value>
+            <value>
+                <fullName>Costa Rica, Caldera</fullName>
+                <default>false</default>
+                <label>Costa Rica, Caldera</label>
+            </value>
+            <value>
+                <fullName>Costa Rica, Golfito</fullName>
+                <default>false</default>
+                <label>Costa Rica, Golfito</label>
+            </value>
+            <value>
+                <fullName>Costa Rica, Puntarenas</fullName>
+                <default>false</default>
+                <label>Costa Rica, Puntarenas</label>
+            </value>
+            <value>
+                <fullName>Costa Rica, Quepos</fullName>
+                <default>false</default>
+                <label>Costa Rica, Quepos</label>
+            </value>
+            <value>
+                <fullName>Croatia, Rijeka Bakar</fullName>
+                <default>false</default>
+                <label>Croatia, Rijeka Bakar</label>
+            </value>
+            <value>
+                <fullName>Croatia, Zadar</fullName>
+                <default>false</default>
+                <label>Croatia, Zadar</label>
+            </value>
+            <value>
+                <fullName>Croatia, Dubrovnik</fullName>
+                <default>false</default>
+                <label>Croatia, Dubrovnik</label>
+            </value>
+            <value>
+                <fullName>Croatia, Omisalj</fullName>
+                <default>false</default>
+                <label>Croatia, Omisalj</label>
+            </value>
+            <value>
+                <fullName>Croatia, Ploce</fullName>
+                <default>false</default>
+                <label>Croatia, Ploce</label>
+            </value>
+            <value>
+                <fullName>Croatia, Pula</fullName>
+                <default>false</default>
+                <label>Croatia, Pula</label>
+            </value>
+            <value>
+                <fullName>Croatia, Sibenik</fullName>
+                <default>false</default>
+                <label>Croatia, Sibenik</label>
+            </value>
+            <value>
+                <fullName>Croatia, Split</fullName>
+                <default>false</default>
+                <label>Croatia, Split</label>
+            </value>
+            <value>
+                <fullName>Cyprus, Akrotiri</fullName>
+                <default>false</default>
+                <label>Cyprus, Akrotiri</label>
+            </value>
+            <value>
+                <fullName>Cyprus, Famagusta</fullName>
+                <default>false</default>
+                <label>Cyprus, Famagusta</label>
+            </value>
+            <value>
+                <fullName>Cyprus, Larnaca</fullName>
+                <default>false</default>
+                <label>Cyprus, Larnaca</label>
+            </value>
+            <value>
+                <fullName>Cyprus, Limassol</fullName>
+                <default>false</default>
+                <label>Cyprus, Limassol</label>
+            </value>
+            <value>
+                <fullName>Cyprus, Paphos</fullName>
+                <default>false</default>
+                <label>Cyprus, Paphos</label>
+            </value>
+            <value>
+                <fullName>Cyprus, Vassiliko</fullName>
+                <default>false</default>
+                <label>Cyprus, Vassiliko</label>
+            </value>
+            <value>
+                <fullName>Côte d&apos;Ivoire, Abidjan</fullName>
+                <default>false</default>
+                <label>Côte d&apos;Ivoire, Abidjan</label>
+            </value>
+            <value>
+                <fullName>Denmark, Aarhus</fullName>
+                <default>false</default>
+                <label>Denmark, Aarhus</label>
+            </value>
+            <value>
+                <fullName>Denmark, Esbjerg</fullName>
+                <default>false</default>
+                <label>Denmark, Esbjerg</label>
+            </value>
+            <value>
+                <fullName>Denmark, Fredericia</fullName>
+                <default>false</default>
+                <label>Denmark, Fredericia</label>
+            </value>
+            <value>
+                <fullName>Denmark, Frederikshavn</fullName>
+                <default>false</default>
+                <label>Denmark, Frederikshavn</label>
+            </value>
+            <value>
+                <fullName>Denmark, Grenaa</fullName>
+                <default>false</default>
+                <label>Denmark, Grenaa</label>
+            </value>
+            <value>
+                <fullName>Denmark, Odense</fullName>
+                <default>false</default>
+                <label>Denmark, Odense</label>
+            </value>
+            <value>
+                <fullName>Denmark, Ronne</fullName>
+                <default>false</default>
+                <label>Denmark, Ronne</label>
+            </value>
+            <value>
+                <fullName>Djibouti, Djibouti</fullName>
+                <default>false</default>
+                <label>Djibouti, Djibouti</label>
+            </value>
+            <value>
+                <fullName>Dominica, Portsmouth</fullName>
+                <default>false</default>
+                <label>Dominica, Portsmouth</label>
+            </value>
+            <value>
+                <fullName>Dominica, Roseau</fullName>
+                <default>false</default>
+                <label>Dominica, Roseau</label>
+            </value>
+            <value>
+                <fullName>Dominican Republic, Barahona</fullName>
+                <default>false</default>
+                <label>Dominican Republic, Barahona</label>
+            </value>
+            <value>
+                <fullName>Dominican Republic, La Romana</fullName>
+                <default>false</default>
+                <label>Dominican Republic, La Romana</label>
+            </value>
+            <value>
+                <fullName>Dominican Republic, Puerto Plata</fullName>
+                <default>false</default>
+                <label>Dominican Republic, Puerto Plata</label>
+            </value>
+            <value>
+                <fullName>Dominican Republic, Rio Haina</fullName>
+                <default>false</default>
+                <label>Dominican Republic, Rio Haina</label>
+            </value>
+            <value>
+                <fullName>Dominican Republic, San Pedro de Macoris</fullName>
+                <default>false</default>
+                <label>Dominican Republic, San Pedro de Macoris</label>
+            </value>
+            <value>
+                <fullName>Dominican Republic, Santo Domingo</fullName>
+                <default>false</default>
+                <label>Dominican Republic, Santo Domingo</label>
+            </value>
+            <value>
+                <fullName>Ecuador, Esmeraldas</fullName>
+                <default>false</default>
+                <label>Ecuador, Esmeraldas</label>
+            </value>
+            <value>
+                <fullName>Ecuador, Guayaquil</fullName>
+                <default>false</default>
+                <label>Ecuador, Guayaquil</label>
+            </value>
+            <value>
+                <fullName>Ecuador, La Libertad</fullName>
+                <default>false</default>
+                <label>Ecuador, La Libertad</label>
+            </value>
+            <value>
+                <fullName>Ecuador, Manta</fullName>
+                <default>false</default>
+                <label>Ecuador, Manta</label>
+            </value>
+            <value>
+                <fullName>Ecuador, Puerto Bolivar</fullName>
+                <default>false</default>
+                <label>Ecuador, Puerto Bolivar</label>
+            </value>
+            <value>
+                <fullName>Ecuador, San Lorenzo</fullName>
+                <default>false</default>
+                <label>Ecuador, San Lorenzo</label>
+            </value>
+            <value>
+                <fullName>Egypt, Alexandria</fullName>
+                <default>false</default>
+                <label>Egypt, Alexandria</label>
+            </value>
+            <value>
+                <fullName>Egypt, Damietta</fullName>
+                <default>false</default>
+                <label>Egypt, Damietta</label>
+            </value>
+            <value>
+                <fullName>Egypt, Port Said</fullName>
+                <default>false</default>
+                <label>Egypt, Port Said</label>
+            </value>
+            <value>
+                <fullName>Egypt, Suez</fullName>
+                <default>false</default>
+                <label>Egypt, Suez</label>
+            </value>
+            <value>
+                <fullName>El Salvador, Acajutla</fullName>
+                <default>false</default>
+                <label>El Salvador, Acajutla</label>
+            </value>
+            <value>
+                <fullName>El Salvador, Cutuco</fullName>
+                <default>false</default>
+                <label>El Salvador, Cutuco</label>
+            </value>
+            <value>
+                <fullName>Estonia, Pärnu</fullName>
+                <default>false</default>
+                <label>Estonia, Pärnu</label>
+            </value>
+            <value>
+                <fullName>Estonia, Tallinn</fullName>
+                <default>false</default>
+                <label>Estonia, Tallinn</label>
+            </value>
+            <value>
+                <fullName>Fiji, Labasa</fullName>
+                <default>false</default>
+                <label>Fiji, Labasa</label>
+            </value>
+            <value>
+                <fullName>Fiji, Lautoka</fullName>
+                <default>false</default>
+                <label>Fiji, Lautoka</label>
+            </value>
+            <value>
+                <fullName>Fiji, Levuka</fullName>
+                <default>false</default>
+                <label>Fiji, Levuka</label>
+            </value>
+            <value>
+                <fullName>Fiji, Savu Savu</fullName>
+                <default>false</default>
+                <label>Fiji, Savu Savu</label>
+            </value>
+            <value>
+                <fullName>Fiji, Suva</fullName>
+                <default>false</default>
+                <label>Fiji, Suva</label>
+            </value>
+            <value>
+                <fullName>Finland, Hamina</fullName>
+                <default>false</default>
+                <label>Finland, Hamina</label>
+            </value>
+            <value>
+                <fullName>Finland, Helsinki</fullName>
+                <default>false</default>
+                <label>Finland, Helsinki</label>
+            </value>
+            <value>
+                <fullName>Finland, Kokkola</fullName>
+                <default>false</default>
+                <label>Finland, Kokkola</label>
+            </value>
+            <value>
+                <fullName>Finland, Kotka</fullName>
+                <default>false</default>
+                <label>Finland, Kotka</label>
+            </value>
+            <value>
+                <fullName>Finland, Loviisa</fullName>
+                <default>false</default>
+                <label>Finland, Loviisa</label>
+            </value>
+            <value>
+                <fullName>Finland, Oulu</fullName>
+                <default>false</default>
+                <label>Finland, Oulu</label>
+            </value>
+            <value>
+                <fullName>Finland, Pori</fullName>
+                <default>false</default>
+                <label>Finland, Pori</label>
+            </value>
+            <value>
+                <fullName>Finland, Rauma</fullName>
+                <default>false</default>
+                <label>Finland, Rauma</label>
+            </value>
+            <value>
+                <fullName>Finland, Turku</fullName>
+                <default>false</default>
+                <label>Finland, Turku</label>
+            </value>
+            <value>
+                <fullName>Finland, Uusikaupunki</fullName>
+                <default>false</default>
+                <label>Finland, Uusikaupunki</label>
+            </value>
+            <value>
+                <fullName>Finland, Vaasa</fullName>
+                <default>false</default>
+                <label>Finland, Vaasa</label>
+            </value>
+            <value>
+                <fullName>France, Bordeaux</fullName>
+                <default>false</default>
+                <label>France, Bordeaux</label>
+            </value>
+            <value>
+                <fullName>France, Boulogne Sur Mer</fullName>
+                <default>false</default>
+                <label>France, Boulogne Sur Mer</label>
+            </value>
+            <value>
+                <fullName>France, Cherbourg</fullName>
+                <default>false</default>
+                <label>France, Cherbourg</label>
+            </value>
+            <value>
+                <fullName>France, Dunkerque</fullName>
+                <default>false</default>
+                <label>France, Dunkerque</label>
+            </value>
+            <value>
+                <fullName>France, La Rochelle-Pallice</fullName>
+                <default>false</default>
+                <label>France, La Rochelle-Pallice</label>
+            </value>
+            <value>
+                <fullName>France, Le Havre</fullName>
+                <default>false</default>
+                <label>France, Le Havre</label>
+            </value>
+            <value>
+                <fullName>France, Marseille</fullName>
+                <default>false</default>
+                <label>France, Marseille</label>
+            </value>
+            <value>
+                <fullName>France, Nantes-St. Nazaire</fullName>
+                <default>false</default>
+                <label>France, Nantes-St. Nazaire</label>
+            </value>
+            <value>
+                <fullName>France, Paris</fullName>
+                <default>false</default>
+                <label>France, Paris</label>
+            </value>
+            <value>
+                <fullName>France, Rouen</fullName>
+                <default>false</default>
+                <label>France, Rouen</label>
+            </value>
+            <value>
+                <fullName>France, St Malo</fullName>
+                <default>false</default>
+                <label>France, St Malo</label>
+            </value>
+            <value>
+                <fullName>France, Strasbourg</fullName>
+                <default>false</default>
+                <label>France, Strasbourg</label>
+            </value>
+            <value>
+                <fullName>France, Toulon</fullName>
+                <default>false</default>
+                <label>France, Toulon</label>
+            </value>
+            <value>
+                <fullName>French Guiana, Cayenne</fullName>
+                <default>false</default>
+                <label>French Guiana, Cayenne</label>
+            </value>
+            <value>
+                <fullName>French Polynesia, Papeete</fullName>
+                <default>false</default>
+                <label>French Polynesia, Papeete</label>
+            </value>
+            <value>
+                <fullName>Gabon, Cap Lopez</fullName>
+                <default>false</default>
+                <label>Gabon, Cap Lopez</label>
+            </value>
+            <value>
+                <fullName>Gabon, Libreville</fullName>
+                <default>false</default>
+                <label>Gabon, Libreville</label>
+            </value>
+            <value>
+                <fullName>Gabon, Owendo</fullName>
+                <default>false</default>
+                <label>Gabon, Owendo</label>
+            </value>
+            <value>
+                <fullName>Gabon, Port Gentil</fullName>
+                <default>false</default>
+                <label>Gabon, Port Gentil</label>
+            </value>
+            <value>
+                <fullName>Gambia, Banjul</fullName>
+                <default>false</default>
+                <label>Gambia, Banjul</label>
+            </value>
+            <value>
+                <fullName>Georgia, Batumi</fullName>
+                <default>false</default>
+                <label>Georgia, Batumi</label>
+            </value>
+            <value>
+                <fullName>Georgia, Poti</fullName>
+                <default>false</default>
+                <label>Georgia, Poti</label>
+            </value>
+            <value>
+                <fullName>Georgia, Sukhumi</fullName>
+                <default>false</default>
+                <label>Georgia, Sukhumi</label>
+            </value>
+            <value>
+                <fullName>Germany, Brake</fullName>
+                <default>false</default>
+                <label>Germany, Brake</label>
+            </value>
+            <value>
+                <fullName>Germany, Bremen</fullName>
+                <default>false</default>
+                <label>Germany, Bremen</label>
+            </value>
+            <value>
+                <fullName>Germany, Bremerhaven</fullName>
+                <default>false</default>
+                <label>Germany, Bremerhaven</label>
+            </value>
+            <value>
+                <fullName>Germany, Duisburg</fullName>
+                <default>false</default>
+                <label>Germany, Duisburg</label>
+            </value>
+            <value>
+                <fullName>Germany, Dusseldorf</fullName>
+                <default>false</default>
+                <label>Germany, Dusseldorf</label>
+            </value>
+            <value>
+                <fullName>Germany, Emden</fullName>
+                <default>false</default>
+                <label>Germany, Emden</label>
+            </value>
+            <value>
+                <fullName>Germany, Hamburg</fullName>
+                <default>false</default>
+                <label>Germany, Hamburg</label>
+            </value>
+            <value>
+                <fullName>Germany, Karlsruhe</fullName>
+                <default>false</default>
+                <label>Germany, Karlsruhe</label>
+            </value>
+            <value>
+                <fullName>Germany, Kiel</fullName>
+                <default>false</default>
+                <label>Germany, Kiel</label>
+            </value>
+            <value>
+                <fullName>Germany, Lubeck</fullName>
+                <default>false</default>
+                <label>Germany, Lubeck</label>
+            </value>
+            <value>
+                <fullName>Germany, Mannheim</fullName>
+                <default>false</default>
+                <label>Germany, Mannheim</label>
+            </value>
+            <value>
+                <fullName>Germany, Rostock</fullName>
+                <default>false</default>
+                <label>Germany, Rostock</label>
+            </value>
+            <value>
+                <fullName>Germany, Wilhelmshavn</fullName>
+                <default>false</default>
+                <label>Germany, Wilhelmshavn</label>
+            </value>
+            <value>
+                <fullName>Gibraltar, Gibraltar</fullName>
+                <default>false</default>
+                <label>Gibraltar, Gibraltar</label>
+            </value>
+            <value>
+                <fullName>Greece, Eleusis</fullName>
+                <default>false</default>
+                <label>Greece, Eleusis</label>
+            </value>
+            <value>
+                <fullName>Greece, Iraklion</fullName>
+                <default>false</default>
+                <label>Greece, Iraklion</label>
+            </value>
+            <value>
+                <fullName>Greece, Kavala</fullName>
+                <default>false</default>
+                <label>Greece, Kavala</label>
+            </value>
+            <value>
+                <fullName>Greece, Patras</fullName>
+                <default>false</default>
+                <label>Greece, Patras</label>
+            </value>
+            <value>
+                <fullName>Greece, Piraeus</fullName>
+                <default>false</default>
+                <label>Greece, Piraeus</label>
+            </value>
+            <value>
+                <fullName>Greece, Thessaloniki</fullName>
+                <default>false</default>
+                <label>Greece, Thessaloniki</label>
+            </value>
+            <value>
+                <fullName>Greece, Volos</fullName>
+                <default>false</default>
+                <label>Greece, Volos</label>
+            </value>
+            <value>
+                <fullName>Guatemala, Champerico</fullName>
+                <default>false</default>
+                <label>Guatemala, Champerico</label>
+            </value>
+            <value>
+                <fullName>Guatemala, Puerto Barrios</fullName>
+                <default>false</default>
+                <label>Guatemala, Puerto Barrios</label>
+            </value>
+            <value>
+                <fullName>Guatemala, Santo Tomas</fullName>
+                <default>false</default>
+                <label>Guatemala, Santo Tomas</label>
+            </value>
+            <value>
+                <fullName>Guinea, Conakry</fullName>
+                <default>false</default>
+                <label>Guinea, Conakry</label>
+            </value>
+            <value>
+                <fullName>Guinea, Port Kamsar</fullName>
+                <default>false</default>
+                <label>Guinea, Port Kamsar</label>
+            </value>
+            <value>
+                <fullName>Haiti, Port Au Prince</fullName>
+                <default>false</default>
+                <label>Haiti, Port Au Prince</label>
+            </value>
+            <value>
+                <fullName>Honduras, La Ceiba</fullName>
+                <default>false</default>
+                <label>Honduras, La Ceiba</label>
+            </value>
+            <value>
+                <fullName>Honduras, Puerto Castilla</fullName>
+                <default>false</default>
+                <label>Honduras, Puerto Castilla</label>
+            </value>
+            <value>
+                <fullName>Honduras, Puerto Cortes</fullName>
+                <default>false</default>
+                <label>Honduras, Puerto Cortes</label>
+            </value>
+            <value>
+                <fullName>Honduras, San Lorenzo</fullName>
+                <default>false</default>
+                <label>Honduras, San Lorenzo</label>
+            </value>
+            <value>
+                <fullName>Honduras, Tela</fullName>
+                <default>false</default>
+                <label>Honduras, Tela</label>
+            </value>
+            <value>
+                <fullName>Hong Kong, Hong Kong</fullName>
+                <default>false</default>
+                <label>Hong Kong, Hong Kong</label>
+            </value>
+            <value>
+                <fullName>Iceland, Akureyri</fullName>
+                <default>false</default>
+                <label>Iceland, Akureyri</label>
+            </value>
+            <value>
+                <fullName>Iceland, Hafnarfjordur</fullName>
+                <default>false</default>
+                <label>Iceland, Hafnarfjordur</label>
+            </value>
+            <value>
+                <fullName>Iceland, Isafjordur</fullName>
+                <default>false</default>
+                <label>Iceland, Isafjordur</label>
+            </value>
+            <value>
+                <fullName>Iceland, Keflavik</fullName>
+                <default>false</default>
+                <label>Iceland, Keflavik</label>
+            </value>
+            <value>
+                <fullName>Iceland, Reykjavik</fullName>
+                <default>false</default>
+                <label>Iceland, Reykjavik</label>
+            </value>
+            <value>
+                <fullName>Iceland, Vestmannaeyjar</fullName>
+                <default>false</default>
+                <label>Iceland, Vestmannaeyjar</label>
+            </value>
+            <value>
+                <fullName>India, Bombay (Mumbai)</fullName>
+                <default>false</default>
+                <label>India, Bombay (Mumbai)</label>
+            </value>
+            <value>
+                <fullName>India, Calcutta (Kolkata)</fullName>
+                <default>false</default>
+                <label>India, Calcutta (Kolkata)</label>
+            </value>
+            <value>
+                <fullName>India, Chennai (Madras)</fullName>
+                <default>false</default>
+                <label>India, Chennai (Madras)</label>
+            </value>
+            <value>
+                <fullName>India, Cochin</fullName>
+                <default>false</default>
+                <label>India, Cochin</label>
+            </value>
+            <value>
+                <fullName>India, Kandla</fullName>
+                <default>false</default>
+                <label>India, Kandla</label>
+            </value>
+            <value>
+                <fullName>India, Nhava Sheva</fullName>
+                <default>false</default>
+                <label>India, Nhava Sheva</label>
+            </value>
+            <value>
+                <fullName>India, Tuticorin</fullName>
+                <default>false</default>
+                <label>India, Tuticorin</label>
+            </value>
+            <value>
+                <fullName>India, Vishakhapatnam</fullName>
+                <default>false</default>
+                <label>India, Vishakhapatnam</label>
+            </value>
+            <value>
+                <fullName>Indonesia, Cilacap,</fullName>
+                <default>false</default>
+                <label>Indonesia, Cilacap,</label>
+            </value>
+            <value>
+                <fullName>Indonesia, Cirebon</fullName>
+                <default>false</default>
+                <label>Indonesia, Cirebon</label>
+            </value>
+            <value>
+                <fullName>Indonesia, Jakarta</fullName>
+                <default>false</default>
+                <label>Indonesia, Jakarta</label>
+            </value>
+            <value>
+                <fullName>Indonesia, Kupang</fullName>
+                <default>false</default>
+                <label>Indonesia, Kupang</label>
+            </value>
+            <value>
+                <fullName>Indonesia, Palembang</fullName>
+                <default>false</default>
+                <label>Indonesia, Palembang</label>
+            </value>
+            <value>
+                <fullName>Indonesia, Semarang</fullName>
+                <default>false</default>
+                <label>Indonesia, Semarang</label>
+            </value>
+            <value>
+                <fullName>Indonesia, Surabaya</fullName>
+                <default>false</default>
+                <label>Indonesia, Surabaya</label>
+            </value>
+            <value>
+                <fullName>Indonesia, Ujung Pandang</fullName>
+                <default>false</default>
+                <label>Indonesia, Ujung Pandang</label>
+            </value>
+            <value>
+                <fullName>Ireland, Arklow</fullName>
+                <default>false</default>
+                <label>Ireland, Arklow</label>
+            </value>
+            <value>
+                <fullName>Ireland, Cork</fullName>
+                <default>false</default>
+                <label>Ireland, Cork</label>
+            </value>
+            <value>
+                <fullName>Ireland, Drogheda</fullName>
+                <default>false</default>
+                <label>Ireland, Drogheda</label>
+            </value>
+            <value>
+                <fullName>Ireland, Dublin</fullName>
+                <default>false</default>
+                <label>Ireland, Dublin</label>
+            </value>
+            <value>
+                <fullName>Ireland, Foynes (Shannon</fullName>
+                <default>false</default>
+                <label>Ireland, Foynes (Shannon</label>
+            </value>
+            <value>
+                <fullName>Ireland, Galway</fullName>
+                <default>false</default>
+                <label>Ireland, Galway</label>
+            </value>
+            <value>
+                <fullName>Ireland, New Ross</fullName>
+                <default>false</default>
+                <label>Ireland, New Ross</label>
+            </value>
+            <value>
+                <fullName>Ireland, Waterford</fullName>
+                <default>false</default>
+                <label>Ireland, Waterford</label>
+            </value>
+            <value>
+                <fullName>Israel, Haifa</fullName>
+                <default>false</default>
+                <label>Israel, Haifa</label>
+            </value>
+            <value>
+                <fullName>Italy, Augusta</fullName>
+                <default>false</default>
+                <label>Italy, Augusta</label>
+            </value>
+            <value>
+                <fullName>Italy, Bagnoli</fullName>
+                <default>false</default>
+                <label>Italy, Bagnoli</label>
+            </value>
+            <value>
+                <fullName>Italy, Bari</fullName>
+                <default>false</default>
+                <label>Italy, Bari</label>
+            </value>
+            <value>
+                <fullName>Italy, Brindisi</fullName>
+                <default>false</default>
+                <label>Italy, Brindisi</label>
+            </value>
+            <value>
+                <fullName>Italy, Gela</fullName>
+                <default>false</default>
+                <label>Italy, Gela</label>
+            </value>
+            <value>
+                <fullName>Italy, Genoa</fullName>
+                <default>false</default>
+                <label>Italy, Genoa</label>
+            </value>
+            <value>
+                <fullName>Italy, La Spezia</fullName>
+                <default>false</default>
+                <label>Italy, La Spezia</label>
+            </value>
+            <value>
+                <fullName>Italy, Livorno</fullName>
+                <default>false</default>
+                <label>Italy, Livorno</label>
+            </value>
+            <value>
+                <fullName>Italy, Messina</fullName>
+                <default>false</default>
+                <label>Italy, Messina</label>
+            </value>
+            <value>
+                <fullName>Italy, Milazzo</fullName>
+                <default>false</default>
+                <label>Italy, Milazzo</label>
+            </value>
+            <value>
+                <fullName>Italy, Napoli</fullName>
+                <default>false</default>
+                <label>Italy, Napoli</label>
+            </value>
+            <value>
+                <fullName>Italy, Palermo</fullName>
+                <default>false</default>
+                <label>Italy, Palermo</label>
+            </value>
+            <value>
+                <fullName>Italy, Porto Torres</fullName>
+                <default>false</default>
+                <label>Italy, Porto Torres</label>
+            </value>
+            <value>
+                <fullName>Italy, Ravenna</fullName>
+                <default>false</default>
+                <label>Italy, Ravenna</label>
+            </value>
+            <value>
+                <fullName>Italy, Sarroch</fullName>
+                <default>false</default>
+                <label>Italy, Sarroch</label>
+            </value>
+            <value>
+                <fullName>Italy, Savona-Vado</fullName>
+                <default>false</default>
+                <label>Italy, Savona-Vado</label>
+            </value>
+            <value>
+                <fullName>Italy, Taranto</fullName>
+                <default>false</default>
+                <label>Italy, Taranto</label>
+            </value>
+            <value>
+                <fullName>Italy, Trieste</fullName>
+                <default>false</default>
+                <label>Italy, Trieste</label>
+            </value>
+            <value>
+                <fullName>Italy, Venice</fullName>
+                <default>false</default>
+                <label>Italy, Venice</label>
+            </value>
+            <value>
+                <fullName>Jamaica, Kingston</fullName>
+                <default>false</default>
+                <label>Jamaica, Kingston</label>
+            </value>
+            <value>
+                <fullName>Jamaica, Montego Bay</fullName>
+                <default>false</default>
+                <label>Jamaica, Montego Bay</label>
+            </value>
+            <value>
+                <fullName>Jamaica, Ocho Rios</fullName>
+                <default>false</default>
+                <label>Jamaica, Ocho Rios</label>
+            </value>
+            <value>
+                <fullName>Jamaica, Port Antonio</fullName>
+                <default>false</default>
+                <label>Jamaica, Port Antonio</label>
+            </value>
+            <value>
+                <fullName>Jamaica, Port Esquivel</fullName>
+                <default>false</default>
+                <label>Jamaica, Port Esquivel</label>
+            </value>
+            <value>
+                <fullName>Jamaica, Rocky Point</fullName>
+                <default>false</default>
+                <label>Jamaica, Rocky Point</label>
+            </value>
+            <value>
+                <fullName>Japan, Akita</fullName>
+                <default>false</default>
+                <label>Japan, Akita</label>
+            </value>
+            <value>
+                <fullName>Japan, Amagasaki</fullName>
+                <default>false</default>
+                <label>Japan, Amagasaki</label>
+            </value>
+            <value>
+                <fullName>Japan, Chiba</fullName>
+                <default>false</default>
+                <label>Japan, Chiba</label>
+            </value>
+            <value>
+                <fullName>Japan, Hachinohe</fullName>
+                <default>false</default>
+                <label>Japan, Hachinohe</label>
+            </value>
+            <value>
+                <fullName>Japan, Hakodate</fullName>
+                <default>false</default>
+                <label>Japan, Hakodate</label>
+            </value>
+            <value>
+                <fullName>Japan, Higashiharima</fullName>
+                <default>false</default>
+                <label>Japan, Higashiharima</label>
+            </value>
+            <value>
+                <fullName>Japan, Himeji</fullName>
+                <default>false</default>
+                <label>Japan, Himeji</label>
+            </value>
+            <value>
+                <fullName>Japan, Hiroshima</fullName>
+                <default>false</default>
+                <label>Japan, Hiroshima</label>
+            </value>
+            <value>
+                <fullName>Japan, Kawasaki</fullName>
+                <default>false</default>
+                <label>Japan, Kawasaki</label>
+            </value>
+            <value>
+                <fullName>Japan, Kinuura</fullName>
+                <default>false</default>
+                <label>Japan, Kinuura</label>
+            </value>
+            <value>
+                <fullName>Japan, Kobe</fullName>
+                <default>false</default>
+                <label>Japan, Kobe</label>
+            </value>
+            <value>
+                <fullName>Japan, Kushiro</fullName>
+                <default>false</default>
+                <label>Japan, Kushiro</label>
+            </value>
+            <value>
+                <fullName>Japan, Mizushima</fullName>
+                <default>false</default>
+                <label>Japan, Mizushima</label>
+            </value>
+            <value>
+                <fullName>Japan, Moji</fullName>
+                <default>false</default>
+                <label>Japan, Moji</label>
+            </value>
+            <value>
+                <fullName>Japan, Nagoya</fullName>
+                <default>false</default>
+                <label>Japan, Nagoya</label>
+            </value>
+            <value>
+                <fullName>Japan, Osaka</fullName>
+                <default>false</default>
+                <label>Japan, Osaka</label>
+            </value>
+            <value>
+                <fullName>Japan, Sakai</fullName>
+                <default>false</default>
+                <label>Japan, Sakai</label>
+            </value>
+            <value>
+                <fullName>Japan, Sakata</fullName>
+                <default>false</default>
+                <label>Japan, Sakata</label>
+            </value>
+            <value>
+                <fullName>Japan, Shimizu</fullName>
+                <default>false</default>
+                <label>Japan, Shimizu</label>
+            </value>
+            <value>
+                <fullName>Japan, Tokyo</fullName>
+                <default>false</default>
+                <label>Japan, Tokyo</label>
+            </value>
+            <value>
+                <fullName>Japan, Tomakomai</fullName>
+                <default>false</default>
+                <label>Japan, Tomakomai</label>
+            </value>
+            <value>
+                <fullName>Japan, Yokohama</fullName>
+                <default>false</default>
+                <label>Japan, Yokohama</label>
+            </value>
+            <value>
+                <fullName>Jordan, Aqaba</fullName>
+                <default>false</default>
+                <label>Jordan, Aqaba</label>
+            </value>
+            <value>
+                <fullName>Kenya, Lamu</fullName>
+                <default>false</default>
+                <label>Kenya, Lamu</label>
+            </value>
+            <value>
+                <fullName>Kenya, Mombasa</fullName>
+                <default>false</default>
+                <label>Kenya, Mombasa</label>
+            </value>
+            <value>
+                <fullName>Kiribati, Betio</fullName>
+                <default>false</default>
+                <label>Kiribati, Betio</label>
+            </value>
+            <value>
+                <fullName>Korea (South), Busan</fullName>
+                <default>false</default>
+                <label>Korea (South), Busan</label>
+            </value>
+            <value>
+                <fullName>Korea (South), Chinhae</fullName>
+                <default>false</default>
+                <label>Korea (South), Chinhae</label>
+            </value>
+            <value>
+                <fullName>Korea (South), Inchon</fullName>
+                <default>false</default>
+                <label>Korea (South), Inchon</label>
+            </value>
+            <value>
+                <fullName>Korea (South), Masan</fullName>
+                <default>false</default>
+                <label>Korea (South), Masan</label>
+            </value>
+            <value>
+                <fullName>Korea (South), Mokpo</fullName>
+                <default>false</default>
+                <label>Korea (South), Mokpo</label>
+            </value>
+            <value>
+                <fullName>Korea (South), Pohang</fullName>
+                <default>false</default>
+                <label>Korea (South), Pohang</label>
+            </value>
+            <value>
+                <fullName>Korea (South), Tonghae</fullName>
+                <default>false</default>
+                <label>Korea (South), Tonghae</label>
+            </value>
+            <value>
+                <fullName>Korea (South), Ulsan</fullName>
+                <default>false</default>
+                <label>Korea (South), Ulsan</label>
+            </value>
+            <value>
+                <fullName>Korea (South), Yosu</fullName>
+                <default>false</default>
+                <label>Korea (South), Yosu</label>
+            </value>
+            <value>
+                <fullName>Kuwait, Mina al Ahmadi</fullName>
+                <default>false</default>
+                <label>Kuwait, Mina al Ahmadi</label>
+            </value>
+            <value>
+                <fullName>Kuwait, Mina Saud</fullName>
+                <default>false</default>
+                <label>Kuwait, Mina Saud</label>
+            </value>
+            <value>
+                <fullName>Kuwait, Shuwaikh</fullName>
+                <default>false</default>
+                <label>Kuwait, Shuwaikh</label>
+            </value>
+            <value>
+                <fullName>Latvia, Liepaja</fullName>
+                <default>false</default>
+                <label>Latvia, Liepaja</label>
+            </value>
+            <value>
+                <fullName>Latvia, Riga</fullName>
+                <default>false</default>
+                <label>Latvia, Riga</label>
+            </value>
+            <value>
+                <fullName>Latvia, Ventspils</fullName>
+                <default>false</default>
+                <label>Latvia, Ventspils</label>
+            </value>
+            <value>
+                <fullName>Lebanon, Beirut</fullName>
+                <default>false</default>
+                <label>Lebanon, Beirut</label>
+            </value>
+            <value>
+                <fullName>Lebanon, Chekka</fullName>
+                <default>false</default>
+                <label>Lebanon, Chekka</label>
+            </value>
+            <value>
+                <fullName>Lebanon, Selaata</fullName>
+                <default>false</default>
+                <label>Lebanon, Selaata</label>
+            </value>
+            <value>
+                <fullName>Lebanon, Sidon</fullName>
+                <default>false</default>
+                <label>Lebanon, Sidon</label>
+            </value>
+            <value>
+                <fullName>Lebanon, Tripoli</fullName>
+                <default>false</default>
+                <label>Lebanon, Tripoli</label>
+            </value>
+            <value>
+                <fullName>Liberia, Buchanan</fullName>
+                <default>false</default>
+                <label>Liberia, Buchanan</label>
+            </value>
+            <value>
+                <fullName>Liberia, Greenville</fullName>
+                <default>false</default>
+                <label>Liberia, Greenville</label>
+            </value>
+            <value>
+                <fullName>Liberia, Monrovia</fullName>
+                <default>false</default>
+                <label>Liberia, Monrovia</label>
+            </value>
+            <value>
+                <fullName>Lithuania, Klaipeda</fullName>
+                <default>false</default>
+                <label>Lithuania, Klaipeda</label>
+            </value>
+            <value>
+                <fullName>Macau, Macau</fullName>
+                <default>false</default>
+                <label>Macau, Macau</label>
+            </value>
+            <value>
+                <fullName>Madagascar, Antsiranana</fullName>
+                <default>false</default>
+                <label>Madagascar, Antsiranana</label>
+            </value>
+            <value>
+                <fullName>Madagascar, Majunga</fullName>
+                <default>false</default>
+                <label>Madagascar, Majunga</label>
+            </value>
+            <value>
+                <fullName>Madagascar, Toamasina</fullName>
+                <default>false</default>
+                <label>Madagascar, Toamasina</label>
+            </value>
+            <value>
+                <fullName>Madagascar, Tulear</fullName>
+                <default>false</default>
+                <label>Madagascar, Tulear</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Bintulu, Sarawak</fullName>
+                <default>false</default>
+                <label>Malaysia, Bintulu, Sarawak</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Kota Kinabalu, Sabah</fullName>
+                <default>false</default>
+                <label>Malaysia, Kota Kinabalu, Sabah</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Kuantan</fullName>
+                <default>false</default>
+                <label>Malaysia, Kuantan</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Kuching, Sarawak</fullName>
+                <default>false</default>
+                <label>Malaysia, Kuching, Sarawak</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Kudat</fullName>
+                <default>false</default>
+                <label>Malaysia, Kudat</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Labuan</fullName>
+                <default>false</default>
+                <label>Malaysia, Labuan</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Lahad Datu</fullName>
+                <default>false</default>
+                <label>Malaysia, Lahad Datu</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Lumut</fullName>
+                <default>false</default>
+                <label>Malaysia, Lumut</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Miri, Sarawak</fullName>
+                <default>false</default>
+                <label>Malaysia, Miri, Sarawak</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Pasir Gudang</fullName>
+                <default>false</default>
+                <label>Malaysia, Pasir Gudang</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Penang</fullName>
+                <default>false</default>
+                <label>Malaysia, Penang</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Port Dickson</fullName>
+                <default>false</default>
+                <label>Malaysia, Port Dickson</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Port Klang</fullName>
+                <default>false</default>
+                <label>Malaysia, Port Klang</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Sandakan, Sabah</fullName>
+                <default>false</default>
+                <label>Malaysia, Sandakan, Sabah</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Sibu, Sarawak</fullName>
+                <default>false</default>
+                <label>Malaysia, Sibu, Sarawak</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Tanjung</fullName>
+                <default>false</default>
+                <label>Malaysia, Tanjung</label>
+            </value>
+            <value>
+                <fullName>Malaysia, Tawau, Sabah</fullName>
+                <default>false</default>
+                <label>Malaysia, Tawau, Sabah</label>
+            </value>
+            <value>
+                <fullName>Malta, Valletta</fullName>
+                <default>false</default>
+                <label>Malta, Valletta</label>
+            </value>
+            <value>
+                <fullName>Mauritania, Nouadhibou</fullName>
+                <default>false</default>
+                <label>Mauritania, Nouadhibou</label>
+            </value>
+            <value>
+                <fullName>Mauritania, Nouakchott</fullName>
+                <default>false</default>
+                <label>Mauritania, Nouakchott</label>
+            </value>
+            <value>
+                <fullName>Mauritius, Port Louis</fullName>
+                <default>false</default>
+                <label>Mauritius, Port Louis</label>
+            </value>
+            <value>
+                <fullName>Mexico, Acapulco</fullName>
+                <default>false</default>
+                <label>Mexico, Acapulco</label>
+            </value>
+            <value>
+                <fullName>Mexico, Coatzacoalcos</fullName>
+                <default>false</default>
+                <label>Mexico, Coatzacoalcos</label>
+            </value>
+            <value>
+                <fullName>Mexico, Guaymas</fullName>
+                <default>false</default>
+                <label>Mexico, Guaymas</label>
+            </value>
+            <value>
+                <fullName>Mexico, La Paz</fullName>
+                <default>false</default>
+                <label>Mexico, La Paz</label>
+            </value>
+            <value>
+                <fullName>Mexico, Lazaro Cardenas</fullName>
+                <default>false</default>
+                <label>Mexico, Lazaro Cardenas</label>
+            </value>
+            <value>
+                <fullName>Mexico, Manzanillo</fullName>
+                <default>false</default>
+                <label>Mexico, Manzanillo</label>
+            </value>
+            <value>
+                <fullName>Mexico, Mazatlan</fullName>
+                <default>false</default>
+                <label>Mexico, Mazatlan</label>
+            </value>
+            <value>
+                <fullName>Mexico, Progreso</fullName>
+                <default>false</default>
+                <label>Mexico, Progreso</label>
+            </value>
+            <value>
+                <fullName>Mexico, Salina Cruz</fullName>
+                <default>false</default>
+                <label>Mexico, Salina Cruz</label>
+            </value>
+            <value>
+                <fullName>Mexico, Tampico</fullName>
+                <default>false</default>
+                <label>Mexico, Tampico</label>
+            </value>
+            <value>
+                <fullName>Mexico, Topolobampo</fullName>
+                <default>false</default>
+                <label>Mexico, Topolobampo</label>
+            </value>
+            <value>
+                <fullName>Mexico, Tuxpan</fullName>
+                <default>false</default>
+                <label>Mexico, Tuxpan</label>
+            </value>
+            <value>
+                <fullName>Mexico, Veracruz</fullName>
+                <default>false</default>
+                <label>Mexico, Veracruz</label>
+            </value>
+            <value>
+                <fullName>Micronesia, Pohnpei</fullName>
+                <default>false</default>
+                <label>Micronesia, Pohnpei</label>
+            </value>
+            <value>
+                <fullName>Monaco, Monaco</fullName>
+                <default>false</default>
+                <label>Monaco, Monaco</label>
+            </value>
+            <value>
+                <fullName>Montenegro, Bar</fullName>
+                <default>false</default>
+                <label>Montenegro, Bar</label>
+            </value>
+            <value>
+                <fullName>Montenegro, Kotor</fullName>
+                <default>false</default>
+                <label>Montenegro, Kotor</label>
+            </value>
+            <value>
+                <fullName>Montserrat, Plymouth</fullName>
+                <default>false</default>
+                <label>Montserrat, Plymouth</label>
+            </value>
+            <value>
+                <fullName>Morocco, Agadir</fullName>
+                <default>false</default>
+                <label>Morocco, Agadir</label>
+            </value>
+            <value>
+                <fullName>Morocco, Casablanca</fullName>
+                <default>false</default>
+                <label>Morocco, Casablanca</label>
+            </value>
+            <value>
+                <fullName>Morocco, El Jadida</fullName>
+                <default>false</default>
+                <label>Morocco, El Jadida</label>
+            </value>
+            <value>
+                <fullName>Morocco, Kenitra</fullName>
+                <default>false</default>
+                <label>Morocco, Kenitra</label>
+            </value>
+            <value>
+                <fullName>Morocco, Mohammedia</fullName>
+                <default>false</default>
+                <label>Morocco, Mohammedia</label>
+            </value>
+            <value>
+                <fullName>Morocco, Safi</fullName>
+                <default>false</default>
+                <label>Morocco, Safi</label>
+            </value>
+            <value>
+                <fullName>Morocco, Tangier</fullName>
+                <default>false</default>
+                <label>Morocco, Tangier</label>
+            </value>
+            <value>
+                <fullName>Mozambique, Beira</fullName>
+                <default>false</default>
+                <label>Mozambique, Beira</label>
+            </value>
+            <value>
+                <fullName>Mozambique, Inhambane</fullName>
+                <default>false</default>
+                <label>Mozambique, Inhambane</label>
+            </value>
+            <value>
+                <fullName>Mozambique, Maputo</fullName>
+                <default>false</default>
+                <label>Mozambique, Maputo</label>
+            </value>
+            <value>
+                <fullName>Mozambique, Nacala</fullName>
+                <default>false</default>
+                <label>Mozambique, Nacala</label>
+            </value>
+            <value>
+                <fullName>Mozambique, Pemba</fullName>
+                <default>false</default>
+                <label>Mozambique, Pemba</label>
+            </value>
+            <value>
+                <fullName>Mozambique, Quelimane</fullName>
+                <default>false</default>
+                <label>Mozambique, Quelimane</label>
+            </value>
+            <value>
+                <fullName>Myanmar, Moulmein</fullName>
+                <default>false</default>
+                <label>Myanmar, Moulmein</label>
+            </value>
+            <value>
+                <fullName>Myanmar, Yangon</fullName>
+                <default>false</default>
+                <label>Myanmar, Yangon</label>
+            </value>
+            <value>
+                <fullName>Namibia, Luderitz</fullName>
+                <default>false</default>
+                <label>Namibia, Luderitz</label>
+            </value>
+            <value>
+                <fullName>Namibia, Walvis Bay</fullName>
+                <default>false</default>
+                <label>Namibia, Walvis Bay</label>
+            </value>
+            <value>
+                <fullName>Nauru, Nauru Island</fullName>
+                <default>false</default>
+                <label>Nauru, Nauru Island</label>
+            </value>
+            <value>
+                <fullName>Netherlands, Amsterdam</fullName>
+                <default>false</default>
+                <label>Netherlands, Amsterdam</label>
+            </value>
+            <value>
+                <fullName>Netherlands, Delfzijl</fullName>
+                <default>false</default>
+                <label>Netherlands, Delfzijl</label>
+            </value>
+            <value>
+                <fullName>Netherlands, Dordrecht</fullName>
+                <default>false</default>
+                <label>Netherlands, Dordrecht</label>
+            </value>
+            <value>
+                <fullName>Netherlands, Eemshaven</fullName>
+                <default>false</default>
+                <label>Netherlands, Eemshaven</label>
+            </value>
+            <value>
+                <fullName>Netherlands, Groningen</fullName>
+                <default>false</default>
+                <label>Netherlands, Groningen</label>
+            </value>
+            <value>
+                <fullName>Netherlands, IJmuiden</fullName>
+                <default>false</default>
+                <label>Netherlands, IJmuiden</label>
+            </value>
+            <value>
+                <fullName>Netherlands, Rotterdam</fullName>
+                <default>false</default>
+                <label>Netherlands, Rotterdam</label>
+            </value>
+            <value>
+                <fullName>Netherlands, Terneuzen</fullName>
+                <default>false</default>
+                <label>Netherlands, Terneuzen</label>
+            </value>
+            <value>
+                <fullName>Netherlands Antilles, Kralendijk</fullName>
+                <default>false</default>
+                <label>Netherlands Antilles, Kralendijk</label>
+            </value>
+            <value>
+                <fullName>Netherlands Antilles, Philipsburg</fullName>
+                <default>false</default>
+                <label>Netherlands Antilles, Philipsburg</label>
+            </value>
+            <value>
+                <fullName>Netherlands Antilles, Willemstad</fullName>
+                <default>false</default>
+                <label>Netherlands Antilles, Willemstad</label>
+            </value>
+            <value>
+                <fullName>New Zealand, Auckland Otago Harbour</fullName>
+                <default>false</default>
+                <label>New Zealand, Auckland Otago Harbour</label>
+            </value>
+            <value>
+                <fullName>New Zealand, Dunedin</fullName>
+                <default>false</default>
+                <label>New Zealand, Dunedin</label>
+            </value>
+            <value>
+                <fullName>New Zealand, Tauranga</fullName>
+                <default>false</default>
+                <label>New Zealand, Tauranga</label>
+            </value>
+            <value>
+                <fullName>New Zealand, Wellington</fullName>
+                <default>false</default>
+                <label>New Zealand, Wellington</label>
+            </value>
+            <value>
+                <fullName>Nicaragua, Bluefields</fullName>
+                <default>false</default>
+                <label>Nicaragua, Bluefields</label>
+            </value>
+            <value>
+                <fullName>Nicaragua, Corinto</fullName>
+                <default>false</default>
+                <label>Nicaragua, Corinto</label>
+            </value>
+            <value>
+                <fullName>Nicaragua, El Bluff</fullName>
+                <default>false</default>
+                <label>Nicaragua, El Bluff</label>
+            </value>
+            <value>
+                <fullName>Nicaragua, Puerto Cabezas</fullName>
+                <default>false</default>
+                <label>Nicaragua, Puerto Cabezas</label>
+            </value>
+            <value>
+                <fullName>Nicaragua, Puerto Sandino</fullName>
+                <default>false</default>
+                <label>Nicaragua, Puerto Sandino</label>
+            </value>
+            <value>
+                <fullName>Nicaragua, San Juan Del Sur</fullName>
+                <default>false</default>
+                <label>Nicaragua, San Juan Del Sur</label>
+            </value>
+            <value>
+                <fullName>Nigeria, Calabar</fullName>
+                <default>false</default>
+                <label>Nigeria, Calabar</label>
+            </value>
+            <value>
+                <fullName>Nigeria, Lagos</fullName>
+                <default>false</default>
+                <label>Nigeria, Lagos</label>
+            </value>
+            <value>
+                <fullName>Nigeria, Onne</fullName>
+                <default>false</default>
+                <label>Nigeria, Onne</label>
+            </value>
+            <value>
+                <fullName>Nigeria, Port Harcourt</fullName>
+                <default>false</default>
+                <label>Nigeria, Port Harcourt</label>
+            </value>
+            <value>
+                <fullName>Nigeria, Sapele</fullName>
+                <default>false</default>
+                <label>Nigeria, Sapele</label>
+            </value>
+            <value>
+                <fullName>Nigeria, Tin Can Island</fullName>
+                <default>false</default>
+                <label>Nigeria, Tin Can Island</label>
+            </value>
+            <value>
+                <fullName>Nigeria, Warri</fullName>
+                <default>false</default>
+                <label>Nigeria, Warri</label>
+            </value>
+            <value>
+                <fullName>Norway, Bergen</fullName>
+                <default>false</default>
+                <label>Norway, Bergen</label>
+            </value>
+            <value>
+                <fullName>Norway, Drammen</fullName>
+                <default>false</default>
+                <label>Norway, Drammen</label>
+            </value>
+            <value>
+                <fullName>Norway, Grenland Harbour</fullName>
+                <default>false</default>
+                <label>Norway, Grenland Harbour</label>
+            </value>
+            <value>
+                <fullName>Norway, Hammerfest</fullName>
+                <default>false</default>
+                <label>Norway, Hammerfest</label>
+            </value>
+            <value>
+                <fullName>Norway, Harstad</fullName>
+                <default>false</default>
+                <label>Norway, Harstad</label>
+            </value>
+            <value>
+                <fullName>Norway, Haugesund</fullName>
+                <default>false</default>
+                <label>Norway, Haugesund</label>
+            </value>
+            <value>
+                <fullName>Norway, Kristiansand</fullName>
+                <default>false</default>
+                <label>Norway, Kristiansand</label>
+            </value>
+            <value>
+                <fullName>Norway, Larvik</fullName>
+                <default>false</default>
+                <label>Norway, Larvik</label>
+            </value>
+            <value>
+                <fullName>Norway, Oslo</fullName>
+                <default>false</default>
+                <label>Norway, Oslo</label>
+            </value>
+            <value>
+                <fullName>Norway, Stavanger</fullName>
+                <default>false</default>
+                <label>Norway, Stavanger</label>
+            </value>
+            <value>
+                <fullName>Norway, Trondheim</fullName>
+                <default>false</default>
+                <label>Norway, Trondheim</label>
+            </value>
+            <value>
+                <fullName>Pakistan, Karachi</fullName>
+                <default>false</default>
+                <label>Pakistan, Karachi</label>
+            </value>
+            <value>
+                <fullName>Panama, Colon</fullName>
+                <default>false</default>
+                <label>Panama, Colon</label>
+            </value>
+            <value>
+                <fullName>Panama, Cristobal</fullName>
+                <default>false</default>
+                <label>Panama, Cristobal</label>
+            </value>
+            <value>
+                <fullName>Panama, Vacamonte</fullName>
+                <default>false</default>
+                <label>Panama, Vacamonte</label>
+            </value>
+            <value>
+                <fullName>Papua New Guinea, Kieta</fullName>
+                <default>false</default>
+                <label>Papua New Guinea, Kieta</label>
+            </value>
+            <value>
+                <fullName>Papua New Guinea, Lae</fullName>
+                <default>false</default>
+                <label>Papua New Guinea, Lae</label>
+            </value>
+            <value>
+                <fullName>Papua New Guinea, Madang</fullName>
+                <default>false</default>
+                <label>Papua New Guinea, Madang</label>
+            </value>
+            <value>
+                <fullName>Papua New Guinea, Port Moresby</fullName>
+                <default>false</default>
+                <label>Papua New Guinea, Port Moresby</label>
+            </value>
+            <value>
+                <fullName>Papua New Guinea, Rabaul</fullName>
+                <default>false</default>
+                <label>Papua New Guinea, Rabaul</label>
+            </value>
+            <value>
+                <fullName>Peru, Callao</fullName>
+                <default>false</default>
+                <label>Peru, Callao</label>
+            </value>
+            <value>
+                <fullName>Peru, Chimbote</fullName>
+                <default>false</default>
+                <label>Peru, Chimbote</label>
+            </value>
+            <value>
+                <fullName>Peru, Ilo</fullName>
+                <default>false</default>
+                <label>Peru, Ilo</label>
+            </value>
+            <value>
+                <fullName>Peru, Matarani</fullName>
+                <default>false</default>
+                <label>Peru, Matarani</label>
+            </value>
+            <value>
+                <fullName>Peru, Paita</fullName>
+                <default>false</default>
+                <label>Peru, Paita</label>
+            </value>
+            <value>
+                <fullName>Peru, Salaverry</fullName>
+                <default>false</default>
+                <label>Peru, Salaverry</label>
+            </value>
+            <value>
+                <fullName>Peru, Talara</fullName>
+                <default>false</default>
+                <label>Peru, Talara</label>
+            </value>
+            <value>
+                <fullName>Philippines, Batangas</fullName>
+                <default>false</default>
+                <label>Philippines, Batangas</label>
+            </value>
+            <value>
+                <fullName>Philippines, Cagayan de Oro</fullName>
+                <default>false</default>
+                <label>Philippines, Cagayan de Oro</label>
+            </value>
+            <value>
+                <fullName>Philippines, Cebu</fullName>
+                <default>false</default>
+                <label>Philippines, Cebu</label>
+            </value>
+            <value>
+                <fullName>Philippines, Davao</fullName>
+                <default>false</default>
+                <label>Philippines, Davao</label>
+            </value>
+            <value>
+                <fullName>Philippines, Iligan</fullName>
+                <default>false</default>
+                <label>Philippines, Iligan</label>
+            </value>
+            <value>
+                <fullName>Philippines, Iloilo</fullName>
+                <default>false</default>
+                <label>Philippines, Iloilo</label>
+            </value>
+            <value>
+                <fullName>Philippines, Jolo</fullName>
+                <default>false</default>
+                <label>Philippines, Jolo</label>
+            </value>
+            <value>
+                <fullName>Philippines, Legaspi, Davao</fullName>
+                <default>false</default>
+                <label>Philippines, Legaspi, Davao</label>
+            </value>
+            <value>
+                <fullName>Philippines, Manila</fullName>
+                <default>false</default>
+                <label>Philippines, Manila</label>
+            </value>
+            <value>
+                <fullName>Philippines, Puerto</fullName>
+                <default>false</default>
+                <label>Philippines, Puerto</label>
+            </value>
+            <value>
+                <fullName>Philippines, San Fernando</fullName>
+                <default>false</default>
+                <label>Philippines, San Fernando</label>
+            </value>
+            <value>
+                <fullName>Philippines, Subic Bay</fullName>
+                <default>false</default>
+                <label>Philippines, Subic Bay</label>
+            </value>
+            <value>
+                <fullName>Philippines, Zamboanga,</fullName>
+                <default>false</default>
+                <label>Philippines, Zamboanga,</label>
+            </value>
+            <value>
+                <fullName>Poland, Gdansk</fullName>
+                <default>false</default>
+                <label>Poland, Gdansk</label>
+            </value>
+            <value>
+                <fullName>Poland, Gdynia</fullName>
+                <default>false</default>
+                <label>Poland, Gdynia</label>
+            </value>
+            <value>
+                <fullName>Poland, Kolobrzeg</fullName>
+                <default>false</default>
+                <label>Poland, Kolobrzeg</label>
+            </value>
+            <value>
+                <fullName>Poland, Swinoujscie</fullName>
+                <default>false</default>
+                <label>Poland, Swinoujscie</label>
+            </value>
+            <value>
+                <fullName>Poland, Szczecin</fullName>
+                <default>false</default>
+                <label>Poland, Szczecin</label>
+            </value>
+            <value>
+                <fullName>Poland, Ustka</fullName>
+                <default>false</default>
+                <label>Poland, Ustka</label>
+            </value>
+            <value>
+                <fullName>Portugal, Aveiro</fullName>
+                <default>false</default>
+                <label>Portugal, Aveiro</label>
+            </value>
+            <value>
+                <fullName>Portugal, Leixoes</fullName>
+                <default>false</default>
+                <label>Portugal, Leixoes</label>
+            </value>
+            <value>
+                <fullName>Portugal, Lisbon</fullName>
+                <default>false</default>
+                <label>Portugal, Lisbon</label>
+            </value>
+            <value>
+                <fullName>Portugal, Portimao</fullName>
+                <default>false</default>
+                <label>Portugal, Portimao</label>
+            </value>
+            <value>
+                <fullName>Portugal, Setubal</fullName>
+                <default>false</default>
+                <label>Portugal, Setubal</label>
+            </value>
+            <value>
+                <fullName>Portugal, Viana Do Castelo</fullName>
+                <default>false</default>
+                <label>Portugal, Viana Do Castelo</label>
+            </value>
+            <value>
+                <fullName>Qatar, Doha</fullName>
+                <default>false</default>
+                <label>Qatar, Doha</label>
+            </value>
+            <value>
+                <fullName>Qatar, Halul Island</fullName>
+                <default>false</default>
+                <label>Qatar, Halul Island</label>
+            </value>
+            <value>
+                <fullName>Qatar, Ras Laffan</fullName>
+                <default>false</default>
+                <label>Qatar, Ras Laffan</label>
+            </value>
+            <value>
+                <fullName>Qatar, Umm Said</fullName>
+                <default>false</default>
+                <label>Qatar, Umm Said</label>
+            </value>
+            <value>
+                <fullName>Romania, Braila</fullName>
+                <default>false</default>
+                <label>Romania, Braila</label>
+            </value>
+            <value>
+                <fullName>Romania, Constantza</fullName>
+                <default>false</default>
+                <label>Romania, Constantza</label>
+            </value>
+            <value>
+                <fullName>Romania, Mangalia</fullName>
+                <default>false</default>
+                <label>Romania, Mangalia</label>
+            </value>
+            <value>
+                <fullName>Romania, Sulina</fullName>
+                <default>false</default>
+                <label>Romania, Sulina</label>
+            </value>
+            <value>
+                <fullName>Russia, Kaliningrad</fullName>
+                <default>false</default>
+                <label>Russia, Kaliningrad</label>
+            </value>
+            <value>
+                <fullName>Russia, Kholmsk</fullName>
+                <default>false</default>
+                <label>Russia, Kholmsk</label>
+            </value>
+            <value>
+                <fullName>Russia, Murmansk</fullName>
+                <default>false</default>
+                <label>Russia, Murmansk</label>
+            </value>
+            <value>
+                <fullName>Russia, Nakhodka</fullName>
+                <default>false</default>
+                <label>Russia, Nakhodka</label>
+            </value>
+            <value>
+                <fullName>Russia, Novorossiysk</fullName>
+                <default>false</default>
+                <label>Russia, Novorossiysk</label>
+            </value>
+            <value>
+                <fullName>Russia, St Petersburg</fullName>
+                <default>false</default>
+                <label>Russia, St Petersburg</label>
+            </value>
+            <value>
+                <fullName>Russia, Tuapse</fullName>
+                <default>false</default>
+                <label>Russia, Tuapse</label>
+            </value>
+            <value>
+                <fullName>Russia, Vladivostok</fullName>
+                <default>false</default>
+                <label>Russia, Vladivostok</label>
+            </value>
+            <value>
+                <fullName>Russia, Vyborg</fullName>
+                <default>false</default>
+                <label>Russia, Vyborg</label>
+            </value>
+            <value>
+                <fullName>Saint Kitts and Nevis, Basseterre</fullName>
+                <default>false</default>
+                <label>Saint Kitts and Nevis, Basseterre</label>
+            </value>
+            <value>
+                <fullName>Saint Lucia, Castries</fullName>
+                <default>false</default>
+                <label>Saint Lucia, Castries</label>
+            </value>
+            <value>
+                <fullName>Saint Lucia, Vieux Fort</fullName>
+                <default>false</default>
+                <label>Saint Lucia, Vieux Fort</label>
+            </value>
+            <value>
+                <fullName>Saint Vincent and the Grenadines, Kingstown</fullName>
+                <default>false</default>
+                <label>Saint Vincent and the Grenadines, Kingstown</label>
+            </value>
+            <value>
+                <fullName>Samoa, Apia</fullName>
+                <default>false</default>
+                <label>Samoa, Apia</label>
+            </value>
+            <value>
+                <fullName>Sao Tome and Principe, Santo Antonio</fullName>
+                <default>false</default>
+                <label>Sao Tome and Principe, Santo Antonio</label>
+            </value>
+            <value>
+                <fullName>Sao Tome and Principe, Sao Tome</fullName>
+                <default>false</default>
+                <label>Sao Tome and Principe, Sao Tome</label>
+            </value>
+            <value>
+                <fullName>Saudi Arabia, Dammam</fullName>
+                <default>false</default>
+                <label>Saudi Arabia, Dammam</label>
+            </value>
+            <value>
+                <fullName>Saudi Arabia, Dhuba</fullName>
+                <default>false</default>
+                <label>Saudi Arabia, Dhuba</label>
+            </value>
+            <value>
+                <fullName>Saudi Arabia, Gizan</fullName>
+                <default>false</default>
+                <label>Saudi Arabia, Gizan</label>
+            </value>
+            <value>
+                <fullName>Saudi Arabia, Jeddah</fullName>
+                <default>false</default>
+                <label>Saudi Arabia, Jeddah</label>
+            </value>
+            <value>
+                <fullName>Saudi Arabia, Jubail</fullName>
+                <default>false</default>
+                <label>Saudi Arabia, Jubail</label>
+            </value>
+            <value>
+                <fullName>Saudi Arabia, Rabigh</fullName>
+                <default>false</default>
+                <label>Saudi Arabia, Rabigh</label>
+            </value>
+            <value>
+                <fullName>Saudi Arabia, Ras al Mishab</fullName>
+                <default>false</default>
+                <label>Saudi Arabia, Ras al Mishab</label>
+            </value>
+            <value>
+                <fullName>Saudi Arabia, Ras Tanura</fullName>
+                <default>false</default>
+                <label>Saudi Arabia, Ras Tanura</label>
+            </value>
+            <value>
+                <fullName>Saudi Arabia, Yanbu</fullName>
+                <default>false</default>
+                <label>Saudi Arabia, Yanbu</label>
+            </value>
+            <value>
+                <fullName>Senegal, Dakar</fullName>
+                <default>false</default>
+                <label>Senegal, Dakar</label>
+            </value>
+            <value>
+                <fullName>Seychelles, Port Victoria</fullName>
+                <default>false</default>
+                <label>Seychelles, Port Victoria</label>
+            </value>
+            <value>
+                <fullName>Sierra Leone, Freetown</fullName>
+                <default>false</default>
+                <label>Sierra Leone, Freetown</label>
+            </value>
+            <value>
+                <fullName>Sierra Leone, Pepel</fullName>
+                <default>false</default>
+                <label>Sierra Leone, Pepel</label>
+            </value>
+            <value>
+                <fullName>Singapore, Singapore</fullName>
+                <default>false</default>
+                <label>Singapore, Singapore</label>
+            </value>
+            <value>
+                <fullName>Slovenia, Izola</fullName>
+                <default>false</default>
+                <label>Slovenia, Izola</label>
+            </value>
+            <value>
+                <fullName>Slovenia, Koper</fullName>
+                <default>false</default>
+                <label>Slovenia, Koper</label>
+            </value>
+            <value>
+                <fullName>Slovenia, Piran</fullName>
+                <default>false</default>
+                <label>Slovenia, Piran</label>
+            </value>
+            <value>
+                <fullName>Solomon Islands, Honiara</fullName>
+                <default>false</default>
+                <label>Solomon Islands, Honiara</label>
+            </value>
+            <value>
+                <fullName>Solomon Islands, Noro, New Georgia</fullName>
+                <default>false</default>
+                <label>Solomon Islands, Noro, New Georgia</label>
+            </value>
+            <value>
+                <fullName>Solomon Islands, Viru Harbour</fullName>
+                <default>false</default>
+                <label>Solomon Islands, Viru Harbour</label>
+            </value>
+            <value>
+                <fullName>Solomon Islands, Yandina, Pavuvu</fullName>
+                <default>false</default>
+                <label>Solomon Islands, Yandina, Pavuvu</label>
+            </value>
+            <value>
+                <fullName>South Africa, Cape Town</fullName>
+                <default>false</default>
+                <label>South Africa, Cape Town</label>
+            </value>
+            <value>
+                <fullName>South Africa, Durban</fullName>
+                <default>false</default>
+                <label>South Africa, Durban</label>
+            </value>
+            <value>
+                <fullName>South Africa, Mossel Bay</fullName>
+                <default>false</default>
+                <label>South Africa, Mossel Bay</label>
+            </value>
+            <value>
+                <fullName>South Africa, Port Elizabeth</fullName>
+                <default>false</default>
+                <label>South Africa, Port Elizabeth</label>
+            </value>
+            <value>
+                <fullName>South Africa, Richards Bay</fullName>
+                <default>false</default>
+                <label>South Africa, Richards Bay</label>
+            </value>
+            <value>
+                <fullName>South Africa, Saldanha Bay</fullName>
+                <default>false</default>
+                <label>South Africa, Saldanha Bay</label>
+            </value>
+            <value>
+                <fullName>Spain, Aviles</fullName>
+                <default>false</default>
+                <label>Spain, Aviles</label>
+            </value>
+            <value>
+                <fullName>Spain, Barcelona</fullName>
+                <default>false</default>
+                <label>Spain, Barcelona</label>
+            </value>
+            <value>
+                <fullName>Spain, Bilbao</fullName>
+                <default>false</default>
+                <label>Spain, Bilbao</label>
+            </value>
+            <value>
+                <fullName>Spain, Cadiz</fullName>
+                <default>false</default>
+                <label>Spain, Cadiz</label>
+            </value>
+            <value>
+                <fullName>Spain, Cartagena</fullName>
+                <default>false</default>
+                <label>Spain, Cartagena</label>
+            </value>
+            <value>
+                <fullName>Spain, Castellon</fullName>
+                <default>false</default>
+                <label>Spain, Castellon</label>
+            </value>
+            <value>
+                <fullName>Spain, Ceuta</fullName>
+                <default>false</default>
+                <label>Spain, Ceuta</label>
+            </value>
+            <value>
+                <fullName>Spain, Huelva</fullName>
+                <default>false</default>
+                <label>Spain, Huelva</label>
+            </value>
+            <value>
+                <fullName>Spain, Malaga</fullName>
+                <default>false</default>
+                <label>Spain, Malaga</label>
+            </value>
+            <value>
+                <fullName>Spain, Pasajes</fullName>
+                <default>false</default>
+                <label>Spain, Pasajes</label>
+            </value>
+            <value>
+                <fullName>Spain, Santander</fullName>
+                <default>false</default>
+                <label>Spain, Santander</label>
+            </value>
+            <value>
+                <fullName>Spain, Tarragona</fullName>
+                <default>false</default>
+                <label>Spain, Tarragona</label>
+            </value>
+            <value>
+                <fullName>Spain, Valencia</fullName>
+                <default>false</default>
+                <label>Spain, Valencia</label>
+            </value>
+            <value>
+                <fullName>Spain, Vigo</fullName>
+                <default>false</default>
+                <label>Spain, Vigo</label>
+            </value>
+            <value>
+                <fullName>Sri Lanka, Colombo</fullName>
+                <default>false</default>
+                <label>Sri Lanka, Colombo</label>
+            </value>
+            <value>
+                <fullName>Sri Lanka, Jaffna</fullName>
+                <default>false</default>
+                <label>Sri Lanka, Jaffna</label>
+            </value>
+            <value>
+                <fullName>Sri Lanka, Trincomalee</fullName>
+                <default>false</default>
+                <label>Sri Lanka, Trincomalee</label>
+            </value>
+            <value>
+                <fullName>Suriname, Moengo</fullName>
+                <default>false</default>
+                <label>Suriname, Moengo</label>
+            </value>
+            <value>
+                <fullName>Suriname, Nieuw Nickerie</fullName>
+                <default>false</default>
+                <label>Suriname, Nieuw Nickerie</label>
+            </value>
+            <value>
+                <fullName>Suriname, Paramaribo</fullName>
+                <default>false</default>
+                <label>Suriname, Paramaribo</label>
+            </value>
+            <value>
+                <fullName>Suriname, Paranam</fullName>
+                <default>false</default>
+                <label>Suriname, Paranam</label>
+            </value>
+            <value>
+                <fullName>Suriname, Wageningen</fullName>
+                <default>false</default>
+                <label>Suriname, Wageningen</label>
+            </value>
+            <value>
+                <fullName>Sweden, Gavle</fullName>
+                <default>false</default>
+                <label>Sweden, Gavle</label>
+            </value>
+            <value>
+                <fullName>Sweden, Gothenburg</fullName>
+                <default>false</default>
+                <label>Sweden, Gothenburg</label>
+            </value>
+            <value>
+                <fullName>Sweden, Halmstad</fullName>
+                <default>false</default>
+                <label>Sweden, Halmstad</label>
+            </value>
+            <value>
+                <fullName>Sweden, Kalmar</fullName>
+                <default>false</default>
+                <label>Sweden, Kalmar</label>
+            </value>
+            <value>
+                <fullName>Sweden, Karlshamn</fullName>
+                <default>false</default>
+                <label>Sweden, Karlshamn</label>
+            </value>
+            <value>
+                <fullName>Sweden, Malmo</fullName>
+                <default>false</default>
+                <label>Sweden, Malmo</label>
+            </value>
+            <value>
+                <fullName>Sweden, Solvesborg</fullName>
+                <default>false</default>
+                <label>Sweden, Solvesborg</label>
+            </value>
+            <value>
+                <fullName>Sweden, Stockholm</fullName>
+                <default>false</default>
+                <label>Sweden, Stockholm</label>
+            </value>
+            <value>
+                <fullName>Sweden, Sundsvall</fullName>
+                <default>false</default>
+                <label>Sweden, Sundsvall</label>
+            </value>
+            <value>
+                <fullName>Switzerland, Basel</fullName>
+                <default>false</default>
+                <label>Switzerland, Basel</label>
+            </value>
+            <value>
+                <fullName>Taiwan, Hualien</fullName>
+                <default>false</default>
+                <label>Taiwan, Hualien</label>
+            </value>
+            <value>
+                <fullName>Taiwan, Kaohsiung</fullName>
+                <default>false</default>
+                <label>Taiwan, Kaohsiung</label>
+            </value>
+            <value>
+                <fullName>Taiwan, Keelung</fullName>
+                <default>false</default>
+                <label>Taiwan, Keelung</label>
+            </value>
+            <value>
+                <fullName>Taiwan, Suao</fullName>
+                <default>false</default>
+                <label>Taiwan, Suao</label>
+            </value>
+            <value>
+                <fullName>Taiwan, Taichung</fullName>
+                <default>false</default>
+                <label>Taiwan, Taichung</label>
+            </value>
+            <value>
+                <fullName>Tanzania, Dar Es Salaam</fullName>
+                <default>false</default>
+                <label>Tanzania, Dar Es Salaam</label>
+            </value>
+            <value>
+                <fullName>Tanzania, Kilwa Masoko</fullName>
+                <default>false</default>
+                <label>Tanzania, Kilwa Masoko</label>
+            </value>
+            <value>
+                <fullName>Tanzania, Lindi</fullName>
+                <default>false</default>
+                <label>Tanzania, Lindi</label>
+            </value>
+            <value>
+                <fullName>Tanzania, Mtwara</fullName>
+                <default>false</default>
+                <label>Tanzania, Mtwara</label>
+            </value>
+            <value>
+                <fullName>Tanzania, Pangani</fullName>
+                <default>false</default>
+                <label>Tanzania, Pangani</label>
+            </value>
+            <value>
+                <fullName>Tanzania, Tanga</fullName>
+                <default>false</default>
+                <label>Tanzania, Tanga</label>
+            </value>
+            <value>
+                <fullName>Thailand, Bangkok</fullName>
+                <default>false</default>
+                <label>Thailand, Bangkok</label>
+            </value>
+            <value>
+                <fullName>Thailand, Laem Chabang</fullName>
+                <default>false</default>
+                <label>Thailand, Laem Chabang</label>
+            </value>
+            <value>
+                <fullName>Thailand, Pattani</fullName>
+                <default>false</default>
+                <label>Thailand, Pattani</label>
+            </value>
+            <value>
+                <fullName>Thailand, Phuket</fullName>
+                <default>false</default>
+                <label>Thailand, Phuket</label>
+            </value>
+            <value>
+                <fullName>Thailand, Sattahip</fullName>
+                <default>false</default>
+                <label>Thailand, Sattahip</label>
+            </value>
+            <value>
+                <fullName>Thailand, Songkhla</fullName>
+                <default>false</default>
+                <label>Thailand, Songkhla</label>
+            </value>
+            <value>
+                <fullName>Thailand, Sriracha</fullName>
+                <default>false</default>
+                <label>Thailand, Sriracha</label>
+            </value>
+            <value>
+                <fullName>Togo, Kpeme</fullName>
+                <default>false</default>
+                <label>Togo, Kpeme</label>
+            </value>
+            <value>
+                <fullName>Togo, Lome</fullName>
+                <default>false</default>
+                <label>Togo, Lome</label>
+            </value>
+            <value>
+                <fullName>Tonga, Neiafu</fullName>
+                <default>false</default>
+                <label>Tonga, Neiafu</label>
+            </value>
+            <value>
+                <fullName>Tonga, Nukualofa</fullName>
+                <default>false</default>
+                <label>Tonga, Nukualofa</label>
+            </value>
+            <value>
+                <fullName>Tonga, Pangai</fullName>
+                <default>false</default>
+                <label>Tonga, Pangai</label>
+            </value>
+            <value>
+                <fullName>Turkey, Derince</fullName>
+                <default>false</default>
+                <label>Turkey, Derince</label>
+            </value>
+            <value>
+                <fullName>Turkey, Dikili</fullName>
+                <default>false</default>
+                <label>Turkey, Dikili</label>
+            </value>
+            <value>
+                <fullName>Turkey, Gemlik</fullName>
+                <default>false</default>
+                <label>Turkey, Gemlik</label>
+            </value>
+            <value>
+                <fullName>Turkey, Hopa, Artvin</fullName>
+                <default>false</default>
+                <label>Turkey, Hopa, Artvin</label>
+            </value>
+            <value>
+                <fullName>Turkey, Iskenderun, Hatay</fullName>
+                <default>false</default>
+                <label>Turkey, Iskenderun, Hatay</label>
+            </value>
+            <value>
+                <fullName>Turkey, Istanbul</fullName>
+                <default>false</default>
+                <label>Turkey, Istanbul</label>
+            </value>
+            <value>
+                <fullName>Turkey, Trabzon</fullName>
+                <default>false</default>
+                <label>Turkey, Trabzon</label>
+            </value>
+            <value>
+                <fullName>Tuvalu, Funafuti</fullName>
+                <default>false</default>
+                <label>Tuvalu, Funafuti</label>
+            </value>
+            <value>
+                <fullName>Ukraine, Berdyansk</fullName>
+                <default>false</default>
+                <label>Ukraine, Berdyansk</label>
+            </value>
+            <value>
+                <fullName>Ukraine, Kherson</fullName>
+                <default>false</default>
+                <label>Ukraine, Kherson</label>
+            </value>
+            <value>
+                <fullName>Ukraine, Odessa</fullName>
+                <default>false</default>
+                <label>Ukraine, Odessa</label>
+            </value>
+            <value>
+                <fullName>Ukraine, Reni</fullName>
+                <default>false</default>
+                <label>Ukraine, Reni</label>
+            </value>
+            <value>
+                <fullName>Ukraine, Sevastopol</fullName>
+                <default>false</default>
+                <label>Ukraine, Sevastopol</label>
+            </value>
+            <value>
+                <fullName>United Arab Emirates, Ajman</fullName>
+                <default>false</default>
+                <label>United Arab Emirates, Ajman</label>
+            </value>
+            <value>
+                <fullName>United Arab Emirates, Das Island</fullName>
+                <default>false</default>
+                <label>United Arab Emirates, Das Island</label>
+            </value>
+            <value>
+                <fullName>United Arab Emirates, Dubai</fullName>
+                <default>false</default>
+                <label>United Arab Emirates, Dubai</label>
+            </value>
+            <value>
+                <fullName>United Arab Emirates, Fujairah</fullName>
+                <default>false</default>
+                <label>United Arab Emirates, Fujairah</label>
+            </value>
+            <value>
+                <fullName>United Arab Emirates, Jebel Dhanna</fullName>
+                <default>false</default>
+                <label>United Arab Emirates, Jebel Dhanna</label>
+            </value>
+            <value>
+                <fullName>United Arab Emirates, Khor Fakkan</fullName>
+                <default>false</default>
+                <label>United Arab Emirates, Khor Fakkan</label>
+            </value>
+            <value>
+                <fullName>United Arab Emirates, Mina Saqr</fullName>
+                <default>false</default>
+                <label>United Arab Emirates, Mina Saqr</label>
+            </value>
+            <value>
+                <fullName>United Arab Emirates, Mina Zayed</fullName>
+                <default>false</default>
+                <label>United Arab Emirates, Mina Zayed</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Aberdeen</fullName>
+                <default>false</default>
+                <label>United Kingdom, Aberdeen</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Belfast</fullName>
+                <default>false</default>
+                <label>United Kingdom, Belfast</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Bristol</fullName>
+                <default>false</default>
+                <label>United Kingdom, Bristol</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Dover</fullName>
+                <default>false</default>
+                <label>United Kingdom, Dover</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Falmouth</fullName>
+                <default>false</default>
+                <label>United Kingdom, Falmouth</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Felixstowe</fullName>
+                <default>false</default>
+                <label>United Kingdom, Felixstowe</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Glasgow</fullName>
+                <default>false</default>
+                <label>United Kingdom, Glasgow</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Grangemouth</fullName>
+                <default>false</default>
+                <label>United Kingdom, Grangemouth</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Hull</fullName>
+                <default>false</default>
+                <label>United Kingdom, Hull</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Leith</fullName>
+                <default>false</default>
+                <label>United Kingdom, Leith</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Liverpool</fullName>
+                <default>false</default>
+                <label>United Kingdom, Liverpool</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, London</fullName>
+                <default>false</default>
+                <label>United Kingdom, London</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Manchester</fullName>
+                <default>false</default>
+                <label>United Kingdom, Manchester</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Peterhead Bay</fullName>
+                <default>false</default>
+                <label>United Kingdom, Peterhead Bay</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Plymouth</fullName>
+                <default>false</default>
+                <label>United Kingdom, Plymouth</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Portsmouth</fullName>
+                <default>false</default>
+                <label>United Kingdom, Portsmouth</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Scapa Flow</fullName>
+                <default>false</default>
+                <label>United Kingdom, Scapa Flow</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Southampton</fullName>
+                <default>false</default>
+                <label>United Kingdom, Southampton</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Sullom Voe</fullName>
+                <default>false</default>
+                <label>United Kingdom, Sullom Voe</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Teesport</fullName>
+                <default>false</default>
+                <label>United Kingdom, Teesport</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Thamesport</fullName>
+                <default>false</default>
+                <label>United Kingdom, Thamesport</label>
+            </value>
+            <value>
+                <fullName>United Kingdom, Tyne</fullName>
+                <default>false</default>
+                <label>United Kingdom, Tyne</label>
+            </value>
+            <value>
+                <fullName>United States, Anacortes</fullName>
+                <default>false</default>
+                <label>United States, Anacortes</label>
+            </value>
+            <value>
+                <fullName>United States, Ashtabula</fullName>
+                <default>false</default>
+                <label>United States, Ashtabula</label>
+            </value>
+            <value>
+                <fullName>United States, Baltimore</fullName>
+                <default>false</default>
+                <label>United States, Baltimore</label>
+            </value>
+            <value>
+                <fullName>United States, Baton Rouge</fullName>
+                <default>false</default>
+                <label>United States, Baton Rouge</label>
+            </value>
+            <value>
+                <fullName>United States, Beaumont</fullName>
+                <default>false</default>
+                <label>United States, Beaumont</label>
+            </value>
+            <value>
+                <fullName>United States, Boston</fullName>
+                <default>false</default>
+                <label>United States, Boston</label>
+            </value>
+            <value>
+                <fullName>United States, Charleston</fullName>
+                <default>false</default>
+                <label>United States, Charleston</label>
+            </value>
+            <value>
+                <fullName>United States, Chicago</fullName>
+                <default>false</default>
+                <label>United States, Chicago</label>
+            </value>
+            <value>
+                <fullName>United States, Cleveland</fullName>
+                <default>false</default>
+                <label>United States, Cleveland</label>
+            </value>
+            <value>
+                <fullName>United States, Corpus Christi</fullName>
+                <default>false</default>
+                <label>United States, Corpus Christi</label>
+            </value>
+            <value>
+                <fullName>United States, Detroit</fullName>
+                <default>false</default>
+                <label>United States, Detroit</label>
+            </value>
+            <value>
+                <fullName>United States, Duluth-Superior</fullName>
+                <default>false</default>
+                <label>United States, Duluth-Superior</label>
+            </value>
+            <value>
+                <fullName>United States, Freeport</fullName>
+                <default>false</default>
+                <label>United States, Freeport</label>
+            </value>
+            <value>
+                <fullName>United States, Hampton Roads</fullName>
+                <default>false</default>
+                <label>United States, Hampton Roads</label>
+            </value>
+            <value>
+                <fullName>United States, Honolulu</fullName>
+                <default>false</default>
+                <label>United States, Honolulu</label>
+            </value>
+            <value>
+                <fullName>United States, Houston</fullName>
+                <default>false</default>
+                <label>United States, Houston</label>
+            </value>
+            <value>
+                <fullName>United States, Huntington - Tri-State</fullName>
+                <default>false</default>
+                <label>United States, Huntington - Tri-State</label>
+            </value>
+            <value>
+                <fullName>United States, Jacksonville</fullName>
+                <default>false</default>
+                <label>United States, Jacksonville</label>
+            </value>
+            <value>
+                <fullName>United States, Lake Charles</fullName>
+                <default>false</default>
+                <label>United States, Lake Charles</label>
+            </value>
+            <value>
+                <fullName>United States, Long Beach</fullName>
+                <default>false</default>
+                <label>United States, Long Beach</label>
+            </value>
+            <value>
+                <fullName>United States, Los Angeles</fullName>
+                <default>false</default>
+                <label>United States, Los Angeles</label>
+            </value>
+            <value>
+                <fullName>United States, Manatee</fullName>
+                <default>false</default>
+                <label>United States, Manatee</label>
+            </value>
+            <value>
+                <fullName>United States, Memphis</fullName>
+                <default>false</default>
+                <label>United States, Memphis</label>
+            </value>
+            <value>
+                <fullName>United States, Miami</fullName>
+                <default>false</default>
+                <label>United States, Miami</label>
+            </value>
+            <value>
+                <fullName>United States, Mobile</fullName>
+                <default>false</default>
+                <label>United States, Mobile</label>
+            </value>
+            <value>
+                <fullName>United States, New Orleans</fullName>
+                <default>false</default>
+                <label>United States, New Orleans</label>
+            </value>
+            <value>
+                <fullName>United States, New York/New</fullName>
+                <default>false</default>
+                <label>United States, New York/New</label>
+            </value>
+            <value>
+                <fullName>United States, Oakland</fullName>
+                <default>false</default>
+                <label>United States, Oakland</label>
+            </value>
+            <value>
+                <fullName>United States, Pascagoula</fullName>
+                <default>false</default>
+                <label>United States, Pascagoula</label>
+            </value>
+            <value>
+                <fullName>United States, Philadelphia</fullName>
+                <default>false</default>
+                <label>United States, Philadelphia</label>
+            </value>
+            <value>
+                <fullName>United States, Pittsburgh</fullName>
+                <default>false</default>
+                <label>United States, Pittsburgh</label>
+            </value>
+            <value>
+                <fullName>United States, Plaquemines</fullName>
+                <default>false</default>
+                <label>United States, Plaquemines</label>
+            </value>
+            <value>
+                <fullName>United States, Port Arthur</fullName>
+                <default>false</default>
+                <label>United States, Port Arthur</label>
+            </value>
+            <value>
+                <fullName>United States, Port Everglades</fullName>
+                <default>false</default>
+                <label>United States, Port Everglades</label>
+            </value>
+            <value>
+                <fullName>United States, Portland (Maine)</fullName>
+                <default>false</default>
+                <label>United States, Portland (Maine)</label>
+            </value>
+            <value>
+                <fullName>United States, Portland (Oregon)</fullName>
+                <default>false</default>
+                <label>United States, Portland (Oregon)</label>
+            </value>
+            <value>
+                <fullName>United States, Richmond (CA)</fullName>
+                <default>false</default>
+                <label>United States, Richmond (CA)</label>
+            </value>
+            <value>
+                <fullName>United States, Richmond (VA)</fullName>
+                <default>false</default>
+                <label>United States, Richmond (VA)</label>
+            </value>
+            <value>
+                <fullName>United States, Savannah</fullName>
+                <default>false</default>
+                <label>United States, Savannah</label>
+            </value>
+            <value>
+                <fullName>United States, Seattle</fullName>
+                <default>false</default>
+                <label>United States, Seattle</label>
+            </value>
+            <value>
+                <fullName>United States, South Louisiana</fullName>
+                <default>false</default>
+                <label>United States, South Louisiana</label>
+            </value>
+            <value>
+                <fullName>United States, Tacoma</fullName>
+                <default>false</default>
+                <label>United States, Tacoma</label>
+            </value>
+            <value>
+                <fullName>United States, Tampa</fullName>
+                <default>false</default>
+                <label>United States, Tampa</label>
+            </value>
+            <value>
+                <fullName>United States, Texas City</fullName>
+                <default>false</default>
+                <label>United States, Texas City</label>
+            </value>
+            <value>
+                <fullName>United States, Valdez</fullName>
+                <default>false</default>
+                <label>United States, Valdez</label>
+            </value>
+            <value>
+                <fullName>United States, Wilmington (DE)</fullName>
+                <default>false</default>
+                <label>United States, Wilmington (DE)</label>
+            </value>
+            <value>
+                <fullName>United States, Wilmington (NC)</fullName>
+                <default>false</default>
+                <label>United States, Wilmington (NC)</label>
+            </value>
+            <value>
+                <fullName>United States, Yakutat</fullName>
+                <default>false</default>
+                <label>United States, Yakutat</label>
+            </value>
+            <value>
+                <fullName>Uruguay, Fray Bentos</fullName>
+                <default>false</default>
+                <label>Uruguay, Fray Bentos</label>
+            </value>
+            <value>
+                <fullName>Uruguay, Montevideo</fullName>
+                <default>false</default>
+                <label>Uruguay, Montevideo</label>
+            </value>
+            <value>
+                <fullName>Uruguay, Nueva Palmira</fullName>
+                <default>false</default>
+                <label>Uruguay, Nueva Palmira</label>
+            </value>
+            <value>
+                <fullName>Uruguay, Paysandu</fullName>
+                <default>false</default>
+                <label>Uruguay, Paysandu</label>
+            </value>
+            <value>
+                <fullName>Vanuatu, Port Vila</fullName>
+                <default>false</default>
+                <label>Vanuatu, Port Vila</label>
+            </value>
+            <value>
+                <fullName>Vanuatu, Santo</fullName>
+                <default>false</default>
+                <label>Vanuatu, Santo</label>
+            </value>
+            <value>
+                <fullName>Vietnam, Danang</fullName>
+                <default>false</default>
+                <label>Vietnam, Danang</label>
+            </value>
+            <value>
+                <fullName>Vietnam, Haiphong</fullName>
+                <default>false</default>
+                <label>Vietnam, Haiphong</label>
+            </value>
+            <value>
+                <fullName>Vietnam, Ho Chi Minh City</fullName>
+                <default>false</default>
+                <label>Vietnam, Ho Chi Minh City</label>
+            </value>
+            <value>
+                <fullName>Vietnam, Hon Gay</fullName>
+                <default>false</default>
+                <label>Vietnam, Hon Gay</label>
+            </value>
+            <value>
+                <fullName>Vietnam, Nha Trang</fullName>
+                <default>false</default>
+                <label>Vietnam, Nha Trang</label>
+            </value>
+            <value>
+                <fullName>Virgin Islands, Charlotte Amalie,St.Thomas</fullName>
+                <default>false</default>
+                <label>Virgin Islands, Charlotte Amalie,St.Thomas</label>
+            </value>
+            <value>
+                <fullName>Virgin Islands, Christiansted</fullName>
+                <default>false</default>
+                <label>Virgin Islands, Christiansted</label>
+            </value>
+            <value>
+                <fullName>Virgin Islands, Limetree Bay</fullName>
+                <default>false</default>
+                <label>Virgin Islands, Limetree Bay</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

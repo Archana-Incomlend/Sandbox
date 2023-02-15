@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>document_check_id__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <externalId>false</externalId>
+    <label>document check Id</label>
+    <referenceTo>document_check__c</referenceTo>
+    <relationshipLabel>Supporting Document Checks</relationshipLabel>
+    <relationshipName>Supporting_Document_Checks</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Repayment_Type__c</fullName>
+    <defaultValue>&quot;Repayment of Funders Capital and Discount Amount&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>Repayment Type</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Repayment of Funders Capital only</fullName>
+                <default>false</default>
+                <label>Repayment of Funders Capital only</label>
+            </value>
+            <value>
+                <fullName>Repayment of Funders Capital and Discount Amount</fullName>
+                <default>false</default>
+                <label>Repayment of Funders Capital and Discount Amount</label>
+            </value>
+            <value>
+                <fullName>Repayment to all parties</fullName>
+                <default>false</default>
+                <label>Repayment to all parties</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

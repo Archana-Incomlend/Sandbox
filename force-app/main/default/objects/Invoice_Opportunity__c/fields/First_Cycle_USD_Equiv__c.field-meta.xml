@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Cycle_USD_Equiv__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( TEXT(CCY__c) = &quot;USD&quot;,First_invoice_Amount__c, First_invoice_Amount__c * Marketplace_product__r.FX_Rate_for_MI__r.rate__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>First Cycle USD Equiv</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

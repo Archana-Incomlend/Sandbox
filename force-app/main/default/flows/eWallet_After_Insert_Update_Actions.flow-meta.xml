@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <description>Account__c + text(CCY__c) &lt;&gt; Unique_Name__c</description>
+        <name>Account_CCY_Not_Equal_Unique_Name</name>
+        <label>Account + CCY &lt;&gt; Unique Name</label>
+        <locationX>182</locationX>
+        <locationY>1007</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account_CCY_Is_Not_Equal_Unique_Name</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Unique_Name__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>AccountName_CCY</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>eWallet_Unique_Key</targetReference>
+            </connector>
+            <label>Account + CCY &lt;&gt; Unique Name</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>eWallet_is_negative</name>
+        <label>eWallet is negative</label>
+        <locationX>182</locationX>
+        <locationY>671</locationY>
+        <defaultConnector>
+            <targetReference>Account_CCY_Not_Equal_Unique_Name</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Balance_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Balance__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Balance__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Balance__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Slack_alert_when_eWallet_is_negative</targetReference>
+            </connector>
+            <label>Balance &lt; 0</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>eWallet_Rollup_Entry_Criteria</name>
+        <label>eWallet Rollup - Entry Criteria</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnector>
+            <targetReference>eWallet_is_negative</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>eWallet_ID_null</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Balance_Rollup__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Balance_Rollup__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Total_Discount_Earned_Rollup__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Total_Discount_Earned_Rollup__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Reservation_Rollup__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Reservation_Rollup__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.In_Progress_Rollup__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.In_Progress_Rollup__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_eWallet_Rollup_fields</targetReference>
+            </connector>
+            <label>Rollup changed</label>
+        </rules>
+    </decisions>
+    <description>Migrated from Workflows to Flow.
+1. Update eWallet Rollup
+2. Send Slack alert when eWallet is negative
+3. eWallet Unique Key</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AccountName_CCY</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Account__r.Id}+ TEXT({!$Record.CCY__c})</expression>
+    </formulas>
+    <interviewLabel>eWallet - After Insert / Update Actions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>eWallet - After Insert / Update Actions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>eWallet_Unique_Key</name>
+        <label>eWallet Unique Key</label>
+        <locationX>50</locationX>
+        <locationY>1127</locationY>
+        <inputAssignments>
+            <field>Unique_Name__c</field>
+            <value>
+                <elementReference>AccountName_CCY</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_eWallet_Rollup_fields</name>
+        <label>Update eWallet Rollup fields</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <connector>
+            <targetReference>eWallet_is_negative</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Balance__c</field>
+            <value>
+                <elementReference>$Record.Balance_Rollup__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>In_Progress__c</field>
+            <value>
+                <elementReference>$Record.In_Progress_Rollup__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Reservations__c</field>
+            <value>
+                <elementReference>$Record.Reservation_Rollup__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Total_Discount_Earned__c</field>
+            <value>
+                <elementReference>$Record.Total_Discount_Earned_Rollup__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>eWallet_Rollup_Entry_Criteria</targetReference>
+        </connector>
+        <filterFormula>!{!$Setup.ICL_Settings__c.Disable_Migrate_Flow__c}</filterFormula>
+        <object>eWallet__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <subflows>
+        <name>Send_Slack_alert_when_eWallet_is_negative</name>
+        <label>Send Slack alert when eWallet is negative</label>
+        <locationX>50</locationX>
+        <locationY>791</locationY>
+        <connector>
+            <targetReference>Account_CCY_Not_Equal_Unique_Name</targetReference>
+        </connector>
+        <flowName>Send_Slack_alert_when_eWallet_is_negative</flowName>
+        <inputAssignments>
+            <name>eWalletID</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Auto_Satus_Map__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF
+( Total_Financing_value_alltime__c &gt;0, &quot;Financed&quot;,
+IF ( AND( TEXT(General_Status_Map__c) = &quot;active&quot;,TEXT(map_onboarding_stage__c) &lt;&gt;&quot;99.Onboarded&quot;),&quot;Pending&quot;, &quot;Dropped&quot;
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Auto Satus Map</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

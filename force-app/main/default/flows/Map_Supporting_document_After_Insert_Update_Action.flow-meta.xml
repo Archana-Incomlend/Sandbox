@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <description>Migrated from the Process Builder to Flow.
+1. New Supporting Doc Map</description>
+    <environments>Default</environments>
+    <interviewLabel>Map Supporting document - New Supporting Doc Map {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Map Supporting document - After Insert / Update Action</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Buyer_and_supplier</name>
+        <label>Update Buyer and supplier</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <inputAssignments>
+            <field>Buyer_Name__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Buyer__r.Account_Name_for_unique_index__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Buyer__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Buyer__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Supplier__c</field>
+            <value>
+                <elementReference>$Record.Supplier__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Supplier_name__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Supplier__r.Account_Name_for_unique_index__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Buyer_and_supplier</targetReference>
+        </connector>
+        <filterFormula>{!$Setup.ICL_Settings__c.Enable_migrate_flow__c}</filterFormula>
+        <object>Map_Supporting_Document__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

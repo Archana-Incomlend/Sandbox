@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>next_action__c</fullName>
+    <externalId>false</externalId>
+    <label>next action</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pre-Pitch</fullName>
+                <default>false</default>
+                <label>Pre-Pitch</label>
+            </value>
+            <value>
+                <fullName>Send offer</fullName>
+                <default>false</default>
+                <label>Send offer</label>
+            </value>
+            <value>
+                <fullName>Setup meeting</fullName>
+                <default>false</default>
+                <label>Setup meeting</label>
+            </value>
+            <value>
+                <fullName>Pitch offer</fullName>
+                <default>false</default>
+                <label>Pitch offer</label>
+            </value>
+            <value>
+                <fullName>Collect Buyer info</fullName>
+                <default>false</default>
+                <label>Collect Buyer info</label>
+            </value>
+            <value>
+                <fullName>Confirm Insurance cover</fullName>
+                <default>false</default>
+                <label>Confirm Insurance cover</label>
+            </value>
+            <value>
+                <fullName>Invite to registration</fullName>
+                <default>false</default>
+                <label>Invite to registration</label>
+            </value>
+            <value>
+                <fullName>Collect registration docs</fullName>
+                <default>false</default>
+                <label>Collect registration docs</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

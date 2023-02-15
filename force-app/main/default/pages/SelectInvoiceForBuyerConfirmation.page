@@ -1,0 +1,63 @@
+<apex:page controller="SelectInvoiceForBuyerConfirmation" docType="html-5.0" tabStyle="invoice_finance_deal__c" lightningStylesheets="true">
+    <apex:sectionHeader title="Invoice Finance Deals" />
+    <apex:form id="theForm">
+    
+        <apex:pageMessages id="pbm"/>
+        
+        <apex:pageBlock rendered="{!if(wrapperRecordList == null || wrapperRecordList.size == 0,true,false)}">
+            <apex:pageBlockSection rendered="{!if(wrapperRecordList == null || wrapperRecordList.size == 0,true,false)}">
+                No Pre Listing Invoice available for this Supplier Buyer Map
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="All Invoices" rendered="{!wrapperRecordList.size!=0}" id="pbId" >
+            <apex:pageBlockTable value="{!wrapperRecordList}" var="objInv">
+                <apex:column headerValue="Select">
+                    <apex:inputCheckbox value="{!objInv.isSelected}"/>
+                </apex:column>
+                <apex:column headerValue="Invoice No.">
+                    <apex:outputField value="{!objInv.objInvoice.supplier_invoice_reference_number__c}"/>
+                </apex:column>
+                <apex:column headerValue="Invoice Date">
+                    <apex:outputField value="{!objInv.objInvoice.Invoice_date__c}"/>
+                </apex:column>
+                <apex:column headerValue="Invoice Face Value">
+                    <apex:outputField value="{!objInv.objInvoice.Real_Face_Value__c}"/>
+                </apex:column>
+                <apex:column headerValue="Advance Payment (defined below)">
+                    <apex:outputField value="{!objInv.objInvoice.advanced_amount__c}"/>
+                </apex:column>
+                <apex:column headerValue="Balance Amount (defined below)">
+                    <apex:outputField value="{!objInv.objInvoice.Balance_due__c}"/>
+                </apex:column>
+                <apex:column headerValue="Due Date">
+                    <apex:outputField value="{!objInv.objInvoice.Due_Date__c}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+            
+            <br/> <br/>
+            <apex:outputPanel style="text-align:center;" layout="block">
+                <apex:commandButton value="First" reRender="pbId" action="{!first}" disabled="{!NOT(hasPrevious)}" status="paginationStatus"/>
+                <apex:commandButton value="Previous" rerender="pbId" action="{!previous}" disabled="{!NOT(hasPrevious)}" status="paginationStatus"/>&nbsp;Page {!pageNumber} of {!totalPages}&nbsp;
+                <apex:commandButton value="Next" rerender="pbId" action="{!next}" disabled="{!NOT(hasNext)}" status="paginationStatus"/>
+                <apex:commandButton value="Last" rerender="pbId" action="{!last}" disabled="{!NOT(hasNext)}" status="paginationStatus"/>
+                <apex:actionStatus id="paginationStatus">
+                    <apex:facet name="start">
+                        Please wait...<img src="/img/loading32.gif" style="width: 18px;"/>
+                    </apex:facet>
+                </apex:actionStatus>
+                
+            </apex:outputPanel>
+            
+            
+            <br/> <br/>
+            <apex:outputPanel style="text-align:center;" layout="block">
+                
+                <apex:commandButton value="Generate Buyer Confirmation PDF" action="{!savePdf}"/>
+            </apex:outputPanel>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

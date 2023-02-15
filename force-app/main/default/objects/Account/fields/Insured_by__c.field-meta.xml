@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insured_by__c</fullName>
+    <externalId>false</externalId>
+    <label>Insured by</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Atradius</fullName>
+                <default>false</default>
+                <label>Atradius</label>
+            </value>
+            <value>
+                <fullName>Coface</fullName>
+                <default>false</default>
+                <label>Coface</label>
+            </value>
+            <value>
+                <fullName>ICIEC</fullName>
+                <default>false</default>
+                <label>ICIEC</label>
+            </value>
+            <value>
+                <fullName>Mercury</fullName>
+                <default>false</default>
+                <label>Mercury</label>
+            </value>
+            <value>
+                <fullName>Non insured</fullName>
+                <default>false</default>
+                <label>Non insured</label>
+            </value>
+            <value>
+                <fullName>Funder&apos;s Insurance</fullName>
+                <default>false</default>
+                <label>Funder&apos;s Insurance</label>
+            </value>
+            <value>
+                <fullName>FCI-NFC</fullName>
+                <default>false</default>
+                <label>FCI-NFC</label>
+            </value>
+            <value>
+                <fullName>FCI - Factofrance</fullName>
+                <default>false</default>
+                <label>FCI - Factofrance</label>
+            </value>
+            <value>
+                <fullName>FCI - Deutsche Factoring Bank</fullName>
+                <default>false</default>
+                <label>FCI - Deutsche Factoring Bank</label>
+            </value>
+            <value>
+                <fullName>FCI - Factorit</fullName>
+                <default>false</default>
+                <label>FCI - Factorit</label>
+            </value>
+            <value>
+                <fullName>BCC Trade Credit Pty Ltd - Reverse Factoring</fullName>
+                <default>false</default>
+                <label>BCC Trade Credit Pty Ltd - Reverse Factoring</label>
+            </value>
+            <value>
+                <fullName>Supplier Insurance</fullName>
+                <default>false</default>
+                <label>Supplier Insurance</label>
+            </value>
+            <value>
+                <fullName>Volofin</fullName>
+                <default>false</default>
+                <label>Volofin</label>
+            </value>
+            <value>
+                <fullName>Bank ( LC lite )</fullName>
+                <default>false</default>
+                <label>Bank ( LC lite )</label>
+            </value>
+            <value>
+                <fullName>Mercury-Atradius</fullName>
+                <default>false</default>
+                <label>Mercury-Atradius</label>
+            </value>
+            <value>
+                <fullName>Archipelago Insurance Ltd</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Archipelago Insurance Ltd</label>
+            </value>
+            <value>
+                <fullName>BCC Trade Credit Pty Ltd</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BCC Trade Credit Pty Ltd</label>
+            </value>
+            <value>
+                <fullName>Euler Hermes</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Euler Hermes</label>
+            </value>
+            <value>
+                <fullName>QBE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>QBE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>actual_repayment_amount_difference__c</fullName>
+    <externalId>false</externalId>
+    <formula>if (isnull( Actual_Repayment_Received_Date__c),null, Actual_Repayment_Amount__c -  Real_Face_Value__c  - deposit_already_paid__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>actual repayment amount difference</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

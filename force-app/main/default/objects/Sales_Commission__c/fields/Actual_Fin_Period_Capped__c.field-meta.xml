@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Fin_Period_Capped__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISNULL(Invoice_Finance_Deal__r.actual_financing_period__c), null,
+IF( AND( Invoice_Allocation__c != null, Invoice_Allocation__r.Expected_finance_period_buyback_capped__c != Invoice_Finance_Deal__r.expected_financing_period__c), 
+Invoice_Allocation__r.Expected_finance_period_buyback_capped__c + MIN (15, Invoice_Allocation__r.Overdue_day_capped__c),
+MAX( MIN (Invoice_Finance_Deal__r.actual_financing_period__c, Invoice_Finance_Deal__r.expected_financing_period__c + 15),
+Invoice_Finance_Deal__r.expected_financing_period__c - 15)))</formula>
+    <label>Actual Fin Period Capped</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

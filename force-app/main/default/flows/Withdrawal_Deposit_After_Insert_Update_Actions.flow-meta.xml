@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>Check_Comment_Bank_0</name>
+        <label>Check Comment Bank</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Amount_not_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Amount__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>BankAccountComment</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Comments_Bank_Account__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Comment_Bank_Account</targetReference>
+            </connector>
+            <label>Amount not 0</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the Workflow
+1. Comments Bank Account</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>BankAccountComment</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Bank_Account__r.Comments__c}</expression>
+    </formulas>
+    <interviewLabel>Withdrawal Deposit - After Insert/ Update Actions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Withdrawal Deposit Fast Field Update Actions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Comment_Bank_Account</name>
+        <label>Comment Bank Account</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <inputAssignments>
+            <field>Comments_Bank_Account__c</field>
+            <value>
+                <elementReference>BankAccountComment</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Comment_Bank_0</targetReference>
+        </connector>
+        <object>Withdrawal_Deposit__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

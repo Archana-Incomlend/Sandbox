@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>Trustee_Is_Not_Null</name>
+        <label>Trustee Is Not Null</label>
+        <locationX>360</locationX>
+        <locationY>333</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Trustee_null</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Trustee__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Trustee__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Account__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CCY__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.CCY__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>get_eWallet_Trustee</targetReference>
+            </connector>
+            <label>Trustee != null</label>
+        </rules>
+    </decisions>
+    <description>to update the e-waller trustee depending of trustee, merge
+    1. WD update ewallet trustee (current flow)
+    2. Trustee DW update trustee (from the Process Builder)</description>
+    <interviewLabel>WD update ewallet trustee {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>WD update ewallet trustee</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>get_eWallet_Trustee</name>
+        <label>get ewallet trustee</label>
+        <locationX>462</locationX>
+        <locationY>57</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Trustee_WD</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>CCY__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.CCY__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Trustee__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Trustee__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>eWallet_Trustee__c</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Trustee_WD</name>
+        <label>Update Trustee WD</label>
+        <locationX>741</locationX>
+        <locationY>55</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>eWallet_Trustee__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>get_eWallet_Trustee.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>eWallet_Trustee__c</field>
+            <value>
+                <elementReference>get_eWallet_Trustee.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Trustee_Is_Not_Null</targetReference>
+        </connector>
+        <object>Withdrawal_Deposit__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

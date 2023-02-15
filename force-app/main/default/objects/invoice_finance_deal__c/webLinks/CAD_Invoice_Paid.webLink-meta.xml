@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CAD_Invoice_Paid</fullName>
+    <availability>online</availability>
+    <description>Create transaction when buyer is paid for CAD Invoice</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>CAD invoice is repaid</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/flow/cad_invoice_paid_transactions_creation?invoiceID={!invoice_finance_deal__c.Id}&amp;retURL={!invoice_finance_deal__c.Id}</url>
+</WebLink>

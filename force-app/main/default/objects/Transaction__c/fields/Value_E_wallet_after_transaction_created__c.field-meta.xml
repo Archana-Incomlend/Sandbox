@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Value_E_wallet_after_transaction_created__c</fullName>
+    <description>Value of the e-wallet after the transaction has been created udapted by a worklow rules when transaction is created</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Value of the e-wallet after the transaction has been created</inlineHelpText>
+    <label>Value E-wallet after transaction created</label>
+    <precision>14</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

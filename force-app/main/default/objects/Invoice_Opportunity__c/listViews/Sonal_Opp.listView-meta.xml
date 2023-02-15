@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sonal_Opp</fullName>
+    <columns>NAME</columns>
+    <columns>Sales_Owner__c</columns>
+    <columns>Supplier_name__c</columns>
+    <columns>Buyer_Name__c</columns>
+    <columns>First_invoice_Amount__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CL_Provided_by_insurer__c</columns>
+    <columns>Ternsheet_Status__c</columns>
+    <columns>Date_First_Invoice__c</columns>
+    <columns>Date_Termsheet_Sent__c</columns>
+    <columns>Date_Term_sheet_Signedt__c</columns>
+    <columns>Opportunity_Status__c</columns>
+    <columns>Sales_Comments__c</columns>
+    <columns>Ops_Comments__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sales_Owner__c</field>
+        <operation>contains</operation>
+        <value>Sonal</value>
+    </filters>
+    <filters>
+        <field>Opportunity_Status__c</field>
+        <operation>equals</operation>
+        <value>Pipeline,OIP,Active,Others,Inactive,Dopped</value>
+    </filters>
+    <label>Sonal Opp</label>
+</ListView>

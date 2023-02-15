@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Broker_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Broker type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accountant / Company secretary / Tax advisory</fullName>
+                <default>false</default>
+                <label>Accountant / Company secretary / Tax advisory</label>
+            </value>
+            <value>
+                <fullName>Bank / Online lender / factoring</fullName>
+                <default>false</default>
+                <label>Bank / Online lender / factoring</label>
+            </value>
+            <value>
+                <fullName>Business Association</fullName>
+                <default>false</default>
+                <label>Business Association</label>
+            </value>
+            <value>
+                <fullName>Corporate finance / boutique inv. banking / lawyer</fullName>
+                <default>false</default>
+                <label>Corporate finance / boutique inv. banking / lawyer</label>
+            </value>
+            <value>
+                <fullName>Credit insurance broker and agent</fullName>
+                <default>false</default>
+                <label>Credit insurance broker and agent</label>
+            </value>
+            <value>
+                <fullName>E-procurement / sourcing / B2B e-commerce platform</fullName>
+                <default>false</default>
+                <label>E-procurement / sourcing / B2B e-commerce platform</label>
+            </value>
+            <value>
+                <fullName>Freight forwarder</fullName>
+                <default>false</default>
+                <label>Freight forwarder</label>
+            </value>
+            <value>
+                <fullName>Loan broker (offline/online, comparators)</fullName>
+                <default>false</default>
+                <label>Loan broker (offline/online, comparators)</label>
+            </value>
+            <value>
+                <fullName>Marine insurance broker</fullName>
+                <default>false</default>
+                <label>Marine insurance broker</label>
+            </value>
+            <value>
+                <fullName>Other Introducer</fullName>
+                <default>false</default>
+                <label>Other Introducer</label>
+            </value>
+            <value>
+                <fullName>SME consulting (IT, ERP, business, FX...)</fullName>
+                <default>false</default>
+                <label>SME consulting (IT, ERP, business, FX...)</label>
+            </value>
+            <value>
+                <fullName>VC</fullName>
+                <default>false</default>
+                <label>VC</label>
+            </value>
+            <value>
+                <fullName>Funder Agent – Financial Adviser</fullName>
+                <default>false</default>
+                <label>Funder Agent – Financial Adviser</label>
+            </value>
+            <value>
+                <fullName>Funder Agent – Insurance Agent</fullName>
+                <default>false</default>
+                <label>Funder Agent – Insurance Agent</label>
+            </value>
+            <value>
+                <fullName>Funder Agent – Other</fullName>
+                <default>false</default>
+                <label>Funder Agent – Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

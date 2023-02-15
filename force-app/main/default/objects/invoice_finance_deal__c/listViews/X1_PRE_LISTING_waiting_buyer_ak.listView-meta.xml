@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1_PRE_LISTING_waiting_buyer_ak</fullName>
+    <booleanFilter>1 AND 2</booleanFilter>
+    <columns>buyer__c</columns>
+    <columns>Buyer_acknowledgment_date__c</columns>
+    <columns>supplier_buyer_map_name__c</columns>
+    <columns>Invoice_date__c</columns>
+    <columns>NAME</columns>
+    <columns>supplier_invoice_reference_number__c</columns>
+    <columns>CCY__c</columns>
+    <columns>invoice_amount__c</columns>
+    <columns>requested_amount__c</columns>
+    <columns>remaining_amount__c</columns>
+    <columns>Funding_Comments__c</columns>
+    <columns>requested_amount_funded_percentage__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>discount_rate__c</columns>
+    <columns>lastest_allowed_listing_start_date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Phase__c</field>
+        <operation>equals</operation>
+        <value>2:ON MARKETPLACE</value>
+    </filters>
+    <filters>
+        <field>supplier_buyer_map_name__c</field>
+        <operation>notContain</operation>
+        <value>TEST</value>
+    </filters>
+    <label>2 MARKETPLACE</label>
+    <sharedTo>
+        <group>Funding</group>
+        <group>Operation</group>
+    </sharedTo>
+</ListView>

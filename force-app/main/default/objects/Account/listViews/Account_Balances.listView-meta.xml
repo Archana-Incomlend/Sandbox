@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Balances</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>Sub_type__c</columns>
+    <columns>USD_eWallet_Balance__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>onboarding_stage__c</field>
+        <operation>equals</operation>
+        <value>99.Onboarded</value>
+    </filters>
+    <label>Account Balances</label>
+</ListView>

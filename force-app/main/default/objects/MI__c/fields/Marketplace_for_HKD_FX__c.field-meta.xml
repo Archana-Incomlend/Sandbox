@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketplace_for_HKD_FX__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Marketplace for HKD FX</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Marketplace__c.Currency__c</field>
+            <operation>equals</operation>
+            <value>HKD</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Marketplace__c</referenceTo>
+    <relationshipLabel>MI (Marketplace for HKD FX)</relationshipLabel>
+    <relationshipName>MI2</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

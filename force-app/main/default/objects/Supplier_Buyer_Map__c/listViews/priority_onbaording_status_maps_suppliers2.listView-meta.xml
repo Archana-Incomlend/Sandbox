@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>priority_onbaording_status_maps_suppliers2</fullName>
+    <booleanFilter>1 and 2</booleanFilter>
+    <columns>Supplier_Owner__c</columns>
+    <columns>NAME</columns>
+    <columns>Supplier__c</columns>
+    <columns>supplier_external_credit_rating__c</columns>
+    <columns>supplier_onboarding_stage__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>buyer_onboarding_stage__c</columns>
+    <columns>buyer_external_credit_rating__c</columns>
+    <columns>buyer_EH_rating__c</columns>
+    <columns>Credit_Insurance_Limit_confirmed_USD__c</columns>
+    <columns>map_onboarding_stage__c</columns>
+    <columns>buyer_supplier_map_approved__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>supplier_priority_onboarding__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>map_onboarding_stage__c</field>
+        <operation>notEqual</operation>
+        <value>90.Onboarded</value>
+    </filters>
+    <label>priority onboarding status - suppliers</label>
+</ListView>

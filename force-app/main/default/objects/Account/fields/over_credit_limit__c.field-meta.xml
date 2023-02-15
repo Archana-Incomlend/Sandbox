@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>over_credit_limit__c</fullName>
+    <externalId>false</externalId>
+    <formula>total_advance_amount_in_progress_USD_equ__c &gt;  Insured_Loss_USD_Equiv__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>over credit limit</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Type__c</name>
+    <picklistValues>
+        <masterLabel>Allowed Extension or Filetype</masterLabel>
+        <translation>허용된 확장자 또는 파일 유형</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Allowed Extension or Filetype Manual Scan</masterLabel>
+        <translation>허용된 확장자 또는 파일 유형 수동 검사</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Attachment Location To Scan</masterLabel>
+        <translation>검사할 첨부 파일 위치</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blocked Extension or Filetype</masterLabel>
+        <translation>차단된 확장자 또는 파일 유형</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blocked Extension or Filetype Manual Scan</masterLabel>
+        <translation>차단된 확장자 또는 파일 유형 수동 검사</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Domain</masterLabel>
+        <translation>도메인</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Excluded Extension or Filetype</masterLabel>
+        <translation>제외된 확장자 또는 파일 유형</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Excluded Extension or Filetype Manual Scan</masterLabel>
+        <translation>제외된 확장자 또는 파일 유형 수동 검사</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Extension</masterLabel>
+        <translation>확장자</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Extension or Filetype To Scan</masterLabel>
+        <translation>검사할 확장자 또는 파일 유형</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Extension or Filetype to Scan Manual Scan</masterLabel>
+        <translation>검사할 확장자 또는 파일 유형 수동 검사</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>File Protection Settings</masterLabel>
+        <translation>파일 보호 설정</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Filetype</masterLabel>
+        <translation>파일 유형</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Host</masterLabel>
+        <translation>호스트</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rich Preview</masterLabel>
+        <translation>리치 미리 보기</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>URL</masterLabel>
+        <translation>URL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>URL Protection Settings</masterLabel>
+        <translation>URL 보호 설정</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Previous_Accounting_Period__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Previous Accounting Period</label>
+    <lookupFilter>
+        <active>false</active>
+        <filterItems>
+            <field>$Source.Start_Date__c</field>
+            <operation>greaterThan</operation>
+            <valueField>Accounting_Period__c.End_Date__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Accounting_Period__c</referenceTo>
+    <relationshipLabel>Accounting Periods</relationshipLabel>
+    <relationshipName>Accounting_Periods</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

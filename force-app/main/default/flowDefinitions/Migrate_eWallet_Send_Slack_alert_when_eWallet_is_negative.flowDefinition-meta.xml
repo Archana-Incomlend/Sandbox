@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Migrated from Workflows to Flow.
+Send Slack alert when eWallet is negative</description>
+    <masterLabel>In-Active Migrate eWallet - Send Slack alert when eWallet is negative</masterLabel>
+</FlowDefinition>

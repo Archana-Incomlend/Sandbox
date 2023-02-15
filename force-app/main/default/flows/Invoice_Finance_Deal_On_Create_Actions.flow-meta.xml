@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>First_invoice_for_Map</name>
+        <label>First invoice for Map</label>
+        <locationX>529</locationX>
+        <locationY>435</locationY>
+        <defaultConnector>
+            <targetReference>Passthrough_Equal_to_False</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>First_Invoice_for_Map1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>First_Cycle</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Passthrough</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_First_deal_for_Map</targetReference>
+            </connector>
+            <label>First Invoice for Map</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Passthrough_Equal_to_False</name>
+        <label>Passthrough Equal to False</label>
+        <locationX>539</locationX>
+        <locationY>657</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Passthrough_False</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Passthrough</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Funder_Supplier_rate_update</targetReference>
+            </connector>
+            <label>Passthrough = False</label>
+        </rules>
+    </decisions>
+    <description>Migrated from Workflows which executes only when Invoice Finance Deal is Created Only.
+1. first invoice for Map - to update the tick box when on invoice when it is a a first deal on the map
+2. Fouder&amp;supplier rate update - Update automatically the Funder rate and the suppplier rate in invoice for calculation</description>
+    <formulas>
+        <name>First_Cycle</name>
+        <dataType>Boolean</dataType>
+        <expression>IF( {!$Record.Supplier_Buyer_Map__r.invoice_deal_closed_amount__c} &gt;0, False, True)</expression>
+    </formulas>
+    <formulas>
+        <name>Passthrough</name>
+        <dataType>Boolean</dataType>
+        <expression>text({!$Record.Incomlend_product_del__r.Auction_Type__c} ) ==&apos;Passthrough&apos;</expression>
+    </formulas>
+    <interviewLabel>Invoice Finance Deal - On Create Actions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Invoice Finance Deal - On Create Actions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Funder_Supplier_rate_update</name>
+        <label>Funder &amp; Supplier rate update</label>
+        <locationX>767</locationX>
+        <locationY>755</locationY>
+        <inputAssignments>
+            <field>Total_Supplier_Discount__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Supplier_Discount_Rate__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>credit_insurance_fee_percentage__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Supplier__r.Credit_insurance_fee__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>discount_rate__c</field>
+            <value>
+                <elementReference>$Record.Supplier_Buyer_Map__r.Funder_Discount_Rate__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_First_deal_for_Map</name>
+        <label>Update - First deal for Map</label>
+        <locationX>255</locationX>
+        <locationY>560</locationY>
+        <connector>
+            <targetReference>Passthrough_Equal_to_False</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>first_deal_for_map__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>410</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>First_invoice_for_Map</targetReference>
+        </connector>
+        <object>invoice_finance_deal__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

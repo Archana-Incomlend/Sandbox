@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EUR_available_eWallet__c</fullName>
+    <externalId>false</externalId>
+    <formula>EUR_eWallet_Balance__c - EUR_eWallet__r.Reservations__c  -  EUR_eWallet__r.Withdrawals_Not_Processed__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>EUR available eWallet</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

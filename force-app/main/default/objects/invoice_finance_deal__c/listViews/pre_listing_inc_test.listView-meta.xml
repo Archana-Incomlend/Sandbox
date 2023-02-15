@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pre_listing_inc_test</fullName>
+    <booleanFilter>1</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>supplier_buyer_map_name__c</columns>
+    <columns>supplier_invoice_reference_number__c</columns>
+    <columns>CCY__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>calculated_expected_payment_date__c</columns>
+    <columns>invoice_amount__c</columns>
+    <columns>requested_amount__c</columns>
+    <columns>Requested_Amount_USD_Equivalent__c</columns>
+    <columns>discount_rate__c</columns>
+    <columns>Listing_Start__c</columns>
+    <columns>Supplier_Confirmed_Date__c</columns>
+    <columns>Invoice_date__c</columns>
+    <columns>expected_financing_period__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Phase__c</field>
+        <operation>equals</operation>
+        <value>1:PRE LISTING</value>
+    </filters>
+    <label>z- PRE LISTING inc test</label>
+</ListView>

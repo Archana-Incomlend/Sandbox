@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Broker_Accountant_Singapore</fullName>
+    <columns>NAME</columns>
+    <columns>Company_Name__c</columns>
+    <columns>First_Name__c</columns>
+    <columns>Country_of_Incorporation_residence__c</columns>
+    <columns>email__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Broker_Type__c</field>
+        <operation>contains</operation>
+        <value>accountant</value>
+    </filters>
+    <filters>
+        <field>Country_of_Incorporation_residence__c</field>
+        <operation>equals</operation>
+        <value>singapore</value>
+    </filters>
+    <label>Broker - Accountant - Singapore</label>
+</ListView>

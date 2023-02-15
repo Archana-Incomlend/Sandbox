@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Credit_Commitee_Planned</fullName>
+        <description>Credit Commitee Planned</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Team_Recipient</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <field>Ops_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/CC_planned_date</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Map_Created</fullName>
+        <description>New Map Created</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Team_Recipient</recipient>
+            <type>role</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/New_Map_Created</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Buye_Sales_Owner</fullName>
+        <description>Set the value of the buyer owner % in factoring case</description>
+        <field>Buyer_Sales_Zone__c</field>
+        <formula>0</formula>
+        <name>% Sales Buyer owner fac Map</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Credit_Committee_Approval_Date</fullName>
+        <field>Credit_Committee_Approval_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Credit Committee Approval Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Date_Change_ICL_Incomlend</fullName>
+        <field>CL_Incomlend_Change_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Date Change ICL Incomlend</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>External</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Extern</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>External</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Legal</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Legal</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Legal</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>MAP_external_view</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Extern</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>MAP external view</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Map_Normal_View</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Supplier_Buyer_Map</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Map Normal View</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Risk_View</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Risk</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Risk View</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Sales</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Supplier_sales_owner</fullName>
+        <field>Supplier_Zone__c</field>
+        <formula>1</formula>
+        <name>% Sales Supplier owner fac Map</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdatePreviousCLIncomlend</fullName>
+        <field>Previous_CL_Incomlend__c</field>
+        <formula>PRIORVALUE( CL_Incomlend_for_this_Map__c )</formula>
+        <name>UpdatePreviousCLIncomlend</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Email_Supplier_for_Approval</fullName>
+        <description>supplier email supp for invoice approval update</description>
+        <field>supplier_contacts_for_invoice_approval__c</field>
+        <formula>Supplier__r.Primary_contact_email__c</formula>
+        <name>Update Email Supplier for Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Supplier_discount_rate</fullName>
+        <field>Supplier_Discount_Rate__c</field>
+        <formula>Recommended_Discount_Rate__c</formula>
+        <name>Update Supplier discount rate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Tickbox_non_active</fullName>
+        <description>Put the tick box unactive</description>
+        <field>Active__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Tickbox non active</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_active_tickbox</fullName>
+        <description>update Tickbox active when map status in not:  checking buyer, 01 and rejected by supplier, buyer, incomlend</description>
+        <field>Active__c</field>
+        <literalValue>1</literalValue>
+        <name>Update active tickbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_buyer_sale</fullName>
+        <description>Update buyer sales % in reverse factoring</description>
+        <field>Buyer_Sales_Zone__c</field>
+        <formula>0.50</formula>
+        <name>%sales buyer Owner rev Map</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>View_Funders</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Funders</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>View Funders</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>sales_Owner_rev_Map_before_102019</fullName>
+        <field>Supplier_Zone__c</field>
+        <formula>0.30</formula>
+        <name>%sales Sup Owner rev Map before 102019</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>sales_buyer_Owner_rev_Map_before_102019</fullName>
+        <field>Buyer_Sales_Zone__c</field>
+        <formula>0.70</formula>
+        <name>%sales buyer Owner rev Map before 102019</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_buy_sup_map_approval_date</fullName>
+        <field>approval_date__c</field>
+        <formula>today()</formula>
+        <name>update buy sup map approval date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_indexed_name</fullName>
+        <field>Name_Indexed__c</field>
+        <formula>Name__c</formula>
+        <name>update indexed name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_map_stage</fullName>
+        <field>map_onboarding_stage__c</field>
+        <literalValue>90.Onboarded</literalValue>
+        <name>update map stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_sales_supplier</fullName>
+        <description>Update slaes supplier% in reverse factoring</description>
+        <field>Supplier_Zone__c</field>
+        <formula>0.50</formula>
+        <name>%sales Supplier Owner rev Map</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_sup_buy_map_approval_date</fullName>
+        <field>approval_date__c</field>
+        <formula>today()</formula>
+        <name>update sup buy map approval date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_sup_buy_map_approved_checkbox</fullName>
+        <field>buyer_supplier_map_approved__c</field>
+        <literalValue>1</literalValue>
+        <name>update sup buy map approved checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <flowActions>
+        <fullName>Send_Slack_Onboarding</fullName>
+        <flow>Send_Slack_when_CC_approved_the_Map</flow>
+        <flowInputs>
+            <name>SupplierBuyerMap</name>
+            <value>{!this}</value>
+        </flowInputs>
+        <label>Send Slack Onboarding</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+    <flowActions>
+        <fullName>Send_slack_when_funders_feedback_positive</fullName>
+        <description>Send slack to onboarding channel</description>
+        <flow>Send_Slack_when_funder_feeback_positive</flow>
+        <flowInputs>
+            <name>mapId</name>
+            <value>{!Id}</value>
+        </flowInputs>
+        <label>Send slack when funders feedback positive</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+    <rules>
+        <fullName>Credit Commitee approved%2C send BNL</fullName>
+        <actions>
+            <name>Send_Slack_Onboarding</name>
+            <type>FlowAction</type>
+        </actions>
+        <active>false</active>
+        <description>Send auto alert to Ops (SF email or slack alert with ops name) requesting to send BNL to buyer for signature. Trigger: MAP field “Credit Committee status” passes to “Approved”</description>
+        <formula>AND (ISCHANGED(   Credit_Committee_Status__c  ),  TEXT(Credit_Committee_Status__c ) = &quot;Approved&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Credit Committee Approval Date</fullName>
+        <actions>
+            <name>Credit_Committee_Approval_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Credit_Committee_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Credit Committee planned</fullName>
+        <actions>
+            <name>Credit_Commitee_Planned</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Credit_Committee_Expected_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>External</fullName>
+        <actions>
+            <name>External</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Select_View__c</field>
+            <operation>equals</operation>
+            <value>External</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>External View</fullName>
+        <actions>
+            <name>External</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Select_View__c</field>
+            <operation>equals</operation>
+            <value>External</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Funder view</fullName>
+        <actions>
+            <name>View_Funders</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Select_View__c</field>
+            <operation>equals</operation>
+            <value>Funders</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>GetPrioValueCLIncomlend</fullName>
+        <actions>
+            <name>Date_Change_ICL_Incomlend</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>UpdatePreviousCLIncomlend</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>ISCHANGED( CL_Incomlend_for_this_Map__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Normal View</fullName>
+        <actions>
+            <name>Map_Normal_View</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Select_View__c</field>
+            <operation>equals</operation>
+            <value>Full</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Select_View__c</field>
+            <operation>equals</operation>
+            <value>Operations</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Risk View</fullName>
+        <actions>
+            <name>Risk_View</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Select_View__c</field>
+            <operation>equals</operation>
+            <value>Risk</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Slack when funder feedback positive</fullName>
+        <actions>
+            <name>Send_slack_when_funders_feedback_positive</name>
+            <type>FlowAction</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.map_onboarding_stage__c</field>
+            <operation>equals</operation>
+            <value>05.Funders feedback Positive</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Split Sales Map factoring</fullName>
+        <actions>
+            <name>Buye_Sales_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Supplier_sales_owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Market_Place_Name__c</field>
+            <operation>contains</operation>
+            <value>Standard Insured - USD</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Market_Place_Name__c</field>
+            <operation>contains</operation>
+            <value>Standard Insured - EUR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Market_Place_Name__c</field>
+            <operation>contains</operation>
+            <value>Standard Insured - HKD</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Market_Place_Name__c</field>
+            <operation>contains</operation>
+            <value>Standard Insured - SGD</value>
+        </criteriaItems>
+        <description>split the commission automatically between sales Supplier and Sales Buyer if Factoring</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Split Sales Reverse factoring before 201910</fullName>
+        <actions>
+            <name>sales_Owner_rev_Map_before_102019</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>sales_buyer_Owner_rev_Map_before_102019</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>(1 OR 2 OR 3 OR 4) AND 5</booleanFilter>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Market_Place_Name__c</field>
+            <operation>equals</operation>
+            <value>Reverse Factoring USD Insured</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Market_Place_Name__c</field>
+            <operation>equals</operation>
+            <value>Reverse Factoring EUR Insured</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Market_Place_Name__c</field>
+            <operation>equals</operation>
+            <value>Reverse Factoring SGD Insured</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Market_Place_Name__c</field>
+            <operation>equals</operation>
+            <value>Reverse Factoring HKD Insured</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.CreatedDate</field>
+            <operation>lessOrEqual</operation>
+            <value>10/1/2019</value>
+        </criteriaItems>
+        <description>split the commission automatically between sales Supplier and Sales Buyer if reverse Factoring and update com with agent and not</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Split Sales reverse factoring</fullName>
+        <actions>
+            <name>Update_buyer_sale</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>update_sales_supplier</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>(1 OR 2 OR 3 OR 4) AND 5</booleanFilter>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Market_Place_Name__c</field>
+            <operation>equals</operation>
+            <value>Reverse Factoring USD Insured</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Market_Place_Name__c</field>
+            <operation>equals</operation>
+            <value>Reverse Factoring EUR Insured</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Market_Place_Name__c</field>
+            <operation>equals</operation>
+            <value>Reverse Factoring SGD Insured</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Market_Place_Name__c</field>
+            <operation>equals</operation>
+            <value>Reverse Factoring HKD Insured</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.CreatedDate</field>
+            <operation>greaterThan</operation>
+            <value>10/1/2019</value>
+        </criteriaItems>
+        <description>split the commission automatically between sales Supplier and Sales Buyer if reverse Factoring and update com with agent and not</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Supplier Discount rate</fullName>
+        <actions>
+            <name>Update_Supplier_discount_rate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Supplier_Discount_Rate__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Udpate supplier discount rate with recommanded discount rate if the field is empty</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Email Supplier for Approval</fullName>
+        <actions>
+            <name>Update_Email_Supplier_for_Approval</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.supplier_contacts_for_invoice_approval__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Update the field supplier email supin Map for invoice approval</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update TickBox Active</fullName>
+        <actions>
+            <name>Update_active_tickbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.map_onboarding_stage__c</field>
+            <operation>notEqual</operation>
+            <value>01 - Blocked - no stats</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.map_onboarding_stage__c</field>
+            <operation>notEqual</operation>
+            <value>10.Checking Insurance</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.map_onboarding_stage__c</field>
+            <operation>notEqual</operation>
+            <value>rejected by buyer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.map_onboarding_stage__c</field>
+            <operation>notEqual</operation>
+            <value>rejected by supplier</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.map_onboarding_stage__c</field>
+            <operation>notEqual</operation>
+            <value>rejected by Incomlend</value>
+        </criteriaItems>
+        <description>Update Tickbox active when the map is active ( need to review the logic)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update TickBox unActive</fullName>
+        <actions>
+            <name>Update_Tickbox_non_active</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.General_Status_Map__c</field>
+            <operation>notEqual</operation>
+            <value>Active</value>
+        </criteriaItems>
+        <description>Update Tickbox INactive when the map is active ( need to review the logic)</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>map name changes</fullName>
+        <actions>
+            <name>update_indexed_name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>When the name of the Map Change , update of of the Indexed name</description>
+        <formula>Name__c &lt;&gt; Name_Indexed__c</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Credit_committee_approval</fullName>
+        <assignedTo>shiv.yadav@incomlend.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>This Map has been approved by the credit committee , please send the BNL via docusign or assign someone else in your team to do it.
+
+Thanks
+
+This is test</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>User.LastLoginDate</offsetFromField>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Credit committee approval</subject>
+    </tasks>
+</Workflow>

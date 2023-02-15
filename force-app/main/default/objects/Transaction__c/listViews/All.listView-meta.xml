@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>eWallet__c</columns>
+    <columns>Invoice_Finance_Deal__c</columns>
+    <columns>Amount_USD_Equiv_daily_fx__c</columns>
+    <columns>FX_conversion_rate_calculated__c</columns>
+    <columns>FX_USD_Rate_Daily__c</columns>
+    <columns>Amount__c</columns>
+    <columns>CCY__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Effective_Date__c</columns>
+    <columns>Account__c</columns>
+    <columns>Type__c</columns>
+    <columns>Status__c</columns>
+    <columns>Withdrawal_Deposit__c</columns>
+    <columns>Trustee_Approved__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>archived</label>
+</ListView>

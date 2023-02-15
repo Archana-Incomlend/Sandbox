@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>2</activeVersionNumber>
+    <description>Migrated from the: Task Completed workflow rule
+Workflow rule description: Send a notif when a task is completed&quot;</description>
+    <masterLabel>Migrate Task Completed</masterLabel>
+</FlowDefinition>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Euler_Hermes_Credit_Rating__c</fullName>
+    <externalId>false</externalId>
+    <label>Euler Hermes Credit Rating</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>*not checked*</fullName>
+                <default>true</default>
+                <label>*not checked*</label>
+            </value>
+            <value>
+                <fullName>*no record*</fullName>
+                <default>false</default>
+                <label>*no record*</label>
+            </value>
+            <value>
+                <fullName>*requested Rating*</fullName>
+                <default>false</default>
+                <label>*requested Rating*</label>
+            </value>
+            <value>
+                <fullName>*requested Revision*</fullName>
+                <default>false</default>
+                <label>*requested Revision*</label>
+            </value>
+            <value>
+                <fullName>1</fullName>
+                <default>false</default>
+                <label>1</label>
+            </value>
+            <value>
+                <fullName>2</fullName>
+                <default>false</default>
+                <label>2</label>
+            </value>
+            <value>
+                <fullName>3</fullName>
+                <default>false</default>
+                <label>3</label>
+            </value>
+            <value>
+                <fullName>4</fullName>
+                <default>false</default>
+                <label>4</label>
+            </value>
+            <value>
+                <fullName>5</fullName>
+                <default>false</default>
+                <label>5</label>
+            </value>
+            <value>
+                <fullName>6</fullName>
+                <default>false</default>
+                <label>6</label>
+            </value>
+            <value>
+                <fullName>7</fullName>
+                <default>false</default>
+                <label>7</label>
+            </value>
+            <value>
+                <fullName>8</fullName>
+                <default>false</default>
+                <label>8</label>
+            </value>
+            <value>
+                <fullName>9</fullName>
+                <default>false</default>
+                <label>9</label>
+            </value>
+            <value>
+                <fullName>10</fullName>
+                <default>false</default>
+                <label>10</label>
+            </value>
+            <value>
+                <fullName>*Gathering more info*</fullName>
+                <default>false</default>
+                <label>*Gathering more info*</label>
+            </value>
+            <value>
+                <fullName>*1 (old rating)</fullName>
+                <default>false</default>
+                <label>*1 (old rating)</label>
+            </value>
+            <value>
+                <fullName>*2 (old rating)</fullName>
+                <default>false</default>
+                <label>*2 (old rating)</label>
+            </value>
+            <value>
+                <fullName>*3 (old rating)</fullName>
+                <default>false</default>
+                <label>*3 (old rating)</label>
+            </value>
+            <value>
+                <fullName>*4 (old rating)</fullName>
+                <default>false</default>
+                <label>*4 (old rating)</label>
+            </value>
+            <value>
+                <fullName>*5 (old rating)</fullName>
+                <default>false</default>
+                <label>*5 (old rating)</label>
+            </value>
+            <value>
+                <fullName>*6 (old rating)</fullName>
+                <default>false</default>
+                <label>*6 (old rating)</label>
+            </value>
+            <value>
+                <fullName>*7 (old rating)</fullName>
+                <default>false</default>
+                <label>*7 (old rating)</label>
+            </value>
+            <value>
+                <fullName>*8 (old rating)</fullName>
+                <default>false</default>
+                <label>*8 (old rating)</label>
+            </value>
+            <value>
+                <fullName>*9 (old rating)</fullName>
+                <default>false</default>
+                <label>*9 (old rating)</label>
+            </value>
+            <value>
+                <fullName>*10 (old rating)</fullName>
+                <default>false</default>
+                <label>*10 (old rating)</label>
+            </value>
+            <value>
+                <fullName>not yet graded</fullName>
+                <default>false</default>
+                <label>not yet graded</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

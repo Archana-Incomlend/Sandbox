@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>number_of_invoices_all_time__c</fullName>
+    <description>posted on platform
+but its filtering on discount rate. should base on product &apos;listable product&apos; but cant filter on calculated fields... make into a trigger ?? hmmmm</description>
+    <externalId>false</externalId>
+    <label>number of invoices all time</label>
+    <summaryFilterItems>
+        <field>invoice_finance_deal__c.Phase__c</field>
+        <operation>equals</operation>
+        <value>2:ON MARKETPLACE, 3:IN PROGRESS, 4:CLOSED</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>invoice_finance_deal__c.discount_rate__c</field>
+        <operation>notEqual</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryForeignKey>invoice_finance_deal__c.Supplier_Buyer_Map__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

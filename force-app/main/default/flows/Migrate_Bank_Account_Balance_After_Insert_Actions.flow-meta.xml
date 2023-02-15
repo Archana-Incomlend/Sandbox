@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>Check_Latest_Date1</name>
+        <label>Check Latest Date</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Latest_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Bank_Account_Detail__r.Latest_Balance_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>$Record.As_of_DateTime__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Bank_Account_Latest_Balance</targetReference>
+            </connector>
+            <label>Check Latest Date</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the workflow.
+1. Update Balance when it is the latest balance</description>
+    <interviewLabel>Migrate Bank Account Balance - After Insert Actions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Bank Account Balance - After Insert Actions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Bank_Account_Latest_Balance</name>
+        <label>Update Bank Account Latest Balance</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Bank_Account_Detail__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Latest_Balance__c</field>
+            <value>
+                <elementReference>$Record.amount__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Bank_Account__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Latest_Date1</targetReference>
+        </connector>
+        <object>Bank_Account_Balance__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

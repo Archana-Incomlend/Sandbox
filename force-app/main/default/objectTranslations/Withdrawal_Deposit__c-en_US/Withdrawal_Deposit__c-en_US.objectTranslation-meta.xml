@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Withdrawal Deposit</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Withdrawals Deposits</value>
+    </caseValues>
+    <layouts>
+        <layout>Trustee View</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>declarations</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallets</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Withdrawal_Deposit Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>declarations</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallets</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label></label>
+        <name>Amicorp</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>amount_positive</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>Confirmed_by_Finance</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Mass_Update</name>
+    </webLinks>
+</CustomObjectTranslation>

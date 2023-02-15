@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>New_Map_Created</name>
+        <label>New_Map_Created</label>
+        <locationX>536</locationX>
+        <locationY>347</locationY>
+        <actionName>Supplier_Buyer_Map__c.New_Map_Created</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Agent_field</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Agent_field</name>
+        <label>Agent field</label>
+        <locationX>527</locationX>
+        <locationY>494</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Agent_field_factoring1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Incomlend_product__r.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Standard</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_Agent_Supplier</targetReference>
+            </connector>
+            <label>Agent field factoring</label>
+        </rules>
+        <rules>
+            <name>Agent_field_reverse</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Incomlend_product__r.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Reverse</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_Agent_Buyer</targetReference>
+            </connector>
+            <label>Agent field reverse</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the Process Builder - New Map Created
+When a New Map is Created email sent to Risk and Agent to populate from supplier account.</description>
+    <environments>Default</environments>
+    <interviewLabel>Supplier Buyer Map - New Map Created {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Supplier Buyer Map - New Map Created</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Account_Agent_Buyer</name>
+        <label>Update Account Agent - Buyer</label>
+        <locationX>782</locationX>
+        <locationY>495</locationY>
+        <inputAssignments>
+            <field>Account_Agent__c</field>
+            <value>
+                <elementReference>$Record.Buyer__r.Agent__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Account_Agent_Supplier</name>
+        <label>Update Account Agent - Supplier</label>
+        <locationX>252</locationX>
+        <locationY>493</locationY>
+        <inputAssignments>
+            <field>Account_Agent__c</field>
+            <value>
+                <elementReference>$Record.Supplier__r.Agent__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>410</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>New_Map_Created</targetReference>
+        </connector>
+        <filterFormula>!{!$Setup.ICL_Settings__c.Disable_Migrate_Flow__c}</filterFormula>
+        <object>Supplier_Buyer_Map__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

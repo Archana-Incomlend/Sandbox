@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>TMP__c</name>
+    <picklistValues>
+        <masterLabel>Accelerando</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chevallion Advisors</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Devonshire Warwick Capital</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mont-Blanc Wealth Mgt Svc AG</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

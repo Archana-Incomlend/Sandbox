@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conclusion_or_Next_Step__c</fullName>
+    <description>Conclusion or next step</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Conclusion or next step ( document missing , need for a new risk comittee</inlineHelpText>
+    <label>Conclusion or Next Step</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

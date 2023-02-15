@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <interviewLabel>Lookup Incomlend Feed Account ID {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lookup Incomlend Fee Account ID</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>lookup_incomlend_fees</name>
+        <label>lookup incomlend fees</label>
+        <locationX>375</locationX>
+        <locationY>283</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Incomlend - fees</stringValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputAssignments>
+            <assignToReference>FeesAccountID</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <startElementReference>lookup_incomlend_fees</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>FeesAccountID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

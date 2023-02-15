@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Premium_Gross_Discount__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* the overdue is limited to 60 cap overdue days*/
+ROUND( discount_rate__c /30 *  funded_amount__c * MIN(over_due_days__c,60) ,2)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Premium Gross Discount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

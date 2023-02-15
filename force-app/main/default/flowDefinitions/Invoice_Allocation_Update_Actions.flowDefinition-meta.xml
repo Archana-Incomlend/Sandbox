@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>6</activeVersionNumber>
+    <description>Migrated workflows to Flow.
+1. Send Email when checkbox is ticked</description>
+    <masterLabel>Migrate Invoice Allocation - Update Actions</masterLabel>
+</FlowDefinition>

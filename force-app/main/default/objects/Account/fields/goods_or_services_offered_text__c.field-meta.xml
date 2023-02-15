@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>goods_or_services_offered_text__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(includes(Goods_or_Services_Offered__c,&quot;Goods Chemicals, oils and greases&quot;),&quot;Goods Chemicals, oils and greases&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Goods Pharmaceuticals&quot;),&quot;Goods Pharmaceuticals&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Goods Metals&quot;),&quot;Goods Metals&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Goods Machines and engines&quot;),&quot;Goods Machines and engines&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Goods Apparatus and instruments&quot;),&quot;Goods Apparatus and instruments&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Goods Vehicles&quot;),&quot;Goods Vehicles&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Goods Firearms&quot;),&quot;Goods Firearms&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Goods Musical instruments&quot;),&quot;Goods Musical instruments&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Goods Materials&quot;),&quot;Goods Materials&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Goods Furniture and Household utensil&quot;),&quot;Goods Furniture and Household utensil&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Goods Textile&quot;),&quot;Goods Textile&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Goods Food and Beverages&quot;),&quot;Goods Food and Beverages&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Goods Tobacco&quot;),&quot;Goods Tobacco&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Services Advertising, administration and marketing&quot;),&quot;Services Advertising, administration and marketing&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Services Finance&quot;),&quot;Services Finance&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Services Building construction&quot;),&quot;Services Building construction&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Services Telecommunications&quot;),&quot;Services Telecommunications&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Services Transport&quot;),&quot;Services Transport&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Services Treatment of materials&quot;),&quot;Services Treatment of materials&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Services Education&quot;),&quot;Services Education&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Services Scientific and technological services&quot;),&quot;Services Scientific and technological services&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Services Services for providing food and drink&quot;),&quot;Services Services for providing food and drink&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Services Medical services&quot;),&quot;Services Medical services&quot;+br(),&quot;&quot;)+
+if(includes(Goods_or_Services_Offered__c,&quot;Services Legal services&quot;),&quot;Services Legal services&quot;+br(),&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>goods or services offered text</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

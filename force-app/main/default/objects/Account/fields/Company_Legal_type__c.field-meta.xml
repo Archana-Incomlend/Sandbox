@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_Legal_type__c</fullName>
+    <externalId>false</externalId>
+    <label>Company Legal type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Corporation - Nonprofit</fullName>
+                <default>false</default>
+                <label>Corporation - Nonprofit</label>
+            </value>
+            <value>
+                <fullName>Public Company (PUBL)</fullName>
+                <default>false</default>
+                <label>Public Company (PUBL)</label>
+            </value>
+            <value>
+                <fullName>Limited Company (LLCO)</fullName>
+                <default>false</default>
+                <label>Limited Company (LLCO)</label>
+            </value>
+            <value>
+                <fullName>PartnerShip (PNTR)</fullName>
+                <default>false</default>
+                <label>PartnerShip (PNTR)</label>
+            </value>
+            <value>
+                <fullName>Individual (INDV)</fullName>
+                <default>false</default>
+                <label>Individual (INDV)</label>
+            </value>
+            <value>
+                <fullName>Government (GOVT)</fullName>
+                <default>false</default>
+                <label>Government (GOVT)</label>
+            </value>
+            <value>
+                <fullName>Other (OTHR)</fullName>
+                <default>false</default>
+                <label>Other (OTHR)</label>
+            </value>
+            <value>
+                <fullName>Corporation - B corp</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corporation - B corp</label>
+            </value>
+            <value>
+                <fullName>Corporation - C corp</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corporation - C corp</label>
+            </value>
+            <value>
+                <fullName>Corporation - S corp</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corporation - S corp</label>
+            </value>
+            <value>
+                <fullName>Limited liability company (LLC)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Limited liability company (LLC)</label>
+            </value>
+            <value>
+                <fullName>Partnerships</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Partnerships</label>
+            </value>
+            <value>
+                <fullName>Public Company</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Public Company</label>
+            </value>
+            <value>
+                <fullName>Sole proprietorship</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sole proprietorship</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

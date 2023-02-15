@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <name>Check_for_the_Send_email_funders</name>
+        <label>Check for the - Send email funders</label>
+        <locationX>182</locationX>
+        <locationY>398</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_the_Send_email_suppliers</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_email_to_funders</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Send_Email_to_Funders_for_Invoice_Funded</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Email_Funders</targetReference>
+            </connector>
+            <label>Send email to funders</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_for_the_Send_email_suppliers</name>
+        <label>Check for the - Send email suppliers</label>
+        <locationX>182</locationX>
+        <locationY>734</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Email_to_Supplier</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Send_Email_Suppliers_for_Invoice_Funded</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Email_Suppliers</targetReference>
+            </connector>
+            <label>Send Email to Supplier</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Send Email - Invoice Funded {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send Email - Invoice Funded</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Invoice_Id</name>
+        <label>Invoice Id</label>
+        <locationX>182</locationX>
+        <locationY>278</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Check_for_the_Send_email_funders</targetReference>
+        </connector>
+        <fields>
+            <name>Invoice</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>InvoiceId</elementReference>
+            </defaultValue>
+            <fieldText>Invoice</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Send_Email_for_Invoice_Funded</name>
+        <label>Send Email for Invoice Funded</label>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Invoice_Id</targetReference>
+        </connector>
+        <fields>
+            <name>Send_Email_to_Funders_for_Invoice_Funded</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Send Email to Funders for Invoice Funded</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Send_Email_Suppliers_for_Invoice_Funded</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Send Email Suppliers for Invoice Funded</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Email_for_Invoice_Funded</targetReference>
+        </connector>
+    </start>
+    <status>Obsolete</status>
+    <subflows>
+        <name>Email_Funders</name>
+        <label>Email Funders</label>
+        <locationX>50</locationX>
+        <locationY>518</locationY>
+        <connector>
+            <targetReference>Check_for_the_Send_email_suppliers</targetReference>
+        </connector>
+        <flowName>Email_Funder_Invoice_Funded_Subflow</flowName>
+        <inputAssignments>
+            <name>invoiceid</name>
+            <value>
+                <elementReference>InvoiceId</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>Email_Suppliers</name>
+        <label>Email Suppliers</label>
+        <locationX>50</locationX>
+        <locationY>854</locationY>
+        <flowName>Email_Supplier_invoice_funded_Subflow</flowName>
+        <inputAssignments>
+            <name>invoiceid</name>
+            <value>
+                <elementReference>InvoiceId</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <variables>
+        <name>InvoiceId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>a092800000Ql27Q</stringValue>
+        </value>
+    </variables>
+</Flow>

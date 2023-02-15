@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HKD</fullName>
+    <columns>NAME</columns>
+    <columns>As_of_DateTime__c</columns>
+    <columns>account_number__c</columns>
+    <columns>Account_Description__c</columns>
+    <columns>amount__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Bank_Account_Detail__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Currency__c</field>
+        <operation>equals</operation>
+        <value>HKD</value>
+    </filters>
+    <label>HKD</label>
+</ListView>

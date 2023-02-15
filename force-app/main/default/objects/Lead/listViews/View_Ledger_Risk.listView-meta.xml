@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>View_Ledger_Risk</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>Date_Credit_Limit_Requested__c</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>Product_type__c</columns>
+    <columns>Insured_by__c</columns>
+    <columns>LEAD.COUNTRY</columns>
+    <columns>Potential_Supplier_s__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>Credit_Limit_requested__c</columns>
+    <columns>New_Increase__c</columns>
+    <columns>VAT_or_D_B__c</columns>
+    <columns>Risk_Member__c</columns>
+    <columns>Insurer_actual_response_date__c</columns>
+    <columns>Credit_Limit_Provided_by_Insurer__c</columns>
+    <columns>Comment_Risk__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.Lead_buyer</value>
+    </filters>
+    <filters>
+        <field>Insured_by__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>View Ledger Risk</label>
+    <sharedTo>
+        <group>Operation</group>
+        <group>Sales_Team</group>
+        <role>Risk_Management_Z1</role>
+        <role>Risk_Management_Z2</role>
+        <role>Risk_Team_Zone_1</role>
+        <role>Risk_Team_Zone_2</role>
+        <role>Risk_Team_Zone_3</role>
+        <role>Risk_Team_Zone_4</role>
+    </sharedTo>
+</ListView>

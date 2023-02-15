@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EUR_total_reservations__c</fullName>
+    <externalId>false</externalId>
+    <label>EUR total reservations</label>
+    <summarizedField>Invoice_Allocation__c.amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Invoice_Allocation__c.CCY__c</field>
+        <operation>equals</operation>
+        <value>EUR</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Invoice_Allocation__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Reservation</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Invoice_Allocation__c.Funder__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

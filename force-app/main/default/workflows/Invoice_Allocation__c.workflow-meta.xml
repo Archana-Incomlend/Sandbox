@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_Customers</fullName>
+        <description>Email Customers</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/Purchaser_7_A_Order_filled</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Customers_allocation</fullName>
+        <description>Email Customers Allocation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/Purchaser_5_A_Imminent_trade_going_live_alert_New_GUI_Autosweep_Loic</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_funder_new_allocation</fullName>
+        <description>Email funder new allocation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/Purchaser_New_Allocation</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Alloc_Applied_Fund_Disc_Prof_Share_Pct</fullName>
+        <description>Copy the Current Funder Discount Profit Share Pct into Applied Funder Discount Profit Share Pct (as a default value)</description>
+        <field>Applied_Funder_Discount_Profit_Share_Pct__c</field>
+        <formula>Current_Funder_Discount_Profit_Share_Pct__c</formula>
+        <name>Alloc Applied Fund Disc Prof Share Pct</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Customer_Email</fullName>
+        <field>Customer_Email__c</field>
+        <formula>Funder__r.Primary_Contact__r.Email</formula>
+        <name>Update Customer Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <flowActions>
+        <fullName>New_Allocation_Created</fullName>
+        <description>New slack when new allocation is created</description>
+        <flow>send_slack_for_new_allocation_created</flow>
+        <flowInputs>
+            <name>invoiceID</name>
+            <value>{!Invoice__c}</value>
+        </flowInputs>
+        <label>New Allocation Created</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+    <flowActions>
+        <fullName>Slack_on_new_allocatin</fullName>
+        <description>Slack on new allocation to precise the owner of the allocation</description>
+        <flow>send_slack_for_new_allocation_created</flow>
+        <flowInputs>
+            <name>invoiceID</name>
+            <value>{!Invoice__c}</value>
+        </flowInputs>
+        <label>Slack on new allocatin</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+    <flowActions>
+        <fullName>Trigger_Allocation_Aggregation</fullName>
+        <flow>Allocation_Aggregation</flow>
+        <flowInputs>
+            <name>AllocationID</name>
+            <value>{!Name}</value>
+        </flowInputs>
+        <label>Trigger Allocation Aggregation</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+    <rules>
+        <fullName>Allocation Creation - Applied Funder Discount Profit Share Pct</fullName>
+        <actions>
+            <name>Alloc_Applied_Fund_Disc_Prof_Share_Pct</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Copy the Current Funder Discount Profit Share Pct into Applied Funder Discount Profit Share Pct (as a default value)</description>
+        <formula>ISNULL(Applied_Funder_Discount_Profit_Share_Pct__c)  || ISBLANK(TRIM(TEXT(Applied_Funder_Discount_Profit_Share_Pct__c)))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Email New allocation</fullName>
+        <actions>
+            <name>Email_Customers_allocation</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Invoice_Allocation__c.amount__c</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>Send an email reservation to the  funders as confirmation for each new allocation created
+Desactivated, Using a Process Builder instead</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Email when checkbox is ticked</fullName>
+        <actions>
+            <name>Email_Customers</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Email_Sent_Confirmation</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Invoice_Allocation__c.Test_Workflow__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Seems to send an email to the funder when a tick box is TRUE, was used for Manual Allocations &quot;not in use&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Customer Email</fullName>
+        <actions>
+            <name>Update_Customer_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Filed update for Customer email (funder) when the allocation is created or edited</description>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Email_Sent_Confirmation</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Email Sent: Confirmation</subject>
+    </tasks>
+</Workflow>

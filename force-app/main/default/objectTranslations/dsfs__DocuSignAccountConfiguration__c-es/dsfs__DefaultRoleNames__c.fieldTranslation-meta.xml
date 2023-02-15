@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Los nombres de función de los destinatarios que se corresponden con los valores de función de los destinatarios a la hora de efectuar el envío con DocuSign.</help>
+    <label></label>
+    <name>dsfs__DefaultRoleNames__c</name>
+</CustomFieldTranslation>

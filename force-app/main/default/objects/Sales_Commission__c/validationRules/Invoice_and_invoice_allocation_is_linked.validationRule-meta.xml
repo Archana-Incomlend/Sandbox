@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_and_invoice_allocation_is_linked</fullName>
+    <active>true</active>
+    <errorConditionFormula>Invoice_Allocation__c != null &amp;&amp; Invoice_Finance_Deal__c != null &amp;&amp; Invoice_Finance_Deal__c != Invoice_Allocation__r.Invoice__c</errorConditionFormula>
+    <errorDisplayField>Invoice_Finance_Deal__c</errorDisplayField>
+    <errorMessage>Invoice and Invoice Allocation mismatch</errorMessage>
+</ValidationRule>

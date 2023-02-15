@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funders_with_EUR2</fullName>
+    <columns>discount_profit_share_percent__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>EUR_available_eWallet__c</columns>
+    <columns>USD_eWallet_Balance__c</columns>
+    <columns>HKD_Available_eWallet__c</columns>
+    <columns>SGD_Available_eWallet__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Customer</value>
+    </filters>
+    <filters>
+        <field>Sub_type__c</field>
+        <operation>equals</operation>
+        <value>Purchaser</value>
+    </filters>
+    <filters>
+        <field>onboarded__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>EUR_available_eWallet__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <label>_Funders with EUR</label>
+</ListView>

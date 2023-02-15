@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningBolt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <category>FinancialServices</category>
+    <lightningBoltFeatures>
+        <order>1</order>
+        <title>Incomlend Trade Finance</title>
+    </lightningBoltFeatures>
+    <lightningBoltFeatures>
+        <order>2</order>
+        <title>Report</title>
+    </lightningBoltFeatures>
+    <lightningBoltFeatures>
+        <order>3</order>
+        <title>Dashboard</title>
+    </lightningBoltFeatures>
+    <lightningBoltImages>
+        <image>Fasanara_logo_transparent</image>
+        <order>1</order>
+    </lightningBoltImages>
+    <lightningBoltImages>
+        <image>Incomlend_Logo_CMYK_Horizontal</image>
+        <order>2</order>
+    </lightningBoltImages>
+    <lightningBoltItems>
+        <name>invoice_finance</name>
+        <type>CustomApplication</type>
+    </lightningBoltItems>
+    <masterLabel>Incomlend Trade Finance</masterLabel>
+    <publisher>Fasanara</publisher>
+    <summary>Onboarding module and Trade dashboard</summary>
+</LightningBolt>

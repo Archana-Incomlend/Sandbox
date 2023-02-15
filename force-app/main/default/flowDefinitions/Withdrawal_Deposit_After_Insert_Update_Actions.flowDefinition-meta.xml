@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Migrated from Workflow and Process Builder to Flow.
+1. Comments Bank Account
+2. Trustee DW update trustee</description>
+    <masterLabel>In-Active Migrate Withdrawal Deposit - After Insert/ Update Actions</masterLabel>
+</FlowDefinition>

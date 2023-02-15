@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FX_Amount_USD__c</fullName>
+    <externalId>false</externalId>
+    <formula>if ( isPickVal(CCY__c, &apos;USD&apos;), amount__c, if (isBlank(FX_Contract__c), null, FX_Rate_Auto__c * amount__c))</formula>
+    <label>FX Amount USD</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Supplier Buyer Map</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Supplier Buyer Maps</value>
+    </caseValues>
+    <layouts>
+        <layout>Credit Committee View</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>External Auditor</layout>
+        <sections>
+            <label></label>
+            <section>Agent (sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Buyer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Product information (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>External Layout</layout>
+        <sections>
+            <label></label>
+            <section>Buyer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Commite and Risk Assessment Visit</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Insurance Coverage</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Verification Details (Legal, Risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Legal Notes (Legal)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Overdue Invoice Processes</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Product information (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Relationship details (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Risk Mitigation Details (risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>First Evaluation View</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Funders View</layout>
+        <sections>
+            <label></label>
+            <section>Buyer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Insurance Coverage</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Legal Notes (Legal)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Overdue</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Product information (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Rates</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Relationship details (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Risk Mitigation Details (risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Legal View</layout>
+        <sections>
+            <label></label>
+            <section>Buyer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Commite and Risk Assessment Visit</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Insurance Coverage</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Verification Details (Legal, Risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Legal Notes (Legal)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Overdue Invoice Processes</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Product information (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Relationship details (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Risk Mitigation Details (risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Risk View</layout>
+        <sections>
+            <label></label>
+            <section>Buyer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Commite and Risk Assessment Visit</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Insurance Coverage</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Verification Details (Legal, Risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Legal Notes (Legal)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Overdue Invoice Processes</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Product information (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Relationship details (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Risk Mitigation Details (risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Sales View</layout>
+        <sections>
+            <label></label>
+            <section>Buyer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Commite and Risk Assessment Visit</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Insurance Coverage</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Verification Details (Legal, Risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Legal Notes (Legal)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Overdue Invoice Processes</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Product information (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Relationship details (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Risk Mitigation Details (risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Supplier Buyer Map Layout</layout>
+        <sections>
+            <label></label>
+            <section>ARPA</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Agent (sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Buyer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Buyer Insurance Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Commite and Risk Assessment Visit</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Exposure for this map (Risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Insurance Coverage</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Discount rate &amp; fees (sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>DocuSign Document Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Insurance Details (Risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Insurance Instalment</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Statistics (All Time)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Stats</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Verification Details (Legal, Risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>LCLITE</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Legal Notes (Legal)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Listing Restrictions (Risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Onboarding Details (Operations)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Onboarding Outlook</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Overdue Invoice Processes</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Product information (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Projected Statistics (calculated)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Relationship details (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Risk Mitigation Details (risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Sales Conditions ( Sales )</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Sales Zone Split</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Special Insurance Notes (sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Trustee-Camelot</layout>
+        <sections>
+            <label></label>
+            <section>ARPA</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Agent (sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Buyer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Buyer Insurance Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Commite and Risk Assessment Visit</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Insurance Coverage</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>DocuSign Document Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Insurance Details (Risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Statistics (All Time)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Stats</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice Verification Details (Legal, Risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Listing Restrictions (Risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Onboarding Details (Operations)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Overdue Invoice Processes</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Product information (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Relationship details (Sales)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Risk Mitigation Details (risk)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Sales Zone Split</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Supplier</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Extern</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Funders</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Legal</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Operations</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Risk</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Sales</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Supplier_Buyer_Map</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Trustee_Camelot</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Buyer_is_not_changed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Minimum_Spread_Rules</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Required_Transwap_Bank_Account_Info</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Supplier_is_not_changed</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>Generate_Arzak_QFM_BC</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Generate_Consolidated_NOA</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Google_Search</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Send_Via_DocuSign</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Update_Trustee</name>
+    </webLinks>
+    <workflowTasks>
+        <description></description>
+        <name>Credit_committee_approval</name>
+        <subject></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

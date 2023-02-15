@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>deposits_and_withdrawals_all</fullName>
+    <columns>NAME</columns>
+    <columns>External_Reference_Number__c</columns>
+    <columns>Account__c</columns>
+    <columns>Type__c</columns>
+    <columns>Amount__c</columns>
+    <columns>CCY__c</columns>
+    <columns>Effective_Date__c</columns>
+    <columns>notes__c</columns>
+    <columns>Status__c</columns>
+    <columns>Trustee_Approved__c</columns>
+    <columns>Withdrawal_Deposit_Unique_Index__c</columns>
+    <columns>Withdrawal_Deposit__c</columns>
+    <columns>eWallet__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>80.Withdrawal,70.Deposit,90.Bank Fees</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </filters>
+    <label>deposits and withdrawals - all</label>
+</ListView>

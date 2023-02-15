@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agent_Commission_Null__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>if the agent commission is Null it is checked ( used for % sales commission rules)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if the Agent commission is null for this map</inlineHelpText>
+    <label>Agent Commission Null</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

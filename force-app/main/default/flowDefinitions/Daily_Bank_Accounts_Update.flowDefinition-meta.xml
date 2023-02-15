@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>5</activeVersionNumber>
+    <description>Create the daily reconciliation daily , done by Amicorp since 04/2018 , No in use anymore but may be automated with an API with DBS</description>
+    <masterLabel>Daily Bank Accounts Update</masterLabel>
+</FlowDefinition>

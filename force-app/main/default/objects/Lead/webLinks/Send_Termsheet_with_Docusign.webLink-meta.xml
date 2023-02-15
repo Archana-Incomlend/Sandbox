@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Termsheet_with_Docusign</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Send Termsheet with Docusign</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/dsfs__DocuSign_createEnvelope?SourceID={!Lead.Id}&amp;CES=&apos;Termsheet for your DocuSign Signature&apos;&amp;CEM=&apos;I am sending you this request for your electronic signature for the termsheet, please review and electronically sign by following the link below.&apos;</url>
+</WebLink>

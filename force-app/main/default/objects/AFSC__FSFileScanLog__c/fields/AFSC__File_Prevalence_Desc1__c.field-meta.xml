@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AFSC__File_Prevalence_Desc1__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(AFSC__File_Reputation_Rating__c),&apos;Unknown&apos;,
+IF(AFSC__File_Prevalence__c = 0, &quot;Unknown&quot;,
+IF(AFSC__File_Prevalence__c &lt; 10, &quot;Unique&quot;,
+IF(AFSC__File_Prevalence__c &lt; 30, &quot;Very rare&quot;,
+IF(AFSC__File_Prevalence__c &lt; 50, &quot;Rare&quot;,
+IF(AFSC__File_Prevalence__c &lt; 80, &quot;Common&quot;,
+IF(AFSC__File_Prevalence__c &lt; 100, &quot;Very common&quot;,
+&quot;Universal&quot;
+)
+)
+)
+)
+)
+)
+)</formula>
+    <label>File Prevalence</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

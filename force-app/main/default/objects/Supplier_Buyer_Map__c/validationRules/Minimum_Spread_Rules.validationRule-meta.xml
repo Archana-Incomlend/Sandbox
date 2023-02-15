@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Minimum_Spread_Rules</fullName>
+    <active>true</active>
+    <description>To respect a minumum spread</description>
+    <errorConditionFormula>Funder_Discount_Rate__c  &gt;=  Funder_Discount_Rate_Maximum__c</errorConditionFormula>
+    <errorDisplayField>Funder_Discount_Rate__c</errorDisplayField>
+    <errorMessage>The Amount of the Funder Discount Rate is too high, Reduce it or increase the Supplier Discount rate</errorMessage>
+</ValidationRule>

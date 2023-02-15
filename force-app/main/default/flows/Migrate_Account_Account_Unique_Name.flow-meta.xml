@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <description>Migrated from the workflow - account unique name</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AccountUniquename</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Name}  + &apos; : &apos; + TEXT({!$Record.Type}) + &apos; : &apos; + TEXT({!$Record.Sub_type__c})</expression>
+    </formulas>
+    <interviewLabel>Migrate Account - Account Unique Name {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Account - Account Unique Name</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Account_Unique_Name</name>
+        <label>Update Account Unique Name</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <inputAssignments>
+            <field>Account_Name_for_unique_index__c</field>
+            <value>
+                <elementReference>AccountUniquename</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Account_Unique_Name</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterFormula>! {!$Setup.ICL_Settings__c.Disable_Migrate_Flow__c} &amp;&amp; ( {!$Record.Name}  &amp; &apos; : &apos; &amp; TEXT({!$Record.Type}) &amp; &apos; : &apos; &amp; TEXT({!$Record.Sub_type__c}) &lt;&gt; {!$Record.Account_Name_for_unique_index__c}  )</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <triggerOrder>500</triggerOrder>
+</Flow>

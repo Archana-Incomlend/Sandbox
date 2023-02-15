@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Migrated from the workflow
+1. Activate external View
+2. Factoring View
+3. Reverse Factoring View
+4. Ready for posting
+5. Waiting for Allications date</description>
+    <masterLabel>In-Active Migrate Invoice Finance Deal - Fast Field Update Action</masterLabel>
+</FlowDefinition>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supplier_annual_revenue__c</fullName>
+    <description>Supplier Annual Revenue USD</description>
+    <externalId>false</externalId>
+    <formula>Supplier_Buyer_Map__r.Supplier_Annual_Revenue__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Supplier Annual Revenue USD</inlineHelpText>
+    <label>Supplier annual revenue</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

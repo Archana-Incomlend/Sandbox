@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_zone__c</fullName>
+    <description>to check if Supplier zone % or % buyer Zone is empty</description>
+    <externalId>false</externalId>
+    <formula>IF(
+OR (
+ISBLANK(  Buyer_Sales_Zone__c  ),
+ISBLANK(   Supplier_Zone__c )),
+FALSE, TRUE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>to check if Supplier zone % or % buyer Zone is empty</inlineHelpText>
+    <label>Sales zone %</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_Repayments_in_14_Days</fullName>
+    <columns>NAME</columns>
+    <columns>Expected_Payment_Date__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>supplier_del__c</columns>
+    <columns>buyer__c</columns>
+    <columns>Real_Face_Value__c</columns>
+    <columns>requested_amount__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Expected_Payment_Date__c</field>
+        <operation>equals</operation>
+        <value>NEXT_N_DAYS:14</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Progress</value>
+    </filters>
+    <label>Invoices Which Are Due in Next 14 days</label>
+</ListView>

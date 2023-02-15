@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>due_date_delta_bucket__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF((0 &gt; due_date_delta__c &amp;&amp; due_date_delta__c &gt; -8), &apos;06. Overdue 1-7&apos;, 
+IF((-7 &gt; due_date_delta__c &amp;&amp; due_date_delta__c &gt; -15), &apos;07. Overdue 8-14&apos;, 
+IF((-14 &gt; due_date_delta__c &amp;&amp; due_date_delta__c &gt; -31), &apos;08. Overdue 15-30&apos;, 
+IF((-30 &gt; due_date_delta__c &amp;&amp; due_date_delta__c &gt; -60), &apos;09. Overdue 31-59&apos;, 
+IF((due_date_delta__c = -60 || -60 &gt; due_date_delta__c), &apos;10. Overdue 60+&apos;, 
+IF(((due_date_delta__c = 0 || 0 &lt; due_date_delta__c) &amp;&amp; due_date_delta__c &lt; 8), &apos;01. Due 0-7&apos;, 
+IF((7 &lt; due_date_delta__c &amp;&amp; due_date_delta__c &lt; 15), &apos;02. Due 8-14&apos;, 
+IF((14 &lt; due_date_delta__c &amp;&amp; due_date_delta__c &lt; 31), &apos;03. Due 15-30&apos;, 
+IF((30 &lt; due_date_delta__c &amp;&amp; due_date_delta__c &lt; 60), &apos;04. Due 31-59&apos;, 
+IF((60 &lt; due_date_delta__c || due_date_delta__c = 60), &apos;05. Due 60+&apos;, 
+NULL))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>due date delta bucket</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

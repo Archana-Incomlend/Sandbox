@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__File_Prevalence_Desc__c</name>
+    <picklistValues>
+        <masterLabel>Common</masterLabel>
+        <translation>共通</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rare</masterLabel>
+        <translation>希少</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unique</masterLabel>
+        <translation>珍しい</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Universal</masterLabel>
+        <translation>一般的</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unknown</masterLabel>
+        <translation>不明</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Very common</masterLabel>
+        <translation>よくある</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Very rare</masterLabel>
+        <translation>非常に稀</translation>
+    </picklistValues>
+</CustomFieldTranslation>

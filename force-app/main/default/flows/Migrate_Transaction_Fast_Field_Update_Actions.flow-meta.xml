@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>Is_New</name>
+        <label>Is New</label>
+        <locationX>336</locationX>
+        <locationY>311</locationY>
+        <defaultConnector>
+            <targetReference>Primary_Contact1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_New2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Market_place_for_SGD_not_null</targetReference>
+            </connector>
+            <label>Is New</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Market_place_for_SGD_not_null</name>
+        <label>Market place for SGD not null</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Update_Transaction_Field_Values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Marketplace_for_SGD_not_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account__r.Marketplace_for_SGD_FX_rate__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Amount__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Amount__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Transaction_Field_Values_0</targetReference>
+            </connector>
+            <label>Marketplace for SGD not null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Primary_Contact1</name>
+        <label>Primary Contact</label>
+        <locationX>336</locationX>
+        <locationY>983</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Primary_Contact</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Funder_First_contact_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>PrimaryContactEmail</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Customer_First_contact_Email</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Primary Contact</label>
+        </rules>
+    </decisions>
+    <description>Migration from the Workflow
+1	Update Customer Email
+2	update SGD amount
+3	Update Transaction Field Values</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>amount_USD_Equiv</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.Amount__c} *
+case ( {!$Record.CCY__c},&apos;USD&apos;,1,
+              &apos;EUR&apos;, {!$Record.Account__r.Marketplace_for_EUR_FX_rate__r.latest_to_usd_rate__c} ,
+              &apos;SGD&apos;, {!$Record.Account__r.Marketplace_for_SGD_FX_rate__r.latest_to_usd_rate__c} ,
+              &apos;GBP&apos;, {!$Record.Account__r.Marketplace_for_GBP_FX_rate__r.latest_to_usd_rate__c} ,
+              &apos;HKD&apos;, (1/7.8),
+              0
+     )</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>AmountSGDequiv</name>
+        <dataType>Number</dataType>
+        <expression>{!amount_USD_Equiv} * 1 / {!$Record.Account__r.Marketplace_for_SGD_FX_rate__r.latest_to_usd_rate__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>IsNew</name>
+        <dataType>Boolean</dataType>
+        <expression>IsNew()</expression>
+    </formulas>
+    <formulas>
+        <name>PrimaryContactEmail</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Account__r.Primary_Contact__r.Email}</expression>
+    </formulas>
+    <interviewLabel>Migrate Transaction - Fast Field Update Actions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Transaction - Fast Field Update Actions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Customer_First_contact_Email</name>
+        <label>Update Customer First contact Email</label>
+        <locationX>204</locationX>
+        <locationY>1103</locationY>
+        <inputAssignments>
+            <field>Funder_First_contact_Email__c</field>
+            <value>
+                <elementReference>PrimaryContactEmail</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Transaction_Field_Values</name>
+        <label>Update Transaction Field Values</label>
+        <locationX>182</locationX>
+        <locationY>767</locationY>
+        <connector>
+            <targetReference>Primary_Contact1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Amount__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Value_E_wallet_after_transaction_created__c</field>
+            <value>
+                <elementReference>$Record.eWallet__r.Balance__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Transaction_Field_Values_0</name>
+        <label>Update Amount SGD equiv</label>
+        <locationX>50</locationX>
+        <locationY>551</locationY>
+        <connector>
+            <targetReference>Update_Transaction_Field_Values</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Amount_SGD_equiv__c</field>
+            <value>
+                <elementReference>AmountSGDequiv</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>210</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_New</targetReference>
+        </connector>
+        <object>Transaction__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

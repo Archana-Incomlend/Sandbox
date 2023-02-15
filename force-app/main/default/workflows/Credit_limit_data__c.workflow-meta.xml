@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Buyer_Name</fullName>
+        <field>Buyer_Account_Name__c</field>
+        <formula>Supplier_Buyer_Map__r.Buyer__r.Name</formula>
+        <name>Buyer Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Credit_limit_requested</fullName>
+        <description>pick the value from the Map to put it in the Credit limit data</description>
+        <field>Credit_Limit_requested__c</field>
+        <formula>Supplier_Buyer_Map__r.CL_Limit_requested_for_this_Map__c</formula>
+        <name>Credit limit requested</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status</fullName>
+        <description>Status</description>
+        <field>Status__c</field>
+        <literalValue>Active</literalValue>
+        <name>Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Cl_Avalaible_for_calcul</fullName>
+        <description>Update the CL availabke for calculation of the CL Remaining on the Buyer account</description>
+        <field>Credit_Limit_Avalaible_2__c</field>
+        <formula>Credit_Limit_Available__c</formula>
+        <name>Update Cl Avalaible for calcul</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>credit_Limit_incomlend</fullName>
+        <description>Credit Limit Incomlend from the Map</description>
+        <field>Credit_Limit_Incomlend__c</field>
+        <formula>Supplier_Buyer_Map__r.CL_Incomlend_for_this_Map__c</formula>
+        <name>credit Limit incomlend</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>credit_limit_available</fullName>
+        <field>Credit_Limit_Avalaible_2__c</field>
+        <formula>Credit_Limit_Incomlend__c</formula>
+        <name>credit limit available</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>credit_limit_available_3</fullName>
+        <field>Credit_Limit_Avalaible_2__c</field>
+        <formula>Credit_Limit_Available__c  -  Total_Funded_Amount_In_pro_prelist__c</formula>
+        <name>credit limit available 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>credit_limit_available_6</fullName>
+        <field>Credit_Limit_Avalaible_2__c</field>
+        <formula>Credit_Limit_Available__c</formula>
+        <name>credit limit available 6</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>credit_limit_available_from_map</fullName>
+        <description>Credit limit available from map</description>
+        <field>Credit_Limit_Avalaible_2__c</field>
+        <formula>Supplier_Buyer_Map__r.Credit_Limit_Avalaible__c</formula>
+        <name>credit limit available from map</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>insurer_name</fullName>
+        <description>from map insurer name</description>
+        <field>Insurer_Name__c</field>
+        <formula>Supplier_buye_Map__r.Buyer_Insured_By__c</formula>
+        <name>insurer name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update Credit Limit data</fullName>
+        <actions>
+            <name>Buyer_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Credit_limit_requested</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Cl_Avalaible_for_calcul</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>credit_Limit_incomlend</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>credit_limit_available_from_map</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>insurer_name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Buyer_Owner__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>copy everything from map, in Credit limit data, Not in use anymore</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

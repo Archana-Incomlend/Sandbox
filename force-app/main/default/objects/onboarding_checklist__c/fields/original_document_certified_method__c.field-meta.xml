@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>original_document_certified_method__c</fullName>
+    <externalId>false</externalId>
+    <label>original document certified method</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Incomlend Director Face to Face</fullName>
+                <default>false</default>
+                <label>Incomlend Director Face to Face</label>
+            </value>
+            <value>
+                <fullName>Incomlend other Face to Face</fullName>
+                <default>false</default>
+                <label>Incomlend other Face to Face</label>
+            </value>
+            <value>
+                <fullName>Incomlend Director video call</fullName>
+                <default>false</default>
+                <label>Incomlend Director video call</label>
+            </value>
+            <value>
+                <fullName>Incomlend other video call</fullName>
+                <default>false</default>
+                <label>Incomlend other video call</label>
+            </value>
+            <value>
+                <fullName>agent face to face</fullName>
+                <default>false</default>
+                <label>agent face to face</label>
+            </value>
+            <value>
+                <fullName>agent video call</fullName>
+                <default>false</default>
+                <label>agent video call</label>
+            </value>
+            <value>
+                <fullName>CPA</fullName>
+                <default>false</default>
+                <label>CPA</label>
+            </value>
+            <value>
+                <fullName>embassy</fullName>
+                <default>false</default>
+                <label>embassy</label>
+            </value>
+            <value>
+                <fullName>police</fullName>
+                <default>false</default>
+                <label>police</label>
+            </value>
+            <value>
+                <fullName>lawyer</fullName>
+                <default>false</default>
+                <label>lawyer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

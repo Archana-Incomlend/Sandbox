@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Reputation_Desc__c</name>
+    <picklistValues>
+        <masterLabel>Malicious</masterLabel>
+        <translation>Malveillant</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not available</masterLabel>
+        <translation>Non disponible</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Safe</masterLabel>
+        <translation>Sûr(e)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Suspicious</masterLabel>
+        <translation>Suspect</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trusted</masterLabel>
+        <translation>Sites de confiance</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unknown</masterLabel>
+        <translation>Inconnu</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unsafe</masterLabel>
+        <translation>Non sûr</translation>
+    </picklistValues>
+</CustomFieldTranslation>

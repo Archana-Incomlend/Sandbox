@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Limit_Available__c</fullName>
+    <description>Credit Limit Available for this Map</description>
+    <externalId>false</externalId>
+    <formula>(Credit_Limit_Incomlend__c *90)/100 - Supplier_Buyer_Map__r.Funded_amount_in_progress_prelisting__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Calculated</inlineHelpText>
+    <label>Credit Limit Available for This Map</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

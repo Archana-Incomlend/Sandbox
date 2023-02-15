@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_calculated__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(text(Source__c)= &apos;Facebook&apos;,&apos;Digital Marketing&apos;,
+if( isblank(Incomlend_Lead__r.calculated_source__c) = true,  
+if( Agent__r.Name &lt;&gt; &apos;Incomlend - agent&apos;, &apos;Broker&apos;, text(Source__c)) , Incomlend_Lead__r.calculated_source__c)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Source - calculated</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

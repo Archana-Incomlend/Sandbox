@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funded_waiting_for_fund_distribution</fullName>
+    <columns>NAME</columns>
+    <columns>RBS_loan_ID__c</columns>
+    <columns>Status__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>discount_rate__c</columns>
+    <columns>CCY__c</columns>
+    <columns>requested_amount__c</columns>
+    <columns>funded_amount__c</columns>
+    <columns>Percentage_of_requested_amount_Funded__c</columns>
+    <columns>Listing_End__c</columns>
+    <columns>financing_period_for_calcs__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Funded - waiting for fund distribution to supplier</value>
+    </filters>
+    <label>Funded - waiting for fund distribution</label>
+</ListView>

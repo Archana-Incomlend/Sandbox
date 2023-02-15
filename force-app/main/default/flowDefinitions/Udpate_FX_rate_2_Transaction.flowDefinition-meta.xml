@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>17</activeVersionNumber>
+    <description>evolution for update Transaction when FX is Created add automatic update of amount USD Equiv daily FX, evolution to avoid to many SQL query mistake, add a subflow for batch processing limit 25</description>
+    <masterLabel>Udpate FX rate 2 Transaction</masterLabel>
+</FlowDefinition>

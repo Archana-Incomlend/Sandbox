@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accounting_Actual_Tenor__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( TEXT(Phase__c )= &quot;3:IN PROGRESS&quot;, TODAY() -  advance_send_to_supplier_date__c , Actual_Repayment_Received_Date__c - advance_send_to_supplier_date__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Accounting  Actual Tenor (Din)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

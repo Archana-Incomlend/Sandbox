@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>01.Invoice Purchase</fullName>
+                <default>false</default>
+                <label>01.Invoice Purchase</label>
+            </value>
+            <value>
+                <fullName>02.Invoice Advance Amount</fullName>
+                <default>false</default>
+                <label>02.Invoice Advance Amount</label>
+            </value>
+            <value>
+                <fullName>03.Invoice Repayment</fullName>
+                <default>false</default>
+                <label>03.Invoice Repayment</label>
+            </value>
+            <value>
+                <fullName>031.Partial Payment Topup</fullName>
+                <default>false</default>
+                <label>031.Partial Payment Topup</label>
+            </value>
+            <value>
+                <fullName>032.Partial Payment reimbursement</fullName>
+                <default>false</default>
+                <label>032.Partial Payment reimbursement</label>
+            </value>
+            <value>
+                <fullName>04.Invoice Capital Repayment</fullName>
+                <default>false</default>
+                <label>04.Invoice Capital Repayment</label>
+            </value>
+            <value>
+                <fullName>05.Invoice Discount Amount</fullName>
+                <default>false</default>
+                <label>05.Invoice Discount Amount</label>
+            </value>
+            <value>
+                <fullName>051.Agent Commission on Discount Amount</fullName>
+                <default>false</default>
+                <label>051.Agent Commission on Discount Amount</label>
+            </value>
+            <value>
+                <fullName>052.discount amount fees</fullName>
+                <default>false</default>
+                <label>052.discount amount fees</label>
+            </value>
+            <value>
+                <fullName>053.discount amount fees overdue</fullName>
+                <default>false</default>
+                <label>053.discount amount fees overdue</label>
+            </value>
+            <value>
+                <fullName>053.Master Agent Commission on Discount Amount</fullName>
+                <default>false</default>
+                <label>053.Master Agent Commission on Discount Amount</label>
+            </value>
+            <value>
+                <fullName>054.Invoice Discount Amount Overdue</fullName>
+                <default>false</default>
+                <label>054.Invoice Discount Amount Overdue</label>
+            </value>
+            <value>
+                <fullName>06.Transaction Fee</fullName>
+                <default>false</default>
+                <label>06.Transaction Fee</label>
+            </value>
+            <value>
+                <fullName>061.Agent Commission on Transaction Fee</fullName>
+                <default>false</default>
+                <label>061.Origination Agent Commission</label>
+            </value>
+            <value>
+                <fullName>062.Transaction Fees overdue</fullName>
+                <default>false</default>
+                <label>062.Transaction Fees overdue</label>
+            </value>
+            <value>
+                <fullName>07.Credit Insurance</fullName>
+                <default>false</default>
+                <label>07.Credit Insurance</label>
+            </value>
+            <value>
+                <fullName>08.Invoice Balance Payment</fullName>
+                <default>false</default>
+                <label>08.Invoice Balance Payment</label>
+            </value>
+            <value>
+                <fullName>09.GST transaction</fullName>
+                <default>false</default>
+                <label>09.GST transaction</label>
+            </value>
+            <value>
+                <fullName>20.Legal fees</fullName>
+                <default>false</default>
+                <label>20.Legal fees</label>
+            </value>
+            <value>
+                <fullName>60.Intra-transfer</fullName>
+                <default>false</default>
+                <label>60.Intra-transfer</label>
+            </value>
+            <value>
+                <fullName>70.Deposit</fullName>
+                <default>false</default>
+                <label>70.Deposit</label>
+            </value>
+            <value>
+                <fullName>80.Withdrawal</fullName>
+                <default>false</default>
+                <label>80.Withdrawal</label>
+            </value>
+            <value>
+                <fullName>88.Annual membership fee</fullName>
+                <default>false</default>
+                <label>88.Annual membership fee</label>
+            </value>
+            <value>
+                <fullName>89.Maintenance fee</fullName>
+                <default>false</default>
+                <label>89.Maintenance fee</label>
+            </value>
+            <value>
+                <fullName>888.Additional buyer onboarding fee</fullName>
+                <default>false</default>
+                <label>888.Additional buyer onboarding fee</label>
+            </value>
+            <value>
+                <fullName>90.Bank Fees</fullName>
+                <default>false</default>
+                <label>90.Bank Fees</label>
+            </value>
+            <value>
+                <fullName>99.Adjustment</fullName>
+                <default>false</default>
+                <label>99.Adjustment</label>
+            </value>
+            <value>
+                <fullName>999. Past balance of archived transactions</fullName>
+                <default>false</default>
+                <label>999. Past balance of archived transactions</label>
+            </value>
+            <value>
+                <fullName>01.Invoice Purchase (Tr)</fullName>
+                <default>false</default>
+                <label>01.Invoice Purchase (Tr)</label>
+            </value>
+            <value>
+                <fullName>04.Invoice Capital Repayment (Tr)</fullName>
+                <default>false</default>
+                <label>04.Invoice Capital Repayment (Tr)</label>
+            </value>
+            <value>
+                <fullName>05.Invoice Discount Amount (Tr)</fullName>
+                <default>false</default>
+                <label>05.Invoice Discount Amount (Tr)</label>
+            </value>
+            <value>
+                <fullName>054.Invoice Discount Amount Overdue (Tr)</fullName>
+                <default>false</default>
+                <label>054.Invoice Discount Amount Overdue (Tr)</label>
+            </value>
+            <value>
+                <fullName>70.Deposit (Tr)</fullName>
+                <default>false</default>
+                <label>70.Deposit (Tr)</label>
+            </value>
+            <value>
+                <fullName>80.Withdrawal (Tr)</fullName>
+                <default>false</default>
+                <label>80.Withdrawal (Tr)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

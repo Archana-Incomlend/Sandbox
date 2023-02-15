@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_be_purchaser</fullName>
+    <active>false</active>
+    <description>To be checked, the Account type must be a Purchaser (company or individual).</description>
+    <errorConditionFormula>Subscribed_To_Trade_Alerts__c = True
+ &amp;&amp; 
+Account_type__c   &lt;&gt;  &apos;Purchaser_company&apos;
+  &amp;&amp;  
+Account_type__c   &lt;&gt;  &apos;Purchaser_individual&apos;</errorConditionFormula>
+    <errorDisplayField>Subscribed_To_Trade_Alerts__c</errorDisplayField>
+    <errorMessage>Account type is not a Purchaser (company or individual).</errorMessage>
+</ValidationRule>

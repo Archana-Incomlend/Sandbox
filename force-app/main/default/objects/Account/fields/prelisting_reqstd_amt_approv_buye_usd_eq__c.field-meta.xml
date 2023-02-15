@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>prelisting_reqstd_amt_approv_buye_usd_eq__c</fullName>
+    <description>Created by Rollup Helper</description>
+    <externalId>false</externalId>
+    <label>prelisting reqst amt buyer confrm usd eq</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

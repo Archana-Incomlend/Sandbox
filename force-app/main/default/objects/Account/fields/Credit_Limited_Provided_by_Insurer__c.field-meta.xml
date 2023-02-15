@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Limited_Provided_by_Insurer__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Credit limit answer provide by the insurer for this Buyer</inlineHelpText>
+    <label>Credit Limited Provided by Insurer</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

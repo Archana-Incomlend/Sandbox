@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deposits_Not_Processed__c</fullName>
+    <externalId>false</externalId>
+    <label>Deposits Not Processed</label>
+    <summarizedField>Withdrawal_Deposit__c.Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Withdrawal_Deposit__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Not Processed</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Withdrawal_Deposit__c.Type__c</field>
+        <operation>equals</operation>
+        <value>70.Deposit</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Withdrawal_Deposit__c.eWallet__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <description>Copy the Balance to Balance check in Invoice, ( maintenance flow)</description>
+    <interviewLabel>Update Ewallet Balance Check {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Maintenance Update Ewallet Balance Check</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>get_e_wallet</name>
+        <label>get e-wallet</label>
+        <locationX>311</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>update_e_wallet</targetReference>
+        </connector>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>eWallet__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>update_e_wallet</name>
+        <label>update e-wallet</label>
+        <locationX>636</locationX>
+        <locationY>49</locationY>
+        <inputReference>get_e_wallet</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>get_e_wallet</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+</Flow>

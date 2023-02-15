@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Actions_Complete__c</fullName>
+    <externalId>false</externalId>
+    <label>Onboarding Actions Complete</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1	Pitch prospect</fullName>
+                <default>false</default>
+                <label>1	Pitch prospect</label>
+            </value>
+            <value>
+                <fullName>1	Send invite to register</fullName>
+                <default>false</default>
+                <label>1	Send invite to register</label>
+            </value>
+            <value>
+                <fullName>2	Reminder to fill in Registration Form</fullName>
+                <default>false</default>
+                <label>2	Reminder to fill in Registration Form</label>
+            </value>
+            <value>
+                <fullName>2	Reminder to finalize Submission</fullName>
+                <default>false</default>
+                <label>2	Reminder to finalize Submission</label>
+            </value>
+            <value>
+                <fullName>2	Assist in form fill in</fullName>
+                <default>false</default>
+                <label>2	Assist in form fill in</label>
+            </value>
+            <value>
+                <fullName>2	Detailed Form Submitted</fullName>
+                <default>false</default>
+                <label>2	Detailed Form Submitted</label>
+            </value>
+            <value>
+                <fullName>3	Set up doc certification meeting</fullName>
+                <default>false</default>
+                <label>3	Set up doc certification meeting</label>
+            </value>
+            <value>
+                <fullName>3	Sign sighted originals</fullName>
+                <default>false</default>
+                <label>3	Sign sighted originals</label>
+            </value>
+            <value>
+                <fullName>3	Obtain appropriate docs</fullName>
+                <default>false</default>
+                <label>3	Obtain appropriate docs</label>
+            </value>
+            <value>
+                <fullName>4	Perform KYC checks</fullName>
+                <default>false</default>
+                <label>4	Perform KYC checks</label>
+            </value>
+            <value>
+                <fullName>4	Obtain appropriate docs</fullName>
+                <default>false</default>
+                <label>4	Obtain appropriate docs</label>
+            </value>
+            <value>
+                <fullName>5	Remind Directors to approve</fullName>
+                <default>false</default>
+                <label>5	Remind Directors to approve</label>
+            </value>
+            <value>
+                <fullName>5	Remind Trustee to approve</fullName>
+                <default>false</default>
+                <label>5	Remind Trustee to approve</label>
+            </value>
+            <value>
+                <fullName>6	Create user accounts and accesses</fullName>
+                <default>false</default>
+                <label>6	Create user accounts and accesses</label>
+            </value>
+            <value>
+                <fullName>6	Send Onboarding email</fullName>
+                <default>false</default>
+                <label>6	Send Onboarding email</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

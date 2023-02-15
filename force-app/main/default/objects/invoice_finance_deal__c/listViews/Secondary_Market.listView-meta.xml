@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Secondary_Market</fullName>
+    <columns>NAME</columns>
+    <columns>buyer__c</columns>
+    <columns>advance_amount_usd_equiv__c</columns>
+    <columns>Display_on_Secondary_Marketplace__c</columns>
+    <columns>discount_rate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Display_on_Secondary_Marketplace__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>invoice_finance_deal__c.Pricing_V2_2018</value>
+    </filters>
+    <label>Secondary Market</label>
+    <sharedTo>
+        <group>Group_Funding</group>
+        <group>Operation</group>
+    </sharedTo>
+</ListView>

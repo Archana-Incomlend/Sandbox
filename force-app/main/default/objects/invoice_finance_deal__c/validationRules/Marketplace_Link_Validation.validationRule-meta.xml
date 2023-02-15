@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketplace_Link_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( RecordType.DeveloperName == &apos;Passthrough_Record&apos; &amp;&amp; (ISNULL(Marketplace_link__c) || ISBLANK(Marketplace_link__c) ), True, False)</errorConditionFormula>
+    <errorDisplayField>Marketplace_link__c</errorDisplayField>
+    <errorMessage>Please enter valid marketplace link.</errorMessage>
+</ValidationRule>

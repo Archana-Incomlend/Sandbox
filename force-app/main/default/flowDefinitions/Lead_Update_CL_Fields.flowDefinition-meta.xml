@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Update CL related fields, Create new sales opportunity and create task according to CL approval and rejection and Reapply Atradius Origination</description>
+    <masterLabel>In-Active Migrate Lead - Update CL Fields, Create new Sales Opportunity, Reapply Atradius Origination</masterLabel>
+</FlowDefinition>

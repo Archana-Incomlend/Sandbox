@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Document_Type__c</fullName>
+    <description>Document Type for The Map</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Document Type for The Map</inlineHelpText>
+    <label>Document Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>RPA</fullName>
+                <default>false</default>
+                <label>ARPA</label>
+            </value>
+            <value>
+                <fullName>PSA</fullName>
+                <default>false</default>
+                <label>PSA</label>
+            </value>
+            <value>
+                <fullName>Term Sheet</fullName>
+                <default>false</default>
+                <label>Term Sheet</label>
+            </value>
+            <value>
+                <fullName>Credit Committee Report</fullName>
+                <default>false</default>
+                <label>Credit Committee Report</label>
+            </value>
+            <value>
+                <fullName>Buyer/Supplier Notification Letter</fullName>
+                <default>false</default>
+                <label>Buyer/Supplier Notification Letter</label>
+            </value>
+            <value>
+                <fullName>Offer of Invoice Financing</fullName>
+                <default>false</default>
+                <label>Offer of Invoice Financing</label>
+            </value>
+            <value>
+                <fullName>Trade Documents</fullName>
+                <default>false</default>
+                <label>Trade Documents</label>
+            </value>
+            <value>
+                <fullName>GTC</fullName>
+                <default>false</default>
+                <label>GTC</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

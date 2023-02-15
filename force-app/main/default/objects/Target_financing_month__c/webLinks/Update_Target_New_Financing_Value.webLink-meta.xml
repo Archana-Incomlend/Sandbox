@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Target_New_Financing_Value</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Update Target New Financing Value</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/51.0/connection.js&quot;)}
+var obj = new sforce.SObject(&quot;Target_financing_month__c&quot;);
+obj.Id = &apos;{!Target_financing_month__c.Id}&apos;;
+obj.New_invoice_Value__c = -1;
+
+var result = sforce.connection.update([obj]);
+if (result[0].getBoolean(&quot;success&quot;)) window.location.reload();
+else alert(&apos;Error: &apos; + result);</url>
+</WebLink>

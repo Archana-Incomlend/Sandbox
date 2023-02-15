@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>calculated_source__c</fullName>
+    <externalId>false</externalId>
+    <formula>if (text(Source__c)=  &apos;Direct Sales - Own Network&apos;, &apos;Direct Sales - own network&apos;,
+ if( isblank(marketing_tracking_ID__c) = false, &apos;Digital Marketing&apos;, text(Source__c) )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>calculated source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>fxRateToInvoice</name>
+        <label>fxRateToInvoice</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <actionName>PopulateInvoiceFxRateController</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>fxRateToTransaction</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fxRate</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>fxRateToTransaction</name>
+        <label>fxRateToTransaction</label>
+        <locationX>50</locationX>
+        <locationY>575</locationY>
+        <actionName>PopulateTransactionFxRateController</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fxRate</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>Check_CCY</name>
+        <label>Check CCY</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CCY_not_USD</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.from_currency__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>USD</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.from_currency__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>XXX</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>fxRateToInvoice</targetReference>
+            </connector>
+            <label>CCY not USD</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the Process Builder
+1. FX rate invoice&amp;transaction</description>
+    <interviewLabel>FX Rates - After Insert Actions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate FX Rates - After Insert Actions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_CCY</targetReference>
+        </connector>
+        <object>FX_Rates__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

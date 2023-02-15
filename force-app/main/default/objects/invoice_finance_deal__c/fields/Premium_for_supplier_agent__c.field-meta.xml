@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Premium_for_supplier_agent__c</fullName>
+    <description>inactive</description>
+    <externalId>false</externalId>
+    <formula>CASE( Supplier_Buyer_Map__r.Agent_s_fee_type__c, 
+&quot;Part of the supplier discount rate (%)&quot;,ROUND(0,2), 
+NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Premium for supplier agent</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

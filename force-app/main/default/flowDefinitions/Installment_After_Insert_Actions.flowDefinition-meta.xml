@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Migrated from the Process Builder to Flow
+1. New insurance instalement</description>
+    <masterLabel>In-Active Migrate Installment - After Insert Actions</masterLabel>
+</FlowDefinition>

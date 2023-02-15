@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_Transwap_Bank_Account_Info</fullName>
+    <active>true</active>
+    <description>Set transwap bank account info is required field if the bank account is transwap</description>
+    <errorConditionFormula>AND(is_transwap_bank_account__c, (LEN(transwap_bank_account_info__c ) &lt; 1))</errorConditionFormula>
+    <errorDisplayField>transwap_bank_account_info__c</errorDisplayField>
+    <errorMessage>Please input transwap bank account info</errorMessage>
+</ValidationRule>

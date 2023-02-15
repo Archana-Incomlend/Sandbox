@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>sp1Insurance_alert_invoice_60_says_overdue</name>
+        <label>invoice_finance_deal__c.Insurance_alert_invoice_60_says_overdue</label>
+        <locationX>535</locationX>
+        <locationY>508</locationY>
+        <actionName>invoice_finance_deal__c.Insurance_alert_invoice_60_says_overdue</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>51.0</apiVersion>
+    <description>Migrated from the: 55 day overdue Insurance alert workflow rule
+Workflow rule description: send an email to Rsik and collection for Insurance declaration&quot;</description>
+    <environments>Default</environments>
+    <label>55 day overdue Insurance alert</label>
+    <migratedFromWorkflowRuleName>55 day overdue Insurance alert</migratedFromWorkflowRuleName>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>410</locationX>
+        <locationY>48</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterFormula>!{!$Setup.ICL_Settings__c.Disable_Migrate_Flow__c} &amp;&amp; ISNULL({!$Record.advanced_amount__c} * {!$Record.Marketplace_link__r.FX_Rate_for_MI__r.rate__c}) = False &amp;&amp; ISPICKVAL({!$Record.Phase__c}, &apos;3:IN PROGRESS&apos;)</filterFormula>
+        <object>invoice_finance_deal__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>ScheduledPath1</name>
+            <connector>
+                <targetReference>sp1Insurance_alert_invoice_60_says_overdue</targetReference>
+            </connector>
+            <label>ScheduledPath1</label>
+            <offsetNumber>55</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>Due_Date__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

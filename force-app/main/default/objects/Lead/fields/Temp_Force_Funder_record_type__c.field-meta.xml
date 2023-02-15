@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Temp_Force_Funder_record_type__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>to mass update Funder Lead Record type</description>
+    <externalId>false</externalId>
+    <label>Temp Force Funder record type</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funders_all</fullName>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Agent__c</columns>
+    <columns>discount_profit_share_percent__c</columns>
+    <columns>Total_Position_USD_Equiv__c</columns>
+    <columns>Detailed_registration_submitted_date__c</columns>
+    <columns>Onboarding_days__c</columns>
+    <columns>head_office_country__c</columns>
+    <columns>Source_calculated__c</columns>
+    <columns>Onboarding_completed_date__c</columns>
+    <columns>Funder_Type__c</columns>
+    <columns>Trustee__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Customer</value>
+    </filters>
+    <filters>
+        <field>Sub_type__c</field>
+        <operation>equals</operation>
+        <value>Purchaser</value>
+    </filters>
+    <filters>
+        <field>onboarding_stage__c</field>
+        <operation>equals</operation>
+        <value>99.Onboarded</value>
+    </filters>
+    <label>_Funders all</label>
+</ListView>

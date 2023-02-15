@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Invoice Allocation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Invoice Allocations</value>
+    </caseValues>
+    <layouts>
+        <layout>Order Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Invoice info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>commisions</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>receipt</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>EUR_ewallet_check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>HKD_ewallet_check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Invalid_Applied_MPR</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>SGD_ewallet_check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>USD_ewallet_check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>buyback_option</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>cant_buy_less_than_marketplace_min</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>cant_buy_less_than_min_is_half_remaining</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>cant_buy_less_than_min_with_remaining</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>cant_buy_more_than_remaining_amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>financing_period_positive</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>create_transactions_from_allocation</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>mass_update</name>
+    </webLinks>
+    <workflowTasks>
+        <name>Email_Sent_Confirmation</name>
+        <subject></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

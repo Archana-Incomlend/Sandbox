@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>instalment_insurance_count__c</fullName>
+    <externalId>false</externalId>
+    <label>instalment insurance count</label>
+    <summaryFilterItems>
+        <field>Instalment_insurance_fee__c.Fee_Type__c</field>
+        <operation>equals</operation>
+        <value>Insurance</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Instalment_insurance_fee__c.Supplier_buyer_map_instalment__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

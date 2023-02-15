@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_live_2</fullName>
+    <columns>NAME</columns>
+    <columns>RBS_loan_ID__c</columns>
+    <columns>Status__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>discount_rate__c</columns>
+    <columns>CCY__c</columns>
+    <columns>requested_amount__c</columns>
+    <columns>lastest_allowed_listing_start_date__c</columns>
+    <columns>Listing_End__c</columns>
+    <columns>expected_financing_period__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Pending Incomlend Final Review,approved for listing</value>
+    </filters>
+    <label>Approved live</label>
+    <sharedTo>
+        <group>Funding</group>
+        <group>Operation</group>
+    </sharedTo>
+</ListView>

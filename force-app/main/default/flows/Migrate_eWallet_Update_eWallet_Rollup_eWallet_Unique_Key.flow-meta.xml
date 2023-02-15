@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <description>Migrated from the workflow
+1. Update eWallet Rollup.
+2. eWallet Unique Key</description>
+    <formulas>
+        <name>AccountIdCCY</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Account__r.Id}+ TEXT({!$Record.CCY__c})</expression>
+    </formulas>
+    <interviewLabel>Migrate eWallet - {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate eWallet - Update eWallet Rollup, eWallet Unique Key</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_eWallet_Rollup_fields</name>
+        <label>Update eWallet Rollup fields</label>
+        <locationX>536</locationX>
+        <locationY>359</locationY>
+        <connector>
+            <targetReference>Update_Unique_Name</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Balance__c</field>
+            <value>
+                <elementReference>$Record.Balance_Rollup__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>In_Progress__c</field>
+            <value>
+                <elementReference>$Record.In_Progress_Rollup__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Reservations__c</field>
+            <value>
+                <elementReference>$Record.Reservation_Rollup__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Total_Discount_Earned__c</field>
+            <value>
+                <elementReference>$Record.Total_Discount_Earned_Rollup__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Withdrawals_Not_Processed_Val__c</field>
+            <value>
+                <elementReference>$Record.Withdrawals_Not_Processed__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Unique_Name</name>
+        <label>Update Unique Name</label>
+        <locationX>536</locationX>
+        <locationY>671</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Unique_Name__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>AccountIdCCY</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Unique_Name__c</field>
+            <value>
+                <elementReference>AccountIdCCY</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>410</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Update_eWallet_Rollup_fields</targetReference>
+        </connector>
+        <object>eWallet__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

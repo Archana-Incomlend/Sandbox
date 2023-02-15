@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance_Coverage_Utilisation_Amount__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Sum of invoice amount  financed from starting date of the coverage.</inlineHelpText>
+    <label>(test) Insurance Cover Utilisation Amt</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

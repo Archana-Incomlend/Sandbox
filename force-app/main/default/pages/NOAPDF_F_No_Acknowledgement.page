@@ -1,0 +1,237 @@
+<apex:page Controller="CombinedNOASaveAsPDF" renderAs="PDF" cache="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" showHeader="false" sidebar="false">
+    <head>
+        <style type="text/css" media="print">
+           
+            @page {
+                @top-center {
+                    content: element(header);
+                }
+                @bottom-left {
+                    content: element(footer);
+                }
+            }
+            div.header {
+                padding: 20px;
+                position: running(header);
+                font-family: sans-serif; font-size: 9pt;
+            }
+            div.footer {
+                display: block;
+                padding-top: 5px;
+                padding-bottom: 10px;
+                padding-right: 10px;
+                padding-left: 10px;
+                position: running(footer);
+                font-family: sans-serif; font-size: 6pt;
+            }
+            .pagenumber:before {
+                content: counter(page);
+            }
+            .pagecount:before {
+                content: counter(pages);
+            }
+            div.content {
+                padding-top: 50px;
+                font-family: sans-serif; 
+                font-size: 12pt;
+            }
+            
+            ol { list-style-type: square; }
+        </style>
+    </head>
+    <body>
+    <div style="font-family: Calibri">
+        <div class="header">
+            <div style="float:left;">
+            </div>
+            <div style="float:right;">
+                <!--Company Registration No : 201600941W<br/>
+                <div style="float:right;">Page <span class="pagenumber"/></div>-->
+            </div>
+        </div>
+        <div class="footer">
+            <!--<div>Page <span class="pagenumber"/> of <span class="pagecount"/></div>-->
+            <div style="float:left; font-style:italic">
+                Power of Attorney: According to the Accounts Receivable Purchase Agreement executed between Incomlend and the Supplier, 
+                the Supplier has irrevocably and unconditionally authorized Incomlend to notify the Buyer on its behalf of the assignment of 
+                Accounts Receivables, by email or otherwise in such form as it is satisfactory to Incomlend and to direct all payments 
+                due under the Accounts Receivables as set out in the relevant Invoice to Incomlend or to any other person as appointed by 
+                Incomlend from time to time.
+            </div>
+            <div style="float:right;">
+            NOA 19/01
+            </div>
+        </div>
+        <div class="content">
+            <center>
+                <h3>
+                    Notice of Assignment
+                </h3>
+            </center>
+            <p>
+                Date: <apex:outputText value=" {0,date,MM/dd/YYYY}"> <apex:param value="{!Today()}" /> </apex:outputText>
+            </p>
+            <p>
+                To: <apex:outputText value=" {!objSupplierBuyerMap.Buyer_Name__c} "> </apex:outputText> <b>("Buyer")</b>
+            </p>
+            <p>
+                C/O <apex:outputField value=" {!objSupplierBuyerMap.Buyer__r.buyer_full_address__c}"> </apex:outputField>
+            </p>
+            <p>
+                Dear Sir/Madam,
+            </p>
+            <p>
+                <b>
+                    NOTICE OF ASSIGNMENT (“NOTICE”) OF {!strInvoiceNumber}
+                </b>
+            </p>
+            <ol>
+                <li>
+                    <p> 
+                    <apex:outputText value=" {!objSupplierBuyerMap.Supplier_name__c} "> </apex:outputText> <b>("Supplier")</b> and Incomlend Pte. Ltd. (Company Registration No.: 201600941W) ("Incomlend") (the Supplier and Incomlend collectively, "we", "us" or "our") refer to the invoices with the following details ("Invoices"):
+                   
+                    </p>
+                    <br/>
+                    
+                    <Table style="border-style: solid;border-collapse: collapse; margin-left: 6.16998pt" cellspacing="0" width="95%">
+                        <tr>
+                            <th width="16.66%" style="border-style: solid;background-color:#D3D3D3;text-align:center;">
+                                Invoice No.
+                            </th>
+                            
+                            <th width="16.66%" style="border-style: solid;background-color:#D3D3D3;text-align:center;">
+                                Invoice Date
+                            </th>
+                            
+                            <th width="16.66%" style="border-style: solid;background-color:#D3D3D3;text-align:center;">
+                                Invoice Face Value
+                            </th>
+                            
+                            <th width="16.66%" style="border-style: solid;background-color:#D3D3D3;text-align:center;">
+                                Advance Payment (defined below)
+                            </th>
+                            
+                            <th width="16.66%" style="border-style: solid;background-color:#D3D3D3;text-align:center;">
+                                Balance Amount (defined below)
+                            </th>
+                            
+                            <th width="16.66%" style="border-style: solid;background-color:#D3D3D3;text-align:center;">
+                                Due Date
+                            </th>
+                        </tr>
+                        <apex:repeat value="{!lstSelectedInvoice}" var="invoice">
+                            <tr>
+                                <td width="16.66%" style="border-style: solid;text-align:center;">
+                                    <apex:outputField value="{!invoice.supplier_invoice_reference_number__c}"/>
+                                </td>
+                                
+                                <td width="16.66%" style="border-style: solid;text-align:center;">
+                                    <apex:outputText value=" {0,date,MM/dd/YYYY}"> <apex:param value="{!invoice.Invoice_date__c}" /> </apex:outputText>   
+                                </td>
+                                
+                                <td width="16.66%" style="border-style: solid;text-align:center;">
+                                    <apex:outputField value="{!invoice.Real_Face_Value__c}"/>
+                                </td>
+                                
+                                <td width="16.66%" style="border-style: solid;text-align:center;">
+                                    <apex:outputField value="{!invoice.advanced_amount__c}"/>
+                                </td>
+                                
+                                <td width="16.66%" style="border-style: solid;text-align:center;">
+                                    <apex:outputField value="{!invoice.Balance_due__c}"/>
+                                </td>
+                                
+                                <td width="16.66%" style="border-style: solid;text-align:center;">
+                                    <apex:outputField value="{!invoice.Due_Date__c}"/>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                    </table>
+                
+                
+                </li>
+                <li>
+                <p>
+                    We hereby give the Buyer notice that:
+                </p>
+                
+                <p style="padding-left:15px;">
+                    (a) by an Accounts Receivable Purchase Agreement dated <apex:outputText value=" {0,date,MM/dd/YYYY}"> <apex:param value="{!ARPADocDate}" /> </apex:outputText> (No.{!ARPADocRefNo}) and entered into between the Supplier and Incomlend, the Supplier sold and assigned to Incomlend absolutely all of the Supplier’s rights, title, interests, benefits and remedies in the accounts receivables (“Accounts Receivables”) as set out in the relevant Invoices (“Purchased Receivables”);
+                    <br/><br/>
+                    (b) Incomlend has subsequently sold all of its rights, title, interest and benefits in the Purchased Receivables to Amicorp Trustees (Singapore) Limited (the “Trustee”), as trustee for the third party purchasers (the “Purchasers”); and
+                    <br/><br/>
+                    (c) the Trustee will hold all its rights, title, interests, benefits and remedies in the Purchased Receivables including but not limited to the monies payable under it, on trust for the benefit of the Purchasers.
+                
+                </p>
+                </li>
+            </ol>
+            <div id="div1" style="page-break-before: always;"></div>
+            <br /><br />
+            <ol>
+                <li>
+                    <p>
+                        The Buyer has pursuant to the buyer notification letter dated on or around the date of this Notice and issued by Incomlend to the Buyer, represented and warranted to Incomlend that, if applicable, it has made full payment to the Supplier of any advance amounts due under the Accounts Receivables as set out in: 
+                        (a) the relevant Invoices; and 
+                        (b) paragraph 1 above <b>("Advance Payment")</b>. Accordingly, the outstanding balance amount due under the Invoices (as set out in paragraph 1 above) <b>("Balance Amount")</b>, which has been: (a) sold and assigned by the Supplier to Incomlend; and (b) subsequently sold and assigned by Incomlend to the Trustee, constitutes 100% of the Accounts Receivables payable by the Buyer to the Supplier as set out in the relevant Invoice.
+                    </p>
+                </li>
+                
+                <li>
+                    <p>
+                        In connection with the matters set out above, please note that all payments to be effected by the Buyer in respect of the Accounts Receivables should be made by wire transfer to the bank account with the following details:
+                        <br/><br/>
+                        <i>
+                           <apex:outputField value="{!lstSelectedInvoice[0].Bank_Information_for_Payment__c}"/> 
+                        </i><br/>
+                        or such other account as Incomlend may notify the Buyer in writing from time to time.
+                    </p>
+                </li>
+                
+                <li>
+                    <p>
+                        In addition, we hereby notify the Buyer that the Trustee has irrevocably appointed Incomlend as the Trustee’s sole agent to: (a) collect all proceeds arising from the Accounts Receivables purchased by Incomlend, and which were subsequently sold and assigned by Incomlend to the Trustee (including the Purchased Receivables); and (b) take any and all action as may be necessary and/or desirable in connection thereof.
+                    </p>
+                </li>
+                
+                <li>
+                    <p>
+                        Notwithstanding anything in this Notice and for the avoidance of doubt, the Supplier shall remain liable for the performance of its obligations pursuant to the relevant contract and none of Incomlend, the Trustee or the Purchasers shall assume any obligation to perform the terms of the relevant contract.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        This arrangement is irrevocable and shall take immediate effect from the date of this Notice, and may not be cancelled, modified or varied without the prior written consent of Incomlend and the Trustee.
+                    </p>
+                </li>
+            </ol>
+            
+            <p>
+                Yours Faithfully,
+            </p>
+            
+            <div id="div1" style="page-break-before: always;"></div>
+            <br /><br />
+            
+            <p>
+                (1) For and on behalf of {!objSupplierBuyerMap.Supplier_Name__c} <br/><br/><br/><br/>
+                     -----------------------------------
+                     <br/>
+                     <br/>
+                     Name: <!--{!objSupplierBuyerMap.Supplier__r.Primary_Contact__r.FirstName} {!objSupplierBuyerMap.Supplier__r.Primary_Contact__r.LastName}--><br/><br/>
+                     Designation: <!--{!objSupplierBuyerMap.Supplier__r.Primary_Contact__r.Title}--><br/><br/>
+            </p>
+            <br/>
+            <br/>
+            <p>
+                (2) For and on behalf of For and on behalf of Incomlend Pte. Ltd. <br/><br/><br/><br/>
+                     -----------------------------------
+                     <br/>
+                     <br/>
+                     Name: <!--LOIC HENNOCQ--><br/><br/>
+                     Designation: <!--HEAD OF OPERATIONS--><br/><br/>
+                     Cc: Trustee<br/><br/>
+            </p>
+        </div>
+    </div>
+    </body>
+</apex:page>

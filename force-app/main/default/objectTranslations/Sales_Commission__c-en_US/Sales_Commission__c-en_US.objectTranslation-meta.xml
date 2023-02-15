@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sales Commission</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sales Commissions</value>
+    </caseValues>
+    <layouts>
+        <layout>Sales Commission Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Funding</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Head</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Repayment</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Invoice_and_invoice_allocation_is_linked</name>
+    </validationRules>
+</CustomObjectTranslation>

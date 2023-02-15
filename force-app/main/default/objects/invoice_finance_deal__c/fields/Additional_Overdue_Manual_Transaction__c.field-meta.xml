@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Overdue_Manual_Transaction__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(over_due_days__c&gt;  Tolerance_overdue_days__c,  Manual_New_Overdue_Charge__c =TRUE),( invoice_amount__c * 0.005/30)*over_due_days__c,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Additional Overdue (+0.5 %) Amount for Manual transaction while waiting for v3 .</inlineHelpText>
+    <label>Additional Overdue Manual Transaction</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

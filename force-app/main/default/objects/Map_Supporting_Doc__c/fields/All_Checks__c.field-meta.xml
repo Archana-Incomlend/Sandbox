@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Checks__c</fullName>
+    <externalId>false</externalId>
+    <formula>Parent_Supporting_Document__r.Parent_Supporting_Document__r.Checks__c   + br() +
+Parent_Supporting_Document__r.Checks__c  + br() +
+ Checks__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>All Checks</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

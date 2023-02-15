@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance_cost_for_Supplier__c</fullName>
+    <description>Cost for the supplier of the Credit insurance</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Cost for the supplier of the Credit Insurance (%)</inlineHelpText>
+    <label>Insurance cost for Supplier</label>
+    <precision>9</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

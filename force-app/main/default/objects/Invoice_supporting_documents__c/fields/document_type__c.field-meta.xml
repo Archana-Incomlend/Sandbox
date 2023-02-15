@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>document_type__c</fullName>
+    <externalId>false</externalId>
+    <label>document type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>bill of lading (marine vessels)</fullName>
+                <default>false</default>
+                <label>bill of lading (marine vessels)</label>
+            </value>
+            <value>
+                <fullName>railway bill</fullName>
+                <default>false</default>
+                <label>railway bill</label>
+            </value>
+            <value>
+                <fullName>airway bill</fullName>
+                <default>false</default>
+                <label>airway bill</label>
+            </value>
+            <value>
+                <fullName>invoice copy</fullName>
+                <default>false</default>
+                <label>invoice copy</label>
+            </value>
+            <value>
+                <fullName>purchase order</fullName>
+                <default>false</default>
+                <label>purchase order</label>
+            </value>
+            <value>
+                <fullName>buyer acknowledgement</fullName>
+                <default>false</default>
+                <label>buyer acknowledgement</label>
+            </value>
+            <value>
+                <fullName>delivery proof</fullName>
+                <default>false</default>
+                <label>delivery proof</label>
+            </value>
+            <value>
+                <fullName>Packing List</fullName>
+                <default>false</default>
+                <label>Packing List</label>
+            </value>
+            <value>
+                <fullName>Certificate of Inspection</fullName>
+                <default>false</default>
+                <label>Certificate of Inspection</label>
+            </value>
+            <value>
+                <fullName>Marine / Shipping Insurance</fullName>
+                <default>false</default>
+                <label>Marine / Shipping Insurance</label>
+            </value>
+            <value>
+                <fullName>Delivery Order</fullName>
+                <default>false</default>
+                <label>Delivery Order</label>
+            </value>
+            <value>
+                <fullName>Notice of Assignment Signed</fullName>
+                <default>false</default>
+                <label>Notice of Assignment Signed</label>
+            </value>
+            <value>
+                <fullName>Post Dating Cheque</fullName>
+                <default>false</default>
+                <label>Post Dating Cheque</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

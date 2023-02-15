@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AFSC__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Exclusion Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>File Protection Settings</fullName>
+                <default>false</default>
+                <label>File Protection Settings</label>
+            </value>
+            <value>
+                <fullName>URL Protection Settings</fullName>
+                <default>false</default>
+                <label>URL Protection Settings</label>
+            </value>
+            <value>
+                <fullName>Extension</fullName>
+                <default>false</default>
+                <label>Extension</label>
+            </value>
+            <value>
+                <fullName>Filetype</fullName>
+                <default>false</default>
+                <label>Filetype</label>
+            </value>
+            <value>
+                <fullName>Host</fullName>
+                <default>false</default>
+                <label>Host</label>
+            </value>
+            <value>
+                <fullName>Domain</fullName>
+                <default>false</default>
+                <label>Domain</label>
+            </value>
+            <value>
+                <fullName>URL</fullName>
+                <default>false</default>
+                <label>URL</label>
+            </value>
+            <value>
+                <fullName>Rich Preview</fullName>
+                <default>false</default>
+                <label>Rich Preview</label>
+            </value>
+            <value>
+                <fullName>Blocked Extension or Filetype</fullName>
+                <default>false</default>
+                <label>Blocked Extension or Filetype</label>
+            </value>
+            <value>
+                <fullName>Blocked Extension or Filetype Manual Scan</fullName>
+                <default>false</default>
+                <label>Blocked Extension or Filetype Manual Scan</label>
+            </value>
+            <value>
+                <fullName>Allowed Extension or Filetype</fullName>
+                <default>false</default>
+                <label>Allowed Extension or Filetype</label>
+            </value>
+            <value>
+                <fullName>Excluded Extension or Filetype</fullName>
+                <default>false</default>
+                <label>Excluded Extension or Filetype</label>
+            </value>
+            <value>
+                <fullName>Extension or Filetype To Scan</fullName>
+                <default>false</default>
+                <label>Extension or Filetype To Scan</label>
+            </value>
+            <value>
+                <fullName>Extension or Filetype to Scan Manual Scan</fullName>
+                <default>false</default>
+                <label>Extension or Filetype to Scan Manual Scan</label>
+            </value>
+            <value>
+                <fullName>Excluded Extension or Filetype Manual Scan</fullName>
+                <default>false</default>
+                <label>Excluded Extension or Filetype Manual Scan</label>
+            </value>
+            <value>
+                <fullName>Allowed Extension or Filetype Manual Scan</fullName>
+                <default>false</default>
+                <label>Allowed Extension or Filetype Manual Scan</label>
+            </value>
+            <value>
+                <fullName>Attachment Location To Scan</fullName>
+                <default>false</default>
+                <label>Attachment Location To Scan</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

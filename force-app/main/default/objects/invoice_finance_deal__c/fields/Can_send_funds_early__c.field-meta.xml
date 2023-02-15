@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Can_send_funds_early__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>if an invoice is funded before the scheduled end of the auction - can we optionally close the auction and send the funds early?</description>
+    <externalId>false</externalId>
+    <label>Can send funds early</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

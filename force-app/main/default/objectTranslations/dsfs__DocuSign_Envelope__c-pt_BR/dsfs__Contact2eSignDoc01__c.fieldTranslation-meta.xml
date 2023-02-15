@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Selecione um contato da Salesforce para ser um destinatário/signatário do DocYouSign.  Apenas contatos com endereços de e-mail válidos podem ser usados como destinatários do DocYouSign.</help>
+    <label></label>
+    <name>dsfs__Contact2eSignDoc01__c</name>
+    <relationshipLabel></relationshipLabel>
+</CustomFieldTranslation>

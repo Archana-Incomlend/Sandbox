@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>20</activeVersionNumber>
+    <description>Manually create transaction from invoice &lt;. trigger button</description>
+    <masterLabel>create double entry from invoice</masterLabel>
+</FlowDefinition>

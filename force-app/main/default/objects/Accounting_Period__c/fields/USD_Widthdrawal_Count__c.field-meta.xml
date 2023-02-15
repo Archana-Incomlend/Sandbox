@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>USD_Widthdrawal_Count__c</fullName>
+    <externalId>false</externalId>
+    <label>USD Widthdrawal Count</label>
+    <summaryFilterItems>
+        <field>Transaction__c.CCY__c</field>
+        <operation>equals</operation>
+        <value>USD</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Transaction__c.Type__c</field>
+        <operation>equals</operation>
+        <value>80.Withdrawal</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Transaction__c.Status__c</field>
+        <operation>equals</operation>
+        <value>True, Confirmed by Finance</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Transaction__c.Accounting_Period__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

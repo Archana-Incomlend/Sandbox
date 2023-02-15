@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Source__c</name>
+    <picklistValues>
+        <masterLabel>Administration</masterLabel>
+        <translation>관리</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>File Protection</masterLabel>
+        <translation>파일 보호</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>License</masterLabel>
+        <translation>라이선스</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Security Cloud</masterLabel>
+        <translation>보안 클라우드</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>URL Protection</masterLabel>
+        <translation>URL 보호</translation>
+    </picklistValues>
+</CustomFieldTranslation>

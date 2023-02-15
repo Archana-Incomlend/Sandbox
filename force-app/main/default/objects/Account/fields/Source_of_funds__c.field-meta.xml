@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_of_funds__c</fullName>
+    <externalId>false</externalId>
+    <label>Source of funds</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Salary, Bonus</fullName>
+                <default>false</default>
+                <label>Salary, Bonus</label>
+            </value>
+            <value>
+                <fullName>Savings</fullName>
+                <default>false</default>
+                <label>Savings</label>
+            </value>
+            <value>
+                <fullName>Income from assets (rent, dividends, etc.)</fullName>
+                <default>false</default>
+                <label>Income from assets (rent, dividends, etc.)</label>
+            </value>
+            <value>
+                <fullName>Inheritance</fullName>
+                <default>false</default>
+                <label>Inheritance</label>
+            </value>
+            <value>
+                <fullName>Other income ‎</fullName>
+                <default>false</default>
+                <label>Other revenue from professional activity</label>
+            </value>
+            <value>
+                <fullName>other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

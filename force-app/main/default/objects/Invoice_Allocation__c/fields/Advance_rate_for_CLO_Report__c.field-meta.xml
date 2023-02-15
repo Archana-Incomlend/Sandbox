@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Advance_rate_for_CLO_Report__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Advance_rate__c &gt;=0.9, 0.9, Advance_rate__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Cap the Rate at Max 90 % to avoid confusion for Product 100</inlineHelpText>
+    <label>Advance rate (for CLO Report)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

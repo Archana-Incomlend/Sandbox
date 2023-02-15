@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Scanbox_Result__c</name>
+    <picklistValues>
+        <masterLabel>Clean</masterLabel>
+        <translation>ล้าง</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grayware</masterLabel>
+        <translation>เกรย์แวร์</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Infected</masterLabel>
+        <translation>ติดไวรัส</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Suspected</masterLabel>
+        <translation>น่าสงสัย</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unknown</masterLabel>
+        <translation>ไม่รู้จัก</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Whitelisted</masterLabel>
+        <translation>ที่น่าเชื่อถือได้</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flag_only_tick_for_deposit</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( Ready_for_email__c,NOT(ISPICKVAL( Type__c ,&apos;70.Deposit&apos;)))</errorConditionFormula>
+    <errorMessage>The checkbox &quot;Ready for Email&quot; is only for Deposit type</errorMessage>
+</ValidationRule>

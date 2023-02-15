@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnimationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <animationFrequency>always</animationFrequency>
+    <developerName>ACCOUNT_SUPPLIER</developerName>
+    <isActive>true</isActive>
+    <masterLabel>ACCOUNT SUPPLIER</masterLabel>
+    <recordTypeContext>Custom</recordTypeContext>
+    <recordTypeName>Supplier</recordTypeName>
+    <sobjectType>Account</sobjectType>
+    <targetField>onboarding_stage__c</targetField>
+    <targetFieldChangeToValues>60.Approvals</targetFieldChangeToValues>
+</AnimationRule>

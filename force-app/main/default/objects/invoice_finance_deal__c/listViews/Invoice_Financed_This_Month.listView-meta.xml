@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Financed_This_Month</fullName>
+    <columns>NAME</columns>
+    <columns>buyer__c</columns>
+    <columns>supplier_del__c</columns>
+    <columns>advance_send_to_supplier_date__c</columns>
+    <columns>Funded_Date__c</columns>
+    <columns>Funded_Date_Auto__c</columns>
+    <columns>advanced_amount__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>advance_send_to_supplier_date__c</field>
+        <operation>equals</operation>
+        <value>THIS_MONTH</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>invoice_finance_deal__c.Pricing_V2_2018</value>
+    </filters>
+    <label>Invoice Financed This Month</label>
+    <sharedTo>
+        <group>Finance</group>
+    </sharedTo>
+</ListView>

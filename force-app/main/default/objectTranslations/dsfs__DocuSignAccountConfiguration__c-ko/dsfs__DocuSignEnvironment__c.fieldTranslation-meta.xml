@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>dsfs__DocuSignEnvironment__c</name>
+    <picklistValues>
+        <masterLabel>demo</masterLabel>
+        <translation>데모</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>preview</masterLabel>
+        <translation>미리 보기</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>production</masterLabel>
+        <translation>프로덕션</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>stage</masterLabel>
+        <translation>단계</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>test</masterLabel>
+        <translation>테스트</translation>
+    </picklistValues>
+</CustomFieldTranslation>

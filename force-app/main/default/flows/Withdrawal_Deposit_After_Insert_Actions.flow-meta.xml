@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>W_D_Approval_from_OP_and_Finance</name>
+        <label>W/D Approval from OP and Finance</label>
+        <locationX>182</locationX>
+        <locationY>455</locationY>
+        <actionName>submit</actionName>
+        <actionType>submit</actionType>
+        <connector>
+            <targetReference>Withdrawal_Internal0</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>processDefinitionNameOrId</name>
+            <value>
+                <stringValue>W_D_Approval_from_OP_and_Finance</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>objectId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>submitterId</name>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>Send email to Ops when withdrawal is for internal</description>
+        <name>Withdrawal_Internal2</name>
+        <label>Withdrawal Internal</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <actionName>Supplier_Buyer_Map__c.Credit_Commitee_Planned</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Deposit_Only</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>Deposit_Only</name>
+        <label>Deposit Only</label>
+        <locationX>336</locationX>
+        <locationY>1007</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Deposit_Only1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>70.Deposit</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>approval_set_to_approved_by_finance</targetReference>
+            </connector>
+            <label>Deposit Only</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Withdrawal_Internal0</name>
+        <label>Withdrawal Internal</label>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
+        <defaultConnector>
+            <targetReference>Deposit_Only</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Withdrawal_Internal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Bank_Details__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>INTERNAL</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Withdrawal_Internal2</targetReference>
+            </connector>
+            <label>Withdrawal Internal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>withdrawal_only</name>
+        <label>Withdrawal only</label>
+        <locationX>336</locationX>
+        <locationY>335</locationY>
+        <defaultConnector>
+            <targetReference>Deposit_Only</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Withdrawal_Only1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>80.Withdrawal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedById</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>005A9000000HhNu</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CCY__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>XXX</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>W_D_Approval_from_OP_and_Finance</targetReference>
+            </connector>
+            <label>Withdrawal Only</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the Process Builder.
+1. Approval for Withdrawal
+Migrated from the workflow.
+1. Withdrawal Internal</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CurrentUserId</name>
+        <dataType>String</dataType>
+        <expression>{!$User.Id}</expression>
+    </formulas>
+    <interviewLabel>Withdrawal Deposit - After Insert Actions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Withdrawal Deposit After Insert Actions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>approval_set_to_approved_by_finance</name>
+        <label>Approval set to approved by finance</label>
+        <locationX>204</locationX>
+        <locationY>1127</locationY>
+        <inputAssignments>
+            <field>Approval__c</field>
+            <value>
+                <stringValue>Confirmed by Finance</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>210</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>withdrawal_only</targetReference>
+        </connector>
+        <filterFormula>{!$Setup.ICL_Settings__c.Enable_migrate_flow__c}</filterFormula>
+        <object>Withdrawal_Deposit__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

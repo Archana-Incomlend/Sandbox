@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Un_utilised_adv_amt_mrk_place_usd_equiv__c</fullName>
+    <externalId>false</externalId>
+    <formula>Un_utilised_advanced_amount_usd_equiv__c - Marketplace_Requested_amount_usd_equiv__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Un utilised adv amt-mrk place usd equiv</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>USD_Percentage_of_eWallet_In_invoices__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(    (USD_total_reservations__c + USD_Total_in_progress_invoices__c &gt; 0),
+        (USD_total_reservations__c + USD_Total_in_progress_invoices__c ) / (USD_total_reservations__c + USD_Total_in_progress_invoices__c +  USD_Available_eWallet__c  ) ,
+        0
+  )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>USD Percentage of eWallet in invoices</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

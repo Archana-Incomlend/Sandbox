@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>External_Credit_Report_Provider__c</fullName>
+    <externalId>false</externalId>
+    <label>External Credit Report Provider</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Trelis Business Reports</fullName>
+                <default>true</default>
+                <label>Trelis Business Reports</label>
+            </value>
+            <value>
+                <fullName>Dunn &amp; Bradstreet</fullName>
+                <default>false</default>
+                <label>Dunn &amp; Bradstreet</label>
+            </value>
+            <value>
+                <fullName>Gladtrust</fullName>
+                <default>false</default>
+                <label>Gladtrust</label>
+            </value>
+            <value>
+                <fullName>Crystal Credit</fullName>
+                <default>false</default>
+                <label>Crystal Credit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

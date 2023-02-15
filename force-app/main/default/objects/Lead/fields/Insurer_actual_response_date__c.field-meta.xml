@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurer_actual_response_date__c</fullName>
+    <externalId>false</externalId>
+    <label>Insurer actual response date</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

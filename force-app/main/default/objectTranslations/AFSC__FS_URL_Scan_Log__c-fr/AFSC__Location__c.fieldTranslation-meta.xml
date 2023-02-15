@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Location__c</name>
+    <picklistValues>
+        <masterLabel>Cases</masterLabel>
+        <translation>Cas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chatter</masterLabel>
+        <translation>Messagerie instantanée</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Email</masterLabel>
+        <translation>E-mail</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Field Value</masterLabel>
+        <translation>Valeur sur le terrain</translation>
+    </picklistValues>
+</CustomFieldTranslation>

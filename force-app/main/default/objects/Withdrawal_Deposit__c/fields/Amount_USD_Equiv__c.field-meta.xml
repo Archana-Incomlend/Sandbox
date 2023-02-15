@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_USD_Equiv__c</fullName>
+    <externalId>false</externalId>
+    <formula>Amount__c * 
+
+case ( CCY__c ,&apos;USD&apos;,1, 
+&apos;EUR&apos;, Account__r.Marketplace_for_EUR_FX_rate__r.FX_Rate_for_MI__r.rate__c , 
+&apos;SGD&apos;, Account__r.Marketplace_for_SGD_FX_rate__r.FX_Rate_for_MI__r.rate__c , 
+&apos;HKD&apos;, (1/7.8), 
+0 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Amount USD Equiv</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

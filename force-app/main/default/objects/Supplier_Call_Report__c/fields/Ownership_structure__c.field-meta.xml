@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ownership_structure__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>[sole proprietorship / partnership / private limited company / public limited company / others]</inlineHelpText>
+    <label>Ownership structure</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>sole proprietorship</fullName>
+                <default>false</default>
+                <label>sole proprietorship</label>
+            </value>
+            <value>
+                <fullName>partnership</fullName>
+                <default>false</default>
+                <label>partnership</label>
+            </value>
+            <value>
+                <fullName>private limited company</fullName>
+                <default>false</default>
+                <label>private limited company</label>
+            </value>
+            <value>
+                <fullName>public limited company</fullName>
+                <default>false</default>
+                <label>public limited company</label>
+            </value>
+            <value>
+                <fullName>others</fullName>
+                <default>false</default>
+                <label>others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <description>Update all Allocations</description>
+    <interviewLabel>Maintance Allocations {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Maintance Allocations</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Allocation</name>
+        <label>Get Allocation</label>
+        <locationX>402</locationX>
+        <locationY>56</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>update_Allocation</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CreatedDate</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <dateTimeValue>2018-12-31T16:00:00.000Z</dateTimeValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CreatedDate</field>
+            <operator>LessThanOrEqualTo</operator>
+            <value>
+                <dateTimeValue>2020-03-31T16:00:00.000Z</dateTimeValue>
+            </value>
+        </filters>
+        <filters>
+            <field>eWallet__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Invoice_Allocation__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>eWallet__c</queriedFields>
+        <queriedFields>eWallet_Trustee__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>update_Allocation</name>
+        <label>update Allocation</label>
+        <locationX>768</locationX>
+        <locationY>59</locationY>
+        <inputReference>Get_Allocation</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>49</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Get_Allocation</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+</Flow>

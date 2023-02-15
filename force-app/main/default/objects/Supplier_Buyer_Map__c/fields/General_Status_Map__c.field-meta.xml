@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>General_Status_Map__c</fullName>
+    <defaultValue>&quot;Active&quot;</defaultValue>
+    <description>General status of the Map</description>
+    <externalId>false</externalId>
+    <inlineHelpText>General status of the Map</inlineHelpText>
+    <label>General Status Map</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+                <label>Dormant</label>
+            </value>
+            <value>
+                <fullName>To be Deleted</fullName>
+                <default>false</default>
+                <label>To be Deleted</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

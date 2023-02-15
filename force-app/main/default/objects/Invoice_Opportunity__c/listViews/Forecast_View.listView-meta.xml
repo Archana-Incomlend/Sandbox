@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forecast_View</fullName>
+    <columns>NAME</columns>
+    <columns>For_Forecast_Report__c</columns>
+    <columns>Product_type__c</columns>
+    <columns>Buyer_Name__c</columns>
+    <columns>Supplier_name__c</columns>
+    <columns>Process_Status__c</columns>
+    <columns>CL_Provided_by_insurer__c</columns>
+    <columns>Opportunity_Status__c</columns>
+    <columns>Ops_Comments__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Buyer_Name__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Opportunity_Status__c</field>
+        <operation>contains</operation>
+        <value>OIP,Others</value>
+    </filters>
+    <label>Forecast View</label>
+</ListView>

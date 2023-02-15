@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <decisions>
+        <name>Check_for_Created_Date</name>
+        <label>Check for Created Date</label>
+        <locationX>536</locationX>
+        <locationY>359</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Created_Date_01_10_2019</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedDate</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <dateTimeValue>2019-09-30T16:00:00.000Z</dateTimeValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Market_Place_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Reverse Factoring USD Insured</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Market_Place_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Reverse Factoring EUR Insured</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Market_Place_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Reverse Factoring SGD Insured</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Market_Place_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Reverse Factoring HKD Insured</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Sales_Supplier_Buyer_owner_fac_Map</targetReference>
+            </connector>
+            <label>Created Date &gt; 01/10/2019</label>
+        </rules>
+        <rules>
+            <name>Created_Date_LessThan_01_10_2019</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <dateTimeValue>2019-09-30T16:00:00.000Z</dateTimeValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Market_Place_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Reverse Factoring USD Insured</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Market_Place_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Reverse Factoring EUR Insured</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Market_Place_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Reverse Factoring SGD Insured</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Market_Place_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Reverse Factoring HKD Insured</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Sales_Supplier_Buyer_owner_factoring_Map1</targetReference>
+            </connector>
+            <label>Created Date &lt;= 01/10/2019</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the workflow - Split Sales reverse factoring and Split Sales Reverse factoring before 201910</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>BuyerSalesZone_70</name>
+        <dataType>Number</dataType>
+        <expression>0.70 * 100</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>SalesZone</name>
+        <dataType>Number</dataType>
+        <expression>0.50 * 100</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>SupplierSalesZone_30</name>
+        <dataType>Number</dataType>
+        <expression>0.30 * 100</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Migrate Supplier Buyer Map - Split Sales Map Reverse factoring {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Supplier Buyer Map - Split Sales Reverse factoring</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Sales_Supplier_Buyer_owner_fac_Map</name>
+        <label>Update Sales Supplier / Buyer owner fac Map</label>
+        <locationX>222</locationX>
+        <locationY>480</locationY>
+        <inputAssignments>
+            <field>Buyer_Sales_Zone__c</field>
+            <value>
+                <elementReference>SalesZone</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Supplier_Zone__c</field>
+            <value>
+                <elementReference>SalesZone</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Sales_Supplier_Buyer_owner_factoring_Map1</name>
+        <label>Update Sales Supplier / Buyer owner factoring Map1</label>
+        <locationX>922</locationX>
+        <locationY>458</locationY>
+        <inputAssignments>
+            <field>Buyer_Sales_Zone__c</field>
+            <value>
+                <elementReference>BuyerSalesZone_70</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Supplier_Zone__c</field>
+            <value>
+                <elementReference>SupplierSalesZone_30</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>410</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Check_for_Created_Date</targetReference>
+        </connector>
+        <filterFormula>!{!$Setup.ICL_Settings__c.Disable_Migrate_Flow__c} &amp;&amp; ( CONTAINS({!$Record.Incomlend_product__r.Name}, &apos;Reverse Factoring USD Insured&apos;) || CONTAINS({!$Record.Incomlend_product__r.Name}, &apos;Reverse Factoring EUR Insured&apos;) || CONTAINS({!$Record.Incomlend_product__r.Name}, &apos;Reverse Factoring SGD Insured&apos;) || CONTAINS({!$Record.Incomlend_product__r.Name}, &apos;Reverse Factoring HKD Insured&apos;))</filterFormula>
+        <object>Supplier_Buyer_Map__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

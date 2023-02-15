@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>19</activeVersionNumber>
+    <description>Send email(s) to funder(s) once the invoice is funded.
+=&gt; Called by the button &quot;Email Funder(s) Invoice Funded&quot;.</description>
+    <masterLabel>Email Funder Invoice Funded</masterLabel>
+</FlowDefinition>

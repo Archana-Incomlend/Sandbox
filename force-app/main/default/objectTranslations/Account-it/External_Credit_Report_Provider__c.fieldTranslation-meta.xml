@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>External_Credit_Report_Provider__c</name>
+    <picklistValues>
+        <masterLabel>Crystal Credit</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dunn &amp; Bradstreet</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gladtrust</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trelis Business Reports</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

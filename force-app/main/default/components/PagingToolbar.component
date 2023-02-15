@@ -1,0 +1,138 @@
+<apex:component id="pagingToolbar">
+    <apex:attribute type="Pageable" 
+        name="Paging"
+        description="A reference to an object that extends the Pageable class" />
+
+    <apex:attribute type="string"
+        name="rerender"
+        description="A list of elements to rerender after a paging command is executed" />
+
+    <apex:outputPanel layout="block"
+        styleClass="listViewport">
+
+        <div class="bottomNav">
+            <div class="paginator">
+                <apex:panelGrid id="gridPaging" 
+                    columns="3"
+                    width="100%"
+                    columnclasses="left, center, right">
+
+                    <apex:panelGroup >
+                        <span class="selectorTarget">
+                            <strong>
+                                <apex:outputText value="{!$Label.Record_Counts}">
+                                    <apex:param value="{!Paging.LNumber}" />
+                                    <apex:param value="{!Paging.UNumber}" />
+                                    <apex:param value="{!Paging.RecordCount}" />
+                                </apex:outputText>
+                            </strong>
+                        </span>
+                        <span>&nbsp;&nbsp;</span>
+                        <apex:actionStatus id="statusPaging">
+                            <apex:facet name="start">
+                                <img src="/img/loading.gif" height="14px" width="14px"/>
+                            </apex:facet>
+
+                            <apex:facet name="stop">
+                                <img src="/img/s.gif" height="14px" width="14px"/>
+                            </apex:facet>
+                        </apex:actionStatus>
+                    </apex:panelGroup>
+
+                    <apex:panelGroup >
+                        <span class="prevNextLinks">
+                            <span class="prevNext">
+                                <apex:commandLink id="linkMoveFirst"
+                                    immediate="true"
+                                    status="statusPaging"
+                                    action="{!Paging.moveFirst}"
+                                    rerender="{!rerender}, gridPaging"
+                                    rendered="{!Paging.allowMovePrev}">
+
+                                    <img src="/s.gif" title="{!$Label.First_Page}" alt="{!$Label.First_Page}" class="first" />
+                                </apex:commandLink>
+
+                                <apex:outputPanel layout="none"
+                                    rendered="{!NOT(Paging.allowMovePrev)}">
+
+                                    <apex:image url="/s.gif" title="{!$Label.First_Page}" alt="{!$Label.First_Page}" styleclass="firstoff" />
+                                </apex:outputPanel>
+                            </span>
+
+                            <span class="prevNext">
+                                <apex:commandLink id="linkMovePrev"
+                                    immediate="true"
+                                    title="{!$Label.Previous}"
+                                    status="statusPaging"
+                                    action="{!Paging.movePrev}"
+                                    rerender="{!rerender}, gridPaging"
+                                    rendered="{!Paging.allowMovePrev}">
+
+                                    <img src="/s.gif" title="{!$Label.Previous}" alt="{!$Label.Previous}" class="prev" />
+                                    <span>Previous</span>
+                                </apex:commandLink>
+
+                                <apex:outputPanel layout="none"
+                                    rendered="{!NOT(Paging.allowMovePrev)}">
+
+                                    <apex:image url="/s.gif" title="{!$Label.Previous}" alt="{!$Label.Previous}" styleclass="prevoff" />
+                                    <span>Previous</span>
+                                </apex:outputPanel>
+                            </span>
+
+                            <span class="prevNext">
+                                <apex:commandLink id="linkMoveNext"
+                                    immediate="true"
+                                    title="{!$Label.Next}"
+                                    status="statusPaging"
+                                    action="{!Paging.moveNext}"
+                                    rerender="{!rerender}, gridPaging"
+                                    rendered="{!Paging.allowMoveNext}">
+
+                                    <span>Next</span>
+                                    <img src="/s.gif" title="{!$Label.Next}" alt="{!$Label.Next}" class="next" />
+                                </apex:commandLink>
+
+                                <apex:outputPanel layout="none"
+                                    rendered="{!NOT(Paging.allowMoveNext)}">
+
+                                    <apex:image url="/s.gif" title="{!$Label.Next}" alt="{!$Label.Next}" styleclass="nextoff" />
+                                    <span>Next</span>
+                                </apex:outputPanel>
+                            </span>
+
+                            <span class="prevNext">
+                                <apex:commandLink id="linkMoveLast"
+                                    immediate="true"
+                                    status="statusPaging"
+                                    action="{!Paging.moveLast}"
+                                    rerender="{!rerender}, gridPaging"
+                                    rendered="{!Paging.allowMoveNext}">
+
+                                    <img src="/s.gif" title="{!$Label.Last_Page}" alt="{!$Label.Last_Page}" class="last" />
+                                </apex:commandLink>
+
+                                <apex:outputPanel layout="none"
+                                    rendered="{!NOT(Paging.allowMoveNext)}">
+
+                                    <apex:image url="/s.gif" title="{!$Label.Last_Page}" alt="{!$Label.Last_Page}" styleclass="lastoff" />
+                                </apex:outputPanel>
+                            </span>
+                        </span>
+                    </apex:panelGroup>
+
+                    <apex:panelGroup >
+                        <span class="selectorTarget">
+                            <strong>
+                                <apex:outputText value="{!$Label.Page_Counts}">
+                                    <apex:param value="{!Paging.PageNumber}" />
+                                    <apex:param value="{!Paging.PageCount}" />
+                                </apex:outputText>
+                            </strong>
+                        </span>
+                    </apex:panelGroup>
+                </apex:panelGrid>   
+            </div>
+        </div>
+    </apex:outputPanel>
+</apex:component>

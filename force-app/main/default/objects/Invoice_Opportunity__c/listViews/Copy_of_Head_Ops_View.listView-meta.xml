@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Head_Ops_View</fullName>
+    <columns>NAME</columns>
+    <columns>Top_of_the_Month__c</columns>
+    <columns>Buyer_Name__c</columns>
+    <columns>Supplier_name__c</columns>
+    <columns>CL_Provided_by_insurer__c</columns>
+    <columns>Ternsheet_Status__c</columns>
+    <columns>Opportunity_Status__c</columns>
+    <columns>Date_Term_sheet_Signedt__c</columns>
+    <columns>First_invoice_Amount__c</columns>
+    <columns>Date_First_Invoice__c</columns>
+    <columns>Ops_Comments__c</columns>
+    <columns>Sales_Comments__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Opportunity_Status__c</field>
+        <operation>equals</operation>
+        <value>Active,OIP</value>
+    </filters>
+    <label>Head Operations View</label>
+</ListView>

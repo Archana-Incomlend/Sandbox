@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Repayment_Type__c</name>
+    <picklistValues>
+        <masterLabel>Repayment of Funders Capital and Discount Amount</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repayment of Funders Capital only</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repayment to all parties</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

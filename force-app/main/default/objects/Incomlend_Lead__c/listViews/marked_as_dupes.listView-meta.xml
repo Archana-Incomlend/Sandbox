@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>marked_as_dupes</fullName>
+    <booleanFilter>1 or 2 or 3 or 4</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Company_Name__c</columns>
+    <columns>Last_Name__c</columns>
+    <columns>First_Name__c</columns>
+    <columns>email__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Company_Name__c</field>
+        <operation>contains</operation>
+        <value>dupe</value>
+    </filters>
+    <filters>
+        <field>First_Name__c</field>
+        <operation>contains</operation>
+        <value>dupe</value>
+    </filters>
+    <filters>
+        <field>Last_Name__c</field>
+        <operation>contains</operation>
+        <value>dupe</value>
+    </filters>
+    <filters>
+        <field>email__c</field>
+        <operation>contains</operation>
+        <value>dupe</value>
+    </filters>
+    <label>marked as dupes</label>
+</ListView>

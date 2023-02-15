@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Send Slack When new allocation is created , plus email to funders and Confirmation email when the ammount requested is &lt; to amount funded</description>
+    <masterLabel>send slack for new allocation created</masterLabel>
+</FlowDefinition>

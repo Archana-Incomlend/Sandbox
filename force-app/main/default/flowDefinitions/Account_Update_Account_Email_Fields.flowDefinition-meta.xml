@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Flow Migration from Workflows and Process Builders
+1. Update Master Agent email
+2. Update Agent Email
+3. Update Primary Contact Email
+4. Update Onboarded Completed Date
+5. Update Transfer Date
+6. account unique name
+7. GBP USD Equiv update (Process Builder)</description>
+    <masterLabel>In-Active Migrate Account - Update Account Fields</masterLabel>
+</FlowDefinition>

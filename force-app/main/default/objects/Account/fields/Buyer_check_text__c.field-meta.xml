@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Buyer_check_text__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;Name : &quot; + Name + br() +br() +
+ &quot;Address : &quot; &amp; BR() &amp;
+if(LEN(BillingStreet)&gt;0, BillingStreet&amp; &quot; &quot; , &quot;&quot; ) &amp; BR() &amp;
+if(LEN(BillingCity)&gt;0,BillingCity&amp; &quot;, &quot; , &quot;&quot; )&amp;
+if(LEN(BillingState)&gt;0, BillingState&amp; &quot; &quot; , &quot;&quot; )&amp;
+if(LEN(BillingPostalCode)&gt;0,BillingPostalCode,&quot;&quot;) &amp; BR() &amp;
+If(LEN(BillingCountry) &gt;0,BillingCountry,&quot;&quot;)
+
+ + br() + br() +
+ &quot;Company Registration Number: &quot; + Company_registration_number__c  + br() +br() +
+ &quot;Insurer Company Reference Number: &quot; + Insurer_Company_Reference_Number__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Buyer check text</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

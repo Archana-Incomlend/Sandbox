@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Severity__c</name>
+    <picklistValues>
+        <masterLabel>Critical</masterLabel>
+        <translation>关键</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Important</masterLabel>
+        <translation>重要</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Information</masterLabel>
+        <translation>信息</translation>
+    </picklistValues>
+</CustomFieldTranslation>

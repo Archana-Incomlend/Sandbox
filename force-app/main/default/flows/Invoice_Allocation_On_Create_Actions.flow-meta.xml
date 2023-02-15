@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>ListingEndDate</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate} + 5</expression>
+    </formulas>
+    <interviewLabel>Invoice Allocation - On Create Actions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Invoice Allocation - On Create Actions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Invoice_Listing_Date</name>
+        <label>Update Invoice Listing Date</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <connector>
+            <targetReference>Email_Supplier_Approve</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Invoice__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Listing_End__c</field>
+            <value>
+                <elementReference>ListingEndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Listing_Start__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <object>invoice_finance_deal__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Invoice_Listing_Date</targetReference>
+        </connector>
+        <object>Invoice_Allocation__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Email_Supplier_Approve</name>
+        <label>Email Supplier Approve</label>
+        <locationX>176</locationX>
+        <locationY>455</locationY>
+        <flowName>Email_Supplier_Approve</flowName>
+        <inputAssignments>
+            <name>invoiceid</name>
+            <value>
+                <elementReference>$Record.Invoice__c</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+</Flow>

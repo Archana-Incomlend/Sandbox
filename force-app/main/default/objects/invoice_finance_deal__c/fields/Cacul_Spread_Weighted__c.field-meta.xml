@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cacul_Spread_Weighted__c</fullName>
+    <description>for calculation Spread weighted</description>
+    <externalId>false</externalId>
+    <formula>Spread_invoice__c  *  advanced_amount__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>for calculation Spread weighted</inlineHelpText>
+    <label>Calcul Spread Weighted</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

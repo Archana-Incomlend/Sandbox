@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>fxRateToInvoice</name>
+        <label>Update rate to invoice</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <actionName>PopulateInvoiceFxRateController</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>fxRateToTransaction</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fxRate</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>fxRateToTransaction</name>
+        <label>Update rate to transactions</label>
+        <locationX>176</locationX>
+        <locationY>455</locationY>
+        <actionName>PopulateTransactionFxRateController</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fxRate</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <description>replace the process builder one</description>
+    <interviewLabel>FX rate invoice and transaction {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FX rate invoice&amp;transaction</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>fxRateToInvoice</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>from_currency__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>USD</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>from_currency__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>XXX</stringValue>
+            </value>
+        </filters>
+        <object>FX_Rates__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

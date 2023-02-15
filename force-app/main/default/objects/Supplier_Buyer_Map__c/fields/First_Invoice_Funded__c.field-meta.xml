@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Invoice_Funded__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Date of the first funded invoice after 1st of May 2021</inlineHelpText>
+    <label>First Invoice Funded</label>
+    <summarizedField>invoice_finance_deal__c.advance_send_to_supplier_date__c</summarizedField>
+    <summaryFilterItems>
+        <field>invoice_finance_deal__c.Phase__c</field>
+        <operation>equals</operation>
+        <value>3:IN PROGRESS, 4:CLOSED</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>invoice_finance_deal__c.advanced_amount__c</field>
+        <operation>notEqual</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>invoice_finance_deal__c.advance_send_to_supplier_date__c</field>
+        <operation>greaterThan</operation>
+        <value>5/1/2019</value>
+    </summaryFilterItems>
+    <summaryForeignKey>invoice_finance_deal__c.Supplier_Buyer_Map__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

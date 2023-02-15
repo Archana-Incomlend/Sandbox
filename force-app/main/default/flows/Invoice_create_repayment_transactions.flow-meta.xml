@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Create_Invoice_Repayment_Objects</name>
+        <label>Create Invoice Repayment Objects</label>
+        <locationX>906</locationX>
+        <locationY>73</locationY>
+        <actionName>InvoicePartialRepayment_Invocable</actionName>
+        <actionType>apex</actionType>
+        <inputParameters>
+            <name>dueDate</name>
+            <value>
+                <elementReference>Repayment_Actual_Date</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>invoiceId</name>
+            <value>
+                <elementReference>invoiceID</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>isOverdueCapped</name>
+            <value>
+                <elementReference>Capped_Overdue_Days</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>isSimulation</name>
+            <value>
+                <elementReference>Is_Simulation</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>repaidAmount</name>
+            <value>
+                <elementReference>Repaid_Amount</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <description>Validates input due date and amount against invoice due date and real face value
+1. Input due date must be in between invoice due date and today&apos;s date, both inclusive
+2. Input amount must be less than or equal to remaining real face value</description>
+        <name>Is_input_due_date_and_amount_valid</name>
+        <label>Are input due date and amount valid</label>
+        <locationX>635</locationX>
+        <locationY>71</locationY>
+        <defaultConnector>
+            <targetReference>Invalid_input_parameters</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Invalid input parameters</defaultConnectorLabel>
+        <rules>
+            <name>Valid_input_parameters</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Repayment_Actual_Date</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Invoice.Due_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Repaid_Amount</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Remaining_Real_Face_Value</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Invoice_Repayment_Objects</targetReference>
+            </connector>
+            <label>Valid input parameters</label>
+        </rules>
+    </decisions>
+    <description>Set null amounts to 0.00</description>
+    <formulas>
+        <description>Real face value left to be paid</description>
+        <name>Remaining_Real_Face_Value</name>
+        <dataType>Currency</dataType>
+        <expression>{!Invoice.Real_Face_Value__c} - BLANKVALUE({!Invoice.Repaid_Amount__c}, 0.00)</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Invoice create repayment transactions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Invoice create repayment transactions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Retrieve face value and due date for validation purposes</description>
+        <name>Retrieve_Invoice</name>
+        <label>Retrieve Invoice</label>
+        <locationX>503</locationX>
+        <locationY>69</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_input_due_date_and_amount_valid</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>invoiceID</elementReference>
+            </value>
+        </filters>
+        <object>invoice_finance_deal__c</object>
+        <outputReference>Invoice</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Due_Date__c</queriedFields>
+        <queriedFields>Real_Face_Value__c</queriedFields>
+        <queriedFields>Repaid_Amount__c</queriedFields>
+    </recordLookups>
+    <screens>
+        <name>Are_you_Sure</name>
+        <label>Are you Sure</label>
+        <locationX>387</locationX>
+        <locationY>69</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Retrieve_Invoice</targetReference>
+        </connector>
+        <fields>
+            <name>Areyousure</name>
+            <fieldText>&lt;p&gt;Please enter values to proceed&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Repaid_Amount</name>
+            <dataType>Currency</dataType>
+            <fieldText>Repaid Amount</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <scale>2</scale>
+            <validationRule>
+                <errorMessage>&lt;p&gt;&lt;span style=&quot;font-size: 12px; color: rgb(255, 0, 0);&quot;&gt;Please enter a valid amount&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                <formulaExpression>{!Repaid_Amount} &gt;= 1000</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>Repayment_Actual_Date</name>
+            <dataType>Date</dataType>
+            <fieldText>Repayment Actual Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;&lt;span style=&quot;font-size: 12px; color: rgb(255, 0, 0);&quot;&gt;Enter a date greater than or equal to today&apos;s date&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                <formulaExpression>{!Repayment_Actual_Date} &lt;= TODAY()</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>Capped_Overdue_Days</name>
+            <dataType>Boolean</dataType>
+            <defaultValue>
+                <booleanValue>true</booleanValue>
+            </defaultValue>
+            <fieldText>Capped Overdue Days</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Flag to cap overdue computation at 60 days&lt;/span&gt;&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Is_Simulation</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Is Simulation</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;Select this option to receive an email to verify amount values. Repayment and transaction objects will not be created.&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>This is the error screen for invalid input screen parameters on the start of the flow.</description>
+        <name>Invalid_input_parameters</name>
+        <label>Invalid input parameters</label>
+        <locationX>643</locationX>
+        <locationY>322</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Invalid_Screen_Parameters</name>
+            <fieldText>&lt;p&gt;Actual repayment date cannot be before the invoice due date and/or Repaid Amount cannot be more than the remaining real face value amount.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Are_you_Sure</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Retrieved invoice as per invoice ID from URL</description>
+        <name>Invoice</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>invoice_finance_deal__c</objectType>
+    </variables>
+    <variables>
+        <name>invoiceID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

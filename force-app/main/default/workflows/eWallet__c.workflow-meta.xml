@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Maintenance_ewallet</fullName>
+        <description>Maintenance, update Balance Check from balance</description>
+        <field>Balance_Amount_Check__c</field>
+        <formula>Balance__c</formula>
+        <name>Maintenance ewallet</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_eWallet_Balance</fullName>
+        <description>copy Balance Rollup to Balance field</description>
+        <field>Balance__c</field>
+        <formula>Balance_Rollup__c</formula>
+        <name>Update eWallet Balance</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_eWallet_In_Progress_Amount</fullName>
+        <field>In_Progress__c</field>
+        <formula>In_Progress_Rollup__c</formula>
+        <name>Update eWallet In Progress Amount</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_eWallet_Reservation</fullName>
+        <field>Reservations__c</field>
+        <formula>Reservation_Rollup__c</formula>
+        <name>Update eWallet Reservation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_eWallet_Total_Discount_Earned</fullName>
+        <description>copy Total Discount Earned Tollup into Total Discount Earned</description>
+        <field>Total_Discount_Earned__c</field>
+        <formula>Total_Discount_Earned_Rollup__c</formula>
+        <name>Update eWallet Total Discount Earned</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>eWallet_Unique_Key</fullName>
+        <field>Unique_Name__c</field>
+        <formula>Account__c +text(CCY__c)</formula>
+        <name>eWallet Unique Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <flowActions>
+        <fullName>Send_Slack_alert_when_eWallet_is_negative</fullName>
+        <flow>Send_Slack_alert_when_eWallet_is_negative</flow>
+        <flowInputs>
+            <name>eWalletID</name>
+            <value>{!Id}</value>
+        </flowInputs>
+        <label>Send Slack alert when eWallet is negative</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+    <rules>
+        <fullName>Maintenance Copy Balance balance check</fullName>
+        <actions>
+            <name>Maintenance_ewallet</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Maintenance, Copy Balance to balance check if empty</description>
+        <formula>1=1</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Slack alert when eWallet is negative</fullName>
+        <actions>
+            <name>Send_Slack_alert_when_eWallet_is_negative</name>
+            <type>FlowAction</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>eWallet__c.Balance__c</field>
+            <operation>lessThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>Send a Slack when an e-wallet is negative , but need to review the logic to avoid multiple alert on same e-wallet</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update eWallet Rollup</fullName>
+        <actions>
+            <name>Update_eWallet_Balance</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_eWallet_In_Progress_Amount</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_eWallet_Reservation</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_eWallet_Total_Discount_Earned</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>eWallet__c.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>eWallet Unique Key</fullName>
+        <actions>
+            <name>eWallet_Unique_Key</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update a flied in E-Wallet (need to investigate whats for )</description>
+        <formula>Account__c + text(CCY__c) &lt;&gt;  Unique_Name__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

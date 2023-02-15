@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sector__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Sector / Industry</inlineHelpText>
+    <label>Sector</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Energy</fullName>
+                <default>false</default>
+                <label>Energy</label>
+            </value>
+            <value>
+                <fullName>Materials</fullName>
+                <default>false</default>
+                <label>Materials</label>
+            </value>
+            <value>
+                <fullName>Metals &amp; Minerals</fullName>
+                <default>false</default>
+                <label>Metals &amp; Minerals</label>
+            </value>
+            <value>
+                <fullName>Industrial Products</fullName>
+                <default>false</default>
+                <label>Industrial Products</label>
+            </value>
+            <value>
+                <fullName>Consumer Goods</fullName>
+                <default>false</default>
+                <label>Consumer Goods</label>
+            </value>
+            <value>
+                <fullName>Food Products, Beverage &amp; Tobacco</fullName>
+                <default>false</default>
+                <label>Food Products &amp; Beverage &amp; Tobacco</label>
+            </value>
+            <value>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+                <label>Health Care</label>
+            </value>
+            <value>
+                <fullName>Technology Hardware &amp; Equipment</fullName>
+                <default>false</default>
+                <label>Technology Hardware &amp; Equipment</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

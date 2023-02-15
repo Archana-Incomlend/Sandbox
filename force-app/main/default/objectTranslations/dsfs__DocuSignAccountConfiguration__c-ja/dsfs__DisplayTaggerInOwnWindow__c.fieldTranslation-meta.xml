@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Salesforce のヘッダーまたはサイドバーに組み込まれるのではなく、独自のウィンドウに表示されるように DocuSign タグ付けを設定します。</help>
+    <label></label>
+    <name>dsfs__DisplayTaggerInOwnWindow__c</name>
+</CustomFieldTranslation>

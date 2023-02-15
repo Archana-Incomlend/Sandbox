@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Account - Agent (company)</layout>
+        <sections>
+            <label></label>
+            <section>Additional information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Commissions</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Onboarding Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trustee</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>exchange.incomlend.com</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>new eWallet structure ignore for now</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Account - Agent (individual)</layout>
+        <sections>
+            <label></label>
+            <section>Commisions</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Onboarding Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trustee</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Account - Buyer New</layout>
+        <sections>
+            <label></label>
+            <section>Account Special features</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Account source</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Contacts</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Insurance / Rating</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Insurance Exposure</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Limit for all Map</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Limit for this Buyer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Report</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Information that shows on GUI</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Onboarding Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Repayment History</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Risk Visit info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Sales</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trust Account Changes Notification</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trustees</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Account - Purchaser (company)</layout>
+        <sections>
+            <label></label>
+            <section>Agent Infomation</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Auto Sweep</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Contact</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Lead Info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Lead informations</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Onboarding Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Position</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Temporary DL Dashboard</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trustee</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet EUR</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet GBP</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet HKD</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet Position Summary</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet SGD</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet USD</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Account - Supplier</layout>
+        <sections>
+            <label></label>
+            <section>Account source</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Account special features</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Check List</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Contacts</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Report</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>E-wallet Summary</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Information that appears on the GUI</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>NEW ARPA</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Onboarding Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Risk Visit Info (Director/Risk Manager)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Sales</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Status for Task ( test)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trustee</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Account - Supplier New</layout>
+        <sections>
+            <label></label>
+            <section>Account source</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Account special features</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Check List</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Contacts</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Report</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>E-wallet Summary</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Information that appears on the GUI</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>NEW ARPA</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Onboarding Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Risk Visit Info (Director/Risk Manager)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Sales</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Status for Task ( test)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trustee</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label></label>
+            <section>eWallet</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>External</layout>
+        <sections>
+            <label></label>
+            <section>Check List</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>External Auditor</layout>
+        <sections>
+            <label></label>
+            <section>Check List</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Purchaser - sensitive</layout>
+        <sections>
+            <label></label>
+            <section>Agent Infomation</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Auto Sweep</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Contact</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Lead Info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Lead informations</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Onboarding Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Temporary DL Dashboard</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trustee</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Trustee-Camelot(Supplier)</layout>
+        <sections>
+            <label></label>
+            <section>Account source</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Account special features</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Contacts</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Report</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>E-wallet Summary</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Information that appears on the GUI</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>NEW ARPA</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Onboarding Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Risk Visit Info (Director/Risk Manager)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Sales</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Status for Task ( test)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trustee</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>account - Purchaser (individual)</layout>
+        <sections>
+            <label></label>
+            <section>Agent Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Auto Sweep</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>New eWallet structure - ignore for now</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Onboarding Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Potential Deposit</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Summary Position</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet EUR</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet GBP</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet HKD</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet SGD</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet USD</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>account - buyer</layout>
+        <sections>
+            <label></label>
+            <section>Account Special features</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Account source</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Check-List</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Contacts</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Insurance / Rating</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Insurance Exposure</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Limit for all Map</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Limit for this Buyer</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Credit Report</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Information that shows on GUI</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Onboarding Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Repayment History</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Risk Visit info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Sales</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Test Status for Task (test)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trust Account Changes Notification</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Trustees</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>eWallet</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>account - prospect buyer</layout>
+        <sections>
+            <label></label>
+            <section>Credit Insurance Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>incomlend operations</layout>
+        <sections>
+            <label></label>
+            <section>eWallet</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label></label>
+        <name>Agent_Individual</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Agent_company</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Buyer</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Competitor</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>External_view</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Prospect_Buyer</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Purchaser_company</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Purchaser_individual</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Purchaser_sensitive</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>RAIF</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Supplier</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>incomlend_operations</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>other</name>
+    </recordTypes>
+    <webLinks>
+        <label></label>
+        <name>AltavistaNews</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Clone</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Download_Attachment</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Download_Document</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>HooversProfile</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>MassManager__Mass_Delete</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>MassManager__Mass_Edit_Standard_Fields</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>MassManager__Mass_Update</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Ready_for_Withdrawal_Supplier</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Worldcheck</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>YahooMaps</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>create_new_buyer</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>dsfs__Send_with_DocuSign</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>dsfs__Verify_with_DNB</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>send_buyer_check</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>send_incomlend_services_invoice</name>
+    </webLinks>
+</CustomObjectTranslation>

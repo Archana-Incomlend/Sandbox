@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incomlend_Fees_and_Disc_Comms_USD_equiv__c</fullName>
+    <externalId>false</externalId>
+    <formula>Marketplace_link__r.FX_Rate_for_MI__r.rate__c 
+* 
+Incomlend_Fees_and_Discount_Commissions__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Incomlend Fees and Disc Comms USD equiv</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

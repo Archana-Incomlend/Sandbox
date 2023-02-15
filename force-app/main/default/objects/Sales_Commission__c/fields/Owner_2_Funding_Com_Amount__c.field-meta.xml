@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_2_Funding_Com_Amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>pct_Owner_2__c    * pct_Com_Funding__c * pct_Com_Owner__c * Agent_Percentage_Portion__c 
+* IF (Invoice_Allocation__c != null,
+Invoice_Allocation__r.amount__c * Invoice_Allocation__r.Expected_finance_period_buyback_capped__c,
+Invoice_Finance_Deal__r.funded_amount__c * Invoice_Finance_Deal__r.expected_financing_period__c)
+* 1 / IF (Invoice_Allocation__c != null, 360, 30)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>in USD equiv of the funded amount</inlineHelpText>
+    <label>Owner 2 Funding Com Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

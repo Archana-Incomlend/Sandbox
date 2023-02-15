@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bangladesh_special_case__c</fullName>
+    <description>For Ops reminder, copy of map Bangladesh special case in the map</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Supplier_Buyer_Map__r.Bangladesh_special_case__c)</formula>
+    <inlineHelpText>For Ops reminder, copy of map Bangladesh special case in the map</inlineHelpText>
+    <label>Bangladesh special case</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

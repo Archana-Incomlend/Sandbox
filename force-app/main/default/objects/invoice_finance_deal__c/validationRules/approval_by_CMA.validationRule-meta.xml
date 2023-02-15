@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>approval_by_CMA</fullName>
+    <active>true</active>
+    <description>enable to continue only if CMA has approved the invoice ( CMA invoice only)</description>
+    <errorConditionFormula>Supplier_Agent__c == &apos;CMA CGM&apos; &amp;&amp; !Approved_by_CMA__c &amp;&amp;  (ISPICKVAL(Status__c, &apos;pending buyer and forwarder confirmation&apos;))</errorConditionFormula>
+    <errorDisplayField>Approved_by_CMA__c</errorDisplayField>
+    <errorMessage>Enable to continue only if CMA has approved the invoice ( CMA invoice only)</errorMessage>
+</ValidationRule>

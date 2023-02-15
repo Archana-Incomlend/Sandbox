@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apexPluginCalls>
+        <name>send_email</name>
+        <label>send email</label>
+        <locationX>505</locationX>
+        <locationY>465</locationY>
+        <apexClass>sendHTMLEmailPlugin</apexClass>
+        <connector>
+            <targetReference>Emails_Sent</targetReference>
+        </connector>
+        <inputParameters>
+            <name>BCC Email Addresses (comma-separated)</name>
+            <value>
+                <stringValue>operations@incomlend.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>htmlBody</name>
+            <value>
+                <elementReference>emailbody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Other Emails (comma-separated)</name>
+            <value>
+                <elementReference>invoice.buyer_Primary_Contact_Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Subject</name>
+            <value>
+                <elementReference>emailTitle</elementReference>
+            </value>
+        </inputParameters>
+    </apexPluginCalls>
+    <apexPluginCalls>
+        <name>send_email_CMA</name>
+        <label>send email CMA</label>
+        <locationX>500</locationX>
+        <locationY>655</locationY>
+        <apexClass>sendHTMLEmailPlugin</apexClass>
+        <connector>
+            <targetReference>Emails_Sent</targetReference>
+        </connector>
+        <inputParameters>
+            <name>htmlBody</name>
+            <value>
+                <elementReference>EmailBodyCMA</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Other Emails (comma-separated)</name>
+            <value>
+                <elementReference>invoice.buyer_Primary_Contact_Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Sender Address</name>
+            <value>
+                <stringValue>Operations@shipfin.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Sender Display Name</name>
+            <value>
+                <stringValue>Shipfin Operations</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Subject</name>
+            <value>
+                <elementReference>EmailTitleCMA</elementReference>
+            </value>
+        </inputParameters>
+    </apexPluginCalls>
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>Check_if_the_status_is_OK</name>
+        <label>Check if the status is OK</label>
+        <locationX>1109</locationX>
+        <locationY>59</locationY>
+        <defaultConnector>
+            <targetReference>Wrong_Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Invoice_status_ok</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>invoice.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>pending incomlend review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CMA</targetReference>
+            </connector>
+            <label>Invoice status ok</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CMA</name>
+        <label>CMA</label>
+        <locationX>776</locationX>
+        <locationY>563</locationY>
+        <defaultConnector>
+            <targetReference>send_email</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CMA2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>invoice.Supplier_Agent__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>CMA</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>send_email_CMA</targetReference>
+            </connector>
+            <label>CMA</label>
+        </rules>
+    </decisions>
+    <description>typo</description>
+    <formulas>
+        <name>PositiveBalance</name>
+        <dataType>Number</dataType>
+        <expression>{!BalanceTransactionInfo.Amount__c}*(-1)</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Email Buyer Request Approve Listing {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Email Buyer Request Signature Listing</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>lookup_invoice</name>
+        <label>lookup invoice</label>
+        <locationX>838</locationX>
+        <locationY>33</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_the_status_is_OK</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>invoiceid</elementReference>
+            </value>
+        </filters>
+        <object>invoice_finance_deal__c</object>
+        <outputReference>invoice</outputReference>
+        <queriedFields>invoice_amount__c</queriedFields>
+        <queriedFields>Invoice_name__c</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>CCY__c</queriedFields>
+        <queriedFields>supplier_text__c</queriedFields>
+        <queriedFields>Buyer_text__c</queriedFields>
+        <queriedFields>requested_amount__c</queriedFields>
+        <queriedFields>Expected_Payment_Date__c</queriedFields>
+        <queriedFields>Phase__c</queriedFields>
+        <queriedFields>supplierID__c</queriedFields>
+        <queriedFields>buyer__c</queriedFields>
+        <queriedFields>supplier_invoice_reference_number__c</queriedFields>
+        <queriedFields>Status__c</queriedFields>
+        <queriedFields>Supplier_Agent__c</queriedFields>
+        <queriedFields>buyer_Primary_Contact_Email__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Emails_Sent</name>
+        <label>Emails Sent</label>
+        <locationX>299</locationX>
+        <locationY>522</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>invoiceid</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>pending Buyer Request Approval resubmission</stringValue>
+            </value>
+        </inputAssignments>
+        <object>invoice_finance_deal__c</object>
+    </recordUpdates>
+    <screens>
+        <name>Are_you_sure</name>
+        <label>Are you sure ?</label>
+        <locationX>450</locationX>
+        <locationY>8</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>lookup_invoice</targetReference>
+        </connector>
+        <fields>
+            <name>Areyousure</name>
+            <fieldText>&lt;p&gt;Are you sure to send an email to the buyer to approve one more time the invoice request?&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Wrong_Status</name>
+        <label>Wrong status</label>
+        <locationX>1270</locationX>
+        <locationY>247</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>ARPA_Signature_required</name>
+            <fieldText>&lt;p&gt;The invoice status should be pending for incomlend review.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>110</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Are_you_sure</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>emailbody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;
+    &lt;head&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+        &lt;title&gt;Incomlend: Your payment has been processed.&lt;/title&gt;
+        &lt;style&gt;
+        /* -------------------------------------
+            RESPONSIVE AND MOBILE FRIENDLY STYLES
+        ------------------------------------- */
+        @media only screen and (max-width: 620px) {
+          table[class=body] h1 {
+            font-size: 28px !important;
+            margin-bottom: 10px !important;
+          }
+          table[class=body] p,
+                table[class=body] ul,
+                table[class=body] ol,
+                table[class=body] td,
+                table[class=body] span,
+                table[class=body] a {
+            font-size: 16px !important;
+          }
+          table[class=body] .wrapper,
+                table[class=body] .article {
+            padding: 10px !important;
+          }
+          table[class=body] .content {
+            padding: 0 !important;
+          }
+          table[class=body] .container {
+            padding: 0 !important;
+            width: 100% !important;
+          }
+          table[class=body] .main {
+            border-left-width: 0 !important;
+            border-radius: 0 !important;
+            border-right-width: 0 !important;
+          }
+          table[class=body] .btn table {
+            width: 100% !important;
+          }
+          table[class=body] .btn a {
+            width: 100% !important;
+          }
+          table[class=body] .img-responsive {
+            height: auto !important;
+            max-width: 100% !important;
+            width: auto !important;
+          }
+        }
+    
+        /* -------------------------------------
+            PRESERVE THESE STYLES IN THE HEAD
+        ------------------------------------- */
+        @media all {
+          .ExternalClass {
+            width: 100%;
+          }
+          .ExternalClass,
+                .ExternalClass p,
+                .ExternalClass span,
+                .ExternalClass font,
+                .ExternalClass td,
+                .ExternalClass div {
+            line-height: 100%;
+          }
+          .apple-link a {
+            color: inherit !important;
+            font-family: inherit !important;
+            font-size: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+            text-decoration: none !important;
+          }
+          #MessageViewBody a {
+            color: inherit;
+            text-decoration: none;
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+          }
+          .btn-primary table td:hover {
+            background-color: #34495e !important;
+          }
+          .btn-primary a:hover {
+            background-color: #34495e !important;
+            border-color: #34495e !important;
+          }
+        }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body class=&quot;&quot; style=&quot;background-color: #f6f6f6; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;&quot;&gt;
+        &lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; class=&quot;body&quot; style=&quot;border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #f6f6f6;&quot;&gt;
+        
+            &lt;tr&gt;
+                &lt;td style=&quot;font-family: sans-serif; font-size: 14px; vertical-align: top;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+                &lt;td class=&quot;container&quot; style=&quot;font-family: sans-serif; font-size: 14px; vertical-align: top; display: block; margin: 0 auto; max-width: 600px; padding: 10px; width: 600px;&quot;&gt;
+                    &lt;div class=&quot;content&quot; style=&quot;box-sizing: border-box; display: block; margin: 0 auto; max-width: 600px;&quot;&gt;
+
+                        &lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;border-spacing: 0px; width: 100%;&quot;&gt;
+                            &lt;tr valign=&quot;top&quot;&gt;
+                                &lt;td style=&quot;background-color:#ffffff;vertical-align:middle;text-align:center;&quot;&gt;
+                                    &lt;img border=&quot;0&quot; src=&quot;https://incomlend-images.s3-ap-southeast-1.amazonaws.com/icl-header.jpg&quot; width=&quot;600&quot; alt=&quot;INCOMLEND header&quot;&gt;
+                                &lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/table&gt;
+        
+                        &lt;!-- START CENTERED WHITE CONTAINER --&gt;
+                        &lt;table class=&quot;main&quot; style=&quot;border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;&quot;&gt;
+        
+                            &lt;!-- START MAIN CONTENT AREA --&gt;
+                            &lt;tr&gt;
+                                &lt;td class=&quot;wrapper&quot; style=&quot;font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 20px;&quot;&gt;
+                                    &lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;&quot;&gt;
+                                        &lt;tr&gt;
+                                            &lt;td style=&quot;font-family: sans-serif; font-size: 14px; vertical-align: top;&quot;&gt;
+                                                &lt;p style=&quot;font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;&quot;&gt;Dear customer,&lt;/p&gt;
+                                                &lt;p style=&quot;font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;&quot;&gt;The invoice {!invoice.supplier_invoice_reference_number__c} of {!invoice.invoice_amount__c} {!invoice.CCY__c} has been reviewed by our Operation Team and we need you to sign the Buyer Request once again following the modifications made on the invoice.&lt;/p&gt;
+                                                &lt;p style=&quot;font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;&quot;&gt;To finalize it, could you please connect to the platform, select the related invoice on your Dashboard in the &quot;Pre Listing&quot; section, once selected, if all information of the invoice is correct, please click on the button &quot;Sign Buyer Request&quot;.&lt;/p&gt;
+                                              &lt;p style=&quot;font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;&quot;&gt;Thank you for using Incomlend services.&lt;/p&gt;
+                                              &lt;p style=&quot;font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;&quot;&gt;If you have any questions about this Buyer Request, simply reply to this email or reach out to your usual Incomlend contact.&lt;/p&gt;
+                                              
+                                                &lt;p style=&quot;font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;&quot;&gt;Yours sincerely,&lt;br/&gt;The INCOMLEND Team&lt;/p&gt;
+                                              &lt;p&gt;---&lt;/p&gt;
+                                              &lt;p style=&quot;font-family: sans-serif; font-size: 12px; font-weight: normal; margin: 0; margin-bottom: 15px;&quot;&gt;DISCLAIMER: Confidentiality&lt;/br&gt;Any information transmitted by means of this e-mail (and any of the attachments) is intended exclusively for the addressee(s) and for those authorized by the addressee(s) to read this message. We are not liable for any views expressed by an individual in this email/attachment which do not constitute official communication. Any use by a party other than the addressee(s) is prohibited. This information may be confidential in nature and fall under a duty of non-disclosure, or be legally privileged. If you have received this e-mail in error please email us on &lt;a href = &quot;mailto: info@incomlend.com&quot;&gt;info@incomlend.com&lt;/a&gt;&lt;/p&gt;
+                                  
+                                  &lt;p style=&quot;font-family: sans-serif; font-size: 12px; font-weight: normal; margin: 0; margin-bottom: 15px;&quot;&gt;This sender has taken reasonnable measures to ensure that this message is free from viruses, but the recipient should also take such measures. The sender shall not be liable for damages resulting fromm the use of electronic means of communication, including - but not limited to - damages resulting from failure or delay in delivery of electronic communications, interception or manipulation of electronic communications by third parties or by computer programs used for electronic communications and transmission of viruses and other malicious code.&lt;/p&gt;
+                                            &lt;/td&gt;
+                                        &lt;/tr&gt;
+                                    &lt;/table&gt;
+                                &lt;/td&gt;
+                            &lt;/tr&gt;
+                          
+        
+                            &lt;!-- END MAIN CONTENT AREA --&gt;
+                        &lt;/table&gt;
+        
+                        &lt;!-- START FOOTER --&gt;
+                        &lt;div class=&quot;footer&quot; style=&quot;clear: both; margin-top: 10px; text-align: center; width: 100%;&quot;&gt;
+                            &lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;&quot;&gt;
+                                &lt;tr&gt;
+                                    &lt;td class=&quot;content-block&quot; style=&quot;font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;&quot;&gt;
+                                        &lt;span class=&quot;apple-link&quot; style=&quot;color: #999999; font-size: 12px; text-align: center;&quot;&gt;©2020 INCOMLEND. All Rights Reserved.&lt;/span&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/div&gt;
+                        &lt;!-- END FOOTER --&gt;
+        
+                        &lt;!-- END CENTERED WHITE CONTAINER --&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+                &lt;td style=&quot;font-family: sans-serif; font-size: 14px; vertical-align: top;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailBodyCMA</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;img src=&quot;https://incomlend--c.ap7.content.force.com/servlet/rtaImage?refid=0EM0I000002VpcB&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: sans-serif;&quot;&gt;Dear customer,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: sans-serif;&quot;&gt;The invoice {!invoice.supplier_invoice_reference_number__c} of {!invoice.invoice_amount__c} {!invoice.CCY__c} #ID{!invoice.Name} has been reviewed by our Operation Team and &lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: sans-serif;&quot;&gt;we ask you to validate once again following the modifications made on this invoice.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: sans-serif;&quot;&gt;To finalize it, could you please connect to the platform, select the related invoice on your Dashboard in &quot;Pre Listing&quot; section, once selected, if all the information of the invoice is correct, please click on the button “I sign”.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: sans-serif;&quot;&gt;Regards, &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: sans-serif;&quot;&gt;Shipfin Team&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>emailsalreadysent</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>Emails already sent !</text>
+    </textTemplates>
+    <textTemplates>
+        <name>emailTitle</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Incomlend - Signature required for the invoice {!invoice.supplier_invoice_reference_number__c} ID[{!invoice.Name}]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailTitleCMA</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;ShipFin- Signature required for the invoice {!invoice.supplier_invoice_reference_number__c} ID[{!invoice.Name}]&lt;/span&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>Allocation</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Invoice_Allocation__c</objectType>
+    </variables>
+    <variables>
+        <name>AllocationIDs</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Invoice_Allocation__c</objectType>
+    </variables>
+    <variables>
+        <name>BalanceTransactionInfo</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Transaction__c</objectType>
+    </variables>
+    <variables>
+        <name>email</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>mathieu@incomlend.com</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>EmailFunder</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>IncomlendOperationID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>invoice</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>invoice_finance_deal__c</objectType>
+    </variables>
+    <variables>
+        <name>invoiceid</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>a092800000Ql27Q</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>MapsInfo</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Supplier_Buyer_Map__c</objectType>
+    </variables>
+    <variables>
+        <name>RosemontIDtoGetInfo</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SupplierAccountInfo</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>SupplierPrimaryContactInfo</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+</Flow>

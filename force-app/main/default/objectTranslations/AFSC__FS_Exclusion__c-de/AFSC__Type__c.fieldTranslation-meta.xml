@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>AFSC__Type__c</name>
+    <picklistValues>
+        <masterLabel>Allowed Extension or Filetype</masterLabel>
+        <translation>Zulässige Erweiterung oder zulässiger Dateityp</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Allowed Extension or Filetype Manual Scan</masterLabel>
+        <translation>Zulässige Erweiterung oder zulässiger Dateityp Manueller Scan</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Attachment Location To Scan</masterLabel>
+        <translation>Zu scannender Anhangsspeicherort</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blocked Extension or Filetype</masterLabel>
+        <translation>Blockierte Erweiterung oder blockierter Dateityp</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blocked Extension or Filetype Manual Scan</masterLabel>
+        <translation>Blockierte Erweiterung oder blockierter Dateityp Manueller Scan</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Domain</masterLabel>
+        <translation>Domäne</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Excluded Extension or Filetype</masterLabel>
+        <translation>Ausgeschlossene Erweiterung oder ausgeschlossener Dateityp</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Excluded Extension or Filetype Manual Scan</masterLabel>
+        <translation>Ausgeschlossene Erweiterung oder ausgeschlossener Dateityp Manueller Scan</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Extension</masterLabel>
+        <translation>Erweiterung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Extension or Filetype To Scan</masterLabel>
+        <translation>Zu scannende Erweiterung oder zu scannender Dateityp</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Extension or Filetype to Scan Manual Scan</masterLabel>
+        <translation>Erweiterung oder zu scannender Dateityp Manueller Scan</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>File Protection Settings</masterLabel>
+        <translation>Dateischutz-Einstellungen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Filetype</masterLabel>
+        <translation>Dateityp</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Host</masterLabel>
+        <translation>Host</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rich Preview</masterLabel>
+        <translation>Ausführliche Vorschau</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>URL</masterLabel>
+        <translation>URL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>URL Protection Settings</masterLabel>
+        <translation>URL-Schutz-Einstellungen</translation>
+    </picklistValues>
+</CustomFieldTranslation>

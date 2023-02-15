@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gross_Funder_Discount_Rate_USD__c</fullName>
+    <description>Gross Funder Discount Rate (USD)</description>
+    <externalId>false</externalId>
+    <label>Gross Funder Discount Rate (USD)</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Cycle_Instalment__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (  TEXT(Insurance_Premium_Logic__c) = &quot;Instalments&quot;, (CL_Incomlend_for_this_Map__c *   Insurance_cost_for_Supplier__c * 360/ Credit_Terms__c)/2, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>First Cycle Instalment</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

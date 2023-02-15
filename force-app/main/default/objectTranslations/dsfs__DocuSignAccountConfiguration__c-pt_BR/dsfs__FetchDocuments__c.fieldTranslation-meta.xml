@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Suporta grandes envelopes do DocYouSign ao enviar envelopes para a DocYouSign sem dados de documento e permitindo a DocYouSign buscar dados de documento conforme a necessidade. Ative apenas se o número de envelopes enviados exceder os limites de chamada da Salesforce.</help>
+    <label></label>
+    <name>dsfs__FetchDocuments__c</name>
+</CustomFieldTranslation>

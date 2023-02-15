@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trade_Alert_Text_end_15pf__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;Offer Type :                    &quot; +  &quot;Fixed price&quot; + br() +
+&quot;Expected Repayment Date :       &quot; +  text( Expected_Payment_Date__c )  + br()+
+&quot;Expected Investment Term :      &quot; +  text( financing_period_for_calcs__c ) + &quot; days&quot;  + br()+
+&quot;Credit Insurer :                &quot; +  text( Supplier_Buyer_Map__r.Buyer__r.Insured_by__c ) + br() +
+&quot;Funding window start :          &quot; + text(datevalue(Listing_Start__c)) + &quot; &quot; + mid(text( Listing_Start__c + (60*8 / 1440)), 12,5 ) + br()+
+&quot;Funding window End :          &quot; + text(datevalue(Listing_End__c)) + &quot; &quot; + mid(text( Listing_End__c + (60*8 / 1440)), 12,5 ) + br() + br()+
+
+
+&quot;Please make sure in advance your eWallet is funded appropriately and connect to the Marketplace&quot; + br() + &quot;within the funding period window, &quot; +  text(datevalue(Listing_Start__c)) + &quot; &quot; + mid(text( Listing_Start__c + (60*8 / 1440)), 12,5 ) + &quot; to &quot; +  text(datevalue(Listing_End__c)) + &quot; &quot; + mid(text( Listing_End__c + (60*8 / 1440)), 12,5 ) + &quot; Hong Kong / Singapore time.&quot; + br() + br() +
+
+
+&quot;Incombot participation:          &quot; + text( CCY__c ) + &quot; &quot; + text(Incombot_Autosweep_participation__c) + br() +
+&quot;Number of outstanding invoices overdue from 15 to 29 days: &quot; + text(Buyer_other_Overdue_15_29__c) + br() +
+&quot;Number of invoices paid back all time: &quot; + text(Buyer_number_invoice_paid_back_all_time__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Trade Alert Text End 15% PF</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funders_onboarded_never_deposited</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Agent__c</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>USD_expected_first_deposit__c</columns>
+    <columns>Onboarding_completed_date__c</columns>
+    <columns>days_since_onboarded__c</columns>
+    <columns>First_Deposit_Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Customer</value>
+    </filters>
+    <filters>
+        <field>Sub_type__c</field>
+        <operation>equals</operation>
+        <value>Purchaser</value>
+    </filters>
+    <filters>
+        <field>onboarding_stage__c</field>
+        <operation>equals</operation>
+        <value>99.Onboarded</value>
+    </filters>
+    <label>Funders onboarded never deposited</label>
+</ListView>

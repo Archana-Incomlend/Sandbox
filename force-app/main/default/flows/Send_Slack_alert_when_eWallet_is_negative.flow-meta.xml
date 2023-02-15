@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>SendSlackMessageToBookkeepingUpdates</name>
+        <label>SendSlackMessageToBookkeepingUpdates</label>
+        <locationX>929</locationX>
+        <locationY>49</locationY>
+        <actionName>SendSlackMessageToBookkeepingUpdates</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Message</name>
+            <value>
+                <elementReference>NotificationContent</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>If_balance_is_negative</name>
+        <label>If balance is negative</label>
+        <locationX>554</locationX>
+        <locationY>52</locationY>
+        <defaultConnectorLabel>Balance is not negative</defaultConnectorLabel>
+        <rules>
+            <name>Excluded_eWallets</name>
+            <conditionLogic>1 OR 2</conditionLogic>
+            <conditions>
+                <leftValueReference>ExcludedeWallets.value__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>$Record.Name</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Balance__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Excluded eWallets</label>
+        </rules>
+        <rules>
+            <name>Balance_is_negative</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Balance__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>-1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SendSlackMessageToBookkeepingUpdates</targetReference>
+            </connector>
+            <label>Balance is negative</label>
+        </rules>
+    </decisions>
+    <description>merge
+1. Send Slack alert when eWallet is negative (this)
+2. Send Slack alert when eWallet is negative (from the workflow)</description>
+    <formulas>
+        <name>AccountName</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Account__r.Name}</expression>
+    </formulas>
+    <interviewLabel>Send Slack alert when eWallet is negative {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send Slack alert when eWallet is negative</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_excluded_eWallet</name>
+        <label>Get excluded eWallet</label>
+        <locationX>390</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>If_balance_is_negative</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Negative eWallets Slack Alert - Excluded eWallets</stringValue>
+            </value>
+        </filters>
+        <object>configuration__c</object>
+        <outputReference>ExcludedeWallets</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>value__c</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>109</locationY>
+        <connector>
+            <targetReference>Get_excluded_eWallet</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Balance__c</field>
+            <operator>LessThan</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <object>eWallet__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>NotificationContent</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>:warning: *An eWallet is negative* :warning:
+Account: {!AccountName}
+eWallet: {!$Record.Name}
+CCY: {!$Record.CCY__c}
+Balance: {!$Record.Balance__c}
+
+*@Finance, @Operations, Immediate investigation is required.*</text>
+    </textTemplates>
+    <variables>
+        <name>ExcludedeWallets</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>configuration__c</objectType>
+    </variables>
+</Flow>

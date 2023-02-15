@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incomlend_Accounts</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Latest_Balance__c</columns>
+    <columns>Latest_Balance_Date__c</columns>
+    <columns>Beneficiary_Name__c</columns>
+    <columns>Bank_Account_Number__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Purpose__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account__c</field>
+        <operation>equals</operation>
+        <value>Incomlend Operations</value>
+    </filters>
+    <label>Incomlend platform Accounts</label>
+</ListView>

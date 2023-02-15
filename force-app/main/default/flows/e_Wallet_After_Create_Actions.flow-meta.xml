@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <description>Migrated Process Builder to Flow.
+1. TRUSTEE create e-wallet trustee</description>
+    <environments>Default</environments>
+    <interviewLabel>e-Wallet - After Create Actions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>e-Wallet - After Create Actions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_e_Wallet_trustee</targetReference>
+        </connector>
+        <filterFormula>!{!$Setup.ICL_Settings__c.Disable_Migrate_Flow__c}</filterFormula>
+        <object>eWallet__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Create_e_Wallet_trustee</name>
+        <label>Create e-Wallet trustee</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <flowName>TRUSTEE_Ewallet_trustee_creation</flowName>
+        <inputAssignments>
+            <name>GETewalletID</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <triggerOrder>500</triggerOrder>
+</Flow>

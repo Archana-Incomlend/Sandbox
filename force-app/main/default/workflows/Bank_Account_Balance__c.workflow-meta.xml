@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Balance</fullName>
+        <field>Latest_Balance__c</field>
+        <formula>amount__c</formula>
+        <name>Update Balance</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>Bank_Account_Detail__c</targetObject>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update Balance when it is the latest balance</fullName>
+        <actions>
+            <name>Update_Balance</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update Bank account balance when it is created  , to investigate, seems to be linked when Amicorp was not yet our trustee</description>
+        <failedMigrationToolVersion>238.17</failedMigrationToolVersion>
+        <formula>Bank_Account_Detail__r.Latest_Balance_Date__c &lt;   As_of_DateTime__c</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

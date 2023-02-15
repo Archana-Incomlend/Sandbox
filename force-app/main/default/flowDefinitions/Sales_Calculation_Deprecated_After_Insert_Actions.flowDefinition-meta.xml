@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>2</activeVersionNumber>
+    <description>Migrated from the Workflow to Flow.
+1. Sales Calculation creation - Take the Data from the invoice finance deal about sales commission to put in the sales calculation object when it&apos;s created</description>
+    <masterLabel>Exclude Migrate Sales Calculation - Deprecated - After Insert Actions</masterLabel>
+</FlowDefinition>

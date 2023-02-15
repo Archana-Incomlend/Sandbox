@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>supplier_buyer_map_public_name__c</fullName>
+    <externalId>false</externalId>
+    <formula>if (hide_suppliers_name__c ,  &apos;NOT DISCLOSED&apos;, Supplier_Buyer_Map__r.Supplier__r.Name)
+&amp; &apos; selling to &apos; &amp;
+if (hide_buyers_name__c ,  &apos;NOT DISCLOSED&apos;, Supplier_Buyer_Map__r.Buyer__r.Name)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>supplier buyer map public name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

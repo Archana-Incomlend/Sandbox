@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_type__c</fullName>
+    <externalId>false</externalId>
+    <label>Product type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Factoring</fullName>
+                <default>true</default>
+                <label>Factoring Insured</label>
+            </value>
+            <value>
+                <fullName>Factoring Insured 100</fullName>
+                <default>false</default>
+                <label>Factoring Insured 100</label>
+            </value>
+            <value>
+                <fullName>Factoring SBLC</fullName>
+                <default>false</default>
+                <label>Factoring SBLC</label>
+            </value>
+            <value>
+                <fullName>Factoring SBLC 100</fullName>
+                <default>false</default>
+                <label>Factoring SBLC 100</label>
+            </value>
+            <value>
+                <fullName>Supply Chain Finance</fullName>
+                <default>false</default>
+                <label>Reverse Factoring Insured</label>
+            </value>
+            <value>
+                <fullName>Reverse Factoring !00</fullName>
+                <default>false</default>
+                <label>Reverse Factoring Insured 100</label>
+            </value>
+            <value>
+                <fullName>Reverse Factoring SBLC</fullName>
+                <default>false</default>
+                <label>Reverse Factoring SBLC</label>
+            </value>
+            <value>
+                <fullName>Reverse Factoring 100 SBLC</fullName>
+                <default>false</default>
+                <label>Reverse Factoring SBLC 100</label>
+            </value>
+            <value>
+                <fullName>In transit</fullName>
+                <default>false</default>
+                <label>In Transit Factoring</label>
+            </value>
+            <value>
+                <fullName>In Transit Reverse Factoring</fullName>
+                <default>false</default>
+                <label>In Transit Reverse Factoring</label>
+            </value>
+            <value>
+                <fullName>In Transit Repo</fullName>
+                <default>false</default>
+                <label>In Transit Repo</label>
+            </value>
+            <value>
+                <fullName>LC</fullName>
+                <default>false</default>
+                <label>LC</label>
+            </value>
+            <value>
+                <fullName>Buyer Lead</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Buyer Led</label>
+            </value>
+            <value>
+                <fullName>Buyer Lead SBLC</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Buyer Led SBLC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compounded_fee_funder__c</fullName>
+    <description>Compound Fee funder Annual
+
+As Sales force do not allow Exponential with with difit number (ex 3.5% ) had to use the algebra function : 
+.A^B in  Algebra would look like EXP(B * Ln10 * LogA) since Salesforce LOG function only works as base 10
+The Ln10 can be calculated to 2.30258509</description>
+    <externalId>false</externalId>
+    <formula>EXP((360 / Invoice__r.financing_period_for_calcs__c)  * 2.30258509 *  LOG(1+ ( (( funder_discount_amount__c   / amount__c  )))))-1</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Compound Fee funder Annual</inlineHelpText>
+    <label>Compounded fee funder</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

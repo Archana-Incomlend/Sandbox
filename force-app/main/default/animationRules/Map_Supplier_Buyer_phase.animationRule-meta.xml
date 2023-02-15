@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnimationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <animationFrequency>often</animationFrequency>
+    <developerName>Map_Supplier_Buyer_phase</developerName>
+    <isActive>true</isActive>
+    <masterLabel>Map Supplier Buyer phase</masterLabel>
+    <recordTypeContext>Master</recordTypeContext>
+    <recordTypeName>__MASTER__</recordTypeName>
+    <sobjectType>Supplier_Buyer_Map__c</sobjectType>
+    <targetField>map_onboarding_stage__c</targetField>
+    <targetFieldChangeToValues>90.Onboarded</targetFieldChangeToValues>
+</AnimationRule>

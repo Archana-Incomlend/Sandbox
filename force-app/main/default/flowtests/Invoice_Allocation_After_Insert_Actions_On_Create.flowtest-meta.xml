@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowTest xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flowApiName>Invoice_Allocation_After_Insert_Actions</flowApiName>
+    <label>On Create</label>
+    <testPoints>
+        <elementApiName>Start</elementApiName>
+        <parameters>
+            <leftValueReference>$Record</leftValueReference>
+            <type>InputTriggeringRecordInitial</type>
+            <value>
+                <sobjectValue>{&quot;Allocation_Confirmed_Date__c&quot;:&quot;2022-08-09T05:30:00.000Z&quot;,&quot;Allocation_Reservation_date__c&quot;:&quot;2022-08-10T05:30:00.000Z&quot;,&quot;Buyback_Enter_Date__c&quot;:&quot;2022-08-03&quot;,&quot;CCY__c&quot;:&quot;USD&quot;,&quot;Customer_Email__c&quot;:&quot;test@test.com&quot;,&quot;Funder_prepayment__c&quot;:&quot;No prepayment&quot;,&quot;Funding_Email_to_Funders_Sent__c&quot;:false,&quot;Is_Summary_Allocation__c&quot;:false,&quot;No_Cap_Overdue__c&quot;:false,&quot;Repayment_Email_to_Funders_Sent__c&quot;:false,&quot;Status__c&quot;:&quot;Reservation&quot;,&quot;Test_Workflow__c&quot;:false,&quot;Trustee__c&quot;:&quot;Amicorp Trust&quot;,&quot;amount__c&quot;:&quot;10000&quot;,&quot;eWallet_Trustee__c&quot;:&quot;a1C0T000000VZTkUAO&quot;}</sobjectValue>
+            </value>
+        </parameters>
+    </testPoints>
+    <testPoints>
+        <assertions>
+            <conditions>
+                <leftValueReference>$Record.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+        </assertions>
+        <elementApiName>Finish</elementApiName>
+    </testPoints>
+</FlowTest>

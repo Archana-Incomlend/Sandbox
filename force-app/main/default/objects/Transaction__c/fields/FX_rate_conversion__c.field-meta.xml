@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FX_rate_conversion__c</fullName>
+    <externalId>false</externalId>
+    <label>FX rate conversion</label>
+    <precision>17</precision>
+    <required>false</required>
+    <scale>9</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

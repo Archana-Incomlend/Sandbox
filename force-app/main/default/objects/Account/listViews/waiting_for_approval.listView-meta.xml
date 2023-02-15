@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>waiting_for_approval</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>Sub_type__c</columns>
+    <columns>Agent__c</columns>
+    <columns>onboarding_checklist__c</columns>
+    <columns>Onboarding_days__c</columns>
+    <columns>Onboarding_Comments__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>onboarding_stage__c</field>
+        <operation>equals</operation>
+        <value>60.Approvals</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>notContain</operation>
+        <value>test</value>
+    </filters>
+    <label>_Waiting for approval</label>
+</ListView>

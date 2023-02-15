@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COMPANY_FUNDER_To_be_called</fullName>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Company_Name__c</columns>
+    <columns>Country_of_Incorporation_residence__c</columns>
+    <columns>phone_number__c</columns>
+    <columns>Status__c</columns>
+    <columns>Telemarketing_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Funder Company</value>
+    </filters>
+    <filters>
+        <field>Telemarketing_Status__c</field>
+        <operation>equals</operation>
+        <value>To be called</value>
+    </filters>
+    <label>COMPANY FUNDER - To be called</label>
+</ListView>

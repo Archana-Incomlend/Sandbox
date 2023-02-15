@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Waiting_for_KYC</fullName>
+    <booleanFilter>(1 AND 2) OR 3</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <columns>onboarding_stage__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>onboarding_approved__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>next_onboarding_action__c</field>
+        <operation>equals</operation>
+        <value>4	Perform KYC checks</value>
+    </filters>
+    <filters>
+        <field>onboarding_stage__c</field>
+        <operation>equals</operation>
+        <value>50.Screening</value>
+    </filters>
+    <label>_Waiting for KYC</label>
+</ListView>

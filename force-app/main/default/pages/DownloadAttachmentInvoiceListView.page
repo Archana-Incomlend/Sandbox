@@ -1,0 +1,14 @@
+<apex:page standardController="invoice_finance_deal__c" recordSetVar="Cs" extensions="ListViewController" lightningStylesheets="false" action="{!downloadInit}">
+    <apex:pageMessages id="message" escape="false"/>
+    <br/>
+    <apex:outputLabel >Please click close after download</apex:outputLabel>
+    <br/>
+    <apex:form id="frm">
+        <br/>
+        <a href="https://salesforce.incomlend.com/api/v1/force-backend/salesforce-notify/document-cache" target="_blank" type="application/zip" download="document.zip">Download</a>
+        <br/>
+        <br/>
+        <apex:commandButton value="Close" action="{!close}"/>
+        <apex:inputHidden id="validate" value="{!errorMessage}"/>
+    </apex:form> 
+</apex:page>

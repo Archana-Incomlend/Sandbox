@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Early_repaid</fullName>
+    <columns>NAME</columns>
+    <columns>Invoice_name__c</columns>
+    <columns>supplier_buyer_map_name__c</columns>
+    <columns>Actual_Repayment_Received_Date__c</columns>
+    <columns>early_payment_transfer_date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Phase__c</field>
+        <operation>equals</operation>
+        <value>4:CLOSED</value>
+    </filters>
+    <filters>
+        <field>Early_payment__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Early repaid</label>
+</ListView>

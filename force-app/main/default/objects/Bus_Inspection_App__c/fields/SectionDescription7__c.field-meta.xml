@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SectionDescription7__c</fullName>
+    <description>1) No Smoking
+2) Removal of bodily fluids
+3) No standing on seats
+4) No throwing of items
+5) No tampering</description>
+    <externalId>false</externalId>
+    <label>_SectionDescription_7</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

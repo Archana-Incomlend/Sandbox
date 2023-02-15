@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RestrictionRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <description>If user is not in Operation, Finance team or Not CEO the eWallet record where Sensitive Record = False those records should be visible</description>
+    <enforcementType>Restrict</enforcementType>
+    <masterLabel>Sensitive Record</masterLabel>
+    <recordFilter>Sensitive_Record__c=false</recordFilter>
+    <targetEntity>eWallet__c</targetEntity>
+    <userCriteria>$User.Operation_Finance_CEO__c=false</userCriteria>
+    <version>1</version>
+</RestrictionRule>

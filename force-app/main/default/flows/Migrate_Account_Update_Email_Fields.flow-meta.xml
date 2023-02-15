@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <description>Migrated from the workflow :
+1. Update Master Agent email
+2. Update Agent Email
+3. Update Primary Contact Email</description>
+    <environments>Default</environments>
+    <interviewLabel>Migrate Account - Update Email Fields {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Account - Update Email Fields</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Email_related_fields</name>
+        <label>Update Email related fields</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <inputAssignments>
+            <field>Agent_Email__c</field>
+            <value>
+                <elementReference>$Record.Agent__r.Primary_contact_email__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Master_Agent_Email__c</field>
+            <value>
+                <elementReference>$Record.Agent__r.Agent__r.Primary_contact_email__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Primary_contact_email__c</field>
+            <value>
+                <elementReference>$Record.Primary_Contact__r.Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Email_related_fields</targetReference>
+        </connector>
+        <filterFormula>!{!$Setup.ICL_Settings__c.Disable_Migrate_Flow__c}</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

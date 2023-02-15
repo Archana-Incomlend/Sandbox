@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <interviewLabel>Lookup Euler Hermes {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lookup Euler Hermes</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>lookup_EulerHermes</name>
+        <label>lookup Euler Hermes</label>
+        <locationX>375</locationX>
+        <locationY>283</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Euler Hermes</stringValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputAssignments>
+            <assignToReference>EulerHermesAccountID</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <startElementReference>lookup_EulerHermes</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>EulerHermesAccountID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

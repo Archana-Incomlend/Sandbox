@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Agent_Com_Amt_USD__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (expected_financing_period__c =0 ,0, (  Actual_Agent_Com_Ammount_USD__c  /  expected_financing_period__c)* if(  Delta_Actual_repayment_Due_Date__c &gt;0, expected_financing_period__c,  IF ( Delta_Actual_repayment_Due_Date__c &lt;-15, expected_financing_period__c-15,expected_financing_period__c+Delta_Actual_repayment_Due_Date__c)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Actual Agent Com Amt USD</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

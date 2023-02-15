@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>sendSlackMessageToInvoiceAllocation</name>
+        <label>send  Slack to Invoice Allocation</label>
+        <locationX>815</locationX>
+        <locationY>312</locationY>
+        <actionName>SendSlackMessageToInvoiceAllocation</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Message</name>
+            <value>
+                <elementReference>formattedmessage_template</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>51.0</apiVersion>
+    <assignments>
+        <name>Set_OwnerName</name>
+        <label>Set OwnerName</label>
+        <locationX>1019</locationX>
+        <locationY>50</locationY>
+        <assignmentItems>
+            <assignToReference>OwnerName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>{!OwnerAccount.Name} :Dart:</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>sendSlackMessageToInvoiceAllocation</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Ops_Owner_found</name>
+        <label>Ops Owner found</label>
+        <locationX>646</locationX>
+        <locationY>52</locationY>
+        <defaultConnector>
+            <targetReference>sendSlackMessageToInvoiceAllocation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OwnerAccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Owner</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Send_Slack_Allocations</name>
+        <label>Send Slack Allocations</label>
+        <locationX>488</locationX>
+        <locationY>53</locationY>
+        <defaultConnectorLabel>Default</defaultConnectorLabel>
+        <rules>
+            <name>Send_Slack_Allocations1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Phase__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1:PRE LISTING</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.allocation_number__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.allocation_number__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Ops_Owner_found</targetReference>
+            </connector>
+            <label>Send Slack Allocations</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the workflow
+    1. Slack on new allocation (merge)
+    Migrated from the flow
+    1. send slack for new allocation created (merge)</description>
+    <formulas>
+        <name>OwnerAccountId</name>
+        <dataType>String</dataType>
+        <expression>$Record.Supplier_Buyer_Map__r.Ops_Owner__c</expression>
+    </formulas>
+    <interviewLabel>Migrate Invoice Finance Deal After Trigger Actions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Invoice Finance Deal After Trigger Actions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Owner</name>
+        <label>Get Owner</label>
+        <locationX>818</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_OwnerName</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>OwnerAccountId</elementReference>
+            </value>
+        </filters>
+        <object>User</object>
+        <outputReference>OwnerAccount</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Slack_Allocations</targetReference>
+        </connector>
+        <object>invoice_finance_deal__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>formattedmessage_template</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>New Allocation(s) for Invoice : *{!$Record.Invoice_name__c}*
+Please check if there is an insurance instalment to Withdraw
+Ops Owner: *{!OwnerName}*</text>
+    </textTemplates>
+    <variables>
+        <name>OwnerAccount</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>User</objectType>
+    </variables>
+    <variables>
+        <name>OwnerName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>:warning: Ops Owner is not set, please amend the Supplier Buyer Map :warning:</stringValue>
+        </value>
+    </variables>
+</Flow>

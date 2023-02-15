@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Balance_upfront_fee_calculation__c</fullName>
+    <description>This is to be used for balance upfront fee calculation</description>
+    <externalId>false</externalId>
+    <formula>amount__c * Expected_finance_period_buyback_capped__c * Applied_MPR__c /30</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Balance upfront fee calculation</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

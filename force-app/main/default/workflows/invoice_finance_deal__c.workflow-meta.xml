@@ -1,0 +1,1770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Insurance_alert_invoice_60_says_overdue</fullName>
+        <description>Insurance alert invoice 55 says overdue</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Team_Recipient</recipient>
+            <type>role</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/X55_day_overdue_insurance_alert_After_Due_date_template_6</template>
+    </alerts>
+    <alerts>
+        <fullName>Invoice_funded_Buyer_email_for_RF</fullName>
+        <description>Invoice funded: Buyer email for RF</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_buyer_for_reminder_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/Invoice_Buyer_invoice_Funded</template>
+    </alerts>
+    <alerts>
+        <fullName>Invoice_funded_CMA_Buyer_email_for_RF</fullName>
+        <description>Invoice funded:  CMA Buyer email for RF</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_buyer_for_reminder_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>operations@shipfin.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Shipfin_email/Invoice_Buyer_CMA_invoice_Funded</template>
+    </alerts>
+    <alerts>
+        <fullName>Overdue_Email_0_30_days</fullName>
+        <description>Overdue Email 0-30 days</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Supplier_Contact_Who_Confirmed__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_buyer_for_reminder_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/Buyer_5_Auto_Reminder_overdue_V1_overdue_3_30_days</template>
+    </alerts>
+    <alerts>
+        <fullName>Overdue_Email_30days</fullName>
+        <description>Overdue Email &gt;30days</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Supplier_Contact_Who_Confirmed__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_buyer_for_reminder_email_2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Email_buyer_for_reminder_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/Buyer_After_Due_date_template_6</template>
+    </alerts>
+    <alerts>
+        <fullName>Reminder_14_days_before_due_date</fullName>
+        <description>Reminder 14 days before due date</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_buyer_for_reminder_email_2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Email_buyer_for_reminder_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/Buyer_Before_Due_date_template_2</template>
+    </alerts>
+    <alerts>
+        <fullName>Reminder_21_days_before_due_date</fullName>
+        <description>Reminder 21 days before due date</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_buyer_for_reminder_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/Buyer_Before_Due_date_template_1</template>
+    </alerts>
+    <alerts>
+        <fullName>Reminder_7_days_after_due_date</fullName>
+        <description>Reminder 7-27 days after due date</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Supplier_Contact_Who_Confirmed__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_buyer_for_reminder_email_2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Email_buyer_for_reminder_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/Buyer_After_Due_date_template_5</template>
+    </alerts>
+    <alerts>
+        <fullName>Reminder_7_days_before_due_date</fullName>
+        <description>Reminder 7 days before due date</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_buyer_for_reminder_email_2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Email_buyer_for_reminder_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/Buyer_Before_Due_date_template_3</template>
+    </alerts>
+    <alerts>
+        <fullName>Reminder_before_due_date</fullName>
+        <description>Reminder before due date</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_buyer_for_reminder_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/Buyer_Before_Due_date_template_2</template>
+    </alerts>
+    <alerts>
+        <fullName>Reminder_on_due_date</fullName>
+        <description>Reminder on due date</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Supplier_Contact_Who_Confirmed__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_buyer_for_reminder_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>operations@incomlend.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Incomlend_emails/Buyer_On_Due_date_template_4</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Auto_Email_Reminder_activation</fullName>
+        <field>Auto_email_payment_reminder__c</field>
+        <literalValue>1</literalValue>
+        <name>Auto Email Reminder activation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Daily_FX_2_Update</fullName>
+        <description>to have this tick box to true after one day as a trigger to start a flow to update de daily FX</description>
+        <field>Auto_Daily_FX_2__c</field>
+        <literalValue>1</literalValue>
+        <name>Daily FX 2 Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Date_In_progress</fullName>
+        <description>Update the field when in phase is in progress</description>
+        <field>in_progress_date__c</field>
+        <formula>NOW()</formula>
+        <name>Date In progress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Date_ready_for_posting</fullName>
+        <field>ready_for_posting_date__c</field>
+        <formula>TODAY()</formula>
+        <name>Date ready for posting</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Factoring_Layout</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Pricing_V2_2018</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Factoring Layout</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Fisrt_invoice_for_map</fullName>
+        <description>Up-date the field First deal for Map</description>
+        <field>first_deal_for_map__c</field>
+        <literalValue>1</literalValue>
+        <name>Fisrt invoice for map</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FunderRateinvoice</fullName>
+        <description>update the field funder Rate in invoice from Map Funder Rate</description>
+        <field>discount_rate__c</field>
+        <formula>Map_Funder_rate__c</formula>
+        <name>FunderRateinvoice</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoice_external_View_Activation</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>External_View</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Invoice external View Activation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Last_date_Repaiement_reminder</fullName>
+        <description>Update the field Lat reminder email date</description>
+        <field>Last_sent_re_payment_reminder_email__c</field>
+        <formula>NOW()</formula>
+        <name>Last date Repaiement reminder</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Overdue_Supplier_discount_rate</fullName>
+        <description>when overdue , a superior discount rate apply</description>
+        <field>Overdue_sSupplier_discount_rate__c</field>
+        <formula>Supplier_Buyer_Map__r.Overdue_Supplier_discount_rate__c</formula>
+        <name>Overdue Supplier discount rate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Ready_for_posting</fullName>
+        <field>Invoice_ready_for_Posting__c</field>
+        <literalValue>1</literalValue>
+        <name>Ready for posting</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Real_Face_Value</fullName>
+        <description>Copy the invoice amount in the real face value field</description>
+        <field>Real_Face_Value__c</field>
+        <formula>invoice_amount__c</formula>
+        <name>Real Face Value</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reverse_Factoring_View</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Auction_Product</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Reverse Factoring View</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Revised_payment_date</fullName>
+        <field>Revised_payment_date__c</field>
+        <formula>Expected_Payment_Date__c</formula>
+        <name>Revised payment date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SupplierRateUpdate</fullName>
+        <description>Update Supplier discount rate from Map  Supplier discount rate when map is created</description>
+        <field>Total_Supplier_Discount__c</field>
+        <formula>Map_Supplier_rate__c</formula>
+        <name>SupplierRateUpdate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_invoice_ready_posting_Date</fullName>
+        <field>ready_for_posting_date__c</field>
+        <formula>TODAY()</formula>
+        <name>Update invoice ready posting Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_over_due_days_value</fullName>
+        <field>over_due_days_value__c</field>
+        <formula>over_due_days__c</formula>
+        <name>Update over due days value</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Waiting_Allocation_date</fullName>
+        <field>Waiting_for_Allocations_date__c</field>
+        <formula>TODAY()</formula>
+        <name>Waiting Allocation date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>insurance_credit_fee</fullName>
+        <description>Update insurance credit field based of insurance credit field in account supplier</description>
+        <field>credit_insurance_fee_percentage__c</field>
+        <formula>Supplier_Buyer_Map__r.Supplier__r.Credit_insurance_fee__c</formula>
+        <name>insurance credit fee</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_due_date_delta_bucket</fullName>
+        <field>due_date_delta_bucket_value__c</field>
+        <formula>due_date_delta_bucket__c</formula>
+        <name>update due date delta bucket</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_field_invoice_amount</fullName>
+        <description>invoice amount = funded amount / percentage of financing in the map</description>
+        <field>invoice_amount__c</field>
+        <formula>Min( Real_Face_Value__c, funded_amount__c / Min( If( Supplier_Buyer_Map__r.Max_advance_amount_percentage__c &gt; 0, Supplier_Buyer_Map__r.Max_advance_amount_percentage__c, 100), Supplier_Buyer_Map__r.percentage_of_financing__c))</formula>
+        <name>update field invoice amount</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_floating_rate</fullName>
+        <field>Invoice_submitted_for_approval__c</field>
+        <formula>Now()</formula>
+        <name>update floating rate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_overdue_rate</fullName>
+        <field>Overdue_sSupplier_discount_rate__c</field>
+        <formula>Total_Supplier_Discount__c</formula>
+        <name>update overdue rate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <flowActions>
+        <fullName>Automatic_notification_to_RF_Supplier_when_new_uploaded_invoice</fullName>
+        <flow>Automatic_notification_to_RF_Supplier_when_new_uploaded_invoice</flow>
+        <flowInputs>
+            <name>InvoiceID</name>
+            <value>{!Id}</value>
+        </flowInputs>
+        <label>Automatic notification to RF Supplier when new uploaded invoice</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+    <flowActions>
+        <fullName>Lauch_Update_Daily_FX</fullName>
+        <flow>Update_FX_Rate_2</flow>
+        <flowInputs>
+            <name>invoiceID</name>
+            <value>{!Id}</value>
+        </flowInputs>
+        <label>Lauch  Update Daily FX</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+    <flowActions>
+        <fullName>Send_Slack_Allocations</fullName>
+        <description>Send a Slack to Operation</description>
+        <flow>send_slack_for_new_allocation_created</flow>
+        <flowInputs>
+            <name>invoiceID</name>
+            <value>{!Id}</value>
+        </flowInputs>
+        <label>Send Slack Allocations</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+    <flowActions>
+        <fullName>Send_Slack_funds_available</fullName>
+        <description>Send a Slack to Operationvas instruction to send NOA</description>
+        <flow>Send_Slack_when_Funds_available</flow>
+        <flowInputs>
+            <name>invoiceID</name>
+            <value>{!Id}</value>
+        </flowInputs>
+        <label>Send Slack funds available</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+    <flowActions>
+        <fullName>Update_Com_sales</fullName>
+        <flow>Update_Come_sales_Invoice</flow>
+        <flowInputs>
+            <name>invoiceID</name>
+            <value>{!Id}</value>
+        </flowInputs>
+        <label>Update Com sales %</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+    <flowActions>
+        <fullName>alert_slack_phase_change</fullName>
+        <flow>send_slack_for_invoice_phase_change</flow>
+        <flowInputs>
+            <name>invoiceID</name>
+            <value>{!Id}</value>
+        </flowInputs>
+        <label>alert slack phase change</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+    <flowActions>
+        <fullName>refresh_allocation_comms_calc_on_invoice_save</fullName>
+        <flow>Refreshtest</flow>
+        <flowInputs>
+            <name>invoiceID</name>
+            <value>{!Id}</value>
+        </flowInputs>
+        <label>refresh allocation comms calc on invoice save</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+    <rules>
+        <fullName>55 day overdue Insurance alert</fullName>
+        <active>false</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.advance_amount_usd_equiv__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Phase__c</field>
+            <operation>equals</operation>
+            <value>3:IN PROGRESS</value>
+        </criteriaItems>
+        <description>send an email to Rsik and collection for Insurance declaration</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Insurance_alert_invoice_60_says_overdue</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.Due_Date__c</offsetFromField>
+            <timeLength>55</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Activate external View</fullName>
+        <actions>
+            <name>Invoice_external_View_Activation</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.External_View__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto -Email before DD  reminder payment</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Passthrough Record</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.auto_status__c</field>
+            <operation>equals</operation>
+            <value>Awaiting due date</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Auto_email_payment_reminder__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.No_reminder_before_due_date__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Workflow to auto email reminder to pay before DD</description>
+        <failedMigrationToolVersion>238.12.1</failedMigrationToolVersion>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_14_days_before_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>-14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_7_days_before_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>-7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Auto -Email before DD  reminder payment new</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Passthrough Record</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.auto_status__c</field>
+            <operation>equals</operation>
+            <value>Awaiting due date</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Auto_email_payment_reminder__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.advance_send_to_supplier_date__c</field>
+            <operation>greaterThan</operation>
+            <value>3/25/2021</value>
+        </criteriaItems>
+        <description>Workflow to auto email reminder to pay before DD new</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_on_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_7_days_before_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>-7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_21_days_before_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>-21</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_14_days_before_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>-14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Auto -Email overdue reminder payment</fullName>
+        <active>false</active>
+        <booleanFilter>(1 and 2 and 3 and 5) or (2 and 3 and 4 and 5)</booleanFilter>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.auto_status__c</field>
+            <operation>equals</operation>
+            <value>Awaiting due date</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Passthrough Record</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Auto_email_payment_reminder__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.auto_status__c</field>
+            <operation>equals</operation>
+            <value>Delayed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.advance_send_to_supplier_date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>3/25/2021</value>
+        </criteriaItems>
+        <description>Workflow to auto email reminder to pay after DD</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>45</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>50</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>60</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>37</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_7_days_after_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>8</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_7_days_after_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>25</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_7_days_after_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>15</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_7_days_after_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>4</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>55</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Auto -Email overdue reminder payment 11</fullName>
+        <actions>
+            <name>Overdue_Email_0_30_days</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Last_date_Repaiement_reminder</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Workflow to auto email overdue 7  Alternative option to Workflow overdue (need an update invoice)</description>
+        <formula>OR ( AND (auto_status__c =&quot;Awaiting due date&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE), AND (auto_status__c =&quot;Delayed&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE,  Days_to_due_date__c = -11))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto -Email overdue reminder payment 18</fullName>
+        <actions>
+            <name>Overdue_Email_0_30_days</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Last_date_Repaiement_reminder</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Workflow to auto email overdue 18  Alternative option to Workflow overdue (need an update invoice)</description>
+        <formula>OR ( AND (auto_status__c =&quot;Awaiting due date&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE), AND (auto_status__c =&quot;Delayed&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE,  Days_to_due_date__c = -18))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto -Email overdue reminder payment 2</fullName>
+        <active>false</active>
+        <booleanFilter>(1 and 2 and 3 and 5) or (2 and 3 and 4 and 5)</booleanFilter>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.auto_status__c</field>
+            <operation>equals</operation>
+            <value>Awaiting due date</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Passthrough Record</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Auto_email_payment_reminder__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.auto_status__c</field>
+            <operation>equals</operation>
+            <value>Delayed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.advance_send_to_supplier_date__c</field>
+            <operation>greaterThan</operation>
+            <value>3/25/2021</value>
+        </criteriaItems>
+        <description>Workflow to auto email reminder to pay after DD 2</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>55</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>60</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Auto -Email overdue reminder payment 25</fullName>
+        <actions>
+            <name>Overdue_Email_0_30_days</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Last_date_Repaiement_reminder</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Workflow to auto email overdue 25  Alternative option to Workflow overdue (need an update invoice)</description>
+        <formula>OR ( AND (auto_status__c =&quot;Awaiting due date&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE), AND (auto_status__c =&quot;Delayed&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE,  Days_to_due_date__c = -25))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto -Email overdue reminder payment 32</fullName>
+        <actions>
+            <name>Overdue_Email_30days</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Last_date_Repaiement_reminder</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Workflow to auto email overdue 32  Alternative option to Workflow overdue (need an update invoice)</description>
+        <formula>OR ( AND (auto_status__c =&quot;Awaiting due date&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE), AND (auto_status__c =&quot;Delayed&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE,  Days_to_due_date__c = -32))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto -Email overdue reminder payment 39</fullName>
+        <actions>
+            <name>Overdue_Email_30days</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Last_date_Repaiement_reminder</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Workflow to auto email overdue 39  Alternative option to Workflow overdue (need an update invoice)</description>
+        <formula>OR ( AND (auto_status__c =&quot;Awaiting due date&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE), AND (auto_status__c =&quot;Delayed&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE,  Days_to_due_date__c = -39))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto -Email overdue reminder payment 4</fullName>
+        <actions>
+            <name>Overdue_Email_0_30_days</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Last_date_Repaiement_reminder</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Workflow to auto email overdue 4  Alternative option to Workflow overdue (need an update invoice)</description>
+        <formula>OR ( AND (auto_status__c =&quot;Awaiting due date&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE,Days_to_due_date__c = -4), AND (auto_status__c =&quot;Delayed&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE,  Days_to_due_date__c = -4))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto -Email overdue reminder payment 46</fullName>
+        <actions>
+            <name>Overdue_Email_30days</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Last_date_Repaiement_reminder</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Workflow to auto email overdue 46  Alternative option to Workflow overdue (need an update invoice)</description>
+        <formula>OR ( AND (auto_status__c =&quot;Awaiting due date&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE), AND (auto_status__c =&quot;Delayed&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE,  Days_to_due_date__c = -46))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto -Email overdue reminder payment 53</fullName>
+        <actions>
+            <name>Overdue_Email_30days</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Last_date_Repaiement_reminder</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Workflow to auto email overdue 53  Alternative option to Workflow overdue (need an update invoice)</description>
+        <formula>OR ( AND (auto_status__c =&quot;Awaiting due date&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE), AND (auto_status__c =&quot;Delayed&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE,  Days_to_due_date__c = -53))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto -Email overdue reminder payment 60</fullName>
+        <actions>
+            <name>Overdue_Email_30days</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Last_date_Repaiement_reminder</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Workflow to auto email overdue 60  Alternative option to Workflow overdue (need an update invoice)</description>
+        <formula>OR ( AND (auto_status__c =&quot;Awaiting due date&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE), AND (auto_status__c =&quot;Delayed&quot;, RecordType.Name &lt;&gt; &quot;Passthrough Record&quot;, Auto_email_payment_reminder__c = TRUE,  Days_to_due_date__c = -60))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto -Email overdue reminder payment new</fullName>
+        <active>false</active>
+        <booleanFilter>(1 and 2 and 3 and 5) or (2 and 3 and 4 and 5)</booleanFilter>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.auto_status__c</field>
+            <operation>equals</operation>
+            <value>Awaiting due date</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Passthrough Record</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Auto_email_payment_reminder__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.auto_status__c</field>
+            <operation>equals</operation>
+            <value>Delayed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.advance_send_to_supplier_date__c</field>
+            <operation>greaterThan</operation>
+            <value>3/25/2021</value>
+        </criteriaItems>
+        <description>Workflow to auto email reminder to pay after DD new</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_7_days_after_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>22</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>35</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>45</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_7_days_after_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>27</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>40</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_7_days_after_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>12</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_7_days_after_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>17</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>50</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_7_days_after_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Auto -Email repayment before due date 1</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Passthrough Record</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.auto_status__c</field>
+            <operation>equals</operation>
+            <value>Awaiting due date</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Auto_email_payment_reminder__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>template 1 : every 7 days, start 21 days before due date, to buyer, cc supplier
+title : payment reminder for Incomlend</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>-21</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Auto Email Reminder activation</fullName>
+        <actions>
+            <name>Auto_Email_Reminder_activation</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Phase__c</field>
+            <operation>equals</operation>
+            <value>2:ON MARKETPLACE</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Phase__c</field>
+            <operation>equals</operation>
+            <value>3:IN PROGRESS</value>
+        </criteriaItems>
+        <description>Tick the box autoemail reminder when the invoice is set to on market place (remplaced by additional field update in the flow invoice is funded</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Factoring View</fullName>
+        <actions>
+            <name>Factoring_Layout</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.External_View__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Product_type__c</field>
+            <operation>contains</operation>
+            <value>Reverse</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Fouder%26supplier rate update</fullName>
+        <actions>
+            <name>FunderRateinvoice</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SupplierRateUpdate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>insurance_credit_fee</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Passthrough__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Update automatically the Funder rate and the suppplier rate in invoice for calculation</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Funds Available</fullName>
+        <actions>
+            <name>Send_Slack_funds_available</name>
+            <type>FlowAction</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Funds_Available__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>when tick box funds available is ticked</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Invoice Maintenance</fullName>
+        <actions>
+            <name>update_overdue_rate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Phase__c</field>
+            <operation>equals</operation>
+            <value>3:IN PROGRESS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Phase__c</field>
+            <operation>equals</operation>
+            <value>1:PRE LISTING</value>
+        </criteriaItems>
+        <description>Update field in invoice for maintenance</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Invoice Phase Change</fullName>
+        <actions>
+            <name>alert_slack_phase_change</name>
+            <type>FlowAction</type>
+        </actions>
+        <active>false</active>
+        <failedMigrationToolVersion>238.12.1</failedMigrationToolVersion>
+        <formula>ISCHANGED( Phase__c )  ||   ISNEW()</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Ready for posting</fullName>
+        <actions>
+            <name>Update_invoice_ready_posting_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>An_invoice_is_ready_for_posting</name>
+            <type>Task</type>
+        </actions>
+        <actions>
+            <name>Invoice_ready_for_posting</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>alert the funding team when it ready for posting</description>
+        <formula>AND ( ISCHANGED( Invoice_ready_for_Posting__c ) , Invoice_ready_for_Posting__c = TRUE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Real_Face_Value</fullName>
+        <actions>
+            <name>Real_Face_Value</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Why ? ask Pierre</description>
+        <formula>IsNull(Real_Face_Value__c)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reminder Email</fullName>
+        <active>false</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Auto_email_payment_reminder__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Passthrough Record</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Phase__c</field>
+            <operation>equals</operation>
+            <value>3:IN PROGRESS</value>
+        </criteriaItems>
+        <description>Test</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_before_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>-7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reminder_before_due_date</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>-14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_0_30_days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_0_30_days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_0_30_days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Auto_Email_Reminder_activation</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>21</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>37</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>invoice_finance_deal__c.due_date2__c</offsetFromField>
+            <timeLength>45</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>52</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Overdue_Email_30days</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Last_date_Repaiement_reminder</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>60</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Reverse Factoring View</fullName>
+        <actions>
+            <name>Reverse_Factoring_View</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.External_View__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Product_type__c</field>
+            <operation>contains</operation>
+            <value>Standart</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Revised expected Payment Date</fullName>
+        <actions>
+            <name>Revised_payment_date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Revised_payment_date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Update Revise expected payment date  for report based on Expected Repayment date</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Slack on new allocation</fullName>
+        <actions>
+            <name>Send_Slack_Allocations</name>
+            <type>FlowAction</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.allocation_number__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Phase__c</field>
+            <operation>equals</operation>
+            <value>1:PRE LISTING</value>
+        </criteriaItems>
+        <description>send a slack in finance upate with the name of the owner</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Supplier Approved Invoice</fullName>
+        <actions>
+            <name>Invoice_approved_by_Supplier</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Invoice_ready_for_Posting__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Waiting_for_allocations__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.supplier_approval_status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <description>Activate a task to funding team when Invoice is ready for posting, waiting ofr allocation and supplier approved the invoice</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>UPDATE COM  %25 INVOICE</fullName>
+        <actions>
+            <name>Update_Com_sales</name>
+            <type>FlowAction</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.Sales_Owner_Set_DD__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.CreatedDate</field>
+            <operation>greaterThan</operation>
+            <value>7/5/2019 8:30 AM</value>
+        </criteriaItems>
+        <description>Update com sales from the map when the invoice is created</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update FX temp</fullName>
+        <actions>
+            <name>Lauch_Update_Daily_FX</name>
+            <type>FlowAction</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.advance_send_to_supplier_date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Temp_Update_Joey__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Used to manually update invoice FX not in use anymore</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Insurance rate from Map</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Invoice_Amount_Prelisting__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update due date delta bucket</fullName>
+        <actions>
+            <name>Update_over_due_days_value</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>update_due_date_delta_bucket</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update due date and  delta bucket on invoice</description>
+        <formula>1=1</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update invoice amount</fullName>
+        <actions>
+            <name>update_field_invoice_amount</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.advanced_amount__c</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Waiting for Allications date</fullName>
+        <actions>
+            <name>Waiting_Allocation_date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update the date when the field Waiting for Allocation is ticked</description>
+        <formula>AND ( ISCHANGED( Waiting_for_allocations__c ) ,  Waiting_for_allocations__c  = TRUE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>first invoice for Map</fullName>
+        <actions>
+            <name>Fisrt_invoice_for_map</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Supplier_Buyer_Map__c.First_Cycle__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Passthrough__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>to update the tick box when on invoice when it is a a first deal on the map</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>in Progress Date</fullName>
+        <actions>
+            <name>Date_In_progress</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Phase__c</field>
+            <operation>equals</operation>
+            <value>3:IN PROGRESS</value>
+        </criteriaItems>
+        <description>to update the field Date in progress when the status is In progress</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>refresh allocation calcs on save</fullName>
+        <actions>
+            <name>refresh_allocation_comms_calc_on_invoice_save</name>
+            <type>FlowAction</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1</booleanFilter>
+        <criteriaItems>
+            <field>invoice_finance_deal__c.Phase__c</field>
+            <operation>equals</operation>
+            <value>2:ON MARKETPLACE,3:IN PROGRESS,4:CLOSED</value>
+        </criteriaItems>
+        <description>Active a flow to update allocation with no field update, Desactivated on 11/22/2019 as he create mistake by udpate to many allocation, Purpose unknow</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>An_invoice_is_ready_for_posting</fullName>
+        <assignedTo>joel.gay@incomlend.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>An invoice is ready for posting, please create the Allocation</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>invoice_finance_deal__c.ready_for_posting_date__c</offsetFromField>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>An invoice is ready for posting</subject>
+    </tasks>
+    <tasks>
+        <fullName>Invoice_approved_by_Supplie2r</fullName>
+        <assignedTo>joel.gay@incomlend.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>The Invoice has been approved by the supplier , please prepare the allocations</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Invoice approved by Supplier</subject>
+    </tasks>
+    <tasks>
+        <fullName>Invoice_approved_by_Supplier</fullName>
+        <assignedTo>mohamed.asif@incomlend.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>The invoice has been approved by the Supplier , please prepare the allocations</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Invoice approved by Supplier</subject>
+    </tasks>
+    <tasks>
+        <fullName>Invoice_ready_for_posting</fullName>
+        <assignedTo>joel.gay@incomlend.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>An invoice is ready for posting, please create the Allocation</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Invoice ready for posting</subject>
+    </tasks>
+    <tasks>
+        <fullName>Test_supplier_approved</fullName>
+        <assignedTo>loic@incomlend.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>Test supplier approved Loic</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Test supplier approved</subject>
+    </tasks>
+</Workflow>

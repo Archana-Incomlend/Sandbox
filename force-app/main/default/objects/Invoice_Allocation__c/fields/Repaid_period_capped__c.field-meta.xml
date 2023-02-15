@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Repaid_period_capped__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* non null Invoice__r.actual_financing_period__c indicates that payment has been received */
+  Max( If( IsPickVal( Funder_prepayment__c, &quot;Net EFDA -15days&quot;), 0, -65535),
+  If( Invoice__r.actual_financing_period__c &lt;= 0, Expected_finance_period_buyback_capped__c,
+Min(Invoice__r.actual_financing_period__c, Expected_finance_period_buyback_capped__c))
+- Expected_funding_period_capped__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Repaid period capped</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

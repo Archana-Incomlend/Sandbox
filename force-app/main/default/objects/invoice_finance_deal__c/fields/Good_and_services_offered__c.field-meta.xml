@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Good_and_services_offered__c</fullName>
+    <description>Good and service offered from supplier</description>
+    <externalId>false</externalId>
+    <formula>Supplier_Buyer_Map__r.Supplier__r.goods_or_services_offered_text__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Good and service offered from supplier</inlineHelpText>
+    <label>Good and services offered</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

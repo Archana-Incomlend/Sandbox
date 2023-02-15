@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Process Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Waiting Credit Limit</fullName>
+                <default>false</default>
+                <label>1-Waiting Credit Limit</label>
+            </value>
+            <value>
+                <fullName>No Credit Limit</fullName>
+                <default>false</default>
+                <label>2-No Credit Limit</label>
+            </value>
+            <value>
+                <fullName>Credit Limit Obtained</fullName>
+                <default>false</default>
+                <label>3-Credit Limit Obtained</label>
+            </value>
+            <value>
+                <fullName>4- Term Sheet Sent</fullName>
+                <default>false</default>
+                <label>4-Term Sheet Sent</label>
+            </value>
+            <value>
+                <fullName>Term sheet Signed</fullName>
+                <default>true</default>
+                <label>5-Term sheet Signed</label>
+            </value>
+            <value>
+                <fullName>Waiting for Documents</fullName>
+                <default>false</default>
+                <label>6-Waiting for Trade Documents</label>
+            </value>
+            <value>
+                <fullName>7-Legal : review Trade Doc</fullName>
+                <default>false</default>
+                <label>7-Legal : review Trade Doc</label>
+            </value>
+            <value>
+                <fullName>8-Risk Supplier Call</fullName>
+                <default>false</default>
+                <label>8-Risk Supplier Call</label>
+            </value>
+            <value>
+                <fullName>9-Risk Buyer Call</fullName>
+                <default>false</default>
+                <label>9-Risk Buyer Call</label>
+            </value>
+            <value>
+                <fullName>10-Map Created</fullName>
+                <default>false</default>
+                <label>10-Map Created</label>
+            </value>
+            <value>
+                <fullName>Credit Committee Planned</fullName>
+                <default>false</default>
+                <label>11-Credit Committee Planned</label>
+            </value>
+            <value>
+                <fullName>Credit Committee Done</fullName>
+                <default>false</default>
+                <label>12-Credit Committee Done</label>
+            </value>
+            <value>
+                <fullName>Offer Signed</fullName>
+                <default>false</default>
+                <label>13-Offer Signed</label>
+            </value>
+            <value>
+                <fullName>Map Onboarded</fullName>
+                <default>false</default>
+                <label>14-Map Onboarded</label>
+            </value>
+            <value>
+                <fullName>Invoice submitted</fullName>
+                <default>false</default>
+                <label>15-Invoice submitted</label>
+            </value>
+            <value>
+                <fullName>20-Dropped</fullName>
+                <default>false</default>
+                <label>20-Dropped</label>
+            </value>
+            <value>
+                <fullName>BNL Signed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BNL Draft Sent</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

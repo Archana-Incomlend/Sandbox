@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>total_advance_amount_all_phases_USD_Equ__c</fullName>
+    <description>Potential total advance amount including in progress, pre-listing and marketplace</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Potential total advance amount including in progress, pre-listing and marketplace</inlineHelpText>
+    <label>Total Advance InProgress&amp;MarketPlace USD</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

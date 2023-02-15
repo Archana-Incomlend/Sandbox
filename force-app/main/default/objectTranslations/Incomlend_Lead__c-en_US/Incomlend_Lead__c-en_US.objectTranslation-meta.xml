@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Incomlend Lead (old)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Incomlend Leads</value>
+    </caseValues>
+    <layouts>
+        <layout>Funder Lead Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Database Extra Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Extra Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Info Funder</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Status</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Lead Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Database Extra Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Extra Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Funders Specific info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Status</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Sales Origination Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Database Extra Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Extra Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Status</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label></label>
+        <name>convert_to_account</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>mass_update</name>
+    </webLinks>
+</CustomObjectTranslation>

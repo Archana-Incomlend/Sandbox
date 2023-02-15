@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applied_Funder_Discount_Profit_Share_Pct__c</fullName>
+    <description>Applied Funder Discount Profit Share Percent applied on this Invoice Allocation</description>
+    <externalId>false</externalId>
+    <label>Applied Funder Discount Profit Share Pct</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

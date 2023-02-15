@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zone_1__c</fullName>
+    <defaultValue>&quot;Brunei Darussalam, Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Singapore, Thailand, Vietnam&quot;</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>Zone 1 countries</inlineHelpText>
+    <label>Zone 1</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

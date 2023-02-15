@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onboarding_doc_received__c</fullName>
+    <externalId>false</externalId>
+    <label>Old Check-list Note and Attachment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Certificate of registration</fullName>
+                <default>false</default>
+                <label>Certificate of registration</label>
+            </value>
+            <value>
+                <fullName>Certificate of Incorporation</fullName>
+                <default>false</default>
+                <label>Certificate of Incorporation</label>
+            </value>
+            <value>
+                <fullName>Directors&apos; Resolution</fullName>
+                <default>false</default>
+                <label>Directors&apos; Resolution</label>
+            </value>
+            <value>
+                <fullName>Memorandum and Articles of Association</fullName>
+                <default>false</default>
+                <label>Memorandum and Articles of Association</label>
+            </value>
+            <value>
+                <fullName>Register of Directors</fullName>
+                <default>false</default>
+                <label>Register of Directors</label>
+            </value>
+            <value>
+                <fullName>Register of Shareholders</fullName>
+                <default>false</default>
+                <label>Register of Shareholders</label>
+            </value>
+            <value>
+                <fullName>Shareholders Personal Identification Docs</fullName>
+                <default>false</default>
+                <label>Shareholders Personal Identification Docs</label>
+            </value>
+            <value>
+                <fullName>Directors Personal Identification and proof of address Docs</fullName>
+                <default>false</default>
+                <label>Directors Personal Identification and proof of address Docs</label>
+            </value>
+            <value>
+                <fullName>UBO Personal Identification Docs</fullName>
+                <default>false</default>
+                <label>UBO Personal Identification Docs</label>
+            </value>
+            <value>
+                <fullName>Proof of Address (individuals)</fullName>
+                <default>false</default>
+                <label>Proof of Address (individuals)</label>
+            </value>
+            <value>
+                <fullName>copy of bank statement</fullName>
+                <default>false</default>
+                <label>copy of bank statement</label>
+            </value>
+            <value>
+                <fullName>RPA</fullName>
+                <default>false</default>
+                <label>RPA</label>
+            </value>
+            <value>
+                <fullName>Invoice Purchase Agreement</fullName>
+                <default>false</default>
+                <label>Invoice Purchase Agreement</label>
+            </value>
+            <value>
+                <fullName>Buyers Acknowlegement</fullName>
+                <default>false</default>
+                <label>Buyers Acknowlegement</label>
+            </value>
+            <value>
+                <fullName>Agent agreement</fullName>
+                <default>false</default>
+                <label>Agent agreement</label>
+            </value>
+            <value>
+                <fullName>General Terms &amp; Conditions (Lenders)</fullName>
+                <default>false</default>
+                <label>General Terms &amp; Conditions (Lenders)</label>
+            </value>
+            <value>
+                <fullName>General Terms &amp; Conditions (suppliers)</fullName>
+                <default>false</default>
+                <label>General Terms &amp; Conditions (suppliers)</label>
+            </value>
+            <value>
+                <fullName>Personal Identification Documents</fullName>
+                <default>false</default>
+                <label>Personal Identification Documents</label>
+            </value>
+            <value>
+                <fullName>Credit Report</fullName>
+                <default>false</default>
+                <label>Credit Report</label>
+            </value>
+            <value>
+                <fullName>Certificate of Credit Limit</fullName>
+                <default>false</default>
+                <label>Certificate of Credit Limit</label>
+            </value>
+            <value>
+                <fullName>Extract from company register</fullName>
+                <default>false</default>
+                <label>Extract from company register</label>
+            </value>
+            <value>
+                <fullName>Last 3 years financials</fullName>
+                <default>false</default>
+                <label>Last 3 years financials</label>
+            </value>
+            <value>
+                <fullName>Overall Debtor Ageing report</fullName>
+                <default>false</default>
+                <label>Overall Debtor Ageing report</label>
+            </value>
+            <value>
+                <fullName>Total invoiced amount and Total Payments received</fullName>
+                <default>false</default>
+                <label>Total invoiced amount and Total Payments received</label>
+            </value>
+            <value>
+                <fullName>Total debit and credit notes amount</fullName>
+                <default>false</default>
+                <label>Total debit and credit notes amount</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

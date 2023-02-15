@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Balance_check_error</fullName>
+    <columns>NAME</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>Balance__c</columns>
+    <columns>Balance_Amount_Check__c</columns>
+    <columns>Amicorp_E_wallet__c</columns>
+    <columns>Available_Balance__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Balance check error</label>
+</ListView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Advanced_Amount__c</name>
+    <picklistValues>
+        <masterLabel>Between 60 to 90% of the invoice face value</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Up to 90% of the invoice face value</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

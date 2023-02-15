@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Declined</fullName>
+                <default>false</default>
+                <label>Declined</label>
+            </value>
+            <value>
+                <fullName>*123 forms submission*</fullName>
+                <default>false</default>
+                <label>*123 forms submission*</label>
+            </value>
+            <value>
+                <fullName>Contacted - Never responded</fullName>
+                <default>false</default>
+                <label>Contacted - Never responded</label>
+            </value>
+            <value>
+                <fullName>10.Not contacted</fullName>
+                <default>true</default>
+                <label>10.Not contacted</label>
+            </value>
+            <value>
+                <fullName>20.Contacted - Not responded yet</fullName>
+                <default>false</default>
+                <label>20.Contacted - Not responded yet</label>
+            </value>
+            <value>
+                <fullName>30.MQL - Responded</fullName>
+                <default>false</default>
+                <label>30.MQL - Responded</label>
+            </value>
+            <value>
+                <fullName>40.SQL - Interested confirmed (waiting for buyers/documents)</fullName>
+                <default>false</default>
+                <label>40.SQL - Interested confirmed (waiting for buyers/documents)</label>
+            </value>
+            <value>
+                <fullName>50.On hold - No immediate interest</fullName>
+                <default>false</default>
+                <label>50.On hold - No immediate interest</label>
+            </value>
+            <value>
+                <fullName>60.Converted to Account</fullName>
+                <default>false</default>
+                <label>60.Converted to Account</label>
+            </value>
+            <value>
+                <fullName>91.Declined</fullName>
+                <default>false</default>
+                <label>91.Declined</label>
+            </value>
+            <value>
+                <fullName>92.Unqualified</fullName>
+                <default>false</default>
+                <label>92.Unqualified</label>
+            </value>
+            <value>
+                <fullName>90.Contacted - Never Responded</fullName>
+                <default>false</default>
+                <label>90.Contacted - Never Responded</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

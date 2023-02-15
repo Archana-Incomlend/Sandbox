@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>added_last_7_days</fullName>
+    <columns>NAME</columns>
+    <columns>Company_Name__c</columns>
+    <columns>First_Name__c</columns>
+    <columns>Last_Name__c</columns>
+    <columns>phone_number__c</columns>
+    <columns>Status__c</columns>
+    <columns>Type__c</columns>
+    <columns>Source__c</columns>
+    <columns>next_action__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:7</value>
+    </filters>
+    <label>added last 7 days</label>
+</ListView>

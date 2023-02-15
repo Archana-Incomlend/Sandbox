@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Onboarding Document</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Onboarding Documents</value>
+    </caseValues>
+    <layouts>
+        <layout>onboarding checklist Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>certification details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>contact_account_is_same_as_account</name>
+    </validationRules>
+</CustomObjectTranslation>

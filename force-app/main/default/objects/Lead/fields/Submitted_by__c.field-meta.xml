@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submitted_by__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Company ( supplier ) who submitted a new buyer</inlineHelpText>
+    <label>Submitted by (Supplier)</label>
+    <length>100</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

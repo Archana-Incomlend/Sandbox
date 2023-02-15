@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Insurance_alert_invoice_60_says_overdue</name>
+        <label>55 day overdue- insurance alert  - After Due date - template 6</label>
+        <locationX>720</locationX>
+        <locationY>562</locationY>
+        <actionName>invoice_finance_deal__c.Insurance_alert_invoice_60_says_overdue</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Overdue_Email_30days</name>
+        <label>Overdue Email &gt;30days</label>
+        <locationX>1513</locationX>
+        <locationY>690</locationY>
+        <actionName>invoice_finance_deal__c.Overdue_Email_30days</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Last_date_Repayment_reminder</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Reminder_14_days_before_due_date</name>
+        <label>Buyer - Before Due date - template 2</label>
+        <locationX>1188</locationX>
+        <locationY>678</locationY>
+        <actionName>invoice_finance_deal__c.Reminder_14_days_before_due_date</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Last_date_Repayment_reminder</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Reminder_7_27_days_after_due_date</name>
+        <label>Buyer - After Due date - template 5</label>
+        <locationX>551</locationX>
+        <locationY>674</locationY>
+        <actionName>invoice_finance_deal__c.Reminder_7_days_after_due_date</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Last_date_Repayment_reminder</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Reminder_7_days_before_due_date</name>
+        <label>Buyer - Before Due date - template 3</label>
+        <locationX>1049</locationX>
+        <locationY>678</locationY>
+        <actionName>invoice_finance_deal__c.Reminder_7_days_before_due_date</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Last_date_Repayment_reminder</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>Check_after_due_date</name>
+        <label>Check after due date</label>
+        <locationX>544</locationX>
+        <locationY>496</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_after_due_date1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Repayment_Agreement__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Reminder_7_27_days_after_due_date</targetReference>
+            </connector>
+            <label>Check after due date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_after_due_date_0</name>
+        <label>Check after due date</label>
+        <locationX>1504</locationX>
+        <locationY>482</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_after_due_date1_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Repayment_Agreement__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Overdue_Email_30days</targetReference>
+            </connector>
+            <label>Check after due date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_before_due_date</name>
+        <label>Check before due date</label>
+        <locationX>1041</locationX>
+        <locationY>494</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Checkbefore_due_date1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Auto_email_payment_reminder__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Supplier_Buyer_Map__r.No_reminder_before_due_date__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Reminder_7_days_before_due_date</targetReference>
+            </connector>
+            <label>Check before due date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_before_due_date_0</name>
+        <label>Check before due date</label>
+        <locationX>1177</locationX>
+        <locationY>493</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Checkbefore_due_date1_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Auto_email_payment_reminder__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Supplier_Buyer_Map__r.No_reminder_before_due_date__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Reminder_14_days_before_due_date</targetReference>
+            </connector>
+            <label>Check before due date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Insurance_alert</name>
+        <label>Check Insurance alert</label>
+        <locationX>897</locationX>
+        <locationY>550</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Insurance_alert1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.advanced_amount__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Insurance_alert_invoice_60_says_overdue</targetReference>
+            </connector>
+            <label>Check Insurance alert</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the workflow
+    1. Auto -Email before DD reminder payment
+    2. Auto -Email overdue reminder payment new
+    3. Auto -Email overdue reminder payment2
+    4. 55 day overdue Insurance alert</description>
+    <environments>Default</environments>
+    <interviewLabel>Migrate Invoice Finance Deal Schedule Path In_Progress {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Migrate Invoice Finance Deal Schedule Path In_Progress</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Last_date_Repayment_reminder</name>
+        <label>Last sent re-payment reminder email</label>
+        <locationX>1147</locationX>
+        <locationY>903</locationY>
+        <inputAssignments>
+            <field>Last_sent_re_payment_reminder_email__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>909</locationX>
+        <locationY>126</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Phase__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>3:IN PROGRESS</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>012280000015HekAAE</stringValue>
+            </value>
+        </filters>
+        <object>invoice_finance_deal__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>X7_Days_Before_Due_Date</name>
+            <connector>
+                <targetReference>Check_before_due_date</targetReference>
+            </connector>
+            <label>7 Days Before Due Date</label>
+            <offsetNumber>-7</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X14_Days_Before_Due_Date</name>
+            <connector>
+                <targetReference>Check_before_due_date_0</targetReference>
+            </connector>
+            <label>14 Days Before Due Date</label>
+            <offsetNumber>-14</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X7_Days_After_Due_Date</name>
+            <connector>
+                <targetReference>Check_after_due_date</targetReference>
+            </connector>
+            <label>7 Days After Due Date</label>
+            <offsetNumber>7</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X12_Days_After_Due_Date</name>
+            <connector>
+                <targetReference>Check_after_due_date</targetReference>
+            </connector>
+            <label>12 Days After Due Date</label>
+            <offsetNumber>12</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X17_Days_After_Due_Date</name>
+            <connector>
+                <targetReference>Check_after_due_date</targetReference>
+            </connector>
+            <label>17 Days After Due Date</label>
+            <offsetNumber>17</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X22_Days_After_Due_Date</name>
+            <connector>
+                <targetReference>Check_after_due_date</targetReference>
+            </connector>
+            <label>22 Days After Due Date</label>
+            <offsetNumber>22</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X27_Days_After_Due_Date</name>
+            <connector>
+                <targetReference>Check_after_due_date</targetReference>
+            </connector>
+            <label>27 Days After Due Date</label>
+            <offsetNumber>27</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X30_Days_After_Due_Date</name>
+            <connector>
+                <targetReference>Check_after_due_date_0</targetReference>
+            </connector>
+            <label>30 Days After Due Date</label>
+            <offsetNumber>30</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X35_Days_After_Due_Date</name>
+            <connector>
+                <targetReference>Check_after_due_date_0</targetReference>
+            </connector>
+            <label>35 Days After Due Date</label>
+            <offsetNumber>35</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X40_Days_After_Due_Date</name>
+            <connector>
+                <targetReference>Check_after_due_date_0</targetReference>
+            </connector>
+            <label>40 Days After Due Date</label>
+            <offsetNumber>40</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X45_Days_After_Due_Date</name>
+            <connector>
+                <targetReference>Check_after_due_date_0</targetReference>
+            </connector>
+            <label>45 Days After Due Date</label>
+            <offsetNumber>45</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X50_Days_After_Due_Date</name>
+            <connector>
+                <targetReference>Check_after_due_date_0</targetReference>
+            </connector>
+            <label>50 Days After Due Date</label>
+            <offsetNumber>50</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X55_Days_After_Due_Date</name>
+            <connector>
+                <targetReference>Check_after_due_date_0</targetReference>
+            </connector>
+            <label>55 Days After Due Date</label>
+            <offsetNumber>55</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X60_Days_After_Due_Date</name>
+            <connector>
+                <targetReference>Check_after_due_date_0</targetReference>
+            </connector>
+            <label>60 Days After Due Date</label>
+            <offsetNumber>60</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>due_date2__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X55_Days_After_Due_Date2</name>
+            <connector>
+                <targetReference>Check_Insurance_alert</targetReference>
+            </connector>
+            <label>55 Days After Due Date</label>
+            <offsetNumber>55</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>Due_Date__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

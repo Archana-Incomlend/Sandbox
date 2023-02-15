@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interest_In_trade_Finance__c</fullName>
+    <externalId>false</externalId>
+    <label>Interest In trade Finance</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes, already invested</fullName>
+                <default>false</default>
+                <label>Yes, already invested</label>
+            </value>
+            <value>
+                <fullName>Yes, knowledgeable</fullName>
+                <default>false</default>
+                <label>Yes, knowledgeable</label>
+            </value>
+            <value>
+                <fullName>Yes, needs education</fullName>
+                <default>false</default>
+                <label>Yes, needs education</label>
+            </value>
+            <value>
+                <fullName>No, no alternatives</fullName>
+                <default>false</default>
+                <label>No, no alternatives</label>
+            </value>
+            <value>
+                <fullName>No, can’t invest in RAIF</fullName>
+                <default>false</default>
+                <label>No, can’t invest in RAIF</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

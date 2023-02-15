@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>in_progress_overdue</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+    <columns>over_due_days__c</columns>
+    <columns>NAME</columns>
+    <columns>auto_status__c</columns>
+    <columns>buyer__c</columns>
+    <columns>supplier_del__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>CCY__c</columns>
+    <columns>Real_Face_Value__c</columns>
+    <columns>funded_amount__c</columns>
+    <columns>discount_rate__c</columns>
+    <columns>revise_payment_date_note__c</columns>
+    <columns>Expected_Payment_Date__c</columns>
+    <columns>supplier_invoice_reference_number__c</columns>
+    <columns>advance_send_to_supplier_date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Phase__c</field>
+        <operation>equals</operation>
+        <value>3:IN PROGRESS</value>
+    </filters>
+    <filters>
+        <field>OVERDUE__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>supplier_buyer_map_name__c</field>
+        <operation>notContain</operation>
+        <value>passthrough</value>
+    </filters>
+    <filters>
+        <field>supplier_buyer_map_public_name__c</field>
+        <operation>notContain</operation>
+        <value>,grand</value>
+    </filters>
+    <label>3 IN PROGRESS - Overdue</label>
+    <sharedTo>
+        <group>Funding</group>
+        <group>Operation</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Repayment_Agreement__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The repayment agreement which the invoice is part of.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The repayment agreement which the invoice is part of.</inlineHelpText>
+    <label>Repayment Agreement</label>
+    <referenceTo>Repayment_Agreement__c</referenceTo>
+    <relationshipLabel>Invoice Finance Deals</relationshipLabel>
+    <relationshipName>Invoice_Finance_Deals</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
